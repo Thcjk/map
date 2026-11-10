@@ -6,6 +6,7 @@ import { useAppLayers } from '../map/useAppLayers'
 import type { LngLat } from '../lib/geo'
 import type { Route } from '../routing/route'
 import type { FeatureCollection } from 'geojson'
+import { SOURCES } from '../data/sources'
 
 interface Props {
   route: Route | null
@@ -45,7 +46,12 @@ export default function RouteLayer(props: Props) {
   latest.current = props
 
   const setup = useCallback((m: MlMap) => {
-    if (!m.getSource(ROUTE)) m.addSource(ROUTE, { type: 'geojson', data: routeGeoJson(latest.current.route) })
+    if (!m.getSource(ROUTE))
+      m.addSource(ROUTE, {
+        type: 'geojson',
+        data: routeGeoJson(latest.current.route),
+        attribution: SOURCES.find((s) => s.id === 'brouter')!.attribution,
+      })
     if (!m.getSource(HIGHLIGHT)) m.addSource(HIGHLIGHT, { type: 'geojson', data: empty })
     if (!m.getLayer(`${ROUTE}-casing`))
       m.addLayer({
