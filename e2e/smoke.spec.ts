@@ -9,8 +9,10 @@ test('Route planen, speichern und als GPX exportieren', async ({ page, context }
   // Kartenkacheln, Schriften, Höhen und Overlays: leer bzw. blockiert
   await context.route(/tiles\.openfreemap\.org|elevation-tiles-prod|waymarkedtrails|geo\.admin\.ch/, (r) => r.abort())
   let routingCalls = 0
-  await context.route(/brouter\.de/, (route) => {
+  await context.route(/brouter\.de/, async (route) => {
     routingCalls++
+    // langsamer Dienst: Der dritte Wegpunkt kommt, während die erste Anfrage noch läuft
+    await new Promise((r) => setTimeout(r, 700))
     const [a, b] = new URL(route.request().url()).searchParams.get('lonlats')!.split('|').map((s) => s.split(',').map(Number))
     const coordinates = Array.from({ length: 21 }, (_, i) => [a[0] + ((b[0] - a[0]) * i) / 20, a[1] + ((b[1] - a[1]) * i) / 20, 1000 + i * 10])
     const end = coordinates[20]
@@ -37,12 +39,14 @@ test('Route planen, speichern und als GPX exportieren', async ({ page, context }
   const map = page.getByRole('region', { name: 'Karte' })
   await map.click({ position: { x: 120, y: 320 } })
   await map.click({ position: { x: 240, y: 420 } })
+  await page.waitForTimeout(600)
   await map.click({ position: { x: 280, y: 300 } })
 
   // Kennzahlen erscheinen, sobald beide Teilstücke geroutet sind
   const panel = page.getByRole('region', { name: 'Routenplanung' })
   await expect(panel.getByText('Route wird berechnet')).toHaveCount(0, { timeout: 15_000 })
   await expect(panel.locator('dd').first()).toContainText('km')
+  // Eine laufende Anfrage darf nicht abgebrochen und wiederholt werden.
   expect(routingCalls).toBe(2)
 
   // Rückgängig entfernt den letzten Punkt, Wiederholen bringt ihn zurück (ohne neue Anfrage)

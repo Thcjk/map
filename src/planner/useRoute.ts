@@ -33,33 +33,42 @@ export function useRoute(plan: Plan): RouteStatus {
     return plan.waypoints.slice(1).map((p, i) => [plan.waypoints[i], p])
   }, [plan])
 
+  // Laufende Anfragen werden nicht abgebrochen, wenn neue Wegpunkte dazukommen: Ein Abbruch
+  // würde dieselbe Anfrage gleich noch einmal auslösen und den Routing-Dienst doppelt belasten.
+  const inflight = useRef(new Set<string>())
+  const wanted = useRef(new Set<string>())
+  const unmount = useRef(new AbortController())
+  useEffect(() => () => unmount.current.abort(), [])
+
   useEffect(() => {
-    const missing = pairs.filter(([a, b]) => !legs.current.has(legKey(a, b)))
+    wanted.current = new Set(pairs.map(([a, b]) => legKey(a, b)))
+    const missing = pairs.filter(([a, b]) => !legs.current.has(legKey(a, b)) && !inflight.current.has(legKey(a, b)))
     if (!missing.length) return
-    const ctrl = new AbortController()
     const timer = setTimeout(async () => {
+      for (const [a, b] of missing) inflight.current.add(legKey(a, b))
       for (const [a, b] of missing) {
         const k = legKey(a, b)
-        try {
-          legs.current.set(k, await routeLeg(a, b, ctrl.signal))
-          failed.current.delete(k)
-        } catch (e) {
-          if (ctrl.signal.aborted) return
-          legs.current.set(k, straightLeg(a, b))
-          failed.current.add(k)
-          setError(
-            navigator.onLine === false
-              ? 'Keine Internetverbindung: Abschnitte werden als Luftlinie gezeigt.'
-              : `Routing nicht möglich (${(e as Error).message}). Abschnitt als Luftlinie.`,
-          )
+        // Inzwischen verschoben oder gelöscht: gar nicht erst anfragen.
+        if (wanted.current.has(k)) {
+          try {
+            legs.current.set(k, await routeLeg(a, b, unmount.current.signal))
+            failed.current.delete(k)
+          } catch (e) {
+            if (unmount.current.signal.aborted) return
+            legs.current.set(k, straightLeg(a, b))
+            failed.current.add(k)
+            setError(
+              navigator.onLine === false
+                ? 'Keine Internetverbindung: Abschnitte werden als Luftlinie gezeigt.'
+                : `Routing nicht möglich (${(e as Error).message}). Abschnitt als Luftlinie.`,
+            )
+          }
         }
+        inflight.current.delete(k)
         setVersion((v) => v + 1)
       }
     }, DEBOUNCE_MS)
-    return () => {
-      clearTimeout(timer)
-      ctrl.abort()
-    }
+    return () => clearTimeout(timer)
   }, [pairs, retryToken])
 
   const retry = useCallback(() => {
