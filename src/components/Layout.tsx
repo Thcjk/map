@@ -1,4 +1,6 @@
+import { Suspense } from 'react'
 import { NavLink, Outlet } from 'react-router-dom'
+import { useOnline } from '../lib/useOnline'
 
 const NAV = [
   { to: '/', label: 'Karte', end: true },
@@ -9,11 +11,19 @@ const NAV = [
 ]
 
 export default function Layout() {
+  const online = useOnline()
   return (
     <div className="flex h-full flex-col">
       <main className="relative min-h-0 flex-1">
-        <Outlet />
+        <Suspense fallback={<p role="status" className="label p-6 text-muted">Lädt …</p>}>
+          <Outlet />
+        </Suspense>
       </main>
+      {!online && (
+        <p role="status" className="label shrink-0 bg-text px-3 py-1.5 text-center text-surface">
+          Offline · gespeicherte Touren und Karten bleiben nutzbar
+        </p>
+      )}
       <nav
         aria-label="Hauptnavigation"
         className="flex shrink-0 border-t border-text bg-surface pb-[env(safe-area-inset-bottom)]"

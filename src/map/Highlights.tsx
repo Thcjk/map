@@ -3,6 +3,7 @@ import * as maplibregl from 'maplibre-gl'
 import { CloseIcon, StarIcon } from '../components/icons'
 import { db, type Highlight } from '../lib/db'
 import { resizePhoto } from '../lib/image'
+import { useEscape } from '../lib/useEscape'
 import { useMap } from './MapContext'
 
 const dateFmt = new Intl.DateTimeFormat('de-CH', { dateStyle: 'medium', timeStyle: 'short' })
@@ -57,6 +58,11 @@ export default function Highlights() {
     close()
     await reload()
   }
+
+  useEscape(adding || !!open, () => {
+    close()
+    setOpen(null)
+  })
 
   const sheet = 'w-full rounded-t-2xl border border-text bg-surface p-4 pb-[calc(1rem+env(safe-area-inset-bottom))] sm:w-96 sm:rounded-2xl'
 

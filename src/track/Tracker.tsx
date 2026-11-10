@@ -1,3 +1,4 @@
+import { useEscape } from '../lib/useEscape'
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import * as maplibregl from 'maplibre-gl'
 import type { GeoJSONSource, Map as MlMap } from 'maplibre-gl'
@@ -31,6 +32,7 @@ export default function Tracker({ route }: { route: Route | null }) {
   const t = useTracker()
   const { rec } = t
   const [intro, setIntro] = useState(false)
+  useEscape(intro, () => setIntro(false))
   const [finishing, setFinishing] = useState(false)
   const [name, setName] = useState('')
   const [now, setNow] = useState(Date.now())

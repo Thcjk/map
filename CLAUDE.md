@@ -39,12 +39,15 @@ Gehostet über GitHub Pages: https://thcjk.github.io/map/
 - Vite + React 19 + TypeScript (strict), Tailwind CSS v4 (`@tailwindcss/vite`)
 - MapLibre GL JS (Karte), Dexie (IndexedDB, lokale Daten), react-router (BrowserRouter
   mit `basename = import.meta.env.BASE_URL`)
-- vite-plugin-pwa (generateSW, autoUpdate), Vitest (+ fake-indexeddb für DB-Tests)
+- vite-plugin-pwa (generateSW, autoUpdate), Vitest (+ fake-indexeddb für DB-Tests),
+  Playwright für den Smoke-Test
+- Seiten sind `lazy` (src/App.tsx); `ErrorBoundary` und Offline-Balken im Seitengerüst
 
 ## Befehle
 - `npm run dev` – Entwicklungsserver
 - `npm test` – Unit-Tests (Vitest)
 - `npm run build` – Typecheck + Produktions-Build
+- `npm run test:e2e` – Playwright-Smoke-Test (`e2e/`, baut selbst; Dienste sind nachgebildet)
 - Build für Pages lokal nachstellen: `BASE_PATH=/map/ npm run build`
 
 ## Deployment

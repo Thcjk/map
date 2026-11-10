@@ -8,6 +8,8 @@ const base = process.env.BASE_PATH ?? '/'
 
 export default defineConfig({
   base,
+  // MapLibre allein ist gut 1 MB; es wird nur mit der Kartenseite geladen.
+  build: { chunkSizeWarningLimit: 1400 },
   plugins: [
     react(),
     tailwindcss(),
@@ -53,5 +55,6 @@ export default defineConfig({
   ],
   test: {
     environment: 'node',
+    include: ['src/**/*.test.ts'],
   },
 })

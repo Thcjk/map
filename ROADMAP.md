@@ -80,5 +80,10 @@ Status: `[x]` erledigt, `[ ]` offen. Nach jeder Änderung aktualisieren.
 - [ ] Highlights optional öffentlich teilen und erledigte Touren/Highlights in die Cloud (braucht Supabase-Projekt + Migration mit Storage)
 
 ## Phase 8 – Feinschliff
-- [ ] Performance, Barrierefreiheit, Fehlerzustände
-- [ ] Unit-Tests Routing/Etappen/Zeit, Playwright-Smoke-Test
+- [x] Performance: Seiten werden einzeln nachgeladen (Karte/MapLibre nur auf der Kartenseite), Höhenprofil zeichnet höchstens einen Punkt pro Pixel, POI-Liste begrenzt, Routing/Overpass gecacht
+- [x] Fehlerzustände: Offline-Balken, Karte nicht erreichbar, Routing down (Luftlinie + «Erneut»), Suche/Overpass down, kein GPS / keine Erlaubnis, Absturz-Schutz (ErrorBoundary)
+- [x] Barrierefreiheit: Beschriftungen (aria), Tastatur (Escape schliesst Dialoge, Ctrl+Z/Y, Pfeiltasten in der Suche), sichtbarer Fokus, Touch-Flächen ≥ 44 px, reduzierte Bewegung
+- [x] Unit-Tests für Routing, Etappen, Wanderzeit, GPX, Sync, Aufzeichnung, Navigation, Offline, Sticker (75 Tests)
+- [x] Playwright-Smoke-Test Planen > Speichern > Export (`npm run test:e2e`, läuft auch in der Deploy-Action)
+- [ ] Mit Screenreader (VoiceOver/TalkBack) und auf einem echten, älteren Handy mit einer Route über 500 km prüfen
+- [ ] Fokus beim Öffnen von Dialogen in den Dialog setzen und dort halten

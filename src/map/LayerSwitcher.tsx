@@ -1,3 +1,4 @@
+import { useEscape } from '../lib/useEscape'
 import { useState } from 'react'
 import { CloseIcon, LayersIcon } from '../components/icons'
 import { BASE_MAPS, OVERLAYS, type BaseMapId, type OverlayId } from './layers'
@@ -11,6 +12,7 @@ interface Props {
 
 export default function LayerSwitcher({ baseId, overlays, onBaseChange, onOverlaysChange }: Props) {
   const [open, setOpen] = useState(false)
+  useEscape(open, () => setOpen(false))
 
   return (
     <>
