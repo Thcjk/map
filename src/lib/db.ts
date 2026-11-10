@@ -47,6 +47,19 @@ export interface Activity {
   durationMs: number | null
 }
 
+/** Heruntergeladener Kartenausschnitt (Korridor um eine Route). */
+export interface OfflineRegion {
+  id: string
+  name: string
+  createdAt: number
+  corridor: number
+  /** Kachel-Schlüssel «z/x/y» */
+  omt: string[]
+  dem: string[]
+  bytes: number
+  failed: number
+}
+
 /** Sammlung von Touren. */
 export interface Collection {
   id: string
@@ -82,6 +95,7 @@ export const db = new Dexie('wanderapp') as Dexie & {
   pois: EntityTable<PoiCache, 'key'>
   collections: EntityTable<Collection, 'id'>
   activities: EntityTable<Activity, 'id'>
+  offlineRegions: EntityTable<OfflineRegion, 'id'>
 }
 
 db.version(1).stores({
@@ -100,6 +114,9 @@ db.version(4).stores({
 })
 db.version(5).stores({
   activities: 'id, startedAt',
+})
+db.version(6).stores({
+  offlineRegions: 'id, createdAt',
 })
 
 export async function getSetting<T>(key: string, fallback: T): Promise<T> {

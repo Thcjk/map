@@ -1,5 +1,6 @@
 import type { LayerSpecification, Map as MlMap, StyleSpecification } from 'maplibre-gl'
 import { SOURCES } from '../data/sources'
+import { OMT_PROTOCOL } from '../offline/store'
 import { GREEN, INK, INK_MUTED, PAPER, PAPER_LIGHT, WATER, WATER_LINE } from '../theme'
 
 /**
@@ -226,7 +227,10 @@ export const TOPO_STYLE: StyleSpecification = {
   sources: {
     omt: {
       type: 'vector',
-      url: 'https://tiles.openfreemap.org/planet',
+      // eigenes Protokoll: zuerst Offline-Cache, sonst Netz (siehe offline/store.ts)
+      tiles: [`${OMT_PROTOCOL}://{z}/{x}/{y}`],
+      minzoom: 0,
+      maxzoom: 14,
       attribution: SOURCES.find((s) => s.id === 'openfreemap')!.attribution,
     },
   },

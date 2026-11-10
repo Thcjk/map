@@ -15,8 +15,8 @@ export default defineConfig({
       registerType: 'autoUpdate',
       includeAssets: ['icon.svg'],
       manifest: {
-        name: 'Wanderapp',
-        short_name: 'Wanderapp',
+        name: 'Etappa',
+        short_name: 'Etappa',
         description: 'Fernwanderungen planen, in Etappen aufteilen und unterwegs navigieren.',
         lang: 'de-CH',
         theme_color: '#e9e8da',
@@ -34,6 +34,20 @@ export default defineConfig({
         globPatterns: ['**/*.{js,mjs,css,html,svg,png,woff2}'],
         navigateFallback: `${base}index.html`,
         maximumFileSizeToCacheInBytes: 4 * 1024 * 1024,
+        // Höhen-Kacheln und Kartenschriften: einmal geladen, offline verfügbar.
+        // Die Cache-Namen nutzt auch src/offline/store.ts für gezielte Downloads.
+        runtimeCaching: [
+          {
+            urlPattern: /^https:\/\/s3\.amazonaws\.com\/elevation-tiles-prod\//,
+            handler: 'CacheFirst',
+            options: { cacheName: 'dem-tiles', expiration: { maxEntries: 8000 }, cacheableResponse: { statuses: [0, 200] } },
+          },
+          {
+            urlPattern: /^https:\/\/tiles\.openfreemap\.org\/fonts\//,
+            handler: 'CacheFirst',
+            options: { cacheName: 'map-fonts', expiration: { maxEntries: 300 }, cacheableResponse: { statuses: [0, 200] } },
+          },
+        ],
       },
     }),
   ],

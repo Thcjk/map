@@ -16,7 +16,7 @@ export function toGpx(
   name: string,
   points: RoutePoint[],
   waypoints: LngLat[] = [],
-  creator = 'Wanderapp',
+  creator = 'Etappa',
   times: (number | null)[] = [],
 ): string {
   const wpts = waypoints

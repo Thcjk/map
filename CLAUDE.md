@@ -12,8 +12,9 @@ Gehostet über GitHub Pages: https://thcjk.github.io/map/
 - **Nur Gratis-Dienste** ohne Kreditkarte. Erlaubt ein Dienst eine Funktion nicht:
   nicht tricksen, sondern Alternativen dokumentieren und dem Nutzer vorschlagen.
 - **Eigene Marke**: keine Namen, Logos, Texte oder Daten von Komoot übernehmen, nichts scrapen.
-  App-Name ist ein Platzhalter (`APP_NAME` in `src/config.ts`, plus `index.html`
-  und Manifest in `vite.config.ts`), bis der Nutzer einen Namen gewählt hat.
+  App-Name: **Etappa** (`APP_NAME` in `src/config.ts`, `index.html`, Manifest in
+  `vite.config.ts`). Die IndexedDB heisst weiterhin `wanderapp` (nicht umbenennen, sonst
+  gehen lokale Daten verloren).
 - **UI-Sprache Deutsch, Schweizer Schreibweise**: immer «ss», nie «ß». Code-Bezeichner Englisch.
 - **Mobile-first**, funktioniert auch auf dem Desktop. Touch-Flächen min. 44–48 px.
 - **Design «Vermessungsblatt»** (verbindliche Vorlage des Nutzers: ein Topo-Kartenblatt in
@@ -57,7 +58,7 @@ Gehostet über GitHub Pages: https://thcjk.github.io/map/
 ```
 src/
   main.tsx, App.tsx      Einstieg, Routen
-  config.ts              App-Name (Platzhalter)
+  config.ts              App-Name
   index.css              Tailwind + Design-Tokens
   components/            UI-Bausteine (Layout = Seitengerüst mit unterer Navigation)
   pages/                 Seiten (Karte, Quellen, 404)
@@ -102,6 +103,10 @@ src/
   track/navigation.ts    Position auf Route, Restwerte, Abweichung (40 m + GPS-Ungenauigkeit)
   track/Tracker.tsx      Leiste auf der Karte, Spur + Positionsmarker, Speichern als Activity
   lib/activities.ts      Erledigte Touren (Tabelle activities, v5), pages/ActivitiesList.tsx
+  offline/tiles.ts       Kacheln eines Korridors um die Route berechnen
+  offline/store.ts       Download/Löschen (Cache Storage + Tabelle offlineRegions, v6),
+                         MapLibre-Protokoll `etappa-omt://` (erst Offline-Cache, dann Netz)
+  offline/OfflinePanel   Tab «Offline» im Planungs-Panel
 ```
 
 ### Datenbank (Dexie, `wanderapp`)
@@ -120,6 +125,14 @@ Neue Felder nur additiv; neue Tabellen über eine neue `db.version(n)`.
 - Migrationen: `supabase/migrations/*.sql`, RLS auf allen Tabellen. Öffentliche Touren nur per
   `rpc/get_public_tour(id)` (kein Auflisten möglich). Einrichtung: `docs/SUPABASE.md`.
 - Keep-alive: `.github/workflows/supabase-keepalive.yml` (alle 3 Tage `rpc/keepalive`).
+
+### Offline
+- Vektorkacheln laufen immer über das Protokoll `etappa-omt://{z}/{x}/{y}`: Schlüssel z/x/y im
+  Cache `offline-omt`, weil die echte OpenFreeMap-URL eine wöchentlich wechselnde Version trägt.
+- Höhen-Kacheln (`dem-tiles`) und Schriften (`map-fonts`) cached der Service Worker (CacheFirst,
+  `vite.config.ts`); der Download schreibt direkt in dieselben Caches.
+- Was heruntergeladen werden darf, steht in `DATENQUELLEN.md`. **swisstopo und Waymarked Trails
+  nie vorab herunterladen.**
 
 ### Wanderzeit
 Aktuell die Faustregel der Schweizer Wanderwege (4 km/h, +15 min/100 Hm Aufstieg,

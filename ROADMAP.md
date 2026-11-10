@@ -10,7 +10,7 @@ Status: `[x]` erledigt, `[ ]` offen. Nach jeder Änderung aktualisieren.
 - [x] CLAUDE.md und ROADMAP.md
 - [x] DATENQUELLEN.md + Quellen-Seite in der App
 - [ ] Nutzer: Settings > Pages > Source auf «GitHub Actions» stellen
-- [ ] Nutzer: App-Namen wählen
+- [x] App-Name: Etappa
 
 ## Phase 1 – Karte
 - [x] Grundkarte OpenFreeMap (eigener Stil)
@@ -62,9 +62,11 @@ Status: `[x]` erledigt, `[ ]` offen. Nach jeder Änderung aktualisieren.
 - [ ] Erledigte Touren in die Cloud synchronisieren (braucht neue Migration; zusammen mit Phase 7)
 
 ## Phase 6 – Offline
-- [ ] Nutzungsbedingungen prüfen und dokumentieren
-- [ ] Karten-Download für Korridor (wo erlaubt), Speicheranzeige, Löschen
-- [ ] navigator.storage.persist(), Routen und POIs offline
+- [x] Nutzungsbedingungen geprüft und dokumentiert (DATENQUELLEN.md, Abschnitt Offline)
+- [x] Karten-Download für Korridor ±1/2/5 km: Topo-Vektorkacheln + Höhenmodell (Relief, Höhenlinien) + Schriften; Schätzung, Fortschritt, Abbrechen, Speicheranzeige, Löschen
+- [x] swisstopo und Wanderwege-Overlay bewusst nicht herunterladbar (nicht erlaubt), Hinweis mit Alternative in der App
+- [x] navigator.storage.persist(); Routen, Etappen, Fernwege und POIs liegen in IndexedDB, App-Hülle im Service Worker
+- [ ] Mit echten OpenFreeMap-Kacheln prüfen (Sandbox: nur Höhen-Kacheln echt, Vektorkacheln nachgebildet)
 
 ## Phase 7 – Sticker und Erinnerungen
 - [ ] Markierungsfarben recherchieren und dokumentieren

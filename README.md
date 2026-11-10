@@ -1,4 +1,4 @@
-# Wanderapp (Arbeitstitel)
+# Etappa
 
 Kostenlose Web-App (PWA) zum Planen von Fernwanderungen – Karte, Routenplanung,
 Etappen, Navigation und offline nutzbar. Alle Daten aus freien Quellen, siehe

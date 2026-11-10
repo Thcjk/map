@@ -18,6 +18,7 @@ import { parseGpx, toGpx } from '../lib/gpx'
 import { db, getSetting, setSetting } from '../lib/db'
 import { fetchPois, POI_CATEGORIES, type Poi, type PoiCategory } from '../trails/pois'
 import Tracker from '../track/Tracker'
+import OfflinePanel from '../offline/OfflinePanel'
 import ExtrasLayer from './ExtrasLayer'
 import PoiPanel from './PoiPanel'
 import StagesPanel from './StagesPanel'
@@ -40,7 +41,7 @@ interface Draft {
   stages?: StagePlan | null
 }
 
-type Tab = 'overview' | 'stages' | 'pois'
+type Tab = 'overview' | 'stages' | 'pois' | 'offline'
 
 /** Schlüssel für den POI-Cache: grobe Signatur der Geometrie + Korridor. */
 function poiKey(points: [number, number, ...unknown[]][], corridor: number) {
@@ -430,12 +431,13 @@ export default function Planner() {
 
           {expanded && hasRoute && route && (
             <div className="mt-3">
-              <div role="tablist" aria-label="Ansicht" className="mb-3 grid grid-cols-3 border-b border-line">
+              <div role="tablist" aria-label="Ansicht" className="mb-3 grid grid-cols-4 border-b border-line">
                 {(
                   [
                     ['overview', 'Übersicht'],
                     ['stages', 'Etappen'],
                     ['pois', 'Unterwegs'],
+                    ['offline', 'Offline'],
                   ] as [Tab, string][]
                 ).map(([id, label]) => (
                   <button
@@ -444,7 +446,7 @@ export default function Planner() {
                     role="tab"
                     aria-selected={tab === id}
                     onClick={() => setTab(id)}
-                    className={`min-h-11 border-b-3 font-semibold ${tab === id ? 'border-accent text-text' : 'border-transparent text-muted'}`}
+                    className={`min-h-11 border-b-3 text-sm font-semibold ${tab === id ? 'border-accent text-text' : 'border-transparent text-muted'}`}
                   >
                     {label}
                   </button>
@@ -461,6 +463,7 @@ export default function Planner() {
               {tab === 'stages' && (
                 <StagesPanel route={route} plan={stages} pois={pois} onChange={setStages} onFocusStage={focusRange} />
               )}
+              {tab === 'offline' && <OfflinePanel route={route} name={name} />}
               {tab === 'pois' && (
                 <PoiPanel
                   pois={pois}

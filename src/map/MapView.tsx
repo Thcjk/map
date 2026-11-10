@@ -4,6 +4,7 @@ import type { Map as MlMap } from 'maplibre-gl'
 import 'maplibre-gl/dist/maplibre-gl.css'
 import workerUrl from 'maplibre-gl/dist/maplibre-gl-worker.mjs?url'
 import { useSetting } from '../lib/useSetting'
+import { registerOfflineProtocol } from '../offline/store'
 import { MapContext } from './MapContext'
 import { BASE_MAPS, syncLayers, type BaseMap, type BaseMapId, type OverlayId } from './layers'
 import { provideStyleImages } from './topoStyle'
@@ -14,6 +15,7 @@ import { styleReady } from './useAppLayers'
 
 // Im Bundle findet MapLibre seinen Worker nicht selbst; Vite liefert die URL.
 maplibregl.setWorkerUrl(workerUrl)
+registerOfflineProtocol()
 
 interface View {
   center: [number, number]

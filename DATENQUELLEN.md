@@ -20,3 +20,13 @@ App-Icon: Europa-Umriss aus [Natural Earth](https://www.naturalearthdata.com/abo
 
 Nicht verwendet: **Nominatim** für Autocomplete – laut
 [Usage Policy](https://operations.osmfoundation.org/policies/nominatim/) verboten.
+
+## Offline-Download: was erlaubt ist (Stand November 2026)
+
+| Dienst | Offline-Download | Begründung |
+|---|---|---|
+| Terrain Tiles (AWS Open Data) | **Ja** | Offene Daten, frei nutzbar; Quellenangabe bleibt Pflicht. |
+| OpenFreeMap (Vektorkacheln, Schriften) | **Ja, zurückhaltend** | Die [Terms of Service](https://openfreemap.org/tos/) enthalten keine Regel zu Bulk-/Offline-Nutzung; der Dienst nennt keine Anfrage-Limits. Entscheid des Nutzers (privater Eigengebrauch): nur Korridor um die Route, max. 4000 Kacheln pro Download, 4 parallele Anfragen. Bei breiterer Nutzung beim Betreiber nachfragen oder auf einen eigenen PMTiles-Ausschnitt wechseln. |
+| swisstopo (WMTS, Vektortiles) | **Nein** | Die [Nutzungsbedingungen](https://www.geo.admin.ch/en/general-terms-of-use-fsdi) verlangen für Offline-Systeme den Download-Dienst statt der Webdienste; Fair Use gilt. Alternative: offizielle swisstopo-App (Offline-Karten gratis) oder Datenbezug über den Download-Dienst. |
+| Waymarked Trails (Overlay) | **Nein** | Keine Erlaubnis für Vorab-Downloads gefunden; freiwillig betriebener Dienst. Alternative: Route/Fernweg ist als Linie ohnehin offline gespeichert. |
+| BRouter, Overpass, Photon | entfällt | Abfragedienste; ihre Ergebnisse (Route, Fernwege, POIs) werden lokal gespeichert. |
