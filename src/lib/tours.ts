@@ -25,11 +25,34 @@ export async function saveTour(
     descent: route.descent,
     duration: route.duration,
     stages,
+    isPublic: existing?.isPublic ?? false,
+    dirty: 1,
   }
   await db.tours.put(tour)
+  notifyLocalChange()
   return tour.id
 }
 
-export const listTours = () => db.tours.orderBy('updatedAt').reverse().toArray()
-export const getTour = (id: string) => db.tours.get(id)
-export const deleteTour = (id: string) => db.tours.delete(id)
+export const listTours = async () =>
+  (await db.tours.orderBy('updatedAt').reverse().toArray()).filter((t) => !t.deleted)
+
+export async function getTour(id: string) {
+  const t = await db.tours.get(id)
+  return t && !t.deleted ? t : undefined
+}
+
+/** Löschen als Markierung, damit die Löschung auch in der Cloud ankommt. */
+export async function deleteTour(id: string) {
+  await db.tours.update(id, { deleted: true, dirty: 1, updatedAt: Date.now() })
+  notifyLocalChange()
+}
+
+export async function setTourPublic(id: string, isPublic: boolean) {
+  await db.tours.update(id, { isPublic, dirty: 1, updatedAt: Date.now() })
+  notifyLocalChange()
+}
+
+/** Meldet lokale Änderungen, damit der Cloud-Abgleich (falls aktiv) bald startet. */
+export function notifyLocalChange() {
+  window.dispatchEvent(new Event('local-data-changed'))
+}

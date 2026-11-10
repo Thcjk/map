@@ -4,7 +4,7 @@ const NAV = [
   { to: '/', label: 'Karte', end: true },
   { to: '/fernwege', label: 'Fernwege', end: false },
   { to: '/touren', label: 'Touren', end: false },
-  { to: '/quellen', label: 'Quellen', end: false },
+  { to: '/konto', label: 'Konto', end: false },
 ]
 
 export default function Layout() {

@@ -39,11 +39,13 @@ Status: `[x]` erledigt, `[ ]` offen. Nach jeder Änderung aktualisieren.
 - [x] POIs im Korridor (500 m / 1 km / 2 km) mit Filter und Abstand, Übernachtungsvorschläge pro Etappe, «An Übernachtung ausrichten»
 
 ## Phase 4 – Konto und Cloud (Supabase)
-- [ ] Magic-Link-Login
-- [ ] Offline-first-Sync (Touren, Etappenpläne, Sammlungen)
-- [ ] RLS für alle Tabellen, öffentliches Teilen per Link
-- [ ] SQL-Migrationen im Repo
-- [ ] Geplante Action gegen Pausieren
+- [x] Magic-Link-Login (Code fertig, aktiv sobald Secrets gesetzt)
+- [x] Offline-first-Sync (Touren, Etappenpläne, Sammlungen), Sammlungen-UI
+- [x] RLS für alle Tabellen, öffentliches Teilen per Link (`/teilen/:id`)
+- [x] SQL-Migrationen im Repo (`supabase/migrations`)
+- [x] Geplante Action gegen Pausieren
+- [ ] Nutzer: Supabase-Projekt anlegen, Migration ausführen, Secrets eintragen (docs/SUPABASE.md)
+- [ ] Mit echtem Projekt testen (Login, Sync zwischen zwei Geräten, Teilen-Link)
 
 ## Phase 5 – Unterwegs
 - [ ] GPS-Aufzeichnung mit Pause/Weiter, Statistik, Wake Lock, ehrlicher iOS-Hinweis

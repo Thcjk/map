@@ -86,11 +86,27 @@ src/
   trails/load.ts         Laden + Höhen + Cache (Tabelle trails, 30 Tage)
   trails/pois.ts         POIs im Korridor (around-Polylinie, abschnittweise), Abstand/km
   pages/TrailsPage.tsx   Fernweg-Katalog und -Suche → /?trail=<relation-id>
+  pages/ToursPage.tsx    Touren, Sammlungen, Teilen · pages/AccountPage.tsx Login/Sync
+  pages/SharedTourPage   /teilen/:id – öffentliche Tour ansehen und übernehmen
+  cloud/                 Supabase-Client, CloudProvider (Session + Auto-Sync), sync.ts
 ```
 
 ### Datenbank (Dexie, `wanderapp`)
-v1 settings · v2 tours (inkl. Geometrie + Etappenplan) · v3 trails, pois (Cache).
+v1 settings · v2 tours (inkl. Geometrie + Etappenplan) · v3 trails, pois (Cache) ·
+v4 Index `dirty` auf tours, Tabelle collections.
 Neue Felder nur additiv; neue Tabellen über eine neue `db.version(n)`.
+
+### Konto und Cloud (Supabase, optional)
+- `src/cloud/client.ts`: Client nur, wenn `VITE_SUPABASE_URL` + `VITE_SUPABASE_ANON_KEY`
+  gesetzt sind (GitHub-Secrets, im Deploy-Workflow als Env). Lazy geladen.
+  **Niemals den service_role-Key ins Frontend.**
+- Offline-first: Alles wird zuerst in IndexedDB gespeichert (`dirty: 1`). Löschen = Markierung
+  `deleted` bis zum Abgleich. `syncAll` (src/cloud/sync.ts): erst holen (Cursor
+  `server_updated_at`), zusammenführen nach «letzte Änderung gewinnt» (`client_updated_at`),
+  dann `dirty` hochladen. Auslöser: Login, Start, Änderung (3 s Debounce), online, alle 5 min.
+- Migrationen: `supabase/migrations/*.sql`, RLS auf allen Tabellen. Öffentliche Touren nur per
+  `rpc/get_public_tour(id)` (kein Auflisten möglich). Einrichtung: `docs/SUPABASE.md`.
+- Keep-alive: `.github/workflows/supabase-keepalive.yml` (alle 3 Tage `rpc/keepalive`).
 
 ### Wanderzeit
 Aktuell die Faustregel der Schweizer Wanderwege (4 km/h, +15 min/100 Hm Aufstieg,
@@ -116,5 +132,6 @@ Details und Links in `DATENQUELLEN.md`. Kurzfassung der Pflichten:
 | Terrain Tiles (AWS) | Frei, Quellenangabe der DEM-Quellen. |
 | BRouter (brouter.de) | Kostenlos, ohne Garantie. Pro Teilstück anfragen, debounced, gecacht, sequenziell. |
 | Overpass API | Nur auf Nutzeraktion, gecacht (IndexedDB), sequenziell, Timeout gesetzt, Ausweich-Instanz bei 429/504. |
+| Supabase (Free Tier) | 500 MB DB, Auth-Mails stark limitiert, Pausieren nach 7 Tagen Inaktivität (Keep-alive-Action). |
 | Photon (photon.komoot.io) | Nur moderate Nutzung, kein Bulk. Debounce, min. 3 Zeichen, Abbruch alter Anfragen. |
 | Nominatim | **Nicht für Autocomplete** erlaubt (Usage Policy) – deshalb Photon. |

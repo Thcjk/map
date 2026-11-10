@@ -23,6 +23,22 @@ export interface Tour {
   descent: number
   duration: number
   stages?: import('../planner/stages').StagePlan | null
+  /** Per Link öffentlich geteilt (nur mit Cloud-Konto). */
+  isPublic?: boolean
+  /** 1 = lokal geändert, noch nicht mit der Cloud abgeglichen. */
+  dirty?: 0 | 1
+  /** Gelöscht, aber Löschung noch nicht abgeglichen. */
+  deleted?: boolean
+}
+
+/** Sammlung von Touren. */
+export interface Collection {
+  id: string
+  name: string
+  tourIds: string[]
+  updatedAt: number
+  dirty?: 0 | 1
+  deleted?: boolean
 }
 
 /** Aus OSM geladener Fernweg (Relation), samt ergänzten Höhen. */
@@ -48,6 +64,7 @@ export const db = new Dexie('wanderapp') as Dexie & {
   tours: EntityTable<Tour, 'id'>
   trails: EntityTable<Trail, 'id'>
   pois: EntityTable<PoiCache, 'key'>
+  collections: EntityTable<Collection, 'id'>
 }
 
 db.version(1).stores({
@@ -59,6 +76,10 @@ db.version(2).stores({
 db.version(3).stores({
   trails: 'id',
   pois: 'key',
+})
+db.version(4).stores({
+  tours: 'id, updatedAt, dirty',
+  collections: 'id, updatedAt, dirty',
 })
 
 export async function getSetting<T>(key: string, fallback: T): Promise<T> {
