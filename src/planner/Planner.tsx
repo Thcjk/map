@@ -15,7 +15,12 @@ import {
 import { bbox } from '../lib/geo'
 import { downloadFile, slug } from '../lib/download'
 import { parseGpx, toGpx } from '../lib/gpx'
-import { getSetting, setSetting } from '../lib/db'
+import { db, getSetting, setSetting } from '../lib/db'
+import { fetchPois, POI_CATEGORIES, type Poi, type PoiCategory } from '../trails/pois'
+import ExtrasLayer from './ExtrasLayer'
+import PoiPanel from './PoiPanel'
+import StagesPanel from './StagesPanel'
+import { autoCuts, moveCut, type StagePlan } from './stages'
 import { getTour, saveTour } from '../lib/tours'
 import { useMap } from '../map/MapContext'
 import { APP_NAME } from '../config'
@@ -31,6 +36,17 @@ interface Draft {
   plan: Plan
   tourId: string | null
   name: string
+  stages?: StagePlan | null
+}
+
+type Tab = 'overview' | 'stages' | 'pois'
+
+/** Schlüssel für den POI-Cache: grobe Signatur der Geometrie + Korridor. */
+function poiKey(points: [number, number, ...unknown[]][], corridor: number) {
+  const f = points[0]
+  const l = points[points.length - 1]
+  const m = points[points.length >> 1]
+  return [points.length, f[0], f[1], m[0], m[1], l[0], l[1], corridor].map((n) => (typeof n === 'number' ? n.toFixed(5) : n)).join('|')
 }
 
 export default function Planner() {
@@ -48,7 +64,15 @@ export default function Planner() {
   const [saveOpen, setSaveOpen] = useState(false)
   const [message, setMessage] = useState<string | null>(null)
   const [draftLoaded, setDraftLoaded] = useState(false)
+  const [tab, setTab] = useState<Tab>('overview')
+  const [stages, setStages] = useState<StagePlan | null>(null)
+  const [pois, setPois] = useState<Poi[] | null>(null)
+  const [poiLoading, setPoiLoading] = useState<number | null>(null)
+  const [poiError, setPoiError] = useState<string | null>(null)
+  const [corridor, setCorridor] = useState(1000)
+  const [poiFilter, setPoiFilter] = useState<Set<PoiCategory>>(() => new Set(POI_CATEGORIES.map((c) => c.id)))
   const fileInput = useRef<HTMLInputElement>(null)
+  const poiCtrl = useRef<AbortController | null>(null)
 
   const waypoints = plan.kind === 'waypoints' ? plan.waypoints : []
   const hasRoute = !!route && route.points.length > 1
@@ -66,6 +90,7 @@ export default function Planner() {
   // Entwurf wiederherstellen bzw. Tour aus ?tour=… laden
   useEffect(() => {
     const id = params.get('tour')
+    const trailId = params.get('trail')
     let alive = true
     ;(async () => {
       if (id) {
@@ -75,8 +100,25 @@ export default function Planner() {
           dispatch({ type: 'load', plan: t.plan })
           setTourId(t.id)
           setName(t.name)
+          setStages(t.stages ?? null)
           fitTo(t.points)
         } else setMessage('Diese Tour gibt es nicht mehr.')
+        setParams({}, { replace: true })
+      } else if (trailId) {
+        const t = await db.trails.get(Number(trailId))
+        if (!alive) return
+        if (t) {
+          dispatch({
+            type: 'load',
+            plan: { kind: 'track', points: t.points, ways: [{ from: 0, to: t.points.length - 1, surface: 'unknown', sac: null }] },
+          })
+          setTourId(null)
+          setName(t.name)
+          setStages(null)
+          setExpanded(true)
+          setTab('stages')
+          fitTo(t.points)
+        } else setMessage('Dieser Weg ist nicht mehr gespeichert.')
         setParams({}, { replace: true })
       } else {
         const d = await getSetting<Draft | null>(DRAFT_KEY, null)
@@ -85,6 +127,7 @@ export default function Planner() {
           dispatch({ type: 'load', plan: d.plan })
           setTourId(d.tourId)
           setName(d.name)
+          setStages(d.stages ?? null)
         }
       }
       setDraftLoaded(true)
@@ -98,8 +141,35 @@ export default function Planner() {
 
   // Entwurf laufend sichern, damit nichts verloren geht
   useEffect(() => {
-    if (draftLoaded) void setSetting<Draft>(DRAFT_KEY, { plan, tourId, name })
-  }, [plan, tourId, name, draftLoaded])
+    if (draftLoaded) void setSetting<Draft>(DRAFT_KEY, { plan, tourId, name, stages })
+  }, [plan, tourId, name, stages, draftLoaded])
+
+  // Ändert sich die Route, passen Etappen und POIs nicht mehr: neu aufteilen, POIs aus dem Cache.
+  const routeSig = route && route.points.length > 1 ? poiKey(route.points, corridor) : null
+  const lastSig = useRef<string | null>(null)
+  useEffect(() => {
+    if (!draftLoaded || pending > 0) return
+    const prev = lastSig.current
+    lastSig.current = routeSig
+    poiCtrl.current?.abort()
+    setPoiLoading(null)
+    setPoiError(null)
+    if (!routeSig || !route) {
+      setPois(null)
+      return
+    }
+    const geometryChanged = prev !== null && prev.split('|').slice(0, -1).join() !== routeSig.split('|').slice(0, -1).join()
+    setStages((s) =>
+      s && (geometryChanged || s.cuts.some((c) => c >= route.points.length - 1))
+        ? { ...s, cuts: autoCuts(route, s.metric, s.target) }
+        : s,
+    )
+    let alive = true
+    void db.pois.get(routeSig).then((c) => alive && setPois(c?.pois ?? null))
+    return () => {
+      alive = false
+    }
+  }, [routeSig, draftLoaded, pending])
 
   // Tastenkürzel am Desktop
   useEffect(() => {
@@ -126,11 +196,33 @@ export default function Planner() {
     setTourId(null)
     setName('')
     setSelected(null)
+    setStages(null)
+  }
+
+  const loadPois = async () => {
+    if (!route || !routeSig) return
+    poiCtrl.current?.abort()
+    const ctrl = (poiCtrl.current = new AbortController())
+    setPoiError(null)
+    setPoiLoading(0)
+    try {
+      const result = await fetchPois(route.points, corridor, ctrl.signal, setPoiLoading)
+      await db.pois.put({ key: routeSig, pois: result, fetchedAt: Date.now() })
+      setPois(result)
+    } catch (e) {
+      if (!ctrl.signal.aborted) setPoiError((e as Error).message)
+    } finally {
+      if (!ctrl.signal.aborted) setPoiLoading(null)
+    }
+  }
+
+  const focusRange = (from: number, to: number) => {
+    if (route) fitTo(route.points.slice(from, to + 1))
   }
 
   const save = async () => {
     if (!route) return
-    const id = await saveTour(name, plan, route, tourId ?? undefined)
+    const id = await saveTour(name, plan, route, tourId ?? undefined, stages)
     setTourId(id)
     setSaveOpen(false)
     flash('Tour gespeichert.')
@@ -177,6 +269,13 @@ export default function Planner() {
         onInsert={(index, at) => dispatch({ type: 'insert', index, at })}
         onMove={(index, to) => dispatch({ type: 'move', index, to })}
         onSelect={setSelected}
+      />
+      <ExtrasLayer
+        route={hasRoute ? route : null}
+        cuts={stages?.cuts ?? []}
+        onMoveCut={(i, index) => route && setStages((s) => (s ? { ...s, cuts: moveCut(s.cuts, i, index, route.points.length) } : s))}
+        pois={pois}
+        filter={poiFilter}
       />
       <input
         ref={fileInput}
@@ -328,11 +427,51 @@ export default function Planner() {
           )}
 
           {expanded && hasRoute && route && (
-            <div className="mt-3 space-y-4">
-              {route.hasElevation && (
-                <ElevationProfile route={route} highlightIndex={highlight} onHighlight={setHighlight} />
+            <div className="mt-3">
+              <div role="tablist" aria-label="Ansicht" className="mb-3 grid grid-cols-3 border-b border-line">
+                {(
+                  [
+                    ['overview', 'Übersicht'],
+                    ['stages', 'Etappen'],
+                    ['pois', 'Unterwegs'],
+                  ] as [Tab, string][]
+                ).map(([id, label]) => (
+                  <button
+                    key={id}
+                    type="button"
+                    role="tab"
+                    aria-selected={tab === id}
+                    onClick={() => setTab(id)}
+                    className={`min-h-11 border-b-3 font-semibold ${tab === id ? 'border-accent text-text' : 'border-transparent text-muted'}`}
+                  >
+                    {label}
+                  </button>
+                ))}
+              </div>
+              {tab === 'overview' && (
+                <div className="space-y-4">
+                  {route.hasElevation && (
+                    <ElevationProfile route={route} highlightIndex={highlight} onHighlight={setHighlight} />
+                  )}
+                  <WayDetails route={route} />
+                </div>
               )}
-              <WayDetails route={route} />
+              {tab === 'stages' && (
+                <StagesPanel route={route} plan={stages} pois={pois} onChange={setStages} onFocusStage={focusRange} />
+              )}
+              {tab === 'pois' && (
+                <PoiPanel
+                  pois={pois}
+                  loading={poiLoading}
+                  error={poiError}
+                  corridor={corridor}
+                  filter={poiFilter}
+                  onCorridor={setCorridor}
+                  onFilter={setPoiFilter}
+                  onLoad={() => void loadPois()}
+                  onFocus={(p) => map?.flyTo({ center: [p.lng, p.lat], zoom: Math.max(map.getZoom(), 14) })}
+                />
+              )}
             </div>
           )}
         </section>

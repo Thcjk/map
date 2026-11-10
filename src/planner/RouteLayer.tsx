@@ -3,7 +3,7 @@ import * as maplibregl from 'maplibre-gl'
 import type { GeoJSONSource, Map as MlMap, MapMouseEvent } from 'maplibre-gl'
 import { useMap } from '../map/MapContext'
 import { useAppLayers } from '../map/useAppLayers'
-import type { LngLat } from '../lib/geo'
+import { nearestIndex, type LngLat } from '../lib/geo'
 import type { Route } from '../routing/route'
 import type { FeatureCollection } from 'geojson'
 import { SOURCES } from '../data/sources'
@@ -122,7 +122,7 @@ export default function RouteLayer(props: Props) {
       const layers = [`${ROUTE}-line`, `${ROUTE}-air`].filter((id) => map.getLayer(id))
       const onLine = layers.length > 0 && map.queryRenderedFeatures(box, { layers }).length > 0
       if (onLine && p.route && p.waypoints.length >= 2) {
-        const idx = nearestPointIndex(p.route, at)
+        const idx = nearestIndex(p.route.points, at)
         const leg = p.route.legRanges.findIndex((r) => idx >= r.from && idx <= r.to)
         if (leg >= 0) {
           p.onInsert(leg + 1, at)
@@ -167,18 +167,4 @@ export default function RouteLayer(props: Props) {
   }, [map, props.waypoints, props.editable, props.selected])
 
   return null
-}
-
-function nearestPointIndex(route: Route, at: LngLat): number {
-  let best = 0
-  let bestD = Infinity
-  const cosLat = Math.cos((at[1] * Math.PI) / 180)
-  route.points.forEach((p, i) => {
-    const d = ((p[0] - at[0]) * cosLat) ** 2 + (p[1] - at[1]) ** 2
-    if (d < bestD) {
-      bestD = d
-      best = i
-    }
-  })
-  return best
 }

@@ -1,8 +1,15 @@
 import { db, type Tour } from './db'
 import type { Plan } from '../planner/plannerState'
 import type { Route } from '../routing/route'
+import type { StagePlan } from '../planner/stages'
 
-export async function saveTour(name: string, plan: Plan, route: Route, id?: string): Promise<string> {
+export async function saveTour(
+  name: string,
+  plan: Plan,
+  route: Route,
+  id?: string,
+  stages: StagePlan | null = null,
+): Promise<string> {
   const now = Date.now()
   const existing = id ? await db.tours.get(id) : undefined
   const tour: Tour = {
@@ -17,6 +24,7 @@ export async function saveTour(name: string, plan: Plan, route: Route, id?: stri
     ascent: route.ascent,
     descent: route.descent,
     duration: route.duration,
+    stages,
   }
   await db.tours.put(tour)
   return tour.id

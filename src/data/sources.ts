@@ -77,6 +77,15 @@ export const SOURCES: DataSource[] = [
     url: 'https://brouter.de',
   },
   {
+    id: 'overpass',
+    name: 'Overpass API (overpass-api.de, Ausweich: overpass.private.coffee)',
+    usage: 'Fernwanderwege (Routenrelationen) und POIs entlang der Route',
+    license: 'Daten ODbL; Dienst frei bei moderater Nutzung (Usage Policy)',
+    licenseUrl: 'https://dev.overpass-api.de/overpass-doc/en/preface/commons.html',
+    attribution: 'Fernwege und POIs: ' + OSM_ATTRIBUTION,
+    url: 'https://overpass-api.de',
+  },
+  {
     id: 'photon',
     name: 'Photon (öffentliche Instanz)',
     usage: 'Ortssuche mit Autovervollständigung',

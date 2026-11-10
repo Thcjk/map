@@ -22,11 +22,32 @@ export interface Tour {
   ascent: number
   descent: number
   duration: number
+  stages?: import('../planner/stages').StagePlan | null
+}
+
+/** Aus OSM geladener Fernweg (Relation), samt ergänzten Höhen. */
+export interface Trail {
+  id: number
+  name: string
+  ref?: string
+  network?: string
+  points: RoutePoint[]
+  gaps: number
+  fetchedAt: number
+}
+
+/** Zwischengespeicherte POIs entlang einer Route (Schlüssel = Geometrie-Hash + Korridor). */
+export interface PoiCache {
+  key: string
+  pois: import('../trails/pois').Poi[]
+  fetchedAt: number
 }
 
 export const db = new Dexie('wanderapp') as Dexie & {
   settings: EntityTable<Setting, 'key'>
   tours: EntityTable<Tour, 'id'>
+  trails: EntityTable<Trail, 'id'>
+  pois: EntityTable<PoiCache, 'key'>
 }
 
 db.version(1).stores({
@@ -34,6 +55,10 @@ db.version(1).stores({
 })
 db.version(2).stores({
   tours: 'id, updatedAt',
+})
+db.version(3).stores({
+  trails: 'id',
+  pois: 'key',
 })
 
 export async function getSetting<T>(key: string, fallback: T): Promise<T> {

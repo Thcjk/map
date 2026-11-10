@@ -78,3 +78,18 @@ export function elevationGainLoss(eles: (number | null)[], threshold = 5): { asc
   }
   return { ascent, descent }
 }
+
+/** Index des Punktes, der `at` am nächsten liegt (flache Näherung, für Klicks/Ziehen). */
+export function nearestIndex(points: (LngLat | RoutePoint)[], at: LngLat): number {
+  let best = 0
+  let bestD = Infinity
+  const cosLat = Math.cos((at[1] * Math.PI) / 180)
+  for (let i = 0; i < points.length; i++) {
+    const d = ((points[i][0] - at[0]) * cosLat) ** 2 + (points[i][1] - at[1]) ** 2
+    if (d < bestD) {
+      bestD = d
+      best = i
+    }
+  }
+  return best
+}

@@ -6,8 +6,8 @@ import { SAC_LABELS, SAC_ORDER, SURFACE_COLORS, SURFACE_LABELS, type SurfaceClas
 export function StatsRow({ route }: { route: Route | null }) {
   const items = [
     { label: 'Distanz', value: route ? formatKm(route.distance) : '–' },
-    { label: 'Aufstieg', value: route?.hasElevation ? `↑ ${formatM(route.ascent)}` : '–' },
-    { label: 'Abstieg', value: route?.hasElevation ? `↓ ${formatM(route.descent)}` : '–' },
+    { label: '↑ Aufstieg', value: route?.hasElevation ? formatM(route.ascent) : '–' },
+    { label: '↓ Abstieg', value: route?.hasElevation ? formatM(route.descent) : '–' },
     { label: 'Wanderzeit', value: route ? formatDuration(route.duration, true) : '–' },
   ]
   return (
@@ -15,7 +15,7 @@ export function StatsRow({ route }: { route: Route | null }) {
       {items.map((i) => (
         <div key={i.label} className="min-w-0">
           <dt className="text-[11px] font-semibold uppercase tracking-wide text-muted">{i.label}</dt>
-          <dd className="tabular truncate text-lg font-bold leading-tight sm:text-xl">{i.value}</dd>
+          <dd className="tabular truncate text-[clamp(0.95rem,4.6vw,1.25rem)] font-bold leading-tight">{i.value}</dd>
         </div>
       ))}
     </dl>

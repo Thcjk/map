@@ -3,6 +3,7 @@ import Layout from './components/Layout'
 import MapPage from './pages/MapPage'
 import SourcesPage from './pages/SourcesPage'
 import ToursPage from './pages/ToursPage'
+import TrailsPage from './pages/TrailsPage'
 import NotFoundPage from './pages/NotFoundPage'
 
 export default function App() {
@@ -10,6 +11,7 @@ export default function App() {
     <Routes>
       <Route element={<Layout />}>
         <Route index element={<MapPage />} />
+        <Route path="fernwege" element={<TrailsPage />} />
         <Route path="touren" element={<ToursPage />} />
         <Route path="quellen" element={<SourcesPage />} />
         <Route path="*" element={<NotFoundPage />} />

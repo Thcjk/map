@@ -76,7 +76,21 @@ src/
   planner/Planner.tsx    Planungs-Panel, Speichern, GPX, Entwurf in settings
   planner/RouteLayer.tsx Route + Marker auf der Karte, Tippen = Punkt / Linie = einfügen
   planner/ElevationProfile.tsx  SVG-Höhenprofil mit Markierung auf der Karte
+  planner/stages.ts      Etappen: autoCuts (km/Hm/Zeit), moveCut, Übernachtungsvorschläge
+  planner/StagesPanel, PoiPanel, ExtrasLayer   UI + Karte für Etappen und POIs
+  lib/elevation.ts       Höhen aus Terrarium-Tiles (für OSM-Wege ohne Höhe)
+  trails/overpass.ts     Overpass-Client mit Ausweich-Instanz
+  trails/catalog.ts      Kuratierte Fernwege als Overpass-Suchen (keine festen OSM-IDs)
+  trails/search.ts       Suche nach Routenrelationen, Relationsabfrage (3 Ebenen)
+  trails/assemble.ts     Wege einer (Super-)Relation zu einer Linie verketten
+  trails/load.ts         Laden + Höhen + Cache (Tabelle trails, 30 Tage)
+  trails/pois.ts         POIs im Korridor (around-Polylinie, abschnittweise), Abstand/km
+  pages/TrailsPage.tsx   Fernweg-Katalog und -Suche → /?trail=<relation-id>
 ```
+
+### Datenbank (Dexie, `wanderapp`)
+v1 settings · v2 tours (inkl. Geometrie + Etappenplan) · v3 trails, pois (Cache).
+Neue Felder nur additiv; neue Tabellen über eine neue `db.version(n)`.
 
 ### Wanderzeit
 Aktuell die Faustregel der Schweizer Wanderwege (4 km/h, +15 min/100 Hm Aufstieg,
@@ -101,5 +115,6 @@ Details und Links in `DATENQUELLEN.md`. Kurzfassung der Pflichten:
 | Waymarked Trails | Overlay CC BY-SA 3.0, Attribution Pflicht, moderate Nutzung. |
 | Terrain Tiles (AWS) | Frei, Quellenangabe der DEM-Quellen. |
 | BRouter (brouter.de) | Kostenlos, ohne Garantie. Pro Teilstück anfragen, debounced, gecacht, sequenziell. |
+| Overpass API | Nur auf Nutzeraktion, gecacht (IndexedDB), sequenziell, Timeout gesetzt, Ausweich-Instanz bei 429/504. |
 | Photon (photon.komoot.io) | Nur moderate Nutzung, kein Bulk. Debounce, min. 3 Zeichen, Abbruch alter Anfragen. |
 | Nominatim | **Nicht für Autocomplete** erlaubt (Usage Policy) – deshalb Photon. |

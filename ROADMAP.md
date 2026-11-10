@@ -32,10 +32,11 @@ Status: `[x]` erledigt, `[ ]` offen. Nach jeder Änderung aktualisieren.
 - [x] Touren speichern (IndexedDB), Tourenliste, Entwurf bleibt beim Neuladen erhalten
 
 ## Phase 3 – Fernwanderwege
-- [ ] Suche/Laden von OSM-Routenrelationen (Overpass, gecacht)
-- [ ] Kuratierte Startliste Europa
-- [ ] Etappenplaner (km / Hm / Gehzeit), verschiebbare Etappenenden, Etappenübersicht
-- [ ] POIs im Korridor mit Filter und Abstand, Übernachtungsvorschläge pro Etappe
+- [x] Suche/Laden von OSM-Routenrelationen (Overpass, gecacht), Höhen aus Terrain Tiles
+- [x] Kuratierte Startliste Europa (als Overpass-Suchen, ohne ungeprüfte IDs)
+- [ ] Kuratierte Liste mit echten Overpass-Antworten prüfen (aus der Entwicklungs-Sandbox nicht erreichbar)
+- [x] Etappenplaner (km / Hm / Gehzeit), verschiebbare Etappenenden (Karte + ±1 km), Etappenübersicht
+- [x] POIs im Korridor (500 m / 1 km / 2 km) mit Filter und Abstand, Übernachtungsvorschläge pro Etappe, «An Übernachtung ausrichten»
 
 ## Phase 4 – Konto und Cloud (Supabase)
 - [ ] Magic-Link-Login
