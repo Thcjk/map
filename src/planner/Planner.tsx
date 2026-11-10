@@ -17,6 +17,7 @@ import { downloadFile, slug } from '../lib/download'
 import { parseGpx, toGpx } from '../lib/gpx'
 import { db, getSetting, setSetting } from '../lib/db'
 import { fetchPois, POI_CATEGORIES, type Poi, type PoiCategory } from '../trails/pois'
+import Tracker from '../track/Tracker'
 import ExtrasLayer from './ExtrasLayer'
 import PoiPanel from './PoiPanel'
 import StagesPanel from './StagesPanel'
@@ -277,6 +278,7 @@ export default function Planner() {
         pois={pois}
         filter={poiFilter}
       />
+      <Tracker route={hasRoute ? route : null} />
       <input
         ref={fileInput}
         type="file"

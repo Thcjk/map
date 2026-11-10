@@ -31,6 +31,22 @@ export interface Tour {
   deleted?: boolean
 }
 
+/** Erledigte Tour: aufgezeichnet oder als GPX von einem anderen Gerät importiert. */
+export interface Activity {
+  id: string
+  name: string
+  source: 'recorded' | 'gpx'
+  startedAt: number
+  points: RoutePoint[]
+  /** Zeitstempel pro Punkt (ms), falls vorhanden. */
+  times: (number | null)[]
+  distance: number
+  ascent: number
+  descent: number
+  /** Dauer in Bewegung bzw. aufgezeichnete Zeit (ms); null, wenn unbekannt. */
+  durationMs: number | null
+}
+
 /** Sammlung von Touren. */
 export interface Collection {
   id: string
@@ -65,6 +81,7 @@ export const db = new Dexie('wanderapp') as Dexie & {
   trails: EntityTable<Trail, 'id'>
   pois: EntityTable<PoiCache, 'key'>
   collections: EntityTable<Collection, 'id'>
+  activities: EntityTable<Activity, 'id'>
 }
 
 db.version(1).stores({
@@ -80,6 +97,9 @@ db.version(3).stores({
 db.version(4).stores({
   tours: 'id, updatedAt, dirty',
   collections: 'id, updatedAt, dirty',
+})
+db.version(5).stores({
+  activities: 'id, startedAt',
 })
 
 export async function getSetting<T>(key: string, fallback: T): Promise<T> {

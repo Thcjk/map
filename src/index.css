@@ -183,3 +183,12 @@ h1 {
   width: 28px;
   height: 28px;
 }
+
+.position-marker {
+  width: 18px;
+  height: 18px;
+  border-radius: 9999px;
+  background: var(--color-mark);
+  border: 3px solid var(--color-surface);
+  box-shadow: 0 0 0 1px var(--color-text), 0 0 0 8px rgb(179 38 30 / 0.18);
+}

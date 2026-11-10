@@ -25,6 +25,12 @@ describe('GPX', () => {
     expect(data.times[0]).toBe(Date.parse('2026-06-01T08:00:00Z'))
   })
 
+  it('schreibt Zeitstempel aufgezeichneter Touren', () => {
+    const t = Date.parse('2026-07-01T06:00:00Z')
+    const data = parseGpx(toGpx('A', [[7, 46, 1], [7.1, 46.1, 2]], [], 'x', [t, t + 1000]))
+    expect(data.times).toEqual([t, t + 1000])
+  })
+
   it('meldet ungültige Dateien', () => {
     expect(() => parseGpx('kein xml')).toThrow()
   })

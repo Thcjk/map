@@ -12,14 +12,22 @@ export interface GpxData {
 const esc = (s: string) =>
   s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;')
 
-export function toGpx(name: string, points: RoutePoint[], waypoints: LngLat[] = [], creator = 'Wanderapp'): string {
+export function toGpx(
+  name: string,
+  points: RoutePoint[],
+  waypoints: LngLat[] = [],
+  creator = 'Wanderapp',
+  times: (number | null)[] = [],
+): string {
   const wpts = waypoints
     .map(([lng, lat], i) => `  <wpt lat="${lat.toFixed(6)}" lon="${lng.toFixed(6)}"><name>${i + 1}</name></wpt>`)
     .join('\n')
   const trkpts = points
     .map(
-      ([lng, lat, ele]) =>
-        `      <trkpt lat="${lat.toFixed(6)}" lon="${lng.toFixed(6)}">${ele === null ? '' : `<ele>${ele.toFixed(1)}</ele>`}</trkpt>`,
+      ([lng, lat, ele], i) =>
+        `      <trkpt lat="${lat.toFixed(6)}" lon="${lng.toFixed(6)}">${ele === null ? '' : `<ele>${ele.toFixed(1)}</ele>`}${
+          times[i] ? `<time>${new Date(times[i]!).toISOString()}</time>` : ''
+        }</trkpt>`,
     )
     .join('\n')
   return `<?xml version="1.0" encoding="UTF-8"?>

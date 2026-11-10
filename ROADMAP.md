@@ -54,9 +54,12 @@ Status: `[x]` erledigt, `[ ]` offen. Nach jeder Änderung aktualisieren.
 - [ ] Mit echtem Projekt testen (Login, Sync zwischen zwei Geräten, Teilen-Link)
 
 ## Phase 5 – Unterwegs
-- [ ] GPS-Aufzeichnung mit Pause/Weiter, Statistik, Wake Lock, ehrlicher iOS-Hinweis
-- [ ] Navigation auf geplanter Route mit Abweichungswarnung
-- [ ] Erledigte Touren speichern, GPX-Import
+- [x] GPS-Aufzeichnung mit Pause/Weiter, Statistik (Zeit, Distanz, Aufstieg), Wake Lock, ehrlicher Hinweis zu gesperrtem Bildschirm/iOS
+- [x] Laufende Aufzeichnung wird alle 15 s gesichert und nach Neuladen pausiert wiederhergestellt
+- [x] Navigation auf geplanter Route: Rest-Distanz/-Höhenmeter/-Zeit, Warnung (Vibration + Ton, alle 60 s) ab ca. 40 m Abweichung
+- [x] Erledigte Touren speichern (Tab «Erledigt»), GPX-Import (mehrere Dateien) und -Export mit Zeitstempeln
+- [ ] Auf echtem Gerät im Freien testen (bisher nur mit simuliertem GPS)
+- [ ] Erledigte Touren in die Cloud synchronisieren (braucht neue Migration; zusammen mit Phase 7)
 
 ## Phase 6 – Offline
 - [ ] Nutzungsbedingungen prüfen und dokumentieren

@@ -9,6 +9,7 @@ import { formatKm, formatM } from '../lib/format'
 import { toGpx } from '../lib/gpx'
 import { formatDuration } from '../lib/hikingTime'
 import { deleteTour, listTours, setTourPublic } from '../lib/tours'
+import ActivitiesList from './ActivitiesList'
 
 const shareUrl = (id: string) => `${location.origin}${import.meta.env.BASE_URL}teilen/${id}`
 
@@ -20,6 +21,7 @@ export default function ToursPage() {
   const [newName, setNewName] = useState('')
   const [menu, setMenu] = useState<string | null>(null)
   const [copied, setCopied] = useState<string | null>(null)
+  const [tab, setTab] = useState<'planned' | 'done'>('planned')
 
   const reload = useCallback(async () => {
     setTours(await listTours())
@@ -58,6 +60,22 @@ export default function ToursPage() {
     <div className="h-full overflow-y-auto px-4 py-6">
       <div className="mx-auto max-w-2xl">
         <h1 className="text-2xl font-bold">Meine Touren</h1>
+        <div role="tablist" aria-label="Touren" className="mt-3 grid grid-cols-2 border-b border-text">
+          {(
+            [
+              ['planned', 'Geplant'],
+              ['done', 'Erledigt'],
+            ] as const
+          ).map(([id, text]) => (
+            <button key={id} type="button" role="tab" aria-selected={tab === id} onClick={() => setTab(id)} className={`label min-h-11 text-[12px]! ${tab === id ? 'bg-text text-surface' : 'text-muted'}`}>
+              {text}
+            </button>
+          ))}
+        </div>
+        {tab === 'done' ? (
+          <ActivitiesList />
+        ) : (
+          <>
 
         <div className="mt-4 flex flex-wrap gap-2" role="group" aria-label="Sammlungen">
           <button type="button" aria-pressed={!active} onClick={() => setActive(null)} className={`min-h-10 rounded-full border px-4 ${!active ? 'border-accent text-accent' : 'border-line text-muted'}`}>
@@ -182,6 +200,8 @@ export default function ToursPage() {
           <p className="mt-6 text-sm text-muted">
             Melde dich unter <Link to="/konto" className="text-accent underline">Konto</Link> an, um Touren auf allen Geräten zu haben und per Link zu teilen.
           </p>
+        )}
+          </>
         )}
       </div>
     </div>

@@ -97,6 +97,11 @@ src/
   pages/ToursPage.tsx    Touren, Sammlungen, Teilen · pages/AccountPage.tsx Login/Sync
   pages/SharedTourPage   /teilen/:id – öffentliche Tour ansehen und übernehmen
   cloud/                 Supabase-Client, CloudProvider (Session + Auto-Sync), sync.ts
+  track/recorder.ts      Aufzeichnung als Reducer (Filter: Genauigkeit ≤ 35 m, Schritt ≥ 6 m)
+  track/useTracker.ts    watchPosition, Screen Wake Lock, Entwurf sichern/wiederherstellen
+  track/navigation.ts    Position auf Route, Restwerte, Abweichung (40 m + GPS-Ungenauigkeit)
+  track/Tracker.tsx      Leiste auf der Karte, Spur + Positionsmarker, Speichern als Activity
+  lib/activities.ts      Erledigte Touren (Tabelle activities, v5), pages/ActivitiesList.tsx
 ```
 
 ### Datenbank (Dexie, `wanderapp`)
