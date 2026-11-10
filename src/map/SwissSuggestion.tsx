@@ -25,7 +25,7 @@ export default function SwissSuggestion({ onAccept }: { onAccept: () => void }) 
   if (!loaded || dismissed || !inSwitzerland) return null
 
   return (
-    <div role="status" className="absolute inset-x-2 bottom-10 z-20 mx-auto flex max-w-md items-center gap-3 rounded-2xl border border-line bg-surface p-3 shadow-xl">
+    <div role="status" className="absolute inset-x-2 top-[72px] z-20 sm:left-2.5 sm:right-auto sm:w-md flex max-w-md items-center gap-3 rounded-2xl border border-line bg-surface p-3 shadow-xl">
       <p className="flex-1 text-sm">
         Du bist in der Schweiz. Die swisstopo-Wanderkarte zeigt hier mehr Details.
       </p>

@@ -61,7 +61,28 @@ src/
   map/MapContext.ts      useMap() für Kinder-Komponenten
   map/layers.ts          Grundkarten + Overlays; syncLayers() ist idempotent
   map/switzerland.ts     Vereinfachte CH-Grenze (swisstopo-Vorschlag)
+  map/useAppLayers.ts    App-Ebenen anlegen + nach Stilwechsel neu anlegen; styleReady()
+  lib/geo.ts             Distanzen, BBox, Höhen-Glättung (Hysterese 5 m)
+  lib/hikingTime.ts      Wanderzeit (siehe unten), kumuliert pro Punkt
+  lib/gpx.ts             GPX-Export/-Import (DOMParser)
+  lib/tours.ts           Touren in IndexedDB (Tabelle tours, inkl. Geometrie)
+  routing/types.ts       RoutingProvider-Schnittstelle (austauschbar), Leg, WaySegment
+  routing/index.ts       aktiver Provider + LRU-Cache + Luftlinien-Fallback
+  routing/brouter.ts     BRouter-Provider + Parser (WayTags → Belag/SAC)
+  routing/route.ts       Teilstücke zusammensetzen, Kennzahlen berechnen
+  routing/wayInfo.ts     OSM-Tags → Belagsklasse, SAC-Grad
+  planner/plannerState   Reducer mit Rückgängig/Wiederholen (Wegpunkte oder Track)
+  planner/useRoute.ts    lädt fehlende Teilstücke debounced nach
+  planner/Planner.tsx    Planungs-Panel, Speichern, GPX, Entwurf in settings
+  planner/RouteLayer.tsx Route + Marker auf der Karte, Tippen = Punkt / Linie = einfügen
+  planner/ElevationProfile.tsx  SVG-Höhenprofil mit Markierung auf der Karte
 ```
+
+### Wanderzeit
+Aktuell die Faustregel der Schweizer Wanderwege (4 km/h, +15 min/100 Hm Aufstieg,
++15 min/200 Hm Abstieg), segmentweise auf geglätteten Höhen. Die offizielle
+Polynom-Formel ist vorbereitet (`segmentMinutes` austauschen), aber deren Koeffizienten
+müssen zuerst aus einer Primärquelle (Schweizer Wanderwege / swisstopo) verifiziert werden.
 
 ### Karten-Ebenen
 - Grundkarten (`BASE_MAPS`): Vektorstil + optionale swisstopo-Rasterebenen (mit `bounds` CH).
@@ -79,5 +100,6 @@ Details und Links in `DATENQUELLEN.md`. Kurzfassung der Pflichten:
 | swisstopo (wmts.geo.admin.ch, vectortiles.geo.admin.ch) | OGD, Quellenangabe «© swisstopo». Fair Use: keine Massendownloads, kein Abgrasen ganzer Gebiete. |
 | Waymarked Trails | Overlay CC BY-SA 3.0, Attribution Pflicht, moderate Nutzung. |
 | Terrain Tiles (AWS) | Frei, Quellenangabe der DEM-Quellen. |
+| BRouter (brouter.de) | Kostenlos, ohne Garantie. Pro Teilstück anfragen, debounced, gecacht, sequenziell. |
 | Photon (photon.komoot.io) | Nur moderate Nutzung, kein Bulk. Debounce, min. 3 Zeichen, Abbruch alter Anfragen. |
 | Nominatim | **Nicht für Autocomplete** erlaubt (Usage Policy) – deshalb Photon. |

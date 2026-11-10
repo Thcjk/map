@@ -8,6 +8,7 @@ import { MapContext } from './MapContext'
 import { BASE_MAPS, syncLayers, type BaseMapId, type OverlayId } from './layers'
 import LayerSwitcher from './LayerSwitcher'
 import SwissSuggestion from './SwissSuggestion'
+import { styleReady } from './useAppLayers'
 
 // Im Bundle findet MapLibre seinen Worker nicht selbst; Vite liefert die URL.
 maplibregl.setWorkerUrl(workerUrl)
@@ -79,7 +80,7 @@ export default function MapView({ children }: { children?: ReactNode }) {
     if (styleUrl.current !== base.styleUrl) {
       styleUrl.current = base.styleUrl
       map.setStyle(base.styleUrl)
-    } else if (map.isStyleLoaded()) {
+    } else if (styleReady(map)) {
       apply()
     }
     return () => {

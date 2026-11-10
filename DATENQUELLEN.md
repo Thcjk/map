@@ -11,6 +11,7 @@ Nutzungsbedingungen.
 | [swisstopo / geo.admin.ch](https://www.geo.admin.ch/de/allgemeine-nutzungsbedingungen-geoadminch) | Landeskarte, Wanderwege, Vektor, Relief CH | OGD Schweiz | «© swisstopo» | Fair Use; keine systematischen Massendownloads |
 | [Waymarked Trails](https://hiking.waymarkedtrails.org/#help-legal) | Overlay markierte Wanderwege | CC BY-SA 3.0 | «© waymarkedtrails.org (CC BY-SA)» | Moderate Nutzung |
 | [Terrain Tiles](https://registry.opendata.aws/terrain-tiles/) | Höhenmodell / Relief | Offene DEM-Quellen | «Mapzen Terrain Tiles» mit [Quellenliste](https://github.com/tilezen/joerd/blob/master/docs/attribution.md) | Frei über AWS Open Data |
+| [BRouter](https://brouter.de/brouter/) | Routing (Profil hiking-mountain) | Software MIT, Daten ODbL | «Routing: BRouter, Daten © OpenStreetMap-Mitwirkende» | Freiwillig betriebene, kostenlose Instanz ohne SLA: nur pro Teilstück anfragen, Debounce 400 ms, Cache, nacheinander statt parallel |
 | [Photon](https://photon.komoot.io/) | Ortssuche, Autocomplete | Daten ODbL | «© OpenStreetMap-Mitwirkende» | Öffentliche Instanz nur für moderate Nutzung; Debounce, keine Massenabfragen |
 
 Nicht verwendet: **Nominatim** für Autocomplete – laut

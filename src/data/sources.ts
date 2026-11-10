@@ -68,6 +68,15 @@ export const SOURCES: DataSource[] = [
     url: 'https://registry.opendata.aws/terrain-tiles/',
   },
   {
+    id: 'brouter',
+    name: 'BRouter (öffentliche Instanz brouter.de)',
+    usage: 'Routenberechnung (Profil «hiking-mountain»), Höhen und Wegeigenschaften',
+    license: 'Software MIT; Routingdaten aus OSM (ODbL), Höhen aus SRTM',
+    licenseUrl: 'https://brouter.de/brouter/',
+    attribution: 'Routing: BRouter, Daten ' + OSM_ATTRIBUTION,
+    url: 'https://brouter.de',
+  },
+  {
     id: 'photon',
     name: 'Photon (öffentliche Instanz)',
     usage: 'Ortssuche mit Autovervollständigung',

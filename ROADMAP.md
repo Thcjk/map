@@ -22,12 +22,14 @@ Status: `[x]` erledigt, `[ ]` offen. Nach jeder Änderung aktualisieren.
 - [x] Letzte Ansicht, Grundkarte und Ebenen in IndexedDB gespeichert
 
 ## Phase 2 – Routenplanung
-- [ ] Wegpunkte setzen, verschieben, löschen, Rückgängig/Wiederholen
-- [ ] Routing über BRouter (austauschbares Modul, Debounce, Cache)
-- [ ] Distanz, Auf-/Abstieg, Wanderzeit (Schweizer Formel)
-- [ ] Interaktives Höhenprofil
-- [ ] Wegbeschaffenheit und SAC-Schwierigkeit
-- [ ] GPX-Import und -Export
+- [x] Wegpunkte setzen, verschieben, einfügen (Tippen auf Linie), löschen, Rückgängig/Wiederholen (auch Ctrl+Z/Y)
+- [x] Routing über BRouter (austauschbares Modul, Debounce, Cache, Luftlinie als Fallback)
+- [x] Distanz, Auf-/Abstieg, Wanderzeit (Faustregel Schweizer Wanderwege)
+- [ ] Offizielle Polynom-Formel der Schweizer Wanderwege – Koeffizienten aus Primärquelle verifizieren
+- [x] Interaktives Höhenprofil (Tippen markiert Punkt auf der Karte)
+- [x] Wegbeschaffenheit und SAC-Schwierigkeit aus OSM-Tags
+- [x] GPX-Import und -Export
+- [x] Touren speichern (IndexedDB), Tourenliste, Entwurf bleibt beim Neuladen erhalten
 
 ## Phase 3 – Fernwanderwege
 - [ ] Suche/Laden von OSM-Routenrelationen (Overpass, gecacht)
