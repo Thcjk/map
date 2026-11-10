@@ -5,6 +5,7 @@ import SourcesPage from './pages/SourcesPage'
 import ToursPage from './pages/ToursPage'
 import TrailsPage from './pages/TrailsPage'
 import AccountPage from './pages/AccountPage'
+import StickersPage from './pages/StickersPage'
 import SharedTourPage from './pages/SharedTourPage'
 import CloudProvider from './cloud/CloudProvider'
 import NotFoundPage from './pages/NotFoundPage'
@@ -17,6 +18,7 @@ export default function App() {
           <Route index element={<MapPage />} />
           <Route path="fernwege" element={<TrailsPage />} />
           <Route path="touren" element={<ToursPage />} />
+          <Route path="sticker" element={<StickersPage />} />
           <Route path="konto" element={<AccountPage />} />
           <Route path="teilen/:id" element={<SharedTourPage />} />
           <Route path="quellen" element={<SourcesPage />} />

@@ -22,6 +22,7 @@ export default function TrailsPage() {
   const [query, setQuery] = useState('')
   const [title, setTitle] = useState<string | null>(null)
   const [hits, setHits] = useState<TrailHit[] | null>(null)
+  const [catalogId, setCatalogId] = useState<string | undefined>()
   const [status, setStatus] = useState<Status>({ kind: 'idle' })
   const [saved, setSaved] = useState<Trail[]>([])
   const ctrl = useRef<AbortController | null>(null)
@@ -45,11 +46,14 @@ export default function TrailsPage() {
     }
   }
 
-  const fromCatalog = (c: CatalogTrail) =>
-    run(c.name, (signal) => searchTrails({ name: c.nameRegex, ref: c.refRegex }, c.bbox, signal))
+  const fromCatalog = (c: CatalogTrail) => {
+    setCatalogId(c.id)
+    return run(c.name, (signal) => searchTrails({ name: c.nameRegex, ref: c.refRegex }, c.bbox, signal))
+  }
 
   const fromText = async () => {
     if (query.trim().length < 3) return
+    setCatalogId(undefined)
     const area = await searchArea()
     void run(`Suche «${query.trim()}»`, (signal) => searchTrails(userNameFilter(query), area, signal))
   }
@@ -58,7 +62,7 @@ export default function TrailsPage() {
     ctrl.current?.abort()
     ctrl.current = new AbortController()
     try {
-      const trail = await loadTrail(hit, (step, share) => setStatus({ kind: 'loading', step, share }), ctrl.current.signal)
+      const trail = await loadTrail({ id: hit.id, name: hit.name, ref: hit.ref, network: hit.network, catalogId }, (step, share) => setStatus({ kind: 'loading', step, share }), ctrl.current.signal)
       navigate(`/?trail=${trail.id}`)
     } catch (e) {
       if (!ctrl.current.signal.aborted) setStatus({ kind: 'error', message: (e as Error).message })

@@ -4,6 +4,7 @@ const NAV = [
   { to: '/', label: 'Karte', end: true },
   { to: '/fernwege', label: 'Fernwege', end: false },
   { to: '/touren', label: 'Touren', end: false },
+  { to: '/sticker', label: 'Sticker', end: false },
   { to: '/konto', label: 'Konto', end: false },
 ]
 
@@ -23,7 +24,7 @@ export default function Layout() {
             to={item.to}
             end={item.end}
             className={({ isActive }) =>
-              `label flex min-h-14 flex-1 items-center justify-center border-t-3 text-[12px]! ${
+              `label flex min-h-14 flex-1 items-center justify-center border-t-3 text-[11px]! tracking-[0.06em]! ${
                 isActive ? 'border-text font-semibold! text-text' : 'border-transparent text-muted'
               }`
             }
