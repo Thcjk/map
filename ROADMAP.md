@@ -69,11 +69,15 @@ Status: `[x]` erledigt, `[ ]` offen. Nach jeder Änderung aktualisieren.
 - [ ] Mit echten OpenFreeMap-Kacheln prüfen (Sandbox: nur Höhen-Kacheln echt, Vektorkacheln nachgebildet)
 
 ## Phase 7 – Sticker und Erinnerungen
-- [ ] Markierungsfarben recherchieren und dokumentieren
-- [ ] SVG-Sticker je Fernweg + Meilensteine
-- [ ] Freischalten nach Abdeckung (≥ 90 %), Animation
-- [ ] Teilen als Bild
-- [ ] Highlights (Fotos/Notizen)
+- [x] Markierungsfarben dokumentiert (docs/STICKER.md)
+- [ ] Mit «zu prüfen» markierte Farben gegen offizielle Quellen prüfen (Historical Way, TMB, Kungsleden, West Highland Way)
+- [x] SVG-Sticker für alle 11 kuratierten Fernwege, neutraler Sticker für andere geladene Wege, 5 Meilensteine
+- [x] Filter für Fineline-Strich, Aquarell und Die-Cut-Rand
+- [x] Freischalten nach Abdeckung (60 m Toleranz, ≥ 90 % = voll), einmalige Animation
+- [x] Teilen als Bild (1080 × 1350) mit Name, Datum, km
+- [x] Highlights: Foto und Notiz am Fadenkreuz, Marker auf der Karte (lokal)
+- [ ] Sticker für einzelne Etappen; Alpinweg weiss-blau-weiss
+- [ ] Highlights optional öffentlich teilen und erledigte Touren/Highlights in die Cloud (braucht Supabase-Projekt + Migration mit Storage)
 
 ## Phase 8 – Feinschliff
 - [ ] Performance, Barrierefreiheit, Fehlerzustände

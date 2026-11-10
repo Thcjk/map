@@ -21,6 +21,7 @@ Gehostet über GitHub Pages: https://thcjk.github.io/map/
   Papier-Creme und Grünstufen). Regeln:
   - Papiergrund `#e9e8da`, Flächen `#f3f2e7`, Tinte `#17241a`, Grünstufen `green-1…6`,
     Akzent = Waldgrün `#2c4a31`. **Kein Orange, kein Blau.** Gewässer entsättigtes Graugrün.
+    Einzige Ausnahme: Sticker zeigen die echten Wegmarkierungsfarben (Entscheid des Nutzers).
   - Rot (`mark` `#b3261e`) nur als feine Markierung: Route, Fadenkreuz, Fokus, Warnung.
   - Schrift: Archivo (breit, h1 klein geschrieben) für Titel/Text, IBM Plex Mono für
     Zahlen (`.tabular`) und Beschriftungen (`.label`: Versalien, gesperrt).
@@ -107,11 +108,17 @@ src/
   offline/store.ts       Download/Löschen (Cache Storage + Tabelle offlineRegions, v6),
                          MapLibre-Protokoll `etappa-omt://` (erst Offline-Cache, dann Netz)
   offline/OfflinePanel   Tab «Offline» im Planungs-Panel
+  stickers/motifs.ts     Sticker-Motive als Daten (Silhouette, Farbflächen, Linien)
+  stickers/Sticker.tsx   SVG mit Filtern (Strich, Aquarell, Die-Cut), Fortschritt als Füllhöhe
+  stickers/coverage.ts   Abdeckung eines Weges durch eigene Spuren (60 m, Rasterindex)
+  stickers/milestones.ts Meilensteine aus erledigten Touren · stickers/share.ts Bild-Export
+  pages/StickersPage.tsx Stickerheft · docs/STICKER.md Motive + Markierungsfarben
+  map/Highlights.tsx     Fotos/Notizen am Fadenkreuz (Tabelle highlights, v7)
 ```
 
 ### Datenbank (Dexie, `wanderapp`)
 v1 settings · v2 tours (inkl. Geometrie + Etappenplan) · v3 trails, pois (Cache) ·
-v4 Index `dirty` auf tours, Tabelle collections.
+v4 Index `dirty` auf tours, Tabelle collections · v5 activities · v6 offlineRegions · v7 highlights.
 Neue Felder nur additiv; neue Tabellen über eine neue `db.version(n)`.
 
 ### Konto und Cloud (Supabase, optional)

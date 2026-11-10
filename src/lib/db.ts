@@ -60,6 +60,17 @@ export interface OfflineRegion {
   failed: number
 }
 
+/** Eigenes Foto und/oder Notiz an einem Punkt. */
+export interface Highlight {
+  id: string
+  lng: number
+  lat: number
+  note: string
+  /** Verkleinertes JPEG */
+  photo?: Blob
+  createdAt: number
+}
+
 /** Sammlung von Touren. */
 export interface Collection {
   id: string
@@ -98,6 +109,7 @@ export const db = new Dexie('wanderapp') as Dexie & {
   collections: EntityTable<Collection, 'id'>
   activities: EntityTable<Activity, 'id'>
   offlineRegions: EntityTable<OfflineRegion, 'id'>
+  highlights: EntityTable<Highlight, 'id'>
 }
 
 db.version(1).stores({
@@ -119,6 +131,9 @@ db.version(5).stores({
 })
 db.version(6).stores({
   offlineRegions: 'id, createdAt',
+})
+db.version(7).stores({
+  highlights: 'id, createdAt',
 })
 
 export async function getSetting<T>(key: string, fallback: T): Promise<T> {

@@ -218,3 +218,16 @@ h1 {
     animation: none;
   }
 }
+
+.highlight-marker {
+  width: 28px;
+  height: 28px;
+  border-radius: 2px;
+  border: 1.5px solid var(--color-text);
+  background: var(--color-surface);
+  color: var(--color-mark);
+  font-size: 15px;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: 0 1px 4px rgb(23 36 26 / 0.4);
+}

@@ -98,3 +98,9 @@ export const RecordIcon = (p: SVGProps<SVGSVGElement>) => (
     <circle cx="12" cy="12" r="4" fill="currentColor" />
   </svg>
 )
+
+export const StarIcon = (p: SVGProps<SVGSVGElement>) => (
+  <svg {...base(p)}>
+    <path d="m12 3 2.7 5.8 6.3.8-4.6 4.4 1.2 6.3L12 17.2l-5.6 3.1 1.2-6.3L3 9.6l6.3-.8Z" />
+  </svg>
+)

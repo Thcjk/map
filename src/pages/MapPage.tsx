@@ -1,4 +1,5 @@
 import MapView from '../map/MapView'
+import Highlights from '../map/Highlights'
 import SearchBox from '../map/SearchBox'
 import Planner from '../planner/Planner'
 
@@ -7,6 +8,7 @@ export default function MapPage() {
     <MapView>
       <SearchBox />
       <Planner />
+      <Highlights />
     </MapView>
   )
 }
