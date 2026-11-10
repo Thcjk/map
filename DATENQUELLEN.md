@@ -15,5 +15,8 @@ Nutzungsbedingungen.
 | [Overpass API](https://dev.overpass-api.de/overpass-doc/en/preface/commons.html) | Fernwege (Relationen), POIs im Korridor | Daten ODbL | «© OpenStreetMap-Mitwirkende» | Richtwert < 10 000 Abfragen und < 1 GB pro Tag und Nutzer; nur auf Nutzeraktion, Ergebnisse in IndexedDB (Wege 30 Tage), POIs abschnittweise nacheinander |
 | [Photon](https://photon.komoot.io/) | Ortssuche, Autocomplete | Daten ODbL | «© OpenStreetMap-Mitwirkende» | Öffentliche Instanz nur für moderate Nutzung; Debounce, keine Massenabfragen |
 
+App-Icon: Europa-Umriss aus [Natural Earth](https://www.naturalearthdata.com/about/terms-of-use/)
+(1:110 Mio., via Paket `world-atlas`), gemeinfrei, keine Attribution nötig. Eigene Gestaltung.
+
 Nicht verwendet: **Nominatim** für Autocomplete – laut
 [Usage Policy](https://operations.osmfoundation.org/policies/nominatim/) verboten.
