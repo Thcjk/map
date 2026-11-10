@@ -13,13 +13,19 @@ Status: `[x]` erledigt, `[ ]` offen. Nach jeder Änderung aktualisieren.
 - [ ] Nutzer: App-Namen wählen
 
 ## Phase 1 – Karte
-- [x] Grundkarte OpenFreeMap (Stil «liberty»)
+- [x] Grundkarte OpenFreeMap (eigener Stil)
 - [x] swisstopo (Landeskarte, Wanderkarte, Vektor) mit Layer-Umschalter, Vorschlag in der Schweiz
 - [x] Overlay Wanderwege (Waymarked Trails), schaltbar
 - [x] Relief/Hillshade (Terrain Tiles)
 - [x] Massstab, eigener Standort
 - [x] Ortssuche mit Autocomplete (Photon, Debounce 350 ms, min. 3 Zeichen, Cache)
 - [x] Letzte Ansicht, Grundkarte und Ebenen in IndexedDB gespeichert
+
+## Design-Umbau «Vermessungsblatt» (nach Vorlage des Nutzers)
+- [x] Farb- und Schriftsystem umgestellt (Papier, Grünstufen, Tinte, Mono-Labels), kein Orange/Blau
+- [x] Eigener Kartenstil auf OpenFreeMap-Daten, grünes Relief, Höhenlinien, Fadenkreuz + Koordinaten
+- [x] Icon in Papier/Waldgrün
+- [ ] Kartenstil mit echten Vektortiles prüfen (Sandbox erreicht tiles.openfreemap.org nicht; Relief und Höhenlinien sind geprüft)
 
 ## Phase 2 – Routenplanung
 - [x] Wegpunkte setzen, verschieben, einfügen (Tippen auf Linie), löschen, Rückgängig/Wiederholen (auch Ctrl+Z/Y)

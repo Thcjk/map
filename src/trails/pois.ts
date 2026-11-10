@@ -4,11 +4,11 @@ import { overpass, type OsmElement } from './overpass'
 export type PoiCategory = 'hut' | 'camping' | 'lodging' | 'water' | 'shop'
 
 export const POI_CATEGORIES: { id: PoiCategory; label: string; color: string; sleep: boolean }[] = [
-  { id: 'hut', label: 'Hütten', color: '#e0533d', sleep: true },
-  { id: 'camping', label: 'Camping', color: '#3fa34d', sleep: true },
-  { id: 'lodging', label: 'Unterkünfte', color: '#8e6be8', sleep: true },
-  { id: 'water', label: 'Wasser', color: '#2f9bea', sleep: false },
-  { id: 'shop', label: 'Einkauf', color: '#e8b33a', sleep: false },
+  { id: 'hut', label: 'Hütten', color: '#a8281f', sleep: true },
+  { id: 'camping', label: 'Camping', color: '#527549', sleep: true },
+  { id: 'lodging', label: 'Unterkünfte', color: '#17241a', sleep: true },
+  { id: 'water', label: 'Wasser', color: '#7d9f98', sleep: false },
+  { id: 'shop', label: 'Einkauf', color: '#a89a5b', sleep: false },
 ]
 
 export interface Poi {

@@ -7,6 +7,7 @@ import { useAppLayers } from '../map/useAppLayers'
 import { nearestIndex } from '../lib/geo'
 import type { Route } from '../routing/route'
 import { kindLabel, POI_CATEGORIES, type Poi, type PoiCategory } from '../trails/pois'
+import { PAPER_LIGHT } from '../theme'
 
 interface Props {
   route: Route | null
@@ -49,7 +50,7 @@ export default function ExtrasLayer({ route, cuts, onMoveCut, pois, filter }: Pr
               ...POI_CATEGORIES.flatMap((c) => [c.id, c.color]),
               '#888',
             ] as unknown as ExpressionSpecification,
-            'circle-stroke-color': '#fff',
+            'circle-stroke-color': PAPER_LIGHT,
             'circle-stroke-width': 2,
           },
         },

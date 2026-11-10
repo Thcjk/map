@@ -15,7 +15,7 @@ export default function Layout() {
       </main>
       <nav
         aria-label="Hauptnavigation"
-        className="flex shrink-0 border-t border-line bg-surface pb-[env(safe-area-inset-bottom)]"
+        className="flex shrink-0 border-t border-text bg-surface pb-[env(safe-area-inset-bottom)]"
       >
         {NAV.map((item) => (
           <NavLink
@@ -23,8 +23,8 @@ export default function Layout() {
             to={item.to}
             end={item.end}
             className={({ isActive }) =>
-              `flex min-h-14 flex-1 items-center justify-center text-base font-semibold ${
-                isActive ? 'text-accent' : 'text-muted'
+              `label flex min-h-14 flex-1 items-center justify-center border-t-3 text-[12px]! ${
+                isActive ? 'border-text font-semibold! text-text' : 'border-transparent text-muted'
               }`
             }
           >

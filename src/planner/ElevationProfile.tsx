@@ -4,6 +4,7 @@ import { formatDuration } from '../lib/hikingTime'
 import { formatKm } from '../lib/format'
 import type { Route } from '../routing/route'
 import { SURFACE_COLORS } from '../routing/wayInfo'
+import { GREEN, INK, INK_MUTED, LINE, MARK } from '../theme'
 
 interface Props {
   route: Route
@@ -81,20 +82,20 @@ export default function ElevationProfile({ route, highlightIndex, onHighlight }:
       >
         <defs>
           <linearGradient id="profile-fill" x1="0" x2="0" y1="0" y2="1">
-            <stop offset="0" stopColor="#ff7a1a" stopOpacity="0.45" />
-            <stop offset="1" stopColor="#ff7a1a" stopOpacity="0.05" />
+            <stop offset="0" stopColor={GREEN[4]} stopOpacity="0.75" />
+            <stop offset="1" stopColor={GREEN[1]} stopOpacity="0.5" />
           </linearGradient>
         </defs>
         {[chart.lo, (chart.lo + chart.hi) / 2, chart.hi].map((v) => (
           <g key={v}>
-            <line x1={PAD.left} x2={width - PAD.right} y1={chart.y(v)} y2={chart.y(v)} stroke="#33414a" />
-            <text x={PAD.left - 6} y={chart.y(v) + 4} textAnchor="end" fontSize="11" fill="#a7b4bd">
+            <line x1={PAD.left} x2={width - PAD.right} y1={chart.y(v)} y2={chart.y(v)} stroke={LINE} strokeDasharray="2 3" />
+            <text x={PAD.left - 6} y={chart.y(v) + 4} textAnchor="end" fontSize="10" fontFamily="var(--font-mono)" fill={INK_MUTED}>
               {Math.round(v)}
             </text>
           </g>
         ))}
         <path d={chart.area} fill="url(#profile-fill)" />
-        <path d={chart.line} fill="none" stroke="#ff7a1a" strokeWidth="2" />
+        <path d={chart.line} fill="none" stroke={INK} strokeWidth="1.5" />
         {/* Wegbeschaffenheit als Farbband unter dem Profil */}
         {route.ways.map((w, i) => (
           <rect
@@ -112,13 +113,13 @@ export default function ElevationProfile({ route, highlightIndex, onHighlight }:
             x2={chart.x(route.cum[highlightIndex])}
             y1={PAD.top}
             y2={HEIGHT - PAD.bottom}
-            stroke="#fff"
+            stroke={MARK}
             strokeWidth="1.5"
           />
         )}
       </svg>
       {hp && highlightIndex !== null && (
-        <div className="tabular pointer-events-none absolute right-2 top-1 rounded-md bg-bg/85 px-2 py-0.5 text-xs">
+        <div className="tabular pointer-events-none absolute right-2 top-1 rounded-md border border-text bg-surface px-2 py-0.5 text-xs">
           {formatKm(route.cum[highlightIndex])} · {hp[2] !== null ? `${Math.round(hp[2])} m` : '–'} ·{' '}
           {formatDuration(route.minutes[highlightIndex])}
         </div>

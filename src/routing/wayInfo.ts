@@ -13,12 +13,12 @@ export const SURFACE_LABELS: Record<SurfaceClass, string> = {
 }
 
 export const SURFACE_COLORS: Record<SurfaceClass, string> = {
-  paved: '#8fa1ad',
-  gravel: '#d9b26f',
-  natural: '#7fb069',
-  path: '#c97c3d',
-  rock: '#b9b2a6',
-  unknown: '#4b5a63',
+  paved: '#8d9187',
+  gravel: '#bdb184',
+  natural: '#9db389',
+  path: '#2c4a31',
+  rock: '#55634f',
+  unknown: '#d5d9c6',
 }
 
 export const SAC_LABELS: Record<SacGrade, string> = {

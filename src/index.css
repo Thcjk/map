@@ -1,16 +1,37 @@
 @import 'tailwindcss';
+@import '@fontsource-variable/archivo/wdth.css';
+@import '@fontsource/ibm-plex-mono/latin-400.css';
+@import '@fontsource/ibm-plex-mono/latin-500.css';
+@import '@fontsource/ibm-plex-mono/latin-600.css';
 
+/*
+ * Design «Vermessungsblatt»: Papier, Grüntöne in Stufen, dunkle Tinte, technische
+ * Monospace-Beschriftung, feine Linien, kaum Rundungen. Rot nur als feine Markierung
+ * (Fadenkreuz, Route, Warnung). Kein Orange, kein Blau. Details: CLAUDE.md.
+ */
 @theme {
-  --color-bg: #0f1418;
-  --color-surface: #182026;
-  --color-surface-2: #222c33;
-  --color-line: #33414a;
-  --color-text: #f2f5f7;
-  --color-muted: #a7b4bd;
-  --color-accent: #ff7a1a;
-  --color-accent-strong: #ff8f3d;
-  --color-danger: #ff5d5d;
-  --font-sans: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --color-bg: #e9e8da;
+  --color-surface: #f3f2e7;
+  --color-surface-2: #dfe3cf;
+  --color-line: #b4bca3;
+  --color-text: #17241a;
+  --color-muted: #55634f;
+  --color-accent: #2c4a31;
+  --color-accent-strong: #1d3421;
+  --color-danger: #a8281f;
+  --color-mark: #b3261e;
+  --color-green-1: #dfe6d0;
+  --color-green-2: #c2d0ad;
+  --color-green-3: #9db389;
+  --color-green-4: #779567;
+  --color-green-5: #527549;
+  --color-green-6: #2c4a31;
+  --font-sans: 'Archivo Variable', system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+  --radius-md: 2px;
+  --radius-lg: 3px;
+  --radius-xl: 4px;
+  --radius-2xl: 6px;
 }
 
 html,
@@ -21,27 +42,48 @@ body,
 
 body {
   margin: 0;
-  background: var(--color-bg);
+  background-color: var(--color-bg);
+  /* feines Papierkorn */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .09 0 0 0 0 .14 0 0 0 0 .1 0 0 0 .09 0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");
   color: var(--color-text);
   font-family: var(--font-sans);
   -webkit-tap-highlight-color: transparent;
 }
 
+/* Überschriften: breite Grotesk wie ein Kartentitel */
+h1 {
+  font-stretch: 122%;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  text-transform: lowercase;
+}
+
+/* Technische Beschriftung: Monospace-Versalien mit Sperrung */
+.label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
 /* Zahlen gleich breit, damit Werte beim Aktualisieren nicht springen. */
 .tabular {
+  font-family: var(--font-mono);
   font-variant-numeric: tabular-nums;
 }
 
 :focus-visible {
-  outline: 3px solid var(--color-accent);
+  outline: 2px solid var(--color-mark);
   outline-offset: 2px;
 }
 
 /* MapLibre-Bedienelemente an das dunkle UI anpassen, mit grossen Touch-Flächen. */
 .maplibregl-ctrl-group {
   background: var(--color-surface) !important;
-  border: 1px solid var(--color-line);
-  border-radius: 12px !important;
+  border: 1px solid var(--color-text);
+  border-radius: 4px !important;
+  box-shadow: none !important;
   overflow: hidden;
 }
 .maplibregl-ctrl-group button {
@@ -51,14 +93,23 @@ body {
 .maplibregl-ctrl-group button + button {
   border-top-color: var(--color-line) !important;
 }
-.maplibregl-ctrl-group button .maplibregl-ctrl-icon {
-  filter: invert(1);
-}
 .maplibregl-ctrl-top-right .maplibregl-ctrl {
   margin: 10px 10px 0 0;
 }
 .maplibregl-ctrl-attrib {
-  font-size: 11px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+}
+.maplibregl-ctrl-attrib.maplibregl-compact {
+  background: var(--color-surface) !important;
+  border: 1px solid var(--color-line);
+  border-radius: 4px !important;
+}
+.maplibregl-ctrl-scale {
+  background: color-mix(in srgb, var(--color-surface) 80%, transparent) !important;
+  border-color: var(--color-text) !important;
+  color: var(--color-text) !important;
+  font-family: var(--font-mono);
 }
 .map-fab {
   display: flex;
@@ -66,33 +117,35 @@ body {
   justify-content: center;
   width: 46px;
   height: 46px;
-  border-radius: 12px;
-  border: 1px solid var(--color-line);
+  border-radius: 4px;
+  border: 1px solid var(--color-text);
   background: var(--color-surface);
   color: var(--color-text);
 }
 
 .waypoint-marker {
-  width: 34px;
-  height: 34px;
+  width: 32px;
+  height: 32px;
   border-radius: 9999px;
-  border: 3px solid #fff;
-  background: var(--color-accent);
-  color: #1a0d03;
-  font-weight: 800;
+  border: 2px solid var(--color-text);
+  background: var(--color-surface);
+  color: var(--color-text);
+  font-family: var(--font-mono);
+  font-weight: 600;
   font-size: 13px;
-  box-shadow: 0 2px 6px rgb(0 0 0 / 0.45);
+  box-shadow: 0 1px 4px rgb(23 36 26 / 0.4);
   cursor: grab;
 }
 .waypoint-marker.is-start {
-  background: #2fbf71;
+  background: var(--color-green-5);
+  color: var(--color-surface);
 }
 .waypoint-marker.is-end {
-  background: #1a0d03;
-  color: #fff;
+  background: var(--color-text);
+  color: var(--color-surface);
 }
 .waypoint-marker.is-selected {
-  outline: 4px solid #fff;
+  outline: 3px solid var(--color-mark);
   outline-offset: 2px;
 }
 
@@ -100,22 +153,24 @@ body {
   min-width: 30px;
   height: 30px;
   padding: 0 6px;
-  border-radius: 8px;
-  border: 3px solid var(--color-accent);
-  background: var(--color-bg);
-  color: #fff;
-  font-weight: 800;
+  border-radius: 2px;
+  border: 2px solid var(--color-text);
+  background: var(--color-surface);
+  color: var(--color-text);
+  font-family: var(--font-mono);
+  font-weight: 600;
   font-size: 13px;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: grab;
-  box-shadow: 0 2px 6px rgb(0 0 0 / 0.45);
+  box-shadow: 0 1px 4px rgb(23 36 26 / 0.4);
 }
 .poi-popup .maplibregl-popup-content {
   background: var(--color-surface);
   color: var(--color-text);
-  border-radius: 12px;
+  border: 1px solid var(--color-text);
+  border-radius: 4px;
   padding: 10px 28px 10px 12px;
 }
 .poi-popup .maplibregl-popup-tip {

@@ -1,41 +1,43 @@
-import type { Map as MlMap, LayerSpecification, SourceSpecification } from 'maplibre-gl'
+import type { Map as MlMap, LayerSpecification, SourceSpecification, StyleSpecification } from 'maplibre-gl'
 import { SOURCES } from '../data/sources'
+import { GREEN, INK, PAPER_LIGHT } from '../theme'
+import { contourTiles, demSource } from './dem'
 import { CH_BOUNDS } from './switzerland'
+import { TOPO_STYLE } from './topoStyle'
 
 const attribution = (id: string) => SOURCES.find((s) => s.id === id)!.attribution
 
 export type BaseMapId = 'openfreemap' | 'swisstopo-color' | 'swisstopo-hiking' | 'swisstopo-vector'
-export type OverlayId = 'trails' | 'hillshade'
+export type OverlayId = 'trails' | 'hillshade' | 'contours'
 
 export interface BaseMap {
   id: BaseMapId
   label: string
   description: string
   swiss: boolean
-  /** Vektorstil, der als Grundlage geladen wird. */
-  styleUrl: string
+  /** Vektorstil, der als Grundlage geladen wird (eigener Stil oder URL). */
+  style: StyleSpecification | string
   /** Rasterebenen, die über den Vektorstil gelegt werden (nur innerhalb der Schweiz). */
   rasterLayers?: { id: string; url: string }[]
 }
 
-const OPENFREEMAP_STYLE = 'https://tiles.openfreemap.org/styles/liberty'
 const swisstopoWmts = (layer: string, ext: 'jpeg' | 'png') =>
   `https://wmts.geo.admin.ch/1.0.0/${layer}/default/current/3857/{z}/{x}/{y}.${ext}`
 
 export const BASE_MAPS: BaseMap[] = [
   {
     id: 'openfreemap',
-    label: 'Standard',
-    description: 'OpenFreeMap, weltweit',
+    label: 'Topo',
+    description: 'Eigener Stil, weltweit (OpenFreeMap)',
     swiss: false,
-    styleUrl: OPENFREEMAP_STYLE,
+    style: TOPO_STYLE,
   },
   {
     id: 'swisstopo-hiking',
     label: 'Wanderkarte CH',
     description: 'Landeskarte mit Wanderwegen, swisstopo',
     swiss: true,
-    styleUrl: OPENFREEMAP_STYLE,
+    style: TOPO_STYLE,
     rasterLayers: [
       { id: 'pixelkarte', url: swisstopoWmts('ch.swisstopo.pixelkarte-farbe', 'jpeg') },
       { id: 'wanderwege', url: swisstopoWmts('ch.swisstopo.swisstlm3d-wanderwege', 'png') },
@@ -46,7 +48,7 @@ export const BASE_MAPS: BaseMap[] = [
     label: 'Landeskarte CH',
     description: 'Landeskarte farbig, swisstopo',
     swiss: true,
-    styleUrl: OPENFREEMAP_STYLE,
+    style: TOPO_STYLE,
     rasterLayers: [{ id: 'pixelkarte', url: swisstopoWmts('ch.swisstopo.pixelkarte-farbe', 'jpeg') }],
   },
   {
@@ -54,13 +56,14 @@ export const BASE_MAPS: BaseMap[] = [
     label: 'Vektorkarte CH',
     description: 'swisstopo Basiskarte (Vektor)',
     swiss: true,
-    styleUrl: 'https://vectortiles.geo.admin.ch/styles/ch.swisstopo.basemap.vt/style.json',
+    style: 'https://vectortiles.geo.admin.ch/styles/ch.swisstopo.basemap.vt/style.json',
   },
 ]
 
 export const OVERLAYS: { id: OverlayId; label: string }[] = [
   { id: 'trails', label: 'Markierte Wanderwege' },
   { id: 'hillshade', label: 'Relief' },
+  { id: 'contours', label: 'Höhenlinien' },
 ]
 
 /** Präfix für Ebenen, die die App selbst verwaltet. Basis-Overlays liegen darunter. */
@@ -91,6 +94,8 @@ export function syncLayers(map: MlMap, base: BaseMap, overlays: Record<OverlayId
   const trailsId = `${BASE_PREFIX}trails`
   const beforeApp = () => firstLayerId(map, (l) => l.id.startsWith(APP_LAYER_PREFIX))
 
+  const firstSymbol = () => firstLayerId(map, (l) => l.type === 'symbol') ?? beforeApp()
+
   if (overlays.hillshade) {
     const id = `${BASE_PREFIX}hillshade`
     wanted.add(id)
@@ -99,18 +104,67 @@ export function syncLayers(map: MlMap, base: BaseMap, overlays: Record<OverlayId
       id,
       {
         type: 'raster-dem',
-        tiles: ['https://s3.amazonaws.com/elevation-tiles-prod/terrarium/{z}/{x}/{y}.png'],
+        tiles: [demSource.sharedDemProtocolUrl],
         encoding: 'terrarium',
         tileSize: 256,
-        maxzoom: 15,
+        maxzoom: 13,
         attribution: attribution('terrarium'),
       },
       {
         type: 'hillshade',
-        paint: { 'hillshade-exaggeration': 0.35, 'hillshade-shadow-color': '#3a4650' },
+        paint: {
+          'hillshade-exaggeration': 0.6,
+          'hillshade-shadow-color': GREEN[5],
+          'hillshade-highlight-color': PAPER_LIGHT,
+          'hillshade-accent-color': GREEN[4],
+        },
       },
-      firstLayerId(map, (l) => l.type === 'symbol') ?? beforeApp(),
+      // unter Gewässern und Wegen, damit diese lesbar bleiben
+      map.getLayer('water') ? 'water' : firstSymbol(),
     )
+  }
+
+  if (overlays.contours) {
+    const src = `${BASE_PREFIX}contours`
+    const labels = `${BASE_PREFIX}contour-labels`
+    wanted.add(src).add(labels)
+    if (!map.getSource(src))
+      map.addSource(src, { type: 'vector', tiles: [contourTiles], maxzoom: 15, attribution: attribution('terrarium') })
+    if (!map.getLayer(src))
+      map.addLayer(
+        {
+          id: src,
+          type: 'line',
+          source: src,
+          'source-layer': 'contours',
+          paint: {
+            'line-color': GREEN[5],
+            'line-opacity': ['match', ['get', 'level'], 1, 0.75, 0.4],
+            'line-width': ['match', ['get', 'level'], 1, 1, 0.5],
+          },
+        },
+        map.getLayer('building') ? 'building' : firstSymbol(),
+      )
+    // Beschriftung nur im eigenen Stil (dort ist die Schrift sicher vorhanden)
+    if (!map.getLayer(labels) && map.getLayer('peak'))
+      map.addLayer(
+        {
+          id: labels,
+          type: 'symbol',
+          source: src,
+          'source-layer': 'contours',
+          filter: ['>', ['get', 'level'], 0],
+          layout: {
+            'symbol-placement': 'line',
+            'text-field': ['to-string', ['get', 'ele']],
+            'text-font': ['Noto Sans Regular'],
+            'text-size': 10,
+            'text-letter-spacing': 0.08,
+          },
+          paint: { 'text-color': INK, 'text-halo-color': PAPER_LIGHT, 'text-halo-width': 1.2 },
+        },
+        firstSymbol(),
+      )
   }
 
   for (const r of base.rasterLayers ?? []) {
@@ -150,11 +204,13 @@ export function syncLayers(map: MlMap, base: BaseMap, overlays: Record<OverlayId
     )
   }
 
-  // Nicht mehr gewünschte Ebenen entfernen.
+  // Nicht mehr gewünschte Ebenen entfernen, danach deren Quellen.
   for (const layer of map.getStyle().layers) {
     if (layer.id.startsWith(BASE_PREFIX) && !wanted.has(layer.id)) {
       map.removeLayer(layer.id)
-      if (map.getSource(layer.id)) map.removeSource(layer.id)
     }
+  }
+  for (const id of Object.keys(map.getStyle().sources)) {
+    if (id.startsWith(BASE_PREFIX) && !wanted.has(id)) map.removeSource(id)
   }
 }

@@ -14,8 +14,8 @@ export function StatsRow({ route }: { route: Route | null }) {
     <dl className="grid grid-cols-4 gap-1">
       {items.map((i) => (
         <div key={i.label} className="min-w-0">
-          <dt className="text-[11px] font-semibold uppercase tracking-wide text-muted">{i.label}</dt>
-          <dd className="tabular truncate text-[clamp(0.95rem,4.6vw,1.25rem)] font-bold leading-tight">{i.value}</dd>
+          <dt className="label text-[10px]! text-muted">{i.label}</dt>
+          <dd className="tabular truncate text-[clamp(0.95rem,4.6vw,1.25rem)] font-semibold leading-tight">{i.value}</dd>
         </div>
       ))}
     </dl>
@@ -34,7 +34,7 @@ export function WayDetails({ route }: { route: Route }) {
   return (
     <div className="space-y-3">
       <section>
-        <h3 className="text-sm font-semibold text-muted">Wegbeschaffenheit</h3>
+        <h3 className="label text-muted">Wegbeschaffenheit</h3>
         <div className="mt-1 flex h-3 overflow-hidden rounded-full" aria-hidden>
           {surfaces.map(([s, m]) => (
             <div key={s} style={{ width: `${(m / total) * 100}%`, background: SURFACE_COLORS[s] }} />
@@ -51,7 +51,7 @@ export function WayDetails({ route }: { route: Route }) {
         </ul>
       </section>
       <section>
-        <h3 className="text-sm font-semibold text-muted">Schwierigkeit (SAC-Skala)</h3>
+        <h3 className="label text-muted">Schwierigkeit (SAC-Skala)</h3>
         {route.sacMax ? (
           <>
             <p className="mt-1 font-semibold">Bis {SAC_LABELS[route.sacMax]}</p>

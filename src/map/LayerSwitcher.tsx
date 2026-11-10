@@ -28,7 +28,7 @@ export default function LayerSwitcher({ baseId, overlays, onBaseChange, onOverla
             role="dialog"
             aria-label="Kartenebenen"
             onClick={(e) => e.stopPropagation()}
-            className="w-full rounded-t-2xl border border-line bg-surface p-4 pb-[calc(1rem+env(safe-area-inset-bottom))] sm:m-3 sm:w-80 sm:rounded-2xl"
+            className="w-full rounded-t-2xl border border-text bg-surface p-4 pb-[calc(1rem+env(safe-area-inset-bottom))] sm:m-3 sm:w-80 sm:rounded-2xl"
           >
             <div className="flex items-center justify-between">
               <h2 className="text-lg font-bold">Karte</h2>
@@ -52,7 +52,7 @@ export default function LayerSwitcher({ baseId, overlays, onBaseChange, onOverla
                 </button>
               ))}
             </div>
-            <h3 className="mt-4 text-sm font-semibold uppercase tracking-wide text-muted">Ebenen</h3>
+            <h3 className="mt-4 label text-muted">Ebenen</h3>
             <ul className="mt-1">
               {OVERLAYS.map((o) => (
                 <li key={o.id}>

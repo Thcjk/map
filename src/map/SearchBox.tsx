@@ -51,7 +51,7 @@ export default function SearchBox() {
 
   return (
     <div className="absolute left-2.5 right-16 top-2.5 z-20 max-w-md">
-      <div className="flex items-center rounded-xl border border-line bg-surface shadow-lg focus-within:border-accent">
+      <div className="flex items-center rounded-xl border border-text bg-surface focus-within:outline-2 focus-within:outline-mark">
         <SearchIcon className="ml-3 shrink-0 text-muted" />
         <input
           type="search"
@@ -82,7 +82,7 @@ export default function SearchBox() {
         )}
       </div>
       {showList && (
-        <ul id={listId} role="listbox" className="mt-1 overflow-hidden rounded-xl border border-line bg-surface shadow-xl">
+        <ul id={listId} role="listbox" className="mt-1 overflow-hidden rounded-xl border border-text bg-surface">
           {error && <li className="p-3 text-sm text-danger">{error}</li>}
           {results.map((p, i) => (
             <li key={p.id} role="option" aria-selected={i === active}>

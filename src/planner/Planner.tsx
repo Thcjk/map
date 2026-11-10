@@ -290,24 +290,24 @@ export default function Planner() {
       />
 
       {message && (
-        <p role="status" className="absolute inset-x-4 top-[72px] z-30 mx-auto max-w-md rounded-xl bg-text px-4 py-3 text-center font-semibold text-bg shadow-xl">
+        <p role="status" className="absolute inset-x-4 top-[72px] z-30 mx-auto max-w-md rounded-xl bg-text px-4 py-3 text-center font-semibold text-bg">
           {message}
         </p>
       )}
 
       {!editing && !hasRoute ? (
-        <div className="absolute bottom-10 left-2.5 z-20 flex gap-2">
-          <button type="button" onClick={() => setEditing(true)} className="flex min-h-13 items-center gap-2 rounded-2xl bg-accent px-5 text-lg font-bold text-bg shadow-xl">
+        <div className="absolute bottom-16 left-2.5 z-20 flex gap-2">
+          <button type="button" onClick={() => setEditing(true)} className="flex min-h-13 items-center gap-2 rounded-2xl bg-accent px-5 text-lg font-bold text-bg">
             <RouteIcon /> Route planen
           </button>
-          <button type="button" onClick={() => fileInput.current?.click()} aria-label="GPX importieren" className="map-fab size-13! shadow-xl">
+          <button type="button" onClick={() => fileInput.current?.click()} aria-label="GPX importieren" className="map-fab size-13!">
             <UploadIcon />
           </button>
         </div>
       ) : (
         <section
           aria-label="Routenplanung"
-          className="absolute inset-x-0 bottom-0 z-20 max-h-[70%] overflow-y-auto rounded-t-2xl border border-line bg-surface px-3 pt-2 pb-3 shadow-2xl sm:inset-x-auto sm:bottom-2.5 sm:left-2.5 sm:w-[400px] sm:rounded-2xl"
+          className="absolute inset-x-0 bottom-0 z-20 max-h-[70%] overflow-y-auto rounded-t-2xl border border-text bg-surface px-3 pt-2 pb-3 shadow-[0_-1px_0_var(--color-text)] sm:inset-x-auto sm:bottom-2.5 sm:left-2.5 sm:w-[400px] sm:rounded-2xl"
         >
           <div className="flex items-center gap-2">
             <button

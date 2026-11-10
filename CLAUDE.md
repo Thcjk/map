@@ -16,10 +16,18 @@ Gehostet über GitHub Pages: https://thcjk.github.io/map/
   und Manifest in `vite.config.ts`), bis der Nutzer einen Namen gewählt hat.
 - **UI-Sprache Deutsch, Schweizer Schreibweise**: immer «ss», nie «ß». Code-Bezeichner Englisch.
 - **Mobile-first**, funktioniert auch auf dem Desktop. Touch-Flächen min. 44–48 px.
-- **Design «Outdoor-Tech»**: dunkles UI, Akzentfarbe Signal-Orange `#ff7a1a`, Daten
-  (km, Hm, Zeit) gross und mit `tabular`-Ziffern, Karte bekommt maximalen Platz.
-  Farben als Tailwind-Theme-Tokens in `src/index.css` (`bg`, `surface`, `line`, `text`,
-  `muted`, `accent`, `danger`).
+- **Design «Vermessungsblatt»** (verbindliche Vorlage des Nutzers: ein Topo-Kartenblatt in
+  Papier-Creme und Grünstufen). Regeln:
+  - Papiergrund `#e9e8da`, Flächen `#f3f2e7`, Tinte `#17241a`, Grünstufen `green-1…6`,
+    Akzent = Waldgrün `#2c4a31`. **Kein Orange, kein Blau.** Gewässer entsättigtes Graugrün.
+  - Rot (`mark` `#b3261e`) nur als feine Markierung: Route, Fadenkreuz, Fokus, Warnung.
+  - Schrift: Archivo (breit, h1 klein geschrieben) für Titel/Text, IBM Plex Mono für
+    Zahlen (`.tabular`) und Beschriftungen (`.label`: Versalien, gesperrt).
+  - Feine 1-px-Linien in Tinte, kaum Rundungen (Radius-Tokens 2–6 px), keine Schlagschatten.
+  - Tokens in `src/index.css`, dieselben Farben für Karte/SVG in `src/theme.ts`.
+  - Keine Namen, Logos oder Slogans aus der Vorlage übernehmen, nur die Stilrichtung.
+  - Karte: eigener Stil `src/map/topoStyle.ts` auf OpenFreeMap-Vektordaten, Relief grün
+    eingefärbt, Höhenlinien aus `maplibre-contour` (`src/map/dem.ts`).
 - **Attribution**: Jede Quelle steht in `src/data/sources.ts` und `DATENQUELLEN.md`.
   Neue Quelle ⇒ beide Stellen ergänzen, Attribution auf der Karte anzeigen.
 - Kleine, saubere Commits. Kein toter Code, keine ungenutzten Pakete.
@@ -126,7 +134,7 @@ müssen zuerst aus einer Primärquelle (Schweizer Wanderwege / swisstopo) verifi
 Details und Links in `DATENQUELLEN.md`. Kurzfassung der Pflichten:
 | Dienst | Pflichten |
 |---|---|
-| OpenFreeMap | Gratis, ohne Key. Attribution «OpenFreeMap © OpenMapTiles Daten von © OpenStreetMap-Mitwirkende». |
+| OpenFreeMap | Gratis, ohne Key. Wir nutzen Vektortiles + Schriften mit eigenem Stil. Attribution «OpenFreeMap © OpenMapTiles Daten von © OpenStreetMap-Mitwirkende». |
 | swisstopo (wmts.geo.admin.ch, vectortiles.geo.admin.ch) | OGD, Quellenangabe «© swisstopo». Fair Use: keine Massendownloads, kein Abgrasen ganzer Gebiete. |
 | Waymarked Trails | Overlay CC BY-SA 3.0, Attribution Pflicht, moderate Nutzung. |
 | Terrain Tiles (AWS) | Frei, Quellenangabe der DEM-Quellen. |

@@ -1,13 +1,15 @@
-import { useEffect, useRef, useState, type ReactNode } from 'react'
+import { useEffect, useMemo, useRef, useState, type ReactNode } from 'react'
 import * as maplibregl from 'maplibre-gl'
 import type { Map as MlMap } from 'maplibre-gl'
 import 'maplibre-gl/dist/maplibre-gl.css'
 import workerUrl from 'maplibre-gl/dist/maplibre-gl-worker.mjs?url'
 import { useSetting } from '../lib/useSetting'
 import { MapContext } from './MapContext'
-import { BASE_MAPS, syncLayers, type BaseMapId, type OverlayId } from './layers'
+import { BASE_MAPS, syncLayers, type BaseMap, type BaseMapId, type OverlayId } from './layers'
+import { provideStyleImages } from './topoStyle'
 import LayerSwitcher from './LayerSwitcher'
 import SwissSuggestion from './SwissSuggestion'
+import CoordinateReadout from './CoordinateReadout'
 import { styleReady } from './useAppLayers'
 
 // Im Bundle findet MapLibre seinen Worker nicht selbst; Vite liefert die URL.
@@ -19,16 +21,18 @@ interface View {
 }
 
 const DEFAULT_VIEW: View = { center: [8.2, 46.8], zoom: 7 }
-const DEFAULT_OVERLAYS: Record<OverlayId, boolean> = { trails: true, hillshade: true }
+const DEFAULT_OVERLAYS: Record<OverlayId, boolean> = { trails: false, hillshade: true, contours: true }
 
 export default function MapView({ children }: { children?: ReactNode }) {
   const container = useRef<HTMLDivElement>(null)
   const [map, setMap] = useState<MlMap | null>(null)
-  const styleUrl = useRef<string>('')
+  const currentStyle = useRef<BaseMap['style'] | null>(null)
   const [styleError, setStyleError] = useState(false)
   const [view, setView, viewLoaded] = useSetting<View>('map.view', DEFAULT_VIEW)
   const [baseId, setBaseId, baseLoaded] = useSetting<BaseMapId>('map.base', 'openfreemap')
-  const [overlays, setOverlays, overlaysLoaded] = useSetting('map.overlays', DEFAULT_OVERLAYS)
+  const [storedOverlays, setOverlays, overlaysLoaded] = useSetting('map.overlays', DEFAULT_OVERLAYS)
+  // ältere gespeicherte Einstellungen kennen neue Ebenen noch nicht
+  const overlays = useMemo(() => ({ ...DEFAULT_OVERLAYS, ...storedOverlays }), [storedOverlays])
   const ready = viewLoaded && baseLoaded && overlaysLoaded
   const base = BASE_MAPS.find((b) => b.id === baseId) ?? BASE_MAPS[0]
 
@@ -37,12 +41,13 @@ export default function MapView({ children }: { children?: ReactNode }) {
     if (!ready || !container.current) return
     const m = new maplibregl.Map({
       container: container.current,
-      style: (styleUrl.current = base.styleUrl),
+      style: (currentStyle.current = base.style),
       center: view.center,
       zoom: view.zoom,
       attributionControl: false,
       maxPitch: 60,
     })
+    provideStyleImages(m)
     m.addControl(new maplibregl.AttributionControl({ compact: true }), 'bottom-right')
     m.addControl(new maplibregl.ScaleControl({ unit: 'metric', maxWidth: 120 }), 'bottom-left')
     m.addControl(new maplibregl.NavigationControl({ visualizePitch: true }), 'top-right')
@@ -77,9 +82,9 @@ export default function MapView({ children }: { children?: ReactNode }) {
     if (!map) return
     const apply = () => syncLayers(map, base, overlays)
     map.on('style.load', apply)
-    if (styleUrl.current !== base.styleUrl) {
-      styleUrl.current = base.styleUrl
-      map.setStyle(base.styleUrl)
+    if (currentStyle.current !== base.style) {
+      currentStyle.current = base.style
+      map.setStyle(base.style)
     } else if (styleReady(map)) {
       apply()
     }
@@ -101,6 +106,7 @@ export default function MapView({ children }: { children?: ReactNode }) {
       )}
       {map && (
         <>
+          <CoordinateReadout />
           <LayerSwitcher
             baseId={base.id}
             overlays={overlays}

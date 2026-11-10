@@ -156,7 +156,7 @@ export default function TrailsPage() {
               <li key={c.id}>
                 <button type="button" onClick={() => void fromCatalog(c)} className="block h-full w-full rounded-xl border border-line bg-surface p-3 text-left hover:border-accent">
                   <span className="block font-semibold">{c.name}</span>
-                  <span className="block text-xs font-semibold uppercase tracking-wide text-accent">{c.region}</span>
+                  <span className="block label text-green-5">{c.region}</span>
                   <span className="mt-1 block text-sm text-muted">{c.description}</span>
                 </button>
               </li>

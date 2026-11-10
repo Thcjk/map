@@ -7,6 +7,7 @@ import { nearestIndex, type LngLat } from '../lib/geo'
 import type { Route } from '../routing/route'
 import type { FeatureCollection } from 'geojson'
 import { SOURCES } from '../data/sources'
+import { MARK, PAPER_LIGHT } from '../theme'
 
 interface Props {
   route: Route | null
@@ -59,7 +60,7 @@ export default function RouteLayer(props: Props) {
         type: 'line',
         source: ROUTE,
         layout: { 'line-join': 'round', 'line-cap': 'round' },
-        paint: { 'line-color': '#1a0d03', 'line-width': 9, 'line-opacity': 0.55 },
+        paint: { 'line-color': PAPER_LIGHT, 'line-width': 8, 'line-opacity': 0.9 },
       })
     if (!m.getLayer(`${ROUTE}-line`))
       m.addLayer({
@@ -68,7 +69,7 @@ export default function RouteLayer(props: Props) {
         source: ROUTE,
         layout: { 'line-join': 'round', 'line-cap': 'round' },
         filter: ['==', ['get', 'routed'], true],
-        paint: { 'line-color': '#ff7a1a', 'line-width': 5 },
+        paint: { 'line-color': MARK, 'line-width': 4 },
       })
     // Luftlinie (Routing nicht verfügbar oder noch unterwegs) gestrichelt
     if (!m.getLayer(`${ROUTE}-air`))
@@ -77,7 +78,7 @@ export default function RouteLayer(props: Props) {
         type: 'line',
         source: ROUTE,
         filter: ['==', ['get', 'routed'], false],
-        paint: { 'line-color': '#ff7a1a', 'line-width': 4, 'line-dasharray': [1.5, 1.5] },
+        paint: { 'line-color': MARK, 'line-width': 3, 'line-dasharray': [1.5, 1.5] },
       })
     if (!m.getLayer(HIGHLIGHT))
       m.addLayer({
@@ -86,8 +87,8 @@ export default function RouteLayer(props: Props) {
         source: HIGHLIGHT,
         paint: {
           'circle-radius': 8,
-          'circle-color': '#ffffff',
-          'circle-stroke-color': '#ff7a1a',
+          'circle-color': PAPER_LIGHT,
+          'circle-stroke-color': MARK,
           'circle-stroke-width': 4,
         },
       })

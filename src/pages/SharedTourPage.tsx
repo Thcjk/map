@@ -41,7 +41,7 @@ export default function SharedTourPage() {
         {!tour && !error && <p role="status" className="text-muted">Tour wird geladen …</p>}
         {tour && (
           <div className="rounded-xl border border-line bg-surface p-4">
-            <p className="text-xs font-semibold uppercase tracking-wide text-accent">Geteilte Tour</p>
+            <p className="label text-green-5">Geteilte Tour</p>
             <h1 className="mt-1 text-2xl font-bold">{tour.name}</h1>
             <p className="tabular mt-2 text-lg">
               {formatKm(tour.distance)} · ↑ {formatM(tour.ascent)} · ↓ {formatM(tour.descent)} · {formatDuration(tour.duration)}
