@@ -55,7 +55,21 @@ src/
   pages/                 Seiten (Karte, Quellen, 404)
   data/sources.ts        Quellen, Lizenzen, Attribution (Single Source of Truth)
   lib/db.ts              Dexie-Datenbank (Tabelle settings)
+  lib/useSetting.ts      React-Hook für persistente Einstellungen
+  lib/photon.ts          Ortssuche (Photon), mit Cache
+  map/MapView.tsx        MapLibre-Karte, Controls, Grundkarte/Overlays synchron halten
+  map/MapContext.ts      useMap() für Kinder-Komponenten
+  map/layers.ts          Grundkarten + Overlays; syncLayers() ist idempotent
+  map/switzerland.ts     Vereinfachte CH-Grenze (swisstopo-Vorschlag)
 ```
+
+### Karten-Ebenen
+- Grundkarten (`BASE_MAPS`): Vektorstil + optionale swisstopo-Rasterebenen (mit `bounds` CH).
+- Ebenen mit Präfix `base-` verwaltet `syncLayers` (Relief, swisstopo-Raster, Wanderwege).
+- Eigene App-Ebenen (Route, POIs …) bekommen das Präfix `app-` und liegen immer
+  darüber. Wer App-Ebenen hinzufügt, muss sie nach `style.load` neu anlegen
+  (Stilwechsel löscht alle Ebenen).
+- MapLibre 6 braucht `setWorkerUrl` (Worker via `?url`-Import), sonst «Worker failed to load».
 
 ## Verwendete Dienste und Nutzungsbedingungen
 Details und Links in `DATENQUELLEN.md`. Kurzfassung der Pflichten:

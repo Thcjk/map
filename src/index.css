@@ -36,3 +36,38 @@ body {
   outline: 3px solid var(--color-accent);
   outline-offset: 2px;
 }
+
+/* MapLibre-Bedienelemente an das dunkle UI anpassen, mit grossen Touch-Flächen. */
+.maplibregl-ctrl-group {
+  background: var(--color-surface) !important;
+  border: 1px solid var(--color-line);
+  border-radius: 12px !important;
+  overflow: hidden;
+}
+.maplibregl-ctrl-group button {
+  width: 44px !important;
+  height: 44px !important;
+}
+.maplibregl-ctrl-group button + button {
+  border-top-color: var(--color-line) !important;
+}
+.maplibregl-ctrl-group button .maplibregl-ctrl-icon {
+  filter: invert(1);
+}
+.maplibregl-ctrl-top-right .maplibregl-ctrl {
+  margin: 10px 10px 0 0;
+}
+.maplibregl-ctrl-attrib {
+  font-size: 11px;
+}
+.map-fab {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  border: 1px solid var(--color-line);
+  background: var(--color-surface);
+  color: var(--color-text);
+}

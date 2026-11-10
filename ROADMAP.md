@@ -13,12 +13,13 @@ Status: `[x]` erledigt, `[ ]` offen. Nach jeder Änderung aktualisieren.
 - [ ] Nutzer: App-Namen wählen
 
 ## Phase 1 – Karte
-- [ ] Grundkarte OpenFreeMap
-- [ ] swisstopo (Landeskarte, Wanderkarte, Vektor) mit Layer-Umschalter, Vorschlag in der Schweiz
-- [ ] Overlay Wanderwege (Waymarked Trails), schaltbar
-- [ ] Relief/Hillshade
-- [ ] Massstab, eigener Standort
-- [ ] Ortssuche mit Autocomplete (Photon)
+- [x] Grundkarte OpenFreeMap (Stil «liberty»)
+- [x] swisstopo (Landeskarte, Wanderkarte, Vektor) mit Layer-Umschalter, Vorschlag in der Schweiz
+- [x] Overlay Wanderwege (Waymarked Trails), schaltbar
+- [x] Relief/Hillshade (Terrain Tiles)
+- [x] Massstab, eigener Standort
+- [x] Ortssuche mit Autocomplete (Photon, Debounce 350 ms, min. 3 Zeichen, Cache)
+- [x] Letzte Ansicht, Grundkarte und Ebenen in IndexedDB gespeichert
 
 ## Phase 2 – Routenplanung
 - [ ] Wegpunkte setzen, verschieben, löschen, Rückgängig/Wiederholen
