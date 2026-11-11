@@ -10,9 +10,11 @@ import { writeFile } from 'node:fs/promises'
 const UA = 'trail-catalog-builder/1.0 (GitHub Actions; hiking app catalog)'
 const OUT = new URL('../src/data/trailCatalog.json', import.meta.url)
 const MAX_TRAILS = 600
-// Europa (süd, west, nord, ost)
-const BBOX = '34,-25,72,45'
-const OVERPASS = ['https://overpass-api.de/api/interpreter', 'https://overpass.private.coffee/api/interpreter']
+const OVERPASS = [
+  'https://overpass-api.de/api/interpreter',
+  'https://overpass.private.coffee/api/interpreter',
+  'https://maps.mail.ru/osm/tools/overpass/api/interpreter',
+]
 const FREE_LICENSE = /^(cc0|cc[ -]by(-sa)?[ -]\d|public domain|pd\b|pdm)/i
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms))
@@ -35,22 +37,44 @@ const chunks = (arr, n) => Array.from({ length: Math.ceil(arr.length / n) }, (_,
 // ---------- 1. OpenStreetMap ----------
 async function overpass(query) {
   let last
-  for (const url of OVERPASS) {
-    try {
-      const json = await getJson(url, { method: 'POST', body: new URLSearchParams({ data: query }) }, 2)
-      if (json.remark) console.log('Overpass-Hinweis:', json.remark)
-      return json.elements
-    } catch (e) {
-      last = e
-      console.log('Overpass-Fehler, nächster Server:', e.message)
+  for (let round = 0; round < 2; round++) {
+    for (const url of OVERPASS) {
+      try {
+        const json = await getJson(url, { method: 'POST', body: new URLSearchParams({ data: query }) }, 1)
+        if (json.remark) console.log('Overpass-Hinweis:', json.remark)
+        return json.elements
+      } catch (e) {
+        last = e
+        console.log('Overpass-Fehler, nächster Server:', e.message)
+        await sleep(5000)
+      }
     }
   }
   throw last
 }
 
-const relations = await overpass(
-  `[out:json][timeout:600][maxsize:1073741824];relation["route"~"^(hiking|foot)$"]["network"~"^(iwn|nwn|rwn)$"]["wikidata"](${BBOX});out tags;`,
-)
+// Ohne Gebietsfilter und ohne Regex: Für Relationen ist die reine Tag-Abfrage am leichtesten.
+// Internationale und nationale Wege sind Pflicht, regionale ein Zusatz (dürfen ausfallen).
+const QUERIES = [
+  { network: 'iwn', route: 'hiking', required: true },
+  { network: 'nwn', route: 'hiking', required: true },
+  { network: 'iwn', route: 'foot', required: false },
+  { network: 'nwn', route: 'foot', required: false },
+  { network: 'rwn', route: 'hiking', required: false },
+]
+const byId = new Map()
+for (const q of QUERIES) {
+  try {
+    const found = await overpass(`[out:json][timeout:240];relation["route"="${q.route}"]["network"="${q.network}"]["wikidata"];out tags;`)
+    console.log(`OSM ${q.route}/${q.network}:`, found.length)
+    for (const r of found) byId.set(r.id, r)
+  } catch (e) {
+    if (q.required) throw e
+    console.log(`OSM ${q.route}/${q.network} ausgelassen:`, e.message)
+  }
+  await sleep(3000)
+}
+const relations = [...byId.values()]
 console.log('OSM-Relationen mit Wikidata-Verweis:', relations.length)
 
 /** QID -> Relationen */
