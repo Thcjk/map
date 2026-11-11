@@ -1,0 +1,43 @@
+name: Fernweg-Katalog aktualisieren
+
+# Holt Fernwanderwege aus OpenStreetMap/Wikidata und Fotos von Wikimedia Commons
+# (scripts/build-trail-catalog.mjs), schreibt src/data/trailCatalog.json und veröffentlicht neu.
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '23 3 2 * *'
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: trail-catalog
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node scripts/build-trail-catalog.mjs
+      - name: Änderungen committen und veröffentlichen
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if git diff --quiet -- src/data/trailCatalog.json; then
+            echo "Katalog unverändert."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/data/trailCatalog.json
+          git commit -m "Fernweg-Katalog aktualisiert"
+          git pull --rebase
+          git push
+          # Pushes einer Action lösen keinen Deploy aus, darum hier ausdrücklich starten.
+          gh workflow run deploy.yml --ref "$GITHUB_REF_NAME"
