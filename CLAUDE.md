@@ -21,7 +21,6 @@ Gehostet über GitHub Pages: https://thcjk.github.io/map/
   Papier-Creme und Grünstufen). Regeln:
   - Papiergrund `#e9e8da`, Flächen `#f3f2e7`, Tinte `#17241a`, Grünstufen `green-1…6`,
     Akzent = Waldgrün `#2c4a31`. **Kein Orange, kein Blau.** Gewässer entsättigtes Graugrün.
-    Einzige Ausnahme: Sticker zeigen die echten Wegmarkierungsfarben (Entscheid des Nutzers).
   - Rot (`mark` `#b3261e`) nur als feine Markierung: Route, Fadenkreuz, Fokus, Warnung.
   - Schrift: Archivo (breit, h1 klein geschrieben) für Titel/Text, IBM Plex Mono für
     Zahlen (`.tabular`) und Beschriftungen (`.label`: Versalien, gesperrt).
@@ -61,67 +60,49 @@ Gehostet über GitHub Pages: https://thcjk.github.io/map/
 ## Architektur
 ```
 src/
-  main.tsx, App.tsx      Einstieg, Routen
-  config.ts              App-Name
-  index.css              Tailwind + Design-Tokens
-  components/            UI-Bausteine (Layout = Seitengerüst mit unterer Navigation)
-  pages/                 Seiten (Karte, Quellen, 404)
+  main.tsx, App.tsx      Einstieg, Routen (Seiten lazy)
+  components/Layout.tsx  Gerüst: Karte (MapScreen) bleibt IMMER geladen; Seiten legen sich darüber.
+                         Untere Navigation: Karte · Fernwege · Touren · Mehr. Fokus-Modus blendet sie aus.
+  components/            Dialog, Sheet (aufziehbares Panel), PageFrame (Blatt-Rahmen), icons, ShellContext
   data/sources.ts        Quellen, Lizenzen, Attribution (Single Source of Truth)
-  lib/db.ts              Dexie-Datenbank (Tabelle settings)
-  lib/useSetting.ts      React-Hook für persistente Einstellungen
-  lib/photon.ts          Ortssuche (Photon), mit Cache
-  map/MapView.tsx        MapLibre-Karte, Controls, Grundkarte/Overlays synchron halten
-  map/MapContext.ts      useMap() für Kinder-Komponenten
-  map/layers.ts          Grundkarten + Overlays; syncLayers() ist idempotent
-  map/switzerland.ts     Vereinfachte CH-Grenze (swisstopo-Vorschlag)
-  map/useAppLayers.ts    App-Ebenen anlegen + nach Stilwechsel neu anlegen; styleReady()
-  lib/geo.ts             Distanzen, BBox, Höhen-Glättung (Hysterese 5 m)
-  lib/hikingTime.ts      Wanderzeit (siehe unten), kumuliert pro Punkt
-  lib/gpx.ts             GPX-Export/-Import (DOMParser)
-  lib/tours.ts           Touren in IndexedDB (Tabelle tours, inkl. Geometrie)
-  routing/types.ts       RoutingProvider-Schnittstelle (austauschbar), Leg, WaySegment
-  routing/index.ts       aktiver Provider + LRU-Cache + Luftlinien-Fallback
-  routing/brouter.ts     BRouter-Provider + Parser (WayTags → Belag/SAC)
-  routing/route.ts       Teilstücke zusammensetzen, Kennzahlen berechnen
-  routing/wayInfo.ts     OSM-Tags → Belagsklasse, SAC-Grad
-  planner/plannerState   Reducer mit Rückgängig/Wiederholen (Wegpunkte oder Track)
-  planner/useRoute.ts    lädt fehlende Teilstücke debounced nach
-  planner/Planner.tsx    Planungs-Panel, Speichern, GPX, Entwurf in settings
-  planner/RouteLayer.tsx Route + Marker auf der Karte, Tippen = Punkt / Linie = einfügen
-  planner/ElevationProfile.tsx  SVG-Höhenprofil mit Markierung auf der Karte
-  planner/stages.ts      Etappen: autoCuts (km/Hm/Zeit), moveCut, Übernachtungsvorschläge
-  planner/StagesPanel, PoiPanel, ExtrasLayer   UI + Karte für Etappen und POIs
-  lib/elevation.ts       Höhen aus Terrarium-Tiles (für OSM-Wege ohne Höhe)
-  trails/overpass.ts     Overpass-Client mit Ausweich-Instanz
-  trails/catalog.ts      Kuratierte Fernwege als Overpass-Suchen (keine festen OSM-IDs)
-  trails/search.ts       Suche nach Routenrelationen, Relationsabfrage (3 Ebenen)
-  trails/assemble.ts     Wege einer (Super-)Relation zu einer Linie verketten
-  trails/load.ts         Laden + Höhen + Cache (Tabelle trails, 30 Tage)
-  trails/pois.ts         POIs im Korridor (around-Polylinie, abschnittweise), Abstand/km
-  pages/TrailsPage.tsx   Fernweg-Katalog und -Suche → /?trail=<relation-id>
-  pages/ToursPage.tsx    Touren, Sammlungen, Teilen · pages/AccountPage.tsx Login/Sync
-  pages/SharedTourPage   /teilen/:id – öffentliche Tour ansehen und übernehmen
-  cloud/                 Supabase-Client, CloudProvider (Session + Auto-Sync), sync.ts
-  track/recorder.ts      Aufzeichnung als Reducer (Filter: Genauigkeit ≤ 35 m, Schritt ≥ 6 m)
-  track/useTracker.ts    watchPosition, Screen Wake Lock, Entwurf sichern/wiederherstellen
-  track/navigation.ts    Position auf Route, Restwerte, Abweichung (40 m + GPS-Ungenauigkeit)
-  track/Tracker.tsx      Leiste auf der Karte, Spur + Positionsmarker, Speichern als Activity
-  lib/activities.ts      Erledigte Touren (Tabelle activities, v5), pages/ActivitiesList.tsx
-  offline/tiles.ts       Kacheln eines Korridors um die Route berechnen
-  offline/store.ts       Download/Löschen (Cache Storage + Tabelle offlineRegions, v6),
-                         MapLibre-Protokoll `etappa-omt://` (erst Offline-Cache, dann Netz)
-  offline/OfflinePanel   Tab «Offline» im Planungs-Panel
-  stickers/motifs.ts     Sticker-Motive als Daten (Silhouette, Farbflächen, Linien)
-  stickers/Sticker.tsx   SVG mit Filtern (Strich, Aquarell, Die-Cut), Fortschritt als Füllhöhe
-  stickers/coverage.ts   Abdeckung eines Weges durch eigene Spuren (60 m, Rasterindex)
-  stickers/milestones.ts Meilensteine aus erledigten Touren · stickers/share.ts Bild-Export
-  pages/StickersPage.tsx Stickerheft · docs/STICKER.md Motive + Markierungsfarben
-  map/Highlights.tsx     Fotos/Notizen am Fadenkreuz (Tabelle highlights, v7)
+  data/trailCatalog.json Fernweg-Katalog (von scripts/build-trail-catalog.mjs, Action trail-catalog.yml)
+  theme.ts               Farben für Karte/SVG
+  map/MapScreen.tsx      Karte + Planner
+  map/MapView.tsx        MapLibre-Karte, Controls (Ebenen-Knopf als eigenes Control), Grundkarte/Overlays
+  map/topoStyle.ts       Eigener Kartenstil + gezeichnete Kartenzeichen (Gipfel, Hütten, Wasser …)
+  map/layers.ts          Grundkarten + Overlays (Relief multidirektional grün, Höhenlinien); syncLayers()
+  map/dem.ts             Höhenlinien (maplibre-contour), gemeinsame DEM-Quelle
+  map/SearchBox, LayerSwitcher, CoordinateReadout, SwissSuggestion, Highlights (Notiz/Foto am Ort)
+  planner/usePlan.ts     Zustand + Aktionen der Planung (Wegpunkte, Route, Etappen, POIs, Speichern, GPX)
+  planner/Planner.tsx    Bedienung der Karte, 4 Zustände: frei · Planen · Route · Aufzeichnen
+  planner/PlanPanels     StartActions, PointCard (Punkt antippen/Suchtreffer), PlanningBar
+  planner/RouteSheet     Fertige Route: Kennzahlen, Starten/Speichern; aufziehbar: Profil/Etappen/Unterwegs/Offline
+  planner/…              plannerState (Undo/Redo), useRoute, RouteLayer, ElevationProfile, RouteStats,
+                         stages, StagesPanel, PoiPanel, ExtrasLayer
+  routing/               Provider-Schnittstelle, BRouter, Cache, Route + Kennzahlen, OSM-Tags → Belag/SAC
+  trails/                Overpass, Suche, Relation zusammensetzen, Laden + Höhen + Cache, POIs im Korridor
+  track/                 Aufzeichnung (Reducer, useTracker, Wake Lock), Navigation, Tracker-Leiste
+  offline/               Korridor-Kacheln, Download/Löschen, Protokoll etappa-omt://, OfflinePanel
+  cloud/                 Supabase (optional), Abgleich
+  lib/                   db (Dexie), geo, elevation, hikingTime, format, gpx, tours, activities, …
+  pages/                 TrailsPage (Katalog mit Fotos), ToursPage (+ActivitiesList), MorePage (Konto,
+                         Offline-Karten, Quellen), SourcesPage, SharedTourPage, NotFoundPage
+scripts/build-trail-catalog.mjs   OSM + Wikidata + Commons + Wikipedia → trailCatalog.json
+public/fonts/          Kartenschrift IBM Plex Mono als MapLibre-Glyphen (erzeugt mit fontnik)
 ```
+
+### Zahlen müssen stimmen (Grundsatz)
+- Auf-/Abstieg heissen **«Bergauf/Bergab»** und werden in **Hm** angezeigt (Summe aller Anstiege),
+  nie als «m» – sonst liest man 9'844 m als Gipfelhöhe. Höhen über Meer: «m» / «m ü. M.».
+- Höhenmeter mit Hysterese **10 m** (`ELEVATION_THRESHOLD_M`), GPS-Spuren 15 m; auf 10 Hm gerundet.
+- Gehzeit = reine Gehzeit ohne Pausen; ab 24 h nur ganze Stunden, mit Hinweis auf Tage.
+- Katalogdaten nur aus Quellen (OSM/Wikidata/Wikipedia), nie geraten; Quelle wird angezeigt.
+- Fehlt eine Angabe (z. B. SAC), sagen wir das, statt «leicht» anzunehmen.
 
 ### Datenbank (Dexie, `wanderapp`)
 v1 settings · v2 tours (inkl. Geometrie + Etappenplan) · v3 trails, pois (Cache) ·
 v4 Index `dirty` auf tours, Tabelle collections · v5 activities · v6 offlineRegions · v7 highlights.
+(Die Spalte `catalogId` in trails existiert nicht mehr; ältere Einträge stören nicht.)
 Neue Felder nur additiv; neue Tabellen über eine neue `db.version(n)`.
 
 ### Konto und Cloud (Supabase, optional)
@@ -139,14 +120,14 @@ Neue Felder nur additiv; neue Tabellen über eine neue `db.version(n)`.
 ### Offline
 - Vektorkacheln laufen immer über das Protokoll `etappa-omt://{z}/{x}/{y}`: Schlüssel z/x/y im
   Cache `offline-omt`, weil die echte OpenFreeMap-URL eine wöchentlich wechselnde Version trägt.
-- Höhen-Kacheln (`dem-tiles`) und Schriften (`map-fonts`) cached der Service Worker (CacheFirst,
-  `vite.config.ts`); der Download schreibt direkt in dieselben Caches.
+- Höhen-Kacheln (`dem-tiles`), Kartenschriften (`map-fonts`, eigene Dateien) und Katalogfotos
+  (`trail-photos`) cached der Service Worker (CacheFirst, `vite.config.ts`).
 - Was heruntergeladen werden darf, steht in `DATENQUELLEN.md`. **swisstopo und Waymarked Trails
   nie vorab herunterladen.**
 
 ### Wanderzeit
-Aktuell die Faustregel der Schweizer Wanderwege (4 km/h, +15 min/100 Hm Aufstieg,
-+15 min/200 Hm Abstieg), segmentweise auf geglätteten Höhen. Die offizielle
+Aktuell die Leistungskilometer-Faustformel (4 km/h, +15 min/100 Hm bergauf,
++15 min/200 Hm bergab), segmentweise auf geglätteten Höhen. Die offizielle
 Polynom-Formel ist vorbereitet (`segmentMinutes` austauschen), aber deren Koeffizienten
 müssen zuerst aus einer Primärquelle (Schweizer Wanderwege / swisstopo) verifiziert werden.
 

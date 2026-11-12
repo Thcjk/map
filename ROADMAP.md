@@ -39,8 +39,7 @@ Status: `[x]` erledigt, `[ ]` offen. Nach jeder Änderung aktualisieren.
 
 ## Phase 3 – Fernwanderwege
 - [x] Suche/Laden von OSM-Routenrelationen (Overpass, gecacht), Höhen aus Terrain Tiles
-- [x] Kuratierte Startliste Europa (als Overpass-Suchen, ohne ungeprüfte IDs)
-- [ ] Kuratierte Liste mit echten Overpass-Antworten prüfen (aus der Entwicklungs-Sandbox nicht erreichbar)
+- [x] Katalog: bis 600 Fernwege in Europa aus OSM-Relationen mit eindeutigem Wikidata-Bezug, mit Fotos (ersetzt die kuratierte Liste)
 - [x] Etappenplaner (km / Hm / Gehzeit), verschiebbare Etappenenden (Karte + ±1 km), Etappenübersicht
 - [x] POIs im Korridor (500 m / 1 km / 2 km) mit Filter und Abstand, Übernachtungsvorschläge pro Etappe, «An Übernachtung ausrichten»
 
@@ -68,22 +67,29 @@ Status: `[x]` erledigt, `[ ]` offen. Nach jeder Änderung aktualisieren.
 - [x] navigator.storage.persist(); Routen, Etappen, Fernwege und POIs liegen in IndexedDB, App-Hülle im Service Worker
 - [ ] Mit echten OpenFreeMap-Kacheln prüfen (Sandbox: nur Höhen-Kacheln echt, Vektorkacheln nachgebildet)
 
-## Phase 7 – Sticker und Erinnerungen
-- [x] Markierungsfarben dokumentiert (docs/STICKER.md)
-- [ ] Mit «zu prüfen» markierte Farben gegen offizielle Quellen prüfen (Historical Way, TMB, Kungsleden, West Highland Way)
-- [x] SVG-Sticker für alle 11 kuratierten Fernwege, neutraler Sticker für andere geladene Wege, 5 Meilensteine
-- [x] Filter für Fineline-Strich, Aquarell und Die-Cut-Rand
-- [x] Freischalten nach Abdeckung (60 m Toleranz, ≥ 90 % = voll), einmalige Animation
-- [x] Teilen als Bild (1080 × 1350) mit Name, Datum, km
-- [x] Highlights: Foto und Notiz am Fadenkreuz, Marker auf der Karte (lokal)
-- [ ] Sticker für einzelne Etappen; Alpinweg weiss-blau-weiss
-- [ ] Highlights optional öffentlich teilen und erledigte Touren/Highlights in die Cloud (braucht Supabase-Projekt + Migration mit Storage)
+## Phase 7 – Erinnerungen
+- [x] Sticker auf Wunsch des Nutzers entfernt
+- [x] Notizen und Fotos an Orten (Punkt antippen oder während der Aufzeichnung)
+
+## Umbau nach Nutzer-Feedback (November 2026)
+- [x] Design näher an der Vorlage: Kartenblatt-Rahmen, Wortmarken-Titel, Mono-Beschriftung, Papierkorn,
+      grünes Relief (multidirektional), dunkle Höhenlinien, rote Pfade, Kartenschrift Plex Mono, Kartenzeichen
+- [x] Seitenstruktur: Karte · Fernwege · Touren · Mehr; Karte bleibt beim Seitenwechsel geladen
+- [x] Bedienung: Punkt antippen → «Hier starten» / «Hierhin»; Planen-Leiste mit Fertig; Route-Panel mit
+      Starten/Speichern; aufziehbare Details; Standort als Start; Rundtour; Menü für seltene Aktionen
+- [x] Geschwindigkeit: kein Neuzeichnen bei jeder Kartenbewegung, Entwurf verzögert speichern,
+      Pixeldichte begrenzt, Höhen parallel laden, Panel-Inhalt erst beim Öffnen
+- [x] Zahlen: «Bergauf/Bergab» in Hm mit Erklärung, höchster/tiefster Punkt, Gehzeit über 24 h ohne Minuten,
+      bilineare Höheninterpolation, deutsche Ortsnamen
+- [x] Fernweg-Katalog aus OSM + Wikidata + Wikipedia + Commons-Fotos (monatliche Action)
+- [ ] Katalog-Action erfolgreich durchlaufen lassen und Inhalte stichprobenartig prüfen
+- [ ] Kartenstil mit echten Vektorkacheln auf dem Handy prüfen
 
 ## Phase 8 – Feinschliff
 - [x] Performance: Seiten werden einzeln nachgeladen (Karte/MapLibre nur auf der Kartenseite), Höhenprofil zeichnet höchstens einen Punkt pro Pixel, POI-Liste begrenzt, Routing/Overpass gecacht
 - [x] Fehlerzustände: Offline-Balken, Karte nicht erreichbar, Routing down (Luftlinie + «Erneut»), Suche/Overpass down, kein GPS / keine Erlaubnis, Absturz-Schutz (ErrorBoundary)
 - [x] Barrierefreiheit: Beschriftungen (aria), Tastatur (Escape schliesst Dialoge, Ctrl+Z/Y, Pfeiltasten in der Suche), sichtbarer Fokus, Touch-Flächen ≥ 44 px, reduzierte Bewegung
-- [x] Unit-Tests für Routing, Etappen, Wanderzeit, GPX, Sync, Aufzeichnung, Navigation, Offline, Sticker (75 Tests)
+- [x] Unit-Tests für Routing, Etappen, Wanderzeit, GPX, Sync, Aufzeichnung, Navigation, Offline
 - [x] Playwright-Smoke-Test Planen > Speichern > Export (`npm run test:e2e`, läuft auch in der Deploy-Action)
 - [ ] Mit Screenreader (VoiceOver/TalkBack) und auf einem echten, älteren Handy mit einer Route über 500 km prüfen
 - [ ] Fokus beim Öffnen von Dialogen in den Dialog setzen und dort halten
