@@ -185,11 +185,32 @@ function inEurope(e) {
   return !!coord && coord.latitude > 34 && coord.latitude < 72 && coord.longitude > -25 && coord.longitude < 45
 }
 
+/*
+ * Ist das Wikidata-Objekt wirklich ein Weg? In OSM ist manchmal ein Begriff verknüpft
+ * (z. B. «Transhumanz» statt eines konkreten Weges). Ohne fest eingetragene Klassen:
+ * Objekte, die selbst auf eine OSM-Relation zeigen (P402), sind sicher Wege. Ihre Klassen
+ * (P31) gelten als «Weg-Klassen»; andere Objekte müssen eine davon tragen.
+ */
+const routeClassCount = new Map()
+for (const [qid] of groups) {
+  const e = entities.get(qid)
+  if (!e || claimValues(e, 'P402').length === 0) continue
+  for (const c of claimValues(e, 'P31')) routeClassCount.set(c.id, (routeClassCount.get(c.id) ?? 0) + 1)
+}
+const ROUTE_CLASSES = new Set([...routeClassCount].filter(([, n]) => n >= 3).map(([id]) => id))
+console.log('Weg-Klassen aus den Daten:', ROUTE_CLASSES.size)
+const isRoute = (e) => claimValues(e, 'P402').length > 0 || claimValues(e, 'P31').some((c) => ROUTE_CLASSES.has(c.id))
+
 const candidates = []
 let ambiguous = 0
+let notRoute = 0
 for (const [qid, rels] of groups) {
   const e = entities.get(qid)
   if (!e || !inEurope(e)) continue
+  if (!isRoute(e)) {
+    notRoute++
+    continue
+  }
   // Eindeutige Haupt-Relation bestimmen
   const p402 = new Set(claimValues(e, 'P402').map(String))
   let root = rels.find((r) => p402.has(String(r.id)))
@@ -223,7 +244,7 @@ for (const [qid, rels] of groups) {
     links,
   })
 }
-console.log('Mehrdeutig (übersprungen):', ambiguous, '· Kandidaten:', candidates.length)
+console.log('Mehrdeutig (übersprungen):', ambiguous, '· kein Weg:', notRoute, '· Kandidaten:', candidates.length)
 
 candidates.sort((a, b) => b.links - a.links || (b.imageFile ? 1 : 0) - (a.imageFile ? 1 : 0))
 const selected = candidates.filter((c) => c.name).slice(0, MAX_TRAILS)
