@@ -10,11 +10,13 @@ import { writeFile } from 'node:fs/promises'
 const UA = 'trail-catalog-builder/1.0 (GitHub Actions; hiking app catalog)'
 const OUT = new URL('../src/data/trailCatalog.json', import.meta.url)
 const MAX_TRAILS = 600
+// Reihenfolge nach Erfahrung aus den Läufen: der erste antwortete zuverlässig in unter einer Minute.
 const OVERPASS = [
-  'https://overpass-api.de/api/interpreter',
-  'https://overpass.private.coffee/api/interpreter',
   'https://maps.mail.ru/osm/tools/overpass/api/interpreter',
+  'https://overpass.private.coffee/api/interpreter',
+  'https://overpass-api.de/api/interpreter',
 ]
+const OVERPASS_TIMEOUT_MS = 120_000
 const FREE_LICENSE = /^(cc0|cc[ -]by(-sa)?[ -]\d|public domain|pd\b|pdm)/i
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms))
@@ -48,7 +50,7 @@ async function overpass(query) {
   for (let round = 0; round < 1; round++) {
     for (const url of OVERPASS) {
       try {
-        const json = await getJson(url, { method: 'POST', body: new URLSearchParams({ data: query }) }, 1)
+        const json = await getJson(url, { method: 'POST', body: new URLSearchParams({ data: query }), signal: AbortSignal.timeout(OVERPASS_TIMEOUT_MS) }, 1)
         if (json.remark) console.log('Overpass-Hinweis:', json.remark)
         return json.elements
       } catch (e) {
@@ -91,7 +93,7 @@ const byId = new Map()
 const failed = []
 for (const q of QUERIES) {
   try {
-    const found = await overpass(`[out:json][timeout:180];relation${q.filter}["wikidata"]${q.bbox ? `(${q.bbox})` : ''};out tags;`)
+    const found = await overpass(`[out:json][timeout:110];relation${q.filter}["wikidata"]${q.bbox ? `(${q.bbox})` : ''};out tags;`)
     console.log(`OSM ${q.label}:`, found.length)
     for (const r of found) byId.set(r.id, r)
   } catch (e) {
