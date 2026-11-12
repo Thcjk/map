@@ -1,1 +1,4695 @@
-{ "generatedAt": null, "trails": [] }
+{
+ "generatedAt": "2026-11-12",
+ "trails": [
+  {
+   "id": 153968,
+   "wikidata": "Q41150",
+   "name": "Jakobsweg",
+   "ref": null,
+   "network": "iwn",
+   "from": null,
+   "to": null,
+   "countries": [
+    "Spanien",
+    "Portugal",
+    "Frankreich",
+    "Italien",
+    "Luxemburg",
+    "Belgien",
+    "Deutschland",
+    "Schweiz",
+    "Österreich",
+    "Polen",
+    "Tschechien",
+    "Vereinigtes Königreich",
+    "Niederlande",
+    "Slowenien",
+    "Ungarn"
+   ],
+   "lengthKm": null,
+   "lengthSource": null,
+   "text": "Als Jakobsweg (spanisch Camino de Santiago, galicisch: Camiño de Santiago) wird eine Anzahl von Pilgerwegen durch Europa bezeichnet, die alle das angebliche Grab des Apostels Jakobus in Santiago de Compostela in Galicien (Spanien) zum Ziel haben.",
+   "textSource": "Wikipedia",
+   "wikipedia": "https://de.wikipedia.org/wiki/Jakobsweg",
+   "image": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/86/Plake_tchimin_Sint-Dj%C3%A5ke.JPG/960px-Plake_tchimin_Sint-Dj%C3%A5ke.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 960,
+    "height": 1448,
+    "author": "Lucyin",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Plake_tchimin_Sint-Dj%C3%A5ke.JPG"
+   },
+   "links": 71
+  },
+  {
+   "id": 13958520,
+   "wikidata": "Q4657754",
+   "name": "Transhumanz",
+   "ref": "CR-Vallès",
+   "network": "rwn",
+   "from": "Sant Feliu Sasserra",
+   "to": "Matadepera o Vacarisses",
+   "countries": [
+    "Österreich",
+    "Italien",
+    "Griechenland",
+    "Spanien",
+    "Albanien",
+    "Andorra",
+    "Kroatien",
+    "Frankreich",
+    "Luxemburg",
+    "Rumänien"
+   ],
+   "lengthKm": null,
+   "lengthSource": null,
+   "text": "Transhumanz oder Wanderweidewirtschaft bezeichnet eine Form der Viehhaltung, bei dem Viehherden in regelmäßig wiederkehrenden, meist jahreszeitlich bedingten Wanderungen zwischen zwei oder mehreren räumlich getrennten, saisonal nutzbaren, zumeist nicht eingehegten Weidegebieten wechseln.",
+   "textSource": "Wikipedia",
+   "wikipedia": "https://de.wikipedia.org/wiki/Transhumanz",
+   "image": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/25/Transumanza_nel_Parc_National_des_Ecrins.jpg/960px-Transumanza_nel_Parc_National_des_Ecrins.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 960,
+    "height": 638,
+    "author": "CamDib",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Transumanza_nel_Parc_National_des_Ecrins.jpg"
+   },
+   "links": 45
+  },
+  {
+   "id": 241329,
+   "wikidata": "Q1754499",
+   "name": "Vía de la Plata",
+   "ref": "VDLP",
+   "network": "iwn",
+   "from": "Sevilla",
+   "to": "Astorga",
+   "countries": [
+    "Spanien"
+   ],
+   "lengthKm": 700,
+   "lengthSource": "OpenStreetMap",
+   "text": "Die Vía de la Plata (auch Camino de la Plata) ist eine historische Straßenverbindung zwischen Sevilla und Astorga auf der Iberischen Halbinsel. Sie zieht sich in Nord-Süd-Richtung durch die ehemalige römische Provinz Lusitania in Hispania.",
+   "textSource": "Wikipedia",
+   "wikipedia": "https://de.wikipedia.org/wiki/V%C3%ADa_de_la_Plata",
+   "image": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c5/MonolitoViaPlataCarreteraPe%C3%B1ausendeZamora.jpg/960px-MonolitoViaPlataCarreteraPe%C3%B1ausendeZamora.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 960,
+    "height": 1280,
+    "author": "Roinpa",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:MonolitoViaPlataCarreteraPe%C3%B1ausendeZamora.jpg"
+   },
+   "links": 23
+  },
+  {
+   "id": 3312655,
+   "wikidata": "Q685132",
+   "name": "Via Claudia Augusta",
+   "ref": "VIA",
+   "network": "iwn",
+   "from": null,
+   "to": null,
+   "countries": [
+    "Österreich",
+    "Italien",
+    "Deutschland"
+   ],
+   "lengthKm": null,
+   "lengthSource": null,
+   "text": "Die Via Claudia Augusta war eine der wichtigsten Römerstraßen, die Norditalien mit dem süddeutschen Raum verbanden. Auf ihr konnten schon zur Zeit des römischen Kaisers Claudius die Alpen mit Fuhrwerken überquert werden.",
+   "textSource": "Wikipedia",
+   "wikipedia": "https://de.wikipedia.org/wiki/Via_Claudia_Augusta",
+   "image": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/8/88/Percorso_della_via_Claudia_Augusta.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "width": 960,
+    "height": 893,
+    "author": "Verdiana Pasqualini",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Percorso_della_via_Claudia_Augusta.jpg"
+   },
+   "links": 23
+  },
+  {
+   "id": 8218200,
+   "wikidata": "Q836028",
+   "name": "Via Regia",
+   "ref": null,
+   "network": "iwn",
+   "from": null,
+   "to": null,
+   "countries": [
+    "Deutschland"
+   ],
+   "lengthKm": 4500,
+   "lengthSource": "Wikidata",
+   "text": "Die Via Regia (lat. für „Königliche Straße“ oder „Königlicher Weg“) oder Hohe Straße war im Mittelalter und der frühen Neuzeit ein Sammelbegriff für unterschiedliche Straßen, die unter dem Schutz eines Herrschers (Könige, Kaiser) standen.",
+   "textSource": "Wikipedia",
+   "wikipedia": "https://de.wikipedia.org/wiki/Via_Regia",
+   "image": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f8/Via_Imperii_und_Via_Regia.png/960px-Via_Imperii_und_Via_Regia.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 960,
+    "height": 700,
+    "author": "Maximilian Dörrbecker ( Chumwa )",
+    "license": "CC BY-SA 2.5",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.5",
+    "page": "https://commons.wikimedia.org/wiki/File:Via_Imperii_und_Via_Regia.png"
+   },
+   "links": 21
+  },
+  {
+   "id": 545421,
+   "wikidata": "Q11708276",
+   "name": "Beskiden-Hauptwanderweg",
+   "ref": "GSB",
+   "network": "nwn",
+   "from": "Ustroń",
+   "to": "Wołosate",
+   "countries": [
+    "Polen"
+   ],
+   "lengthKm": 496,
+   "lengthSource": "Wikidata",
+   "text": "Der Kazimierz-Sosnowski-Beskidenhauptwanderweg (pol. Główny Szlak Beskidzki imienia Kazimierza Sosnowskiego, GSB) ist ein rot markierter Fernwanderweg, der aus Ustroń in den Schlesischen Beskiden nach Wołosate in den Bieszczady führt.",
+   "textSource": "Wikipedia",
+   "wikipedia": "https://de.wikipedia.org/wiki/Beskiden-Hauptwanderweg",
+   "image": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ca/CzerwonySzlakTurystyczny.jpg/960px-CzerwonySzlakTurystyczny.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 960,
+    "height": 720,
+    "author": "Michal mwr",
+    "license": "Public domain",
+    "licenseUrl": null,
+    "page": "https://commons.wikimedia.org/wiki/File:CzerwonySzlakTurystyczny.jpg"
+   },
+   "links": 20
+  },
+  {
+   "id": 3020505,
+   "wikidata": "Q60088",
+   "name": "Országos Kéktúra",
+   "ref": "OKT",
+   "network": "nwn",
+   "from": "Írott-kő",
+   "to": "Hollóháza",
+   "countries": [
+    "Ungarn"
+   ],
+   "lengthKm": 1168,
+   "lengthSource": "Wikidata",
+   "text": "Der Országos Kéktúra (deutsch Blaue Landestour), abgekürzt OKT, ist ein ungarischer Fernwanderweg.",
+   "textSource": "Wikipedia",
+   "wikipedia": "https://de.wikipedia.org/wiki/Orsz%C3%A1gos_K%C3%A9kt%C3%BAra",
+   "image": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/2/2f/Okt_trail_marking.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "width": 960,
+    "height": 720,
+    "author": "Horvabe",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+    "page": "https://commons.wikimedia.org/wiki/File:Okt_trail_marking.JPG"
+   },
+   "links": 17
+  },
+  {
+   "id": 2163573,
+   "wikidata": "Q1029584",
+   "name": "Camino Francés",
+   "ref": null,
+   "network": "iwn",
+   "from": "Saint-Jean-pied-de-port, France",
+   "to": "Santiago de Compostela, Espana",
+   "countries": [
+    "Spanien"
+   ],
+   "lengthKm": 750,
+   "lengthSource": "OpenStreetMap",
+   "text": "Der Camino Francés (deutsch: „Französischer Weg“) ist der klassische Jakobsweg, der auf einer Strecke von fast 800 Kilometern quer durch den Norden Spaniens von den Pyrenäen nach Santiago de Compostela führt. Im Jahr 1993 wurde der Weg und die ihn begleitenden Kirchen- und Hospitalbauten als UNESCO-Welterbe eingetragen.",
+   "textSource": "Wikipedia",
+   "wikipedia": "https://de.wikipedia.org/wiki/Camino_Franc%C3%A9s",
+   "image": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6e/CatedraldeLe%C3%B3niluminada.JPG/960px-CatedraldeLe%C3%B3niluminada.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 960,
+    "height": 720,
+    "author": "Frobles",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:CatedraldeLe%C3%B3niluminada.JPG"
+   },
+   "links": 16
+  },
+  {
+   "id": 12484370,
+   "wikidata": "Q262374",
+   "name": "GR 20",
+   "ref": "GR 20",
+   "network": "nwn",
+   "from": null,
+   "to": null,
+   "countries": [
+    "Frankreich"
+   ],
+   "lengthKm": 179,
+   "lengthSource": "Wikidata",
+   "text": "Der GR 20 (franz.: Grande Randonnée 20) ist ein GR-Fernwanderweg auf der französischen Insel Korsika (Regionaler Naturpark Korsika).",
+   "textSource": "Wikipedia",
+   "wikipedia": "https://de.wikipedia.org/wiki/GR_20",
+   "image": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/46/GR20_Calenzana.jpg/960px-GR20_Calenzana.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 960,
+    "height": 720,
+    "author": "Rémih",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:GR20_Calenzana.jpg"
+   },
+   "links": 14
+  },
+  {
+   "id": 1175707,
+   "wikidata": "Q606415",
+   "name": "Europäischer Fernwanderweg E3",
+   "ref": "E3",
+   "network": "iwn",
+   "from": null,
+   "to": null,
+   "countries": [
+    "Belgien",
+    "Frankreich",
+    "Spanien",
+    "Deutschland",
+    "Luxemburg",
+    "Tschechien",
+    "Polen",
+    "Slowakei",
+    "Ungarn",
+    "Rumänien",
+    "Bulgarien"
+   ],
+   "lengthKm": 8880,
+   "lengthSource": "Wikidata",
+   "text": "Der Europäische Fernwanderweg E3 ist Teil des europäischen Fernwanderwegnetzes und soll von der Iberischen Halbinsel zum Schwarzen Meer führen.",
+   "textSource": "Wikipedia",
+   "wikipedia": "https://de.wikipedia.org/wiki/Europ%C3%A4ischer_Fernwanderweg_E3",
+   "image": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ef/E3_European_long_distance_path_%28M%C3%BCnzenberg%29_01.JPG/960px-E3_European_long_distance_path_%28M%C3%BCnzenberg%29_01.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 960,
+    "height": 720,
+    "author": "Cherubino",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:E3_European_long_distance_path_(M%C3%BCnzenberg)_01.JPG"
+   },
+   "links": 13
+  },
+  {
+   "id": 9678362,
+   "wikidata": "Q24777",
+   "name": "Tour du Mont-Blanc",
+   "ref": "TMB-IP",
+   "network": "rwn",
+   "from": null,
+   "to": null,
+   "countries": [
+    "Schweiz",
+    "Frankreich",
+    "Italien"
+   ],
+   "lengthKm": 170,
+   "lengthSource": "Wikidata",
+   "text": "Die Tour du Mont-Blanc [tuʁ dy mɔ̃ blɑ̃] (abgekürzt TMB) ist ein Fernwanderweg der Alpen.",
+   "textSource": "Wikipedia",
+   "wikipedia": "https://de.wikipedia.org/wiki/Tour_du_Mont-Blanc",
+   "image": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6b/GR5_-_TMB_au_nord_du_col_du_Bonhomme.jpg/960px-GR5_-_TMB_au_nord_du_col_du_Bonhomme.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 960,
+    "height": 720,
+    "author": "Cassican",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:GR5_-_TMB_au_nord_du_col_du_Bonhomme.jpg"
+   },
+   "links": 13
+  },
+  {
+   "id": 138227,
+   "wikidata": "Q996686",
+   "name": "Via Podiensis",
+   "ref": null,
+   "network": "iwn",
+   "from": "Le Puy-en-Velay",
+   "to": "Roncesvalles",
+   "countries": [
+    "Frankreich"
+   ],
+   "lengthKm": null,
+   "lengthSource": null,
+   "text": "Die Via Podiensis (lateinisch via = Weg, podium = Le Puy (dt. ‚Bergkuppe‘)) ist einer der vier historischen Jakobswege in Frankreich.",
+   "textSource": "Wikipedia",
+   "wikipedia": "https://de.wikipedia.org/wiki/Via_Podiensis",
+   "image": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c3/Caminos_Santiago_actuales_FR_-_03_Camino_de_Le_Puy.svg/960px-Caminos_Santiago_actuales_FR_-_03_Camino_de_Le_Puy.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 960,
+    "height": 822,
+    "author": "Paulusburg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Caminos_Santiago_actuales_FR_-_03_Camino_de_Le_Puy.svg"
+   },
+   "links": 12
+  },
+  {
+   "id": 285633,
+   "wikidata": "Q460455",
+   "name": "Via Alpina",
+   "ref": null,
+   "network": "iwn",
+   "from": null,
+   "to": null,
+   "countries": [
+    "Italien",
+    "Slowenien",
+    "Österreich",
+    "Deutschland",
+    "Liechtenstein",
+    "Schweiz",
+    "Frankreich",
+    "Monaco"
+   ],
+   "lengthKm": null,
+   "lengthSource": null,
+   "text": "Die Via Alpina ist ein grenzüberschreitender Weitwanderweg, der alle acht Alpenstaaten verbindet, neben der Schweiz so Liechtenstein, Österreich, Slowenien, Italien, Monaco, Frankreich und Deutschland.",
+   "textSource": "Wikipedia",
+   "wikipedia": "https://de.wikipedia.org/wiki/Via_Alpina",
+   "image": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e9/Borne_Via_Alpina_2_TMB_%40_Lac_de_Combal.jpg/960px-Borne_Via_Alpina_2_TMB_%40_Lac_de_Combal.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 960,
+    "height": 720,
+    "author": "Rémih",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Borne_Via_Alpina_2_TMB_@_Lac_de_Combal.jpg"
+   },
+   "links": 12
+  },
+  {
+   "id": 1254604,
+   "wikidata": "Q1377728",
+   "name": "Europäischer Fernwanderweg E9",
+   "ref": "E9",
+   "network": "iwn",
+   "from": null,
+   "to": null,
+   "countries": [
+    "Belgien",
+    "Niederlande",
+    "Frankreich",
+    "Spanien",
+    "Portugal",
+    "Litauen"
+   ],
+   "lengthKm": 9890,
+   "lengthSource": "Wikidata",
+   "text": "Der Europäische Fernwanderweg E9 oder Internationaler Küstenweg Atlantik–Ostsee ist einer der zwölf Fernwanderwege, die von der Europäischen Wandervereinigung (EWV) initiiert wurden. Der Weg hat eine Länge von bisher rund 5.000 km und führt von Portugal entlang der Küsten des Atlantiks, der Nordsee und der Ostsee bis nach Estland.",
+   "textSource": "Wikipedia",
+   "wikipedia": "https://de.wikipedia.org/wiki/Europ%C3%A4ischer_Fernwanderweg_E9",
+   "image": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1c/Ostseek%C3%BCsten_Radweg.jpg/960px-Ostseek%C3%BCsten_Radweg.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 960,
+    "height": 720,
+    "author": "Lukas Beck",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Ostseek%C3%BCsten_Radweg.jpg"
+   },
+   "links": 12
+  },
+  {
+   "id": 371740,
+   "wikidata": "Q151658",
+   "name": "Europäischer Fernwanderweg E4",
+   "ref": "E4",
+   "network": "iwn",
+   "from": null,
+   "to": null,
+   "countries": [
+    "Spanien",
+    "Frankreich",
+    "Österreich",
+    "Deutschland",
+    "Ungarn",
+    "Rumänien",
+    "Serbien",
+    "Bulgarien",
+    "Griechenland",
+    "Zypern",
+    "Schweiz",
+    "Portugal"
+   ],
+   "lengthKm": 12090,
+   "lengthSource": "Wikidata",
+   "text": "Der Europäische Fernwanderweg E4 ist Teil des europäischen Wanderwegnetzes und soll den südwestlichsten Punkt des europäischen Kontinents (Kap St. Vinzenz in Portugal) in einem großen Bogen durch das westliche Mitteleuropa mit der im Südosten liegenden Insel Zypern verbinden.",
+   "textSource": "Wikipedia",
+   "wikipedia": "https://de.wikipedia.org/wiki/Europ%C3%A4ischer_Fernwanderweg_E4",
+   "image": null,
+   "links": 12
+  },
+  {
+   "id": 371743,
+   "wikidata": "Q151653",
+   "name": "Europäischer Fernwanderweg E1",
+   "ref": "E1",
+   "network": "iwn",
+   "from": "Nordkapp",
+   "to": "Sicilia",
+   "countries": [
+    "Norwegen",
+    "Schweden",
+    "Dänemark",
+    "Deutschland",
+    "Schweiz",
+    "Italien"
+   ],
+   "lengthKm": 7114,
+   "lengthSource": "Wikidata",
+   "text": "Der Europäische Fernwanderweg E1 ist Teil des europäischen Wanderwegnetzes und verläuft vom Nordkap derzeit durchgehend bis ins Dorf Fortino im Süden Italiens. Ein weiterer, noch nicht mit dem Hauptweg verbundener Streckenabschnitt besteht auf Sizilien und führt zum südlichen Ende des E1, dem Capo Passero.",
+   "textSource": "Wikipedia",
+   "wikipedia": "https://de.wikipedia.org/wiki/Europ%C3%A4ischer_Fernwanderweg_E1",
+   "image": null,
+   "links": 12
+  },
+  {
+   "id": 19001007,
+   "wikidata": "Q829469",
+   "name": "Camino de la Costa",
+   "ref": "CdN",
+   "network": "iwn",
+   "from": null,
+   "to": null,
+   "countries": [
+    "Spanien"
+   ],
+   "lengthKm": null,
+   "lengthSource": null,
+   "text": "Der Camino del Norte (deutsch Küstenweg) ist einer der Jakobswege nach Santiago de Compostela. Vereinzelt wird die Route Camino de la Costa genannt, sollte aber dabei nicht mit dem „Camino Portuguese da Costa“ verwechselt werden.",
+   "textSource": "Wikipedia",
+   "wikipedia": "https://de.wikipedia.org/wiki/Camino_del_Norte",
+   "image": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a6/Camino_del_Norte_entre_Cerdigo_e_Islares.jpg/960px-Camino_del_Norte_entre_Cerdigo_e_Islares.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 960,
+    "height": 720,
+    "author": "José Antonio Gil Martínez",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Camino_del_Norte_entre_Cerdigo_e_Islares.jpg"
+   },
+   "links": 11
+  },
+  {
+   "id": 1102966,
+   "wikidata": "Q5795426",
+   "name": "Camino de Santiago de los Ingleses",
+   "ref": null,
+   "network": "iwn",
+   "from": "Ferrol / A Coruña",
+   "to": "Santiago de Compostela",
+   "countries": [
+    "Spanien"
+   ],
+   "lengthKm": 112,
+   "lengthSource": "OpenStreetMap",
+   "text": "Der Camino Ingles ist eine Route des Camino de Santiago (Jakobsweg). In der modernen Ära wurde der Englische Weg als eine wesentlich kürzere Alternative zum klassischen Französischen Weg wiederbelebt.",
+   "textSource": "Wikipedia",
+   "wikipedia": "https://de.wikipedia.org/wiki/Camino_Ingles",
+   "image": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5d/Coru%C3%B1a%2C_igrexa_de_Santiago_03-15c.JPG/960px-Coru%C3%B1a%2C_igrexa_de_Santiago_03-15c.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 960,
+    "height": 470,
+    "author": "P.Lameiro",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Coru%C3%B1a,_igrexa_de_Santiago_03-15c.JPG"
+   },
+   "links": 10
+  },
+  {
+   "id": 1175728,
+   "wikidata": "Q1377713",
+   "name": "Europäischer Fernwanderweg E8",
+   "ref": "E8",
+   "network": "iwn",
+   "from": null,
+   "to": null,
+   "countries": [
+    "Niederlande",
+    "Frankreich",
+    "Irland",
+    "Vereinigtes Königreich",
+    "Bulgarien",
+    "Rumänien",
+    "Ukraine",
+    "Polen",
+    "Österreich",
+    "Slowakei",
+    "Deutschland"
+   ],
+   "lengthKm": 6140,
+   "lengthSource": "Wikidata",
+   "text": "Der Europäische Fernwanderweg E8 ist Teil der Europäischen Fernwanderwege und verläuft derzeit von Dursey Head in Irland bis zum (geschlossenen) Beskidenpass an der polnisch-ukrainischen Grenze. In der Ukraine ist er noch nicht verwirklicht, sein Verlauf in Rumänien ist seit Herbst 2017 festgelegt.",
+   "textSource": "Wikipedia",
+   "wikipedia": "https://de.wikipedia.org/wiki/Europ%C3%A4ischer_Fernwanderweg_E8",
+   "image": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/26/N%C3%ADzk%C3%A9_Tatry%2C_sedlo_Hom%C3%B4%C4%BEka%2C_rozcestn%C3%ADk_01.jpg/960px-N%C3%ADzk%C3%A9_Tatry%2C_sedlo_Hom%C3%B4%C4%BEka%2C_rozcestn%C3%ADk_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 960,
+    "height": 720,
+    "author": "Daniel Baránek",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "page": "https://commons.wikimedia.org/wiki/File:N%C3%ADzk%C3%A9_Tatry,_sedlo_Hom%C3%B4%C4%BEka,_rozcestn%C3%ADk_01.jpg"
+   },
+   "links": 10
+  },
+  {
+   "id": 2437984,
+   "wikidata": "Q1042834",
+   "name": "Nordkalottleden",
+   "ref": null,
+   "network": "iwn",
+   "from": null,
+   "to": null,
+   "countries": [
+    "Schweden",
+    "Finnland",
+    "Norwegen"
+   ],
+   "lengthKm": 800,
+   "lengthSource": "Wikidata",
+   "text": "Nordkalottleden (Schwedisch; Norwegisch Nordkalottruta; Finnisch Kalottireitti) ist ein Wanderweg durch den äußersten Norden Skandinaviens. Er führt durch die Länder Finnland (70 Kilometer), Schweden (350 Kilometer) und Norwegen (380 Kilometer).",
+   "textSource": "Wikipedia",
+   "wikipedia": "https://de.wikipedia.org/wiki/Nordkalottleden",
+   "image": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5a/Kalottireitti_Meekonj%C3%A4rvell%C3%A4.JPG/960px-Kalottireitti_Meekonj%C3%A4rvell%C3%A4.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 960,
+    "height": 720,
+    "author": "MattiPaavola",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Kalottireitti_Meekonj%C3%A4rvell%C3%A4.JPG"
+   },
+   "links": 10
+  },
+  {
+   "id": 187781,
+   "wikidata": "Q380251",
+   "name": "Via Turonensis",
+   "ref": null,
+   "network": "iwn",
+   "from": null,
+   "to": null,
+   "countries": [
+    "Frankreich"
+   ],
+   "lengthKm": 915,
+   "lengthSource": "Wikidata",
+   "text": "Die Via Turonensis ist der nördlichste Jakobsweg durch Frankreich. Ihren Namen hat sie wegen ihres Verlaufs durch die Stadt Tours.",
+   "textSource": "Wikipedia",
+   "wikipedia": "https://de.wikipedia.org/wiki/Via_Turonensis",
+   "image": null,
+   "links": 10
+  },
+  {
+   "id": 300393,
+   "wikidata": "Q151915",
+   "name": "Europäischer Fernwanderweg E5",
+   "ref": "E5",
+   "network": "iwn",
+   "from": null,
+   "to": null,
+   "countries": [
+    "Frankreich",
+    "Italien",
+    "Österreich",
+    "Schweiz",
+    "Deutschland"
+   ],
+   "lengthKm": 4120,
+   "lengthSource": "Wikidata",
+   "text": "Der Europäische Fernwanderweg E5 ist ein Europäischer Fernwanderweg, der von der Atlantikküste Frankreichs in der Bretagne über die Alpen nach Verona in Italien führt. Insgesamt ist der Fernwanderweg 4120 Kilometer lang.",
+   "textSource": "Wikipedia",
+   "wikipedia": "https://de.wikipedia.org/wiki/Europ%C3%A4ischer_Fernwanderweg_E5",
+   "image": null,
+   "links": 10
+  },
+  {
+   "id": 3073965,
+   "wikidata": "Q2914372",
+   "name": "Europäischer Fernwanderweg E7",
+   "ref": "E7",
+   "network": "iwn",
+   "from": null,
+   "to": null,
+   "countries": [
+    "Frankreich",
+    "Spanien",
+    "Italien",
+    "Portugal",
+    "Slowenien",
+    "Ungarn"
+   ],
+   "lengthKm": 6460,
+   "lengthSource": "Wikidata",
+   "text": "Der Europäische Fernwanderweg E7 ist ein Fernwanderweg, der in Ost-West-Richtung von den Kanarischen Inseln bis nach Rumänien verläuft.",
+   "textSource": "Wikipedia",
+   "wikipedia": "https://de.wikipedia.org/wiki/Europ%C3%A4ischer_Fernwanderweg_E7",
+   "image": null,
+   "links": 10
+  },
+  {
+   "id": 165997,
+   "wikidata": "Q2252086",
+   "name": "Europäischer Fernwanderweg E10",
+   "ref": "E10",
+   "network": "iwn",
+   "from": null,
+   "to": null,
+   "countries": [
+    "Frankreich",
+    "Italien",
+    "Österreich",
+    "Tschechien",
+    "Finnland",
+    "Deutschland",
+    "Spanien"
+   ],
+   "lengthKm": 2880,
+   "lengthSource": "Wikidata",
+   "text": "Der Europäische Fernwanderweg E10 ist ein Teil des europäischen Wanderwegnetzes und soll einmal vom Norden Finnlands bis zum Süden Spaniens führen. In vielen Ländern sind Ausbau und Markierung bislang aber nur bruchstückhaft vorhanden oder in Planung.",
+   "textSource": "Wikipedia",
+   "wikipedia": "https://de.wikipedia.org/wiki/Europ%C3%A4ischer_Fernwanderweg_E10",
+   "image": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e8/Rozcestn%C3%ADk_u_podchodu.jpg/960px-Rozcestn%C3%ADk_u_podchodu.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 960,
+    "height": 720,
+    "author": "Zákupák",
+    "license": "Public domain",
+    "licenseUrl": null,
+    "page": "https://commons.wikimedia.org/wiki/File:Rozcestn%C3%ADk_u_podchodu.jpg"
+   },
+   "links": 8
+  },
+  {
+   "id": 1254350,
+   "wikidata": "Q1377711",
+   "name": "Europäischer Fernwanderweg E6",
+   "ref": "E6",
+   "network": "iwn",
+   "from": null,
+   "to": null,
+   "countries": [
+    "Frankreich",
+    "Österreich",
+    "Schweden",
+    "Deutschland",
+    "Slowenien",
+    "Dänemark",
+    "Finnland",
+    "Griechenland"
+   ],
+   "lengthKm": 5200,
+   "lengthSource": "Wikidata",
+   "text": "Der Europäische Fernwanderweg E6 ist Teil des europäischen Wanderwegnetzes und führt von Kilpisjärvi im Nordwesten von Finnland bis zu den Dardanellen in der Türkei. Die Gesamtlänge beträgt 6030 Kilometer.",
+   "textSource": "Wikipedia",
+   "wikipedia": "https://de.wikipedia.org/wiki/Europ%C3%A4ischer_Fernwanderweg_E6",
+   "image": null,
+   "links": 8
+  },
+  {
+   "id": 6443086,
+   "wikidata": "Q648576",
+   "name": "Slovenska planinska pot",
+   "ref": "1",
+   "network": "nwn",
+   "from": null,
+   "to": null,
+   "countries": [
+    "Slowenien"
+   ],
+   "lengthKm": null,
+   "lengthSource": null,
+   "text": "",
+   "textSource": null,
+   "wikipedia": "https://en.wikipedia.org/wiki/Slovenian_Mountain_Hiking_Trail",
+   "image": null,
+   "links": 8
+  },
+  {
+   "id": 389715,
+   "wikidata": "Q1483227",
+   "name": "Via Tolosana",
+   "ref": null,
+   "network": "iwn",
+   "from": null,
+   "to": null,
+   "countries": [
+    "Frankreich"
+   ],
+   "lengthKm": null,
+   "lengthSource": null,
+   "text": "Via Tolosana (französisch voie toulousaine; auch GR 653 bzw. Grande Randonnée 653) ist der lateinische Name des südlichsten der vier Jakobswege in Frankreich.",
+   "textSource": "Wikipedia",
+   "wikipedia": "https://de.wikipedia.org/wiki/Via_Tolosana",
+   "image": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b2/Caminos_Santiago_actuales_FR_-_04_Camino_de_Arl%C3%A9s.svg/960px-Caminos_Santiago_actuales_FR_-_04_Camino_de_Arl%C3%A9s.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 960,
+    "height": 689,
+    "author": "Paulusburg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Caminos_Santiago_actuales_FR_-_04_Camino_de_Arl%C3%A9s.svg"
+   },
+   "links": 7
+  },
+  {
+   "id": 1956134,
+   "wikidata": "Q1785188",
+   "name": "North Sea Trail",
+   "ref": "NST",
+   "network": "iwn",
+   "from": null,
+   "to": null,
+   "countries": [
+    "Belgien",
+    "Schweden",
+    "Norwegen",
+    "Niederlande",
+    "Deutschland",
+    "Vereinigtes Königreich",
+    "Dänemark",
+    "Frankreich"
+   ],
+   "lengthKm": null,
+   "lengthSource": null,
+   "text": "Europäischer Fern- und Rundwanderweg entlang der Küsten der Nordsee",
+   "textSource": "Wikidata",
+   "wikipedia": "https://en.wikipedia.org/wiki/North_Sea_Trail",
+   "image": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/93/Naturreservat_Delsj%C3%B6omr%C3%A5det_lub_2024-04-05_img10_V%C3%A4stra_Sj%C3%B6slingan.jpg/960px-Naturreservat_Delsj%C3%B6omr%C3%A5det_lub_2024-04-05_img10_V%C3%A4stra_Sj%C3%B6slingan.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 960,
+    "height": 720,
+    "author": "Lukas Beck",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Naturreservat_Delsj%C3%B6omr%C3%A5det_lub_2024-04-05_img10_V%C3%A4stra_Sj%C3%B6slingan.jpg"
+   },
+   "links": 7
+  },
+  {
+   "id": 3477430,
+   "wikidata": "Q1456945",
+   "name": "Friedensweg",
+   "ref": "SdP",
+   "network": "nwn",
+   "from": "Passo del Tonale",
+   "to": "San Martino di Castrozza",
+   "countries": [
+    "Italien"
+   ],
+   "lengthKm": 500,
+   "lengthSource": "Wikidata",
+   "text": "Der Friedensweg (italienisch Sentiero della Pace) ist ein langer, inneritalienischer Höhenweg entlang der ehemaligen italienisch-österreichischen Frontlinie des Ersten Weltkriegs in den Alpen. Er wurde Mitte des 20.",
+   "textSource": "Wikipedia",
+   "wikipedia": "https://de.wikipedia.org/wiki/Friedensweg_(Dolomiten)",
+   "image": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bc/Opera_10_2_Passo_Monte_Croce_di_Comelico.jpg/960px-Opera_10_2_Passo_Monte_Croce_di_Comelico.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 960,
+    "height": 720,
+    "author": "Fantasy",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+    "page": "https://commons.wikimedia.org/wiki/File:Opera_10_2_Passo_Monte_Croce_di_Comelico.jpg"
+   },
+   "links": 7
+  },
+  {
+   "id": 1956169,
+   "wikidata": "Q667825",
+   "name": "Europäischer Fernwanderweg E2",
+   "ref": "E2",
+   "network": "iwn",
+   "from": null,
+   "to": null,
+   "countries": [
+    "Belgien",
+    "Niederlande",
+    "Frankreich",
+    "Schweiz",
+    "Vereinigtes Königreich"
+   ],
+   "lengthKm": 5720,
+   "lengthSource": "Wikidata",
+   "text": "Der Europäische Fernwanderweg E2 ist Teil des europäischen Wanderwegnetzes und führt von Galway in Irland nach Nizza am Mittelmeer. Der Weg hat eine Gesamtlänge von ungefähr 4850 km.",
+   "textSource": "Wikipedia",
+   "wikipedia": "https://de.wikipedia.org/wiki/Europ%C3%A4ischer_Fernwanderweg_E2",
+   "image": null,
+   "links": 7
+  },
+  {
+   "id": 383060,
+   "wikidata": "Q1551534",
+   "name": "Fernwanderweg GR 221",
+   "ref": "GR 221",
+   "network": "nwn",
+   "from": null,
+   "to": null,
+   "countries": [
+    "Spanien"
+   ],
+   "lengthKm": null,
+   "lengthSource": null,
+   "text": "Der GR 221 (katalanisch: Gran Recorregut 221, span.: Gran Recorrido 221) ist ein GR-Fernwanderweg () auf der spanischen Baleareninsel Mallorca. In der regionalen Amtssprache Katalanisch heißt er Ruta de Pedra en Sec („Route der Trockenstein[mauern]“), die spanisch/kastilische Bezeichnung für den Weg lautet Ruta de Piedra en Seco.",
+   "textSource": "Wikipedia",
+   "wikipedia": "https://de.wikipedia.org/wiki/GR_221",
+   "image": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/df/GR_221_Infomap2.jpg/960px-GR_221_Infomap2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 960,
+    "height": 574,
+    "author": "Sarang , bearbeitet von Oltau",
+    "license": "Public domain",
+    "licenseUrl": null,
+    "page": "https://commons.wikimedia.org/wiki/File:GR_221_Infomap2.jpg"
+   },
+   "links": 6
+  },
+  {
+   "id": 1501400,
+   "wikidata": "Q1031801",
+   "name": "Camí de Cavalls",
+   "ref": "GR 223",
+   "network": "nwn",
+   "from": null,
+   "to": null,
+   "countries": [
+    "Spanien"
+   ],
+   "lengthKm": 186,
+   "lengthSource": "Wikidata",
+   "text": "Der GR 223 – Camí de Cavalls (katalanisch für „Weg für Pferde“) ist ein Fernwanderweg auf der Insel Menorca, Spanien. Er ist 185 km lang und Teil des GR-Fernwanderwegenetzes.",
+   "textSource": "Wikipedia",
+   "wikipedia": "https://de.wikipedia.org/wiki/Cam%C3%AD_de_Cavalls",
+   "image": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/91/Cami_de_Cavalls_-_Es_Talaier_Cala_en_Turqueta.JPG/960px-Cami_de_Cavalls_-_Es_Talaier_Cala_en_Turqueta.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 960,
+    "height": 720,
+    "author": "MontanNito",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+    "page": "https://commons.wikimedia.org/wiki/File:Cami_de_Cavalls_-_Es_Talaier_Cala_en_Turqueta.JPG"
+   },
+   "links": 6
+  },
+  {
+   "id": 2911987,
+   "wikidata": "Q107608253",
+   "name": "GR 7",
+   "ref": "7B",
+   "network": "nwn",
+   "from": null,
+   "to": null,
+   "countries": [
+    "Spanien",
+    "Andorra",
+    "Frankreich"
+   ],
+   "lengthKm": 1471,
+   "lengthSource": "Wikidata",
+   "text": "",
+   "textSource": null,
+   "wikipedia": "https://en.wikipedia.org/wiki/GR_7",
+   "image": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a6/Poste_GR7_Tejo.JPG/960px-Poste_GR7_Tejo.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 960,
+    "height": 720,
+    "author": "José Fco. Català Senent",
+    "license": "CC BY-SA 2.5",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.5",
+    "page": "https://commons.wikimedia.org/wiki/File:Poste_GR7_Tejo.JPG"
+   },
+   "links": 6
+  },
+  {
+   "id": 1208354,
+   "wikidata": "Q723089",
+   "name": "Tatranská magistrála",
+   "ref": "0930",
+   "network": "nwn",
+   "from": null,
+   "to": null,
+   "countries": [
+    "Slowakei"
+   ],
+   "lengthKm": null,
+   "lengthSource": null,
+   "text": "Die Tatranská magistrála (auch Turistická magistrála oder kurz Magistrála, deutsch Magistrale oder auch Oberer Touristenweg) ist ein rot markierter Wanderweg an den Südhängen der West- und der Hohen Tatra in der Slowakei und der längste durchgehende Wanderweg in diesen Gebirgen.",
+   "textSource": "Wikipedia",
+   "wikipedia": "https://de.wikipedia.org/wiki/Tatransk%C3%A1_magistr%C3%A1la",
+   "image": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/64/Tatranska_magistrala.JPG/960px-Tatranska_magistrala.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 960,
+    "height": 641,
+    "author": "Petr Vilgus",
+    "license": "CC BY 3.0 cz",
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0/cz/deed.en",
+    "page": "https://commons.wikimedia.org/wiki/File:Tatranska_magistrala.JPG"
+   },
+   "links": 6
+  },
+  {
+   "id": 1175710,
+   "wikidata": "Q459884",
+   "name": "Europäischer Fernwanderweg E11",
+   "ref": "E11",
+   "network": "iwn",
+   "from": "Scheveningen (NL)",
+   "to": "Talinn (EE)",
+   "countries": [
+    "Frankreich",
+    "Niederlande",
+    "Polen",
+    "Deutschland"
+   ],
+   "lengthKm": 2070,
+   "lengthSource": "Wikidata",
+   "text": "Der Europäische Fernwanderweg E11 ist ein West-Ost-Weg, der rund 4700 km lang ist. Der Europäische Fernwanderweg verläuft von Scheveningen an der Nordsee durch die Niederlande, Deutschland, Polen, Litauen, Lettland, Estland bis Tallinn.",
+   "textSource": "Wikipedia",
+   "wikipedia": "https://de.wikipedia.org/wiki/Europ%C3%A4ischer_Fernwanderweg_E11",
+   "image": null,
+   "links": 6
+  },
+  {
+   "id": 3992585,
+   "wikidata": "Q21040911",
+   "name": "Europäischer Fernwanderweg E12",
+   "ref": "E12",
+   "network": "iwn",
+   "from": "Tarifa (Spain)",
+   "to": "Athens (Greece)",
+   "countries": [
+    "Spanien",
+    "Frankreich",
+    "Italien",
+    "Griechenland",
+    "Slowenien",
+    "Kroatien"
+   ],
+   "lengthKm": 2880,
+   "lengthSource": "Wikidata",
+   "text": "Der Europäische Fernwanderweg E12 soll dereinst unter dem Namen „Mittelmeerweg“ oder „Mittelmeerwanderweg“ die Küstenregionen (als sehr weit gefasster Begriff) der beteiligten Anrainerstaaten erschließen.",
+   "textSource": "Wikipedia",
+   "wikipedia": "https://de.wikipedia.org/wiki/Europ%C3%A4ischer_Fernwanderweg_E12",
+   "image": null,
+   "links": 6
+  },
+  {
+   "id": 11502863,
+   "wikidata": "Q23382685",
+   "name": "Via Dinarica",
+   "ref": "ViaDin",
+   "network": "rwn",
+   "from": null,
+   "to": null,
+   "countries": [
+    "Slowenien",
+    "Kroatien",
+    "Bosnien und Herzegowina",
+    "Montenegro",
+    "Albanien"
+   ],
+   "lengthKm": null,
+   "lengthSource": null,
+   "text": "Die Via Dinarica ist ein über 2000 Kilometer umfassendes Fernwanderwegenetz in den Dinarischen Alpen und besteht aus dem White Trail, dem Blue Trail und dem Green Trail. Sie verbindet die westlichen Balkanländer Slowenien, Kroatien, Bosnien und Herzegowina, Montenegro und Albanien.",
+   "textSource": "Wikipedia",
+   "wikipedia": "https://de.wikipedia.org/wiki/Via_Dinarica",
+   "image": null,
+   "links": 6
+  },
+  {
+   "id": 8727512,
+   "wikidata": "Q1750750",
+   "name": "Cuerda Larga",
+   "ref": "PR-M 11",
+   "network": "rwn",
+   "from": "Puerto de Navacerrada",
+   "to": "Puerto de la Morcuera",
+   "countries": [
+    "Spanien"
+   ],
+   "lengthKm": 21,
+   "lengthSource": "OpenStreetMap",
+   "text": "Gebirge in Spanien",
+   "textSource": "Wikidata",
+   "wikipedia": null,
+   "image": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/be/Cuerda_Larga.jpg/960px-Cuerda_Larga.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 960,
+    "height": 539,
+    "author": "Miguel303xm",
+    "license": "CC BY 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Cuerda_Larga.jpg"
+   },
+   "links": 5
+  },
+  {
+   "id": 8206451,
+   "wikidata": "Q361659",
+   "name": "Weg der Schweiz",
+   "ref": "99",
+   "network": "rwn",
+   "from": null,
+   "to": null,
+   "countries": [
+    "Schweiz"
+   ],
+   "lengthKm": 35,
+   "lengthSource": "Wikidata",
+   "text": "Weg der Schweiz ist der Name der Wanderroute 99 (eine von 65 regionalen Routen) entlang des Urnersees (südlicher Teil des Vierwaldstättersees). Der Weg wurde 1991 zur 700-Jahr-Feier der Schweiz angelegt.",
+   "textSource": "Wikipedia",
+   "wikipedia": "https://de.wikipedia.org/wiki/Weg_der_Schweiz",
+   "image": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/4/41/Voie_suisse.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "width": 960,
+    "height": 1100,
+    "author": "Photograph: NASA – Derivative work: Dake (Path + text)",
+    "license": "Public domain",
+    "licenseUrl": null,
+    "page": "https://commons.wikimedia.org/wiki/File:Voie_suisse.jpg"
+   },
+   "links": 5
+  },
+  {
+   "id": 7700604,
+   "wikidata": "Q3512223",
+   "name": "Cesta hrdinov SNP",
+   "ref": null,
+   "network": "nwn",
+   "from": null,
+   "to": null,
+   "countries": [
+    "Slowakei",
+    "Tschechien"
+   ],
+   "lengthKm": 772,
+   "lengthSource": "Wikidata",
+   "text": "Der Cesta hrdinov SNP (deutsch Weg der Helden des Slowakischen Nationalaufstandes; auch nur Weg der Helden) ist der bedeutendste Fernwanderweg der Slowakei.",
+   "textSource": "Wikipedia",
+   "wikipedia": "https://de.wikipedia.org/wiki/Cesta_hrdinov_SNP",
+   "image": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d2/Dukliansky_priesmyk_Vysny_Komarnik.jpg/960px-Dukliansky_priesmyk_Vysny_Komarnik.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 960,
+    "height": 720,
+    "author": "Peter Zelizňák",
+    "license": "Public domain",
+    "licenseUrl": null,
+    "page": "https://commons.wikimedia.org/wiki/File:Dukliansky_priesmyk_Vysny_Komarnik.jpg"
+   },
+   "links": 5
+  },
+  {
+   "id": 2129520,
+   "wikidata": "Q880680",
+   "name": "Internationaler Bergwanderweg der Freundschaft Eisenach–Budapest",
+   "ref": "EB",
+   "network": "iwn",
+   "from": null,
+   "to": null,
+   "countries": [
+    "Ungarn",
+    "Tschechien",
+    "Deutschland",
+    "Slowakei",
+    "Polen"
+   ],
+   "lengthKm": 2690,
+   "lengthSource": "Wikidata",
+   "text": "Der Internationale Bergwanderweg der Freundschaft Eisenach–Budapest (kurz EB-Weg) ist ein Fernwanderweg, der durch Deutschland, Tschechien, Polen, die Slowakei und Ungarn führt. Er ist 2690 Kilometer lang.",
+   "textSource": "Wikipedia",
+   "wikipedia": "https://de.wikipedia.org/wiki/Internationaler_Bergwanderweg_der_Freundschaft_Eisenach%E2%80%93Budapest",
+   "image": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/9/91/Lilienstein_Kontrollpunkt_Internationaler_Bergwanderweg_der_Freundschaft_Eisenach%E2%80%93Budapest_%2801-2%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "width": 960,
+    "height": 782,
+    "author": "Norbert Kaiser",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Lilienstein_Kontrollpunkt_Internationaler_Bergwanderweg_der_Freundschaft_Eisenach%E2%80%93Budapest_(01-2).jpg"
+   },
+   "links": 4
+  },
+  {
+   "id": 4580796,
+   "wikidata": "Q753119",
+   "name": "GR 5",
+   "ref": "GR 5",
+   "network": "iwn",
+   "from": null,
+   "to": null,
+   "countries": [
+    "Niederlande",
+    "Belgien",
+    "Luxemburg",
+    "Deutschland",
+    "Frankreich",
+    "Schweiz"
+   ],
+   "lengthKm": 2600,
+   "lengthSource": "Wikidata",
+   "text": "Der GR 5 ist ein transnationaler Fernwanderweg. Er ist der kontinentale Teil des auf den britischen Inseln beginnenden Europäischen Fernwanderwegs E2 und führt von der Nordsee über rund 2.080 km ans Mittelmeer.",
+   "textSource": "Wikipedia",
+   "wikipedia": "https://de.wikipedia.org/wiki/GR_5",
+   "image": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/59/Refuge_Bel-Lachat_gr5_Chamonix.jpg/960px-Refuge_Bel-Lachat_gr5_Chamonix.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 960,
+    "height": 720,
+    "author": "Jérôme Tcherniatinsky",
+    "license": "Public domain",
+    "licenseUrl": null,
+    "page": "https://commons.wikimedia.org/wiki/File:Refuge_Bel-Lachat_gr5_Chamonix.jpg"
+   },
+   "links": 4
+  },
+  {
+   "id": 5746104,
+   "wikidata": "Q41623575",
+   "name": "Chemin navarrais / Nafar bidea",
+   "ref": null,
+   "network": "iwn",
+   "from": "Stèle-de-Gibraltar",
+   "to": "Saint-Jean-Pied-de-Port",
+   "countries": [
+    "Spanien",
+    "Frankreich"
+   ],
+   "lengthKm": 118,
+   "lengthSource": "Wikidata",
+   "text": "",
+   "textSource": null,
+   "wikipedia": null,
+   "image": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fb/Camino_Navarro_%28international%29.png/960px-Camino_Navarro_%28international%29.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 960,
+    "height": 954,
+    "author": "OpenStreet Map",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Camino_Navarro_(international).png"
+   },
+   "links": 4
+  },
+  {
+   "id": 9218098,
+   "wikidata": "Q2521677",
+   "name": "Via Romea",
+   "ref": "VR",
+   "network": "iwn",
+   "from": null,
+   "to": null,
+   "countries": [
+    "Deutschland",
+    "Österreich",
+    "Italien"
+   ],
+   "lengthKm": null,
+   "lengthSource": null,
+   "text": "Als Via Romea, Romweg oder Via Romea Germanica wird der Weg bezeichnet, den Abt Albert von Stade im Jahre 1236 von Stade kommend auf einer Pilgerreise zum Papst nach Rom und zurück ging. In seinen Reiseaufzeichnungen, dem Stader Itinerar, hinterließ er den nachfolgenden Generationen eine detaillierte Beschreibung des Weges.",
+   "textSource": "Wikipedia",
+   "wikipedia": "https://de.wikipedia.org/wiki/Via_Romea",
+   "image": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/61/Cartello_Via_Francigena.JPG/960px-Cartello_Via_Francigena.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 960,
+    "height": 720,
+    "author": "Pmk58",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Cartello_Via_Francigena.JPG"
+   },
+   "links": 4
+  },
+  {
+   "id": 10524322,
+   "wikidata": "Q18448597",
+   "name": "St. Olavsweg",
+   "ref": null,
+   "network": "iwn",
+   "from": null,
+   "to": null,
+   "countries": [
+    "Schweden",
+    "Norwegen"
+   ],
+   "lengthKm": 580,
+   "lengthSource": "Wikidata",
+   "text": "",
+   "textSource": null,
+   "wikipedia": "https://en.wikipedia.org/wiki/St._Olavsleden",
+   "image": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Alsen.StOlavsLeden.JPG/960px-Alsen.StOlavsLeden.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 960,
+    "height": 720,
+    "author": "Offerdal",
+    "license": "Public domain",
+    "licenseUrl": null,
+    "page": "https://commons.wikimedia.org/wiki/File:Alsen.StOlavsLeden.JPG"
+   },
+   "links": 4
+  },
+  {
+   "id": 11154539,
+   "wikidata": "Q1212209",
+   "name": "Via Maria",
+   "ref": null,
+   "network": "iwn",
+   "from": null,
+   "to": null,
+   "countries": [
+    "Österreich",
+    "Slowakei",
+    "Ungarn",
+    "Rumänien",
+    "Polen"
+   ],
+   "lengthKm": null,
+   "lengthSource": null,
+   "text": "Pilgrimsfahrt nach Mariazell",
+   "textSource": "Wikidata",
+   "wikipedia": null,
+   "image": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2e/M%C3%A1ria_%C3%BAt%2C_Ny%C3%ADregyh%C3%A1za%E2%80%93Dombr%C3%A1d_vas%C3%BAtvonal%2C_2017_S%C3%B3st%C3%B3gy%C3%B3gyf%C3%BCrd%C5%91.jpg/960px-M%C3%A1ria_%C3%BAt%2C_Ny%C3%ADregyh%C3%A1za%E2%80%93Dombr%C3%A1d_vas%C3%BAtvonal%2C_2017_S%C3%B3st%C3%B3gy%C3%B3gyf%C3%BCrd%C5%91.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 960,
+    "height": 1280,
+    "author": "Globetrotter19",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "page": "https://commons.wikimedia.org/wiki/File:M%C3%A1ria_%C3%BAt,_Ny%C3%ADregyh%C3%A1za%E2%80%93Dombr%C3%A1d_vas%C3%BAtvonal,_2017_S%C3%B3st%C3%B3gy%C3%B3gyf%C3%BCrd%C5%91.jpg"
+   },
+   "links": 4
+  },
+  {
+   "id": 1322224,
+   "wikidata": "Q5028830",
+   "name": "Camí de Ronda",
+   "ref": null,
+   "network": "rwn",
+   "from": null,
+   "to": null,
+   "countries": [
+    "Spanien"
+   ],
+   "lengthKm": null,
+   "lengthSource": null,
+   "text": "Der Camí de Ronda (span.: Camino de Ronda) ist ein Küstenwanderweg an der Costa Brava in Spanien und verbindet die katalanischen Ortschaften Portbou südlich der französischen Grenze und Blanes. Er ist Teil des spanischen Fernwanderweges GR-92 (span.: Gran Recorrido 92, katalanisch: Gran Recorregut 92) und hat eine Länge von fast 200 km.",
+   "textSource": "Wikipedia",
+   "wikipedia": "https://de.wikipedia.org/wiki/Cam%C3%AD_de_Ronda",
+   "image": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/81/Cami_de_ronda.jpg/960px-Cami_de_ronda.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 960,
+    "height": 636,
+    "author": "Mampel",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Cami_de_ronda.jpg"
+   },
+   "links": 4
+  },
+  {
+   "id": 1416072,
+   "wikidata": "Q11913321",
+   "name": "Ultra Pirineu",
+   "ref": "Cavalls del Vent",
+   "network": "rwn",
+   "from": null,
+   "to": null,
+   "countries": [
+    "Spanien"
+   ],
+   "lengthKm": null,
+   "lengthSource": null,
+   "text": "",
+   "textSource": null,
+   "wikipedia": "https://en.wikipedia.org/wiki/Ultra_Pirineu",
+   "image": null,
+   "links": 3
+  },
+  {
+   "id": 83023,
+   "wikidata": "Q2209071",
+   "name": "Saar-Hunsrück-Steig",
+   "ref": "SH",
+   "network": "nwn",
+   "from": "Perl",
+   "to": "Boppard",
+   "countries": [
+    "Deutschland"
+   ],
+   "lengthKm": 410,
+   "lengthSource": "Wikidata",
+   "text": "Der Saar-Hunsrück-Steig ist ein 410 Kilometer langer Wanderweg im Naturpark Saar-Hunsrück sowie im östlichen Hunsrück und verläuft von Perl an der Mosel über die Saarschleife bei Mettlach im Saarland über Hermeskeil und Idar-Oberstein an der Nahe in Rheinland-Pfalz bis nach Boppard am Rhein.",
+   "textSource": "Wikipedia",
+   "wikipedia": "https://de.wikipedia.org/wiki/Saar-Hunsr%C3%BCck-Steig",
+   "image": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c0/Blick_auf_Primstalsperre.jpg/960px-Blick_auf_Primstalsperre.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 960,
+    "height": 720,
+    "author": "Dirtsc",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Blick_auf_Primstalsperre.jpg"
+   },
+   "links": 3
+  },
+  {
+   "id": 1176757,
+   "wikidata": "Q1302902",
+   "name": "Eifelsteig",
+   "ref": "e",
+   "network": "nwn",
+   "from": "Kornelimünster",
+   "to": "Trier",
+   "countries": [
+    "Deutschland",
+    "Belgien"
+   ],
+   "lengthKm": 312,
+   "lengthSource": "Wikidata",
+   "text": "Der Eifelsteig ist ein 313 km langer Fernwanderweg in der Eifel. Er führt in 15 Etappen von 14 bis 29 Kilometer Länge vom Aachener Ortsteil Kornelimünster nach Trier.",
+   "textSource": "Wikipedia",
+   "wikipedia": "https://de.wikipedia.org/wiki/Eifelsteig",
+   "image": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d2/20200905_Eifelsteig_06.jpg/960px-20200905_Eifelsteig_06.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 960,
+    "height": 642,
+    "author": "Flocci Nivis",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:20200905_Eifelsteig_06.jpg"
+   },
+   "links": 3
+  },
+  {
+   "id": 10670467,
+   "wikidata": "Q1486811",
+   "name": "GR 9",
+   "ref": "GR 9",
+   "network": "nwn",
+   "from": "Saint-Amour",
+   "to": "Saint-Pons-les-Mûres",
+   "countries": [
+    "Frankreich"
+   ],
+   "lengthKm": 958,
+   "lengthSource": "Wikidata",
+   "text": "Der GR 9 (französisch Grande Randonnée 9) ist ein französischer Fernwanderweg der Fédération française de la randonnée pédestre zwischen Saint-Amour und Port Grimaud.",
+   "textSource": "Wikipedia",
+   "wikipedia": "https://de.wikipedia.org/wiki/GR_9",
+   "image": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/38/L%C3%A9oncelpaysage1.jpg/960px-L%C3%A9oncelpaysage1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 960,
+    "height": 720,
+    "author": "Rossignol Benoît",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "page": "https://commons.wikimedia.org/wiki/File:L%C3%A9oncelpaysage1.jpg"
+   },
+   "links": 3
+  },
+  {
+   "id": 376307,
+   "wikidata": "Q24877737",
+   "name": "Ponitrianska magistrála",
+   "ref": "0706",
+   "network": "nwn",
+   "from": null,
+   "to": null,
+   "countries": [
+    "Slowakei"
+   ],
+   "lengthKm": null,
+   "lengthSource": null,
+   "text": "",
+   "textSource": null,
+   "wikipedia": null,
+   "image": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/7/7e/Vtacnik_panorama2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "width": 960,
+    "height": 638,
+    "author": "Stanislav Doronenko",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+    "page": "https://commons.wikimedia.org/wiki/File:Vtacnik_panorama2.jpg"
+   },
+   "links": 3
+  },
+  {
+   "id": 389034,
+   "wikidata": "Q9323741",
+   "name": "Rudná magistrála",
+   "ref": "0707",
+   "network": "nwn",
+   "from": null,
+   "to": null,
+   "countries": [
+    "Slowakei"
+   ],
+   "lengthKm": null,
+   "lengthSource": null,
+   "text": "",
+   "textSource": null,
+   "wikipedia": null,
+   "image": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0d/Balock%C3%A9_vrchy%2C_Z%C3%A1k%C4%BEuky%2C_rozcestn%C3%ADk_01.jpg/960px-Balock%C3%A9_vrchy%2C_Z%C3%A1k%C4%BEuky%2C_rozcestn%C3%ADk_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 960,
+    "height": 1280,
+    "author": "Daniel Baránek",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Balock%C3%A9_vrchy,_Z%C3%A1k%C4%BEuky,_rozcestn%C3%ADk_01.jpg"
+   },
+   "links": 3
+  },
+  {
+   "id": 538372,
+   "wikidata": "Q9351791",
+   "name": "Štefánikova magistrála",
+   "ref": null,
+   "network": "nwn",
+   "from": null,
+   "to": null,
+   "countries": [
+    "Slowakei"
+   ],
+   "lengthKm": 102,
+   "lengthSource": "Wikidata",
+   "text": "",
+   "textSource": null,
+   "wikipedia": null,
+   "image": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/46/P1010024.JPG/960px-P1010024.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 960,
+    "height": 720,
+    "author": "Pavel Máša",
+    "license": "Public domain",
+    "licenseUrl": null,
+    "page": "https://commons.wikimedia.org/wiki/File:P1010024.JPG"
+   },
+   "links": 3
+  },
+  {
+   "id": 1181120,
+   "wikidata": "Q5637570",
+   "name": "Camí dels bons homes",
+   "ref": "GR 107",
+   "network": "iwn",
+   "from": null,
+   "to": null,
+   "countries": [
+    "Spanien"
+   ],
+   "lengthKm": null,
+   "lengthSource": null,
+   "text": "",
+   "textSource": null,
+   "wikipedia": null,
+   "image": null,
+   "links": 3
+  },
+  {
+   "id": 3176522,
+   "wikidata": "Q15782535",
+   "name": "Alpe Adria Trail",
+   "ref": "AAT",
+   "network": "iwn",
+   "from": "Großglockner",
+   "to": "Muggia/Trieste",
+   "countries": [
+    "Österreich",
+    "Slowenien",
+    "Italien"
+   ],
+   "lengthKm": 750,
+   "lengthSource": "Wikidata",
+   "text": "Der Alpe Adria Trail ist ein rund 750 km langer Bergwanderweg vom Fuß des Großglockners in Kärnten (Österreich) über Kranjska Gora (Slowenien) nach Muggia in Friaul-Julisch Venetien an der Adriaküste Italiens.",
+   "textSource": "Wikipedia",
+   "wikipedia": "https://de.wikipedia.org/wiki/Alpe_Adria_Trail",
+   "image": null,
+   "links": 3
+  },
+  {
+   "id": 4726204,
+   "wikidata": "Q19298341",
+   "name": "Peaks of the Balkans",
+   "ref": "POB",
+   "network": "iwn",
+   "from": null,
+   "to": null,
+   "countries": [
+    "Albanien",
+    "Kosovo",
+    "Montenegro"
+   ],
+   "lengthKm": 192,
+   "lengthSource": "Wikidata",
+   "text": "Peaks of the Balkans ist ein 192 Kilometer langer Fernwanderweg im Prokletije-Gebirge (Albanische Alpen). Er führt über zehn Tagesetappen durch Albanien, Kosovo und Montenegro.",
+   "textSource": "Wikipedia",
+   "wikipedia": "https://de.wikipedia.org/wiki/Peaks_of_the_Balkans",
+   "image": null,
+   "links": 3
+  },
+  {
+   "id": 7201036,
+   "wikidata": "Q3562197",
+   "name": "Baztango Donejakue bidea",
+   "ref": null,
+   "network": "iwn",
+   "from": null,
+   "to": null,
+   "countries": [
+    "Spanien",
+    "Frankreich"
+   ],
+   "lengthKm": 105,
+   "lengthSource": "OpenStreetMap",
+   "text": "",
+   "textSource": null,
+   "wikipedia": null,
+   "image": null,
+   "links": 3
+  },
+  {
+   "id": 379910,
+   "wikidata": "Q65161839",
+   "name": "GR 5",
+   "ref": "GR 5",
+   "network": "nwn",
+   "from": "Sitges",
+   "to": "Canet de Mar",
+   "countries": [
+    "Spanien"
+   ],
+   "lengthKm": 201,
+   "lengthSource": "OpenStreetMap",
+   "text": "",
+   "textSource": null,
+   "wikipedia": null,
+   "image": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9d/GR-2%2C_GR-5_i_PR-C-200_-_20230319_131311.jpg/960px-GR-2%2C_GR-5_i_PR-C-200_-_20230319_131311.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 960,
+    "height": 1707,
+    "author": "Pere López Brosa",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:GR-2,_GR-5_i_PR-C-200_-_20230319_131311.jpg"
+   },
+   "links": 2
+  },
+  {
+   "id": 554530,
+   "wikidata": "Q21099592",
+   "name": "GR 2",
+   "ref": "GR 2",
+   "network": "nwn",
+   "from": "La Jonquera",
+   "to": "Sant Adrià del Besós",
+   "countries": [
+    "Spanien"
+   ],
+   "lengthKm": 169,
+   "lengthSource": "Wikidata",
+   "text": "spanischer Fernwanderweg",
+   "textSource": "Wikidata",
+   "wikipedia": null,
+   "image": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/80/Cam%C3%AD_de_Can_Serra_de_l%27Arca_pel_GR2_-_20230319_100518.jpg/960px-Cam%C3%AD_de_Can_Serra_de_l%27Arca_pel_GR2_-_20230319_100518.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 960,
+    "height": 1707,
+    "author": "Pere López Brosa",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Cam%C3%AD_de_Can_Serra_de_l%27Arca_pel_GR2_-_20230319_100518.jpg"
+   },
+   "links": 2
+  },
+  {
+   "id": 1280069,
+   "wikidata": "Q97647101",
+   "name": "Del Santuari de Pinós als Ports",
+   "ref": "GR 171",
+   "network": "nwn",
+   "from": null,
+   "to": null,
+   "countries": [
+    "Spanien"
+   ],
+   "lengthKm": 276,
+   "lengthSource": "OpenStreetMap",
+   "text": "Weg in Spanien",
+   "textSource": "Wikidata",
+   "wikipedia": null,
+   "image": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e8/El_cam%C3%AD_GR171.jpg/960px-El_cam%C3%AD_GR171.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 960,
+    "height": 720,
+    "author": "Bea Perez Aragunde",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:El_cam%C3%AD_GR171.jpg"
+   },
+   "links": 2
+  },
+  {
+   "id": 1453949,
+   "wikidata": "Q17615968",
+   "name": "Puigcerdà - Montserrat",
+   "ref": "GR 4",
+   "network": "nwn",
+   "from": "Puigcerdà",
+   "to": "Montserrat",
+   "countries": [
+    "Spanien"
+   ],
+   "lengthKm": 162,
+   "lengthSource": "Wikidata",
+   "text": "",
+   "textSource": null,
+   "wikipedia": null,
+   "image": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/47/Cam%C3%AD_de_Sant_Jaume_de_Vallhonesta_-_GR_4_i_SL-C_53_-_20230402_093209.jpg/960px-Cam%C3%AD_de_Sant_Jaume_de_Vallhonesta_-_GR_4_i_SL-C_53_-_20230402_093209.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 960,
+    "height": 1707,
+    "author": "Pere López Brosa",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Cam%C3%AD_de_Sant_Jaume_de_Vallhonesta_-_GR_4_i_SL-C_53_-_20230402_093209.jpg"
+   },
+   "links": 2
+  },
+  {
+   "id": 2164053,
+   "wikidata": "Q5742366",
+   "name": "Camí de Sant Jaume (Sant Pere de Rodes - Montserrat)",
+   "ref": null,
+   "network": "nwn",
+   "from": null,
+   "to": null,
+   "countries": [
+    "Spanien"
+   ],
+   "lengthKm": null,
+   "lengthSource": null,
+   "text": "",
+   "textSource": null,
+   "wikipedia": null,
+   "image": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d9/WLM14ES_-_Monestir_de_Montserrat_-_Jorge_Franganillo.jpg/960px-WLM14ES_-_Monestir_de_Montserrat_-_Jorge_Franganillo.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 960,
+    "height": 640,
+    "author": "Jorge Franganillo from Barcelona, Spain",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "page": "https://commons.wikimedia.org/wiki/File:WLM14ES_-_Monestir_de_Montserrat_-_Jorge_Franganillo.jpg"
+   },
+   "links": 2
+  },
+  {
+   "id": 2410123,
+   "wikidata": "Q3478722",
+   "name": "De Saint-Étienne au Grau-du-Roi",
+   "ref": "GR 42",
+   "network": "nwn",
+   "from": "Saint-Étienne",
+   "to": "Grau-du-Roi",
+   "countries": [
+    "Frankreich"
+   ],
+   "lengthKm": 452,
+   "lengthSource": "Wikidata",
+   "text": "",
+   "textSource": null,
+   "wikipedia": "https://en.wikipedia.org/wiki/GR_42",
+   "image": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a3/Avignon%2C_Palais_des_Papes_depuis_Tour_Philippe_le_Bel_by_JM_Rosier.jpg/960px-Avignon%2C_Palais_des_Papes_depuis_Tour_Philippe_le_Bel_by_JM_Rosier.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 960,
+    "height": 575,
+    "author": "Jean-Marc Rosier (de/from http://www.cjrosier.com + http://www.gordes-immobilier.com )",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Avignon,_Palais_des_Papes_depuis_Tour_Philippe_le_Bel_by_JM_Rosier.jpg"
+   },
+   "links": 2
+  },
+  {
+   "id": 9621458,
+   "wikidata": "Q11954580",
+   "name": "Ruta del Carrilet I: \"Girona-Olot\"",
+   "ref": "VV1",
+   "network": "nwn",
+   "from": null,
+   "to": null,
+   "countries": [
+    "Spanien"
+   ],
+   "lengthKm": null,
+   "lengthSource": null,
+   "text": "",
+   "textSource": null,
+   "wikipedia": null,
+   "image": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/13/Via_verde_Girona-Olot.JPG/960px-Via_verde_Girona-Olot.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 960,
+    "height": 629,
+    "author": "Peremagria",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Via_verde_Girona-Olot.JPG"
+   },
+   "links": 2
+  },
+  {
+   "id": 12035546,
+   "wikidata": "Q3478711",
+   "name": "De Douarnenez à Redon",
+   "ref": "GR 38",
+   "network": "nwn",
+   "from": "Douarnenez",
+   "to": "Redon",
+   "countries": [
+    "Frankreich"
+   ],
+   "lengthKm": 358,
+   "lengthSource": "Wikidata",
+   "text": "",
+   "textSource": null,
+   "wikipedia": null,
+   "image": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0a/Bretagne_Finistere_Locronan_2005_018a.jpg/960px-Bretagne_Finistere_Locronan_2005_018a.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 960,
+    "height": 815,
+    "author": "S.Möller",
+    "license": "Public domain",
+    "licenseUrl": null,
+    "page": "https://commons.wikimedia.org/wiki/File:Bretagne_Finistere_Locronan_2005_018a.jpg"
+   },
+   "links": 2
+  },
+  {
+   "id": 387633,
+   "wikidata": "Q1914201",
+   "name": "Maximiliansweg",
+   "ref": "Max",
+   "network": "nwn",
+   "from": null,
+   "to": null,
+   "countries": [
+    "Deutschland"
+   ],
+   "lengthKm": 350,
+   "lengthSource": "Wikidata",
+   "text": "Der Maximiliansweg ist ein Fernwanderweg, der in zwei Varianten mit unterschiedlichen Schwierigkeitsgraden von 359 bzw. 388 km von Lindau (Bodensee) entlang der Bayerischen Alpen nach Berchtesgaden führt.",
+   "textSource": "Wikipedia",
+   "wikipedia": "https://de.wikipedia.org/wiki/Maximiliansweg",
+   "image": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ae/Castle_Neuschwanstein.jpg/960px-Castle_Neuschwanstein.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 960,
+    "height": 628,
+    "author": "Softeis",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+    "page": "https://commons.wikimedia.org/wiki/File:Castle_Neuschwanstein.jpg"
+   },
+   "links": 2
+  },
+  {
+   "id": 2167510,
+   "wikidata": "Q3478703",
+   "name": "GR 21 (Fernwanderweg)",
+   "ref": null,
+   "network": "nwn",
+   "from": "Le Tréport",
+   "to": "Montivilliers",
+   "countries": [
+    "Frankreich"
+   ],
+   "lengthKm": null,
+   "lengthSource": null,
+   "text": "Fernwanderweg in der Normandie, Frankreich",
+   "textSource": "Wikidata",
+   "wikipedia": "https://en.wikipedia.org/wiki/GR_21",
+   "image": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/14/Gr21.jpg/960px-Gr21.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 960,
+    "height": 720,
+    "author": "NguyenAiQuoc",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+    "page": "https://commons.wikimedia.org/wiki/File:Gr21.jpg"
+   },
+   "links": 2
+  },
+  {
+   "id": 9711201,
+   "wikidata": "Q3478741",
+   "name": "Tour du Queyras",
+   "ref": "GR 58",
+   "network": "nwn",
+   "from": null,
+   "to": null,
+   "countries": [
+    "Frankreich"
+   ],
+   "lengthKm": 130,
+   "lengthSource": "Wikidata",
+   "text": "",
+   "textSource": null,
+   "wikipedia": "https://en.wikipedia.org/wiki/GR_58",
+   "image": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7b/Maison_le_long_du-GR58-pres_des-lacs-de-Malrif-et_d%27Abries-Queyras-DSC_0531.jpg/960px-Maison_le_long_du-GR58-pres_des-lacs-de-Malrif-et_d%27Abries-Queyras-DSC_0531.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 960,
+    "height": 640,
+    "author": "Pline",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Maison_le_long_du-GR58-pres_des-lacs-de-Malrif-et_d%27Abries-Queyras-DSC_0531.jpg"
+   },
+   "links": 2
+  },
+  {
+   "id": 10814429,
+   "wikidata": "Q2147622",
+   "name": "Rheinburgenweg",
+   "ref": "RB13",
+   "network": "nwn",
+   "from": "Trechtingshausen",
+   "to": "Bingen",
+   "countries": [
+    "Deutschland"
+   ],
+   "lengthKm": 195,
+   "lengthSource": "Wikidata",
+   "text": "Der Rheinburgenweg (früher: Rheinburgen-Wanderweg) ist ein Fernwanderweg auf der linken Seite des Rheins im Welterbe Oberes Mittelrheintal von Bingen am Rhein über Koblenz bis zum Rolandsbogen in Remagen. Nach einer grundlegenden Überarbeitung der Wegeführung im Jahr 2010 hat der Weg eine Gesamtlänge von ca.",
+   "textSource": "Wikipedia",
+   "wikipedia": "https://de.wikipedia.org/wiki/Rheinburgenweg",
+   "image": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/69/RheinBurgenWeg_Wegmarkierung_mit_Weg.jpg/960px-RheinBurgenWeg_Wegmarkierung_mit_Weg.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 960,
+    "height": 720,
+    "author": "Ocrho",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "page": "https://commons.wikimedia.org/wiki/File:RheinBurgenWeg_Wegmarkierung_mit_Weg.jpg"
+   },
+   "links": 2
+  },
+  {
+   "id": 11097196,
+   "wikidata": "Q3478730",
+   "name": "Tour du Parc National des Écrins",
+   "ref": "GR 50",
+   "network": "nwn",
+   "from": null,
+   "to": null,
+   "countries": [
+    "Frankreich"
+   ],
+   "lengthKm": 371,
+   "lengthSource": "Wikidata",
+   "text": "",
+   "textSource": null,
+   "wikipedia": null,
+   "image": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/2/24/Barre_des_Ecrins_20060727.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "width": 960,
+    "height": 1439,
+    "author": "Samijäbä at English Wikipedia ( Original text: Sami Pönkänen )",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+    "page": "https://commons.wikimedia.org/wiki/File:Barre_des_Ecrins_20060727.jpg"
+   },
+   "links": 2
+  },
+  {
+   "id": 1289828,
+   "wikidata": "Q4010705",
+   "name": "Via Priula",
+   "ref": null,
+   "network": "rwn",
+   "from": null,
+   "to": null,
+   "countries": [
+    "Italien"
+   ],
+   "lengthKm": null,
+   "lengthSource": null,
+   "text": "",
+   "textSource": null,
+   "wikipedia": null,
+   "image": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/af/Averara_porticato_ViaPriula01.JPG/960px-Averara_porticato_ViaPriula01.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 960,
+    "height": 720,
+    "author": "Ago76",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Averara_porticato_ViaPriula01.JPG"
+   },
+   "links": 2
+  },
+  {
+   "id": 1681776,
+   "wikidata": "Q17325872",
+   "name": "Renchtalsteig",
+   "ref": "rs",
+   "network": "rwn",
+   "from": null,
+   "to": null,
+   "countries": [
+    "Deutschland"
+   ],
+   "lengthKm": 98,
+   "lengthSource": "OpenStreetMap",
+   "text": "Der Renchtalsteig ist ein 98 km langer Prädikatswanderweg im Naturpark Schwarzwald Mitte/Nord. Er führt in fünf Etappen um das Renchtal mit Start und Ziel bei Oberkirch.",
+   "textSource": "Wikipedia",
+   "wikipedia": "https://de.wikipedia.org/wiki/Renchtalsteig",
+   "image": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/88/Teufelskanzelweg.JPG/960px-Teufelskanzelweg.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 960,
+    "height": 1280,
+    "author": "Stefan Karl",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Teufelskanzelweg.JPG"
+   },
+   "links": 2
+  },
+  {
+   "id": 3632589,
+   "wikidata": "Q15835696",
+   "name": "Moselsteig",
+   "ref": "MoS",
+   "network": "rwn",
+   "from": "Perl",
+   "to": "Koblenz",
+   "countries": [
+    "Deutschland"
+   ],
+   "lengthKm": 365,
+   "lengthSource": "Wikidata",
+   "text": "Der Moselsteig ist ein 365 Kilometer langer, im April 2014 eröffneter Fernwanderweg an der Mosel in Deutschland.",
+   "textSource": "Wikipedia",
+   "wikipedia": "https://de.wikipedia.org/wiki/Moselsteig",
+   "image": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/38/Neef_%28Cochem-Zell%29_01.jpg/960px-Neef_%28Cochem-Zell%29_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 960,
+    "height": 720,
+    "author": "Adrian Thomale",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Neef_(Cochem-Zell)_01.jpg"
+   },
+   "links": 2
+  },
+  {
+   "id": 289362,
+   "wikidata": "Q61108804",
+   "name": "Rockenbauer Pál Dél-dunántúli Kéktúra",
+   "ref": "RPDDK",
+   "network": "nwn",
+   "from": "Írott-kő",
+   "to": "Szekszárd",
+   "countries": [
+    "Ungarn"
+   ],
+   "lengthKm": 541,
+   "lengthSource": "Wikidata",
+   "text": "Der Rockenbauer Pál Dél-dunántúli Kéktúra (Süd-Transdanubiens blaue Tour „Pál Rockenbauer“), abgekürzt DDK, ist ein ungarischer Fernwanderweg.",
+   "textSource": "Wikipedia",
+   "wikipedia": "https://de.wikipedia.org/wiki/Rockenbauer_P%C3%A1l_D%C3%A9l-dun%C3%A1nt%C3%BAli_K%C3%A9kt%C3%BAra",
+   "image": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f6/Bati-kereszt_kil%C3%A1t%C3%B3.jpg/960px-Bati-kereszt_kil%C3%A1t%C3%B3.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 960,
+    "height": 640,
+    "author": "Nyiffi",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Bati-kereszt_kil%C3%A1t%C3%B3.jpg"
+   },
+   "links": 2
+  },
+  {
+   "id": 1272893,
+   "wikidata": "Q67287179",
+   "name": "Veľkofatranská magistrála",
+   "ref": "0870",
+   "network": "nwn",
+   "from": null,
+   "to": null,
+   "countries": [
+    "Slowakei"
+   ],
+   "lengthKm": null,
+   "lengthSource": null,
+   "text": "",
+   "textSource": null,
+   "wikipedia": null,
+   "image": null,
+   "links": 2
+  },
+  {
+   "id": 2164968,
+   "wikidata": "Q61107190",
+   "name": "Alföldi Kéktúra",
+   "ref": "AK",
+   "network": "nwn",
+   "from": "Szekszárd",
+   "to": "Sátoraljaújhely",
+   "countries": [
+    "Ungarn"
+   ],
+   "lengthKm": 868,
+   "lengthSource": "Wikidata",
+   "text": "Der Alföldi Kéktúra (Blaue Tour „Ungarische Tiefebene“), abgekürzt AK, ist ein ungarischer Fernwanderweg.",
+   "textSource": "Wikipedia",
+   "wikipedia": "https://de.wikipedia.org/wiki/Alf%C3%B6ldi_K%C3%A9kt%C3%BAra",
+   "image": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1f/Alf%C3%B6ldi_K%C3%A9kt%C3%BAra_jel_%C3%A9s_Kisv%C3%A1rdai_J%C3%A1nos_eml%C3%A9kszobra%2C_2017_Kisv%C3%A1rda.jpg/960px-Alf%C3%B6ldi_K%C3%A9kt%C3%BAra_jel_%C3%A9s_Kisv%C3%A1rdai_J%C3%A1nos_eml%C3%A9kszobra%2C_2017_Kisv%C3%A1rda.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 960,
+    "height": 1280,
+    "author": "Globetrotter19",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Alf%C3%B6ldi_K%C3%A9kt%C3%BAra_jel_%C3%A9s_Kisv%C3%A1rdai_J%C3%A1nos_eml%C3%A9kszobra,_2017_Kisv%C3%A1rda.jpg"
+   },
+   "links": 2
+  },
+  {
+   "id": 1247178,
+   "wikidata": "Q3562175",
+   "name": "Voie de Soulac",
+   "ref": null,
+   "network": "iwn",
+   "from": null,
+   "to": null,
+   "countries": [
+    "Frankreich"
+   ],
+   "lengthKm": null,
+   "lengthSource": null,
+   "text": "",
+   "textSource": null,
+   "wikipedia": null,
+   "image": null,
+   "links": 2
+  },
+  {
+   "id": 2289173,
+   "wikidata": "Q3556495",
+   "name": "Via Gebennensis",
+   "ref": null,
+   "network": "iwn",
+   "from": "Genève",
+   "to": "Le Puy-en-Velay",
+   "countries": [
+    "Frankreich",
+    "Schweiz"
+   ],
+   "lengthKm": 348,
+   "lengthSource": "OpenStreetMap",
+   "text": "",
+   "textSource": null,
+   "wikipedia": null,
+   "image": null,
+   "links": 2
+  },
+  {
+   "id": 2916867,
+   "wikidata": "Q13049100",
+   "name": "Sendero Prepirenaico",
+   "ref": "GR 15",
+   "network": "nwn",
+   "from": null,
+   "to": null,
+   "countries": [
+    "Spanien"
+   ],
+   "lengthKm": 274,
+   "lengthSource": "OpenStreetMap",
+   "text": "",
+   "textSource": null,
+   "wikipedia": null,
+   "image": null,
+   "links": 2
+  },
+  {
+   "id": 546940,
+   "wikidata": "Q11912624",
+   "name": "Carros de Foc",
+   "ref": "CF",
+   "network": "rwn",
+   "from": null,
+   "to": null,
+   "countries": [
+    "Spanien"
+   ],
+   "lengthKm": 55,
+   "lengthSource": "OpenStreetMap",
+   "text": "",
+   "textSource": null,
+   "wikipedia": null,
+   "image": null,
+   "links": 2
+  },
+  {
+   "id": 9382806,
+   "wikidata": "Q3093358",
+   "name": "GR 2013",
+   "ref": "GR Pays 2013",
+   "network": "rwn",
+   "from": null,
+   "to": null,
+   "countries": [
+    "Frankreich"
+   ],
+   "lengthKm": null,
+   "lengthSource": null,
+   "text": "Der GR 2013 ist ein 365 km langer Fernwanderweg, der durch die zeitgenössische Landschaft der Provence in der Metropolregion der südfranzösischen Hafenstadt Marseille führt.",
+   "textSource": "Wikipedia",
+   "wikipedia": "https://de.wikipedia.org/wiki/GR_2013",
+   "image": null,
+   "links": 2
+  },
+  {
+   "id": 56369,
+   "wikidata": "Q2036200",
+   "name": "Ostweg",
+   "ref": null,
+   "network": "nwn",
+   "from": "Pforzheim",
+   "to": "Schaffhausen",
+   "countries": [
+    "Deutschland"
+   ],
+   "lengthKm": 245,
+   "lengthSource": "OpenStreetMap",
+   "text": "Der Ostweg ist neben dem Westweg und dem Mittelweg eine der drei Nord-Süd-Fernwanderstrecken durch den Schwarzwald und entlang der Schwäbischen Alb. Er führt von Pforzheim über Freudenstadt, Schramberg, Villingen, Geisingen nach Schaffhausen.",
+   "textSource": "Wikipedia",
+   "wikipedia": "https://de.wikipedia.org/wiki/Ostweg",
+   "image": null,
+   "links": 2
+  },
+  {
+   "id": 193073,
+   "wikidata": "Q14538442",
+   "name": "Zentralalpenweg",
+   "ref": "02",
+   "network": "nwn",
+   "from": "Hainburg an der Donau",
+   "to": "Feldkirch",
+   "countries": [
+    "Österreich",
+    "Liechtenstein",
+    "Schweiz"
+   ],
+   "lengthKm": 1200,
+   "lengthSource": "Wikidata",
+   "text": "Der Zentralalpenweg (auch Österreichischer Weitwanderweg 02) ist ein hochalpiner Weitwanderweg in Österreich, der von Hainburg an der Donau nach Feldkirch in Vorarlberg führt. Über weite Strecken gibt der Alpenhauptkamm den groben Verlauf vor.",
+   "textSource": "Wikipedia",
+   "wikipedia": "https://de.wikipedia.org/wiki/Zentralalpenweg",
+   "image": null,
+   "links": 2
+  },
+  {
+   "id": 57646,
+   "wikidata": "Q17461630",
+   "name": "Schwarzwald-Nordrandweg",
+   "ref": null,
+   "network": "rwn",
+   "from": "Durlach",
+   "to": "Mühlacker",
+   "countries": [
+    "Deutschland"
+   ],
+   "lengthKm": 56,
+   "lengthSource": "Wikidata",
+   "text": "Der Schwarzwald-Nordrandweg ist ein 55 km langer Wanderweg in drei Etappen von Mühlacker nach Karlsruhe-Durlach.",
+   "textSource": "Wikipedia",
+   "wikipedia": "https://de.wikipedia.org/wiki/Schwarzwald-Nordrandweg",
+   "image": null,
+   "links": 2
+  },
+  {
+   "id": 109376,
+   "wikidata": "Q1544104",
+   "name": "Nibelungensteig",
+   "ref": "Nibelungensteig",
+   "network": "rwn",
+   "from": "Zwingenberg",
+   "to": "Freudenberg",
+   "countries": [
+    "Deutschland"
+   ],
+   "lengthKm": 130,
+   "lengthSource": "Wikidata",
+   "text": "Der Nibelungensteig (Wegzeichen N) ist ein ca. 130 km langer Qualitäts- und Hauptwanderweg (HW 72) des Odenwaldklubs (Sitz in Bensheim an der Bergstraße).",
+   "textSource": "Wikipedia",
+   "wikipedia": "https://de.wikipedia.org/wiki/Nibelungensteig",
+   "image": null,
+   "links": 2
+  },
+  {
+   "id": 163111,
+   "wikidata": "Q1558879",
+   "name": "Gäurandweg",
+   "ref": null,
+   "network": "rwn",
+   "from": null,
+   "to": null,
+   "countries": [
+    "Deutschland"
+   ],
+   "lengthKm": 121,
+   "lengthSource": "Wikidata",
+   "text": "Der Gäurandweg ist im Nordschwarzwald der östlichste der vom Schwarzwaldverein betreuten Fernwanderwege. Mit einer Länge von 120 Kilometern führt er in sechs Etappen von Mühlacker nach Freudenstadt.",
+   "textSource": "Wikipedia",
+   "wikipedia": "https://de.wikipedia.org/wiki/G%C3%A4urandweg",
+   "image": null,
+   "links": 2
+  },
+  {
+   "id": 172695,
+   "wikidata": "Q1631267",
+   "name": "Hotzenwald-Querweg",
+   "ref": "HwQw",
+   "network": "rwn",
+   "from": "Schopfheim",
+   "to": "Waldshut",
+   "countries": [
+    "Schweiz"
+   ],
+   "lengthKm": null,
+   "lengthSource": null,
+   "text": "Der Hotzenwald-Querweg ist eine zweitägige 46 Kilometer lange Wanderstrecke durch den südlichen Schwarzwald von Schopfheim nach Waldshut. Der Begriff Hotzenwald für die durchwanderte Gegend leitet sich aus Joseph Victor von Scheffels Roman Der Trompeter von Säckingen ab.",
+   "textSource": "Wikipedia",
+   "wikipedia": "https://de.wikipedia.org/wiki/Hotzenwald-Querweg",
+   "image": null,
+   "links": 2
+  },
+  {
+   "id": 907994,
+   "wikidata": "Q1726384",
+   "name": "Schwarzwald-Querweg Schwarzwald–Kaiserstuhl–Rhein",
+   "ref": null,
+   "network": "rwn",
+   "from": null,
+   "to": null,
+   "countries": [
+    "Deutschland"
+   ],
+   "lengthKm": 109,
+   "lengthSource": "Wikidata",
+   "text": "Der Schwarzwald-Querweg Schwarzwald–Kaiserstuhl–Rhein ist eine Ost-West-Mehrtageswanderstrecke durch den Schwarzwald von Donaueschingen nach Breisach. Der 109 Kilometer lange Wanderweg wird vom Schwarzwaldverein gepflegt und betreut.",
+   "textSource": "Wikipedia",
+   "wikipedia": "https://de.wikipedia.org/wiki/Schwarzwald-Querweg_Schwarzwald%E2%80%93Kaiserstuhl%E2%80%93Rhein",
+   "image": null,
+   "links": 2
+  },
+  {
+   "id": 1573367,
+   "wikidata": "Q25107816",
+   "name": "Cesta Márie Széchy",
+   "ref": "0914",
+   "network": "nwn",
+   "from": null,
+   "to": null,
+   "countries": [
+    "Slowakei"
+   ],
+   "lengthKm": 83,
+   "lengthSource": "Wikidata",
+   "text": "",
+   "textSource": null,
+   "wikipedia": null,
+   "image": null,
+   "links": 2
+  },
+  {
+   "id": 3000732,
+   "wikidata": "Q25107876",
+   "name": "Kysucká magistrála",
+   "ref": "0841",
+   "network": "nwn",
+   "from": null,
+   "to": null,
+   "countries": [
+    "Slowakei"
+   ],
+   "lengthKm": 44,
+   "lengthSource": "Wikidata",
+   "text": "",
+   "textSource": null,
+   "wikipedia": null,
+   "image": null,
+   "links": 2
+  },
+  {
+   "id": 8657823,
+   "wikidata": "Q5742325",
+   "name": "Camino Schmidt",
+   "ref": "PR-M/SG 5",
+   "network": "rwn",
+   "from": null,
+   "to": null,
+   "countries": [
+    "Spanien"
+   ],
+   "lengthKm": null,
+   "lengthSource": null,
+   "text": "Berg in Spanien",
+   "textSource": "Wikidata",
+   "wikipedia": null,
+   "image": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/b/b8/Camino_Schmidt-_Desv%C3%ADo_Senda_de_los_Cospes.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "width": 960,
+    "height": 721,
+    "author": "Paconi",
+    "license": "CC BY 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Camino_Schmidt-_Desv%C3%ADo_Senda_de_los_Cospes.jpg"
+   },
+   "links": 1
+  },
+  {
+   "id": 14047854,
+   "wikidata": "Q95290379",
+   "name": "Polvorosa de San Guiñona de los Manes",
+   "ref": null,
+   "network": "rwn",
+   "from": "Segovia",
+   "to": "Ermita de San Frutos",
+   "countries": [
+    "Spanien"
+   ],
+   "lengthKm": 79,
+   "lengthSource": "OpenStreetMap",
+   "text": "",
+   "textSource": null,
+   "wikipedia": null,
+   "image": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d8/Camino_de_San_Frutos.jpg/960px-Camino_de_San_Frutos.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 960,
+    "height": 1339,
+    "author": "Arturo Francisco Barbero",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Camino_de_San_Frutos.jpg"
+   },
+   "links": 1
+  },
+  {
+   "id": 17247698,
+   "wikidata": "Q124626034",
+   "name": "Cordel de Santillana",
+   "ref": null,
+   "network": "rwn",
+   "from": "Segovia",
+   "to": "Puerto de La Fuenfría",
+   "countries": [
+    "Spanien"
+   ],
+   "lengthKm": null,
+   "lengthSource": null,
+   "text": "",
+   "textSource": null,
+   "wikipedia": null,
+   "image": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2f/VAC-246.jpg/960px-VAC-246.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 960,
+    "height": 720,
+    "author": "Arturo Francisco Barbero",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:VAC-246.jpg"
+   },
+   "links": 1
+  },
+  {
+   "id": 6062350,
+   "wikidata": "Q22247902",
+   "name": "Route Napoléon à pied",
+   "ref": "GR 406",
+   "network": "nwn",
+   "from": null,
+   "to": null,
+   "countries": [
+    "Frankreich"
+   ],
+   "lengthKm": 165,
+   "lengthSource": "Wikidata",
+   "text": "",
+   "textSource": null,
+   "wikipedia": null,
+   "image": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5e/Citadelle_de_Sisteron_et_ancienne_route_Napol%C3%A9on.JPG/960px-Citadelle_de_Sisteron_et_ancienne_route_Napol%C3%A9on.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 960,
+    "height": 1280,
+    "author": "Sébastien Thébault",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Citadelle_de_Sisteron_et_ancienne_route_Napol%C3%A9on.JPG"
+   },
+   "links": 1
+  },
+  {
+   "id": 10037197,
+   "wikidata": "Q3478763",
+   "name": "Sentier de la Transhumance",
+   "ref": null,
+   "network": "rwn",
+   "from": "Calenzana",
+   "to": "Corscia",
+   "countries": [
+    "Frankreich"
+   ],
+   "lengthKm": null,
+   "lengthSource": null,
+   "text": "Weg in Frankreich",
+   "textSource": "Wikidata",
+   "wikipedia": null,
+   "image": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b4/Corscia-depart_Sentier_Transhumance.jpg/960px-Corscia-depart_Sentier_Transhumance.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 960,
+    "height": 720,
+    "author": "Pierre Bona",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Corscia-depart_Sentier_Transhumance.jpg"
+   },
+   "links": 1
+  },
+  {
+   "id": 3128407,
+   "wikidata": "Q3997957",
+   "name": "Tratturo Celano-Foggia",
+   "ref": null,
+   "network": "rwn",
+   "from": "Celano",
+   "to": "Foggia",
+   "countries": [
+    "Italien"
+   ],
+   "lengthKm": 225,
+   "lengthSource": "OpenStreetMap",
+   "text": "",
+   "textSource": null,
+   "wikipedia": null,
+   "image": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/2/20/Tratturo-Celano-Foggia.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "width": 960,
+    "height": 720,
+    "author": "Pietro",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Tratturo-Celano-Foggia.jpg"
+   },
+   "links": 1
+  },
+  {
+   "id": 377905,
+   "wikidata": "Q124149580",
+   "name": "GR 55 La Vanoise",
+   "ref": "GR 55",
+   "network": "nwn",
+   "from": null,
+   "to": null,
+   "countries": [
+    "Frankreich"
+   ],
+   "lengthKm": null,
+   "lengthSource": null,
+   "text": "",
+   "textSource": null,
+   "wikipedia": null,
+   "image": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c4/Dent_Parrach%C3%A9e_et_Glaciers_de_la_Vanoise_en_%C3%A9t%C3%A9_%28ao%C3%BBt_2022%29.JPG/960px-Dent_Parrach%C3%A9e_et_Glaciers_de_la_Vanoise_en_%C3%A9t%C3%A9_%28ao%C3%BBt_2022%29.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 960,
+    "height": 706,
+    "author": "Florian Pépellin",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Dent_Parrach%C3%A9e_et_Glaciers_de_la_Vanoise_en_%C3%A9t%C3%A9_(ao%C3%BBt_2022).JPG"
+   },
+   "links": 1
+  },
+  {
+   "id": 1738444,
+   "wikidata": "Q24933083",
+   "name": "GR 56",
+   "ref": "GR 56",
+   "network": "nwn",
+   "from": null,
+   "to": null,
+   "countries": [
+    "Frankreich"
+   ],
+   "lengthKm": 151,
+   "lengthSource": "Wikidata",
+   "text": "",
+   "textSource": null,
+   "wikipedia": null,
+   "image": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/66/Brec-du-Chambeyron.jpeg/960px-Brec-du-Chambeyron.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 960,
+    "height": 640,
+    "author": "Bruno Zunino",
+    "license": "CC BY 2.5",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.5",
+    "page": "https://commons.wikimedia.org/wiki/File:Brec-du-Chambeyron.jpeg"
+   },
+   "links": 1
+  },
+  {
+   "id": 2594584,
+   "wikidata": "Q1949088",
+   "name": "Moselhöhenweg",
+   "ref": "M",
+   "network": "nwn",
+   "from": "Koblenz",
+   "to": "Perl",
+   "countries": [
+    "Deutschland"
+   ],
+   "lengthKm": 240,
+   "lengthSource": "OpenStreetMap",
+   "text": "Der Moselhöhenweg ist ein Wanderweg auf beiden Seiten der Mosel. Der Moselhöhenweg wurde im Jahre 1910 vom Verein für Mosel, Hochwald und Hunsrück beiderseits der Mosel von Trier nach Koblenz ausgezeichnet.",
+   "textSource": "Wikipedia",
+   "wikipedia": "https://de.wikipedia.org/wiki/Moselh%C3%B6henweg",
+   "image": null,
+   "links": 1
+  },
+  {
+   "id": 2785102,
+   "wikidata": "Q20723137",
+   "name": "GR 532",
+   "ref": "GR 532",
+   "network": "nwn",
+   "from": "Mulhouse",
+   "to": "Soultz-sous-Forêts",
+   "countries": [
+    "Frankreich"
+   ],
+   "lengthKm": 503,
+   "lengthSource": "Wikidata",
+   "text": "",
+   "textSource": null,
+   "wikipedia": null,
+   "image": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/55/Source_de_la_Bruche_01.jpg/960px-Source_de_la_Bruche_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 960,
+    "height": 720,
+    "author": "Rémih",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Source_de_la_Bruche_01.jpg"
+   },
+   "links": 1
+  },
+  {
+   "id": 2909096,
+   "wikidata": "Q16009876",
+   "name": "GR-54 (Frankreich)",
+   "ref": "GR 54",
+   "network": "nwn",
+   "from": null,
+   "to": null,
+   "countries": [
+    "Frankreich"
+   ],
+   "lengthKm": 176,
+   "lengthSource": "Wikidata",
+   "text": "",
+   "textSource": null,
+   "wikipedia": null,
+   "image": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/1/19/Bourg_de_Oisans_09.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "width": 960,
+    "height": 1080,
+    "author": "Pelayo 08",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Bourg_de_Oisans_09.jpg"
+   },
+   "links": 1
+  },
+  {
+   "id": 3810330,
+   "wikidata": "Q19605992",
+   "name": "De Griselles à Chaumot",
+   "ref": "GR 132",
+   "network": "nwn",
+   "from": null,
+   "to": null,
+   "countries": [
+    "Frankreich"
+   ],
+   "lengthKm": null,
+   "lengthSource": null,
+   "text": "",
+   "textSource": null,
+   "wikipedia": null,
+   "image": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/8/81/Courtenay-GR132-Clery-rue_des_ponts-1.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "width": 960,
+    "height": 1280,
+    "author": "Basicdesign",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Courtenay-GR132-Clery-rue_des_ponts-1.JPG"
+   },
+   "links": 1
+  },
+  {
+   "id": 5370873,
+   "wikidata": "Q3478689",
+   "name": "De Contes à Carlepont",
+   "ref": "GR 123",
+   "network": "nwn",
+   "from": null,
+   "to": null,
+   "countries": [
+    "Frankreich"
+   ],
+   "lengthKm": 228,
+   "lengthSource": "Wikidata",
+   "text": "",
+   "textSource": null,
+   "wikipedia": null,
+   "image": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/29/Mouriez_vue_du_chemin_rural_de_Douai.png/960px-Mouriez_vue_du_chemin_rural_de_Douai.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 960,
+    "height": 563,
+    "author": "Bruno Dewailly",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Mouriez_vue_du_chemin_rural_de_Douai.png"
+   },
+   "links": 1
+  },
+  {
+   "id": 6197308,
+   "wikidata": "Q115349872",
+   "name": "GR 96",
+   "ref": "GR 96",
+   "network": "nwn",
+   "from": "Samoëns",
+   "to": "Aix-les-Bains",
+   "countries": [
+    "Frankreich"
+   ],
+   "lengthKm": null,
+   "lengthSource": null,
+   "text": "",
+   "textSource": null,
+   "wikipedia": null,
+   "image": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d6/Pic_de_Jallouvre_-_Lac_de_Lessy.jpg/960px-Pic_de_Jallouvre_-_Lac_de_Lessy.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 960,
+    "height": 720,
+    "author": "Juju740",
+    "license": "Public domain",
+    "licenseUrl": null,
+    "page": "https://commons.wikimedia.org/wiki/File:Pic_de_Jallouvre_-_Lac_de_Lessy.jpg"
+   },
+   "links": 1
+  },
+  {
+   "id": 8192507,
+   "wikidata": "Q20723136",
+   "name": "GR 533 Belfort-Sarrebourg",
+   "ref": "GR 533",
+   "network": "nwn",
+   "from": null,
+   "to": null,
+   "countries": [
+    "Frankreich"
+   ],
+   "lengthKm": 241,
+   "lengthSource": "OpenStreetMap",
+   "text": "",
+   "textSource": null,
+   "wikipedia": null,
+   "image": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5c/GR-vosges.jpg/960px-GR-vosges.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 960,
+    "height": 1484,
+    "author": "Brostoler",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:GR-vosges.jpg"
+   },
+   "links": 1
+  },
+  {
+   "id": 8313229,
+   "wikidata": "Q3478691",
+   "name": "De Cires-lès-Mello à Ailly-sur-Noye",
+   "ref": "GR 124",
+   "network": "nwn",
+   "from": "Cires-lès-Mello",
+   "to": "Ailly-sur-Noye",
+   "countries": [
+    "Frankreich"
+   ],
+   "lengthKm": 225,
+   "lengthSource": "Wikidata",
+   "text": "",
+   "textSource": null,
+   "wikipedia": null,
+   "image": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1a/Ansacq_%2860%29%2C_GR_124_%C3%A0_l%27ouest_du_village_1.jpg/960px-Ansacq_%2860%29%2C_GR_124_%C3%A0_l%27ouest_du_village_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 960,
+    "height": 720,
+    "author": "P.poschadel",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Ansacq_(60),_GR_124_%C3%A0_l%27ouest_du_village_1.jpg"
+   },
+   "links": 1
+  },
+  {
+   "id": 9079172,
+   "wikidata": "Q20723798",
+   "name": "GR 531",
+   "ref": "GR 531",
+   "network": "nwn",
+   "from": "Leymen",
+   "to": "Soultz-sous-Forêts",
+   "countries": [
+    "Frankreich"
+   ],
+   "lengthKm": 376,
+   "lengthSource": "OpenStreetMap",
+   "text": "",
+   "textSource": null,
+   "wikipedia": null,
+   "image": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2d/Chemin_des_Soldats_%40_T%C3%AAte_du_Violu_0.jpg/960px-Chemin_des_Soldats_%40_T%C3%AAte_du_Violu_0.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 960,
+    "height": 720,
+    "author": "Rémih",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Chemin_des_Soldats_@_T%C3%AAte_du_Violu_0.jpg"
+   },
+   "links": 1
+  },
+  {
+   "id": 10699408,
+   "wikidata": "Q3478706",
+   "name": "Tour des volcans et lacs d'Auvergne",
+   "ref": null,
+   "network": "nwn",
+   "from": null,
+   "to": null,
+   "countries": [
+    "Frankreich"
+   ],
+   "lengthKm": 194,
+   "lengthSource": "Wikidata",
+   "text": "",
+   "textSource": null,
+   "wikipedia": null,
+   "image": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7b/Lac_Pavin.jpg/960px-Lac_Pavin.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 960,
+    "height": 1434,
+    "author": "User Bodoklecksel on de.wikipedia",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+    "page": "https://commons.wikimedia.org/wiki/File:Lac_Pavin.jpg"
+   },
+   "links": 1
+  },
+  {
+   "id": 10752254,
+   "wikidata": "Q3478747",
+   "name": "Tour en Pays Cévenol",
+   "ref": "GR 67",
+   "network": "nwn",
+   "from": null,
+   "to": null,
+   "countries": [
+    "Frankreich"
+   ],
+   "lengthKm": 121,
+   "lengthSource": "Wikidata",
+   "text": "",
+   "textSource": null,
+   "wikipedia": null,
+   "image": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cb/GR6-GR67_Col_de_l%27Homme_Mort_panorama_cropped.jpg/960px-GR6-GR67_Col_de_l%27Homme_Mort_panorama_cropped.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 960,
+    "height": 540,
+    "author": "Borvan53",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:GR6-GR67_Col_de_l%27Homme_Mort_panorama_cropped.jpg"
+   },
+   "links": 1
+  },
+  {
+   "id": 13078092,
+   "wikidata": "Q3478744",
+   "name": "De Rocamadour aux Eyzies-de-Tayac-Sireuil",
+   "ref": "GR 64",
+   "network": "nwn",
+   "from": "Rocamadour",
+   "to": "Eyzies-de-Tayac-Sireuil",
+   "countries": [
+    "Frankreich"
+   ],
+   "lengthKm": 90,
+   "lengthSource": "Wikidata",
+   "text": "",
+   "textSource": null,
+   "wikipedia": null,
+   "image": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a2/Rocamadour%2C_Lot%2C_Midi-Pyr%C3%A9n%C3%A9es%2C_france.jpg/960px-Rocamadour%2C_Lot%2C_Midi-Pyr%C3%A9n%C3%A9es%2C_france.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 960,
+    "height": 720,
+    "author": "Dynamosquito from France",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Rocamadour,_Lot,_Midi-Pyr%C3%A9n%C3%A9es,_france.jpg"
+   },
+   "links": 1
+  },
+  {
+   "id": 13912694,
+   "wikidata": "Q28493593",
+   "name": "De Laon à Verzenay",
+   "ref": "GR 142",
+   "network": "nwn",
+   "from": "Laon",
+   "to": "Verzenay",
+   "countries": [
+    "Frankreich"
+   ],
+   "lengthKm": 108,
+   "lengthSource": "Wikidata",
+   "text": "",
+   "textSource": null,
+   "wikipedia": null,
+   "image": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/8/8c/Trac%C3%A9GR142.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "width": 960,
+    "height": 936,
+    "author": "Strokkur",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Trac%C3%A9GR142.png"
+   },
+   "links": 1
+  },
+  {
+   "id": 15459436,
+   "wikidata": "Q3478742",
+   "name": "De Montaut à Lacapelle-Biron",
+   "ref": "GR 636",
+   "network": "nwn",
+   "from": null,
+   "to": null,
+   "countries": [
+    "Frankreich"
+   ],
+   "lengthKm": null,
+   "lengthSource": null,
+   "text": "",
+   "textSource": null,
+   "wikipedia": null,
+   "image": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9c/Ribagnac_Bridoire_%284%29.JPG/960px-Ribagnac_Bridoire_%284%29.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 960,
+    "height": 720,
+    "author": "Père Igor",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Ribagnac_Bridoire_(4).JPG"
+   },
+   "links": 1
+  },
+  {
+   "id": 151286,
+   "wikidata": "Q26810493",
+   "name": "Panoramaweg Taubertal",
+   "ref": "PWT",
+   "network": "rwn",
+   "from": "Rothenburg o.d. Tauber",
+   "to": "Freudenberg",
+   "countries": [
+    "Deutschland"
+   ],
+   "lengthKm": 129,
+   "lengthSource": "OpenStreetMap",
+   "text": "Der Panoramaweg Taubertal (auch Panoramaweg Liebliches Taubertal) ist ein 133,3 Kilometer langer Wanderweg durch das Taubertal und das angrenzende Maintal. Die Strecke verläuft von Rothenburg ob der Tauber bis nach Freudenberg am Main.",
+   "textSource": "Wikipedia",
+   "wikipedia": "https://de.wikipedia.org/wiki/Panoramaweg_Taubertal",
+   "image": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/d/d4/Panoramaweg_Liebliches_Taubertal.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "width": 960,
+    "height": 636,
+    "author": "LRA MTK",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Panoramaweg_Liebliches_Taubertal.jpg"
+   },
+   "links": 1
+  },
+  {
+   "id": 1201589,
+   "wikidata": "Q2209196",
+   "name": "Saarland-Rundwanderweg",
+   "ref": "SLW",
+   "network": "rwn",
+   "from": null,
+   "to": null,
+   "countries": [
+    "Deutschland"
+   ],
+   "lengthKm": 273,
+   "lengthSource": "Wikidata",
+   "text": "Der Saarland-Rundwanderweg führt auf 273 Kilometern rund um das Saarland. Der Weg ist markiert mit einem senkrecht halbierten Quadrat, das links rot und rechts weiß gefärbt ist.",
+   "textSource": "Wikipedia",
+   "wikipedia": "https://de.wikipedia.org/wiki/Saarland-Rundwanderweg",
+   "image": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/e/ec/Grenzstein_Kohlhof_03.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "width": 960,
+    "height": 540,
+    "author": "Pelayo 08",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Grenzstein_Kohlhof_03.jpg"
+   },
+   "links": 1
+  },
+  {
+   "id": 1504263,
+   "wikidata": "Q1792133",
+   "name": "Via Spluga",
+   "ref": "50",
+   "network": "rwn",
+   "from": "Thusis",
+   "to": "Chiavenna (I)",
+   "countries": [
+    "Schweiz",
+    "Italien"
+   ],
+   "lengthKm": 68,
+   "lengthSource": "Wikidata",
+   "text": "Die Via Spluga ist ein Schweizer Kulturwanderweg, der auf dem historischen Alpen-Transitweg von Thusis (720 m) in der Schweiz über den Splügenpass (2114 m) nach Chiavenna (325 m) in Italien führt. Die Via Spluga ist von SchweizMobil als Regionale Route mit der Nr.",
+   "textSource": "Wikipedia",
+   "wikipedia": "https://de.wikipedia.org/wiki/Via_Spluga",
+   "image": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e8/Cardinello01.JPG/960px-Cardinello01.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 960,
+    "height": 720,
+    "author": "Paebi",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+    "page": "https://commons.wikimedia.org/wiki/File:Cardinello01.JPG"
+   },
+   "links": 1
+  },
+  {
+   "id": 1717222,
+   "wikidata": "Q13105317",
+   "name": "Alzette Pfad",
+   "ref": "AP",
+   "network": "rwn",
+   "from": null,
+   "to": null,
+   "countries": [
+    "Luxemburg"
+   ],
+   "lengthKm": 25,
+   "lengthSource": "Wikidata",
+   "text": "",
+   "textSource": null,
+   "wikipedia": null,
+   "image": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e9/Kapelle_Fautelfiels_09.jpg/960px-Kapelle_Fautelfiels_09.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 960,
+    "height": 648,
+    "author": "MMFE",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Kapelle_Fautelfiels_09.jpg"
+   },
+   "links": 1
+  },
+  {
+   "id": 2169030,
+   "wikidata": "Q106600038",
+   "name": "Via Sbrinz",
+   "ref": "40",
+   "network": "rwn",
+   "from": "Stansstadt",
+   "to": "Ponte (I)",
+   "countries": [
+    "Schweiz"
+   ],
+   "lengthKm": 110,
+   "lengthSource": "Wikidata",
+   "text": "Die Via Sbrinz – auch Sbrinz–Route – ist ein Schweizer Kulturwanderweg, der in sieben Etappen auf dem historischen Alpen–Transitweg von Luzern (436 m ü. M.) in der Schweiz über den Grimselpass (2164 m ü.",
+   "textSource": "Wikipedia",
+   "wikipedia": "https://de.wikipedia.org/wiki/Via_Sbrinz",
+   "image": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/25/Wanderwegweiser_Guttannen_Schwarzbrunnenbr%C3%BCcke.jpg/960px-Wanderwegweiser_Guttannen_Schwarzbrunnenbr%C3%BCcke.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 960,
+    "height": 767,
+    "author": "Biobuur",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "page": "https://commons.wikimedia.org/wiki/File:Wanderwegweiser_Guttannen_Schwarzbrunnenbr%C3%BCcke.jpg"
+   },
+   "links": 1
+  },
+  {
+   "id": 2375640,
+   "wikidata": "Q1167834",
+   "name": "Toggenburger Höhenweg",
+   "ref": "48",
+   "network": "rwn",
+   "from": "Wildhaus",
+   "to": "Wil SG",
+   "countries": [
+    "Schweiz"
+   ],
+   "lengthKm": 88,
+   "lengthSource": "Wikidata",
+   "text": "Der Toggenburger Höhenweg ist ein rund 87 Kilometer langer Wanderweg im Kanton St. Gallen, der von Wildhaus nach Wil im Nordosten der Schweiz führt.",
+   "textSource": "Wikipedia",
+   "wikipedia": "https://de.wikipedia.org/wiki/Toggenburger_H%C3%B6henweg",
+   "image": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/53/Toggenburger_H%C3%B6henweg.jpg/960px-Toggenburger_H%C3%B6henweg.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 960,
+    "height": 720,
+    "author": "Adrian Michael",
+    "license": "CC BY 2.5",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.5",
+    "page": "https://commons.wikimedia.org/wiki/File:Toggenburger_H%C3%B6henweg.jpg"
+   },
+   "links": 1
+  },
+  {
+   "id": 2598922,
+   "wikidata": "Q110003730",
+   "name": "Tour du Beaufortain",
+   "ref": null,
+   "network": "rwn",
+   "from": null,
+   "to": null,
+   "countries": [
+    "Frankreich"
+   ],
+   "lengthKm": null,
+   "lengthSource": null,
+   "text": "",
+   "textSource": null,
+   "wikipedia": null,
+   "image": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/63/Vue_depuis_le_sentier_du_chard_du_beurre_-_panoramio.jpg/960px-Vue_depuis_le_sentier_du_chard_du_beurre_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 960,
+    "height": 720,
+    "author": "chisloup",
+    "license": "CC BY 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Vue_depuis_le_sentier_du_chard_du_beurre_-_panoramio.jpg"
+   },
+   "links": 1
+  },
+  {
+   "id": 2639516,
+   "wikidata": "Q13104452",
+   "name": "Sentier des Sept Châteaux",
+   "ref": "SSC",
+   "network": "rwn",
+   "from": null,
+   "to": null,
+   "countries": [
+    "Luxemburg",
+    "Belgien"
+   ],
+   "lengthKm": 38,
+   "lengthSource": "Wikidata",
+   "text": "",
+   "textSource": null,
+   "wikipedia": null,
+   "image": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f5/KoerichCastle.JPG/960px-KoerichCastle.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 960,
+    "height": 720,
+    "author": "Chreschtvuletzebuerg",
+    "license": "CC BY-SA 3.0 lu",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/lu/deed.en",
+    "page": "https://commons.wikimedia.org/wiki/File:KoerichCastle.JPG"
+   },
+   "links": 1
+  },
+  {
+   "id": 2795160,
+   "wikidata": "Q48753343",
+   "name": "Tour du Lac d'Annecy",
+   "ref": "GRP TLA",
+   "network": "rwn",
+   "from": null,
+   "to": null,
+   "countries": [
+    "Frankreich"
+   ],
+   "lengthKm": null,
+   "lengthSource": null,
+   "text": "",
+   "textSource": null,
+   "wikipedia": null,
+   "image": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/19/Le_lac_d%27Annecy_depuis_la_montagne_de_Veyrier.jpg/960px-Le_lac_d%27Annecy_depuis_la_montagne_de_Veyrier.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 960,
+    "height": 540,
+    "author": "Calydon74",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Le_lac_d%27Annecy_depuis_la_montagne_de_Veyrier.jpg"
+   },
+   "links": 1
+  },
+  {
+   "id": 5823536,
+   "wikidata": "Q98971851",
+   "name": "Naheweg",
+   "ref": "N",
+   "network": "rwn",
+   "from": null,
+   "to": null,
+   "countries": [
+    "Deutschland"
+   ],
+   "lengthKm": 75,
+   "lengthSource": "OpenStreetMap",
+   "text": "Der Naheweg ist ein etwa 75 Kilometer langer Wanderweg, der vom Rastpfuhl in Saarbrücken durch den Saarkohlenwald und dann weiter über Göttelborn, Illingen und Urexweiler hinab ins Tal der Blies bei Gronig und weiter ins Nahetal führt. Die Nahequelle bei Selbach kann mit einem Abstecher von 2,5 km Länge erreicht werden.",
+   "textSource": "Wikipedia",
+   "wikipedia": "https://de.wikipedia.org/wiki/Naheweg",
+   "image": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/18/Naheweg.1jpg.jpg/960px-Naheweg.1jpg.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 960,
+    "height": 1280,
+    "author": "Müller Andreas",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Naheweg.1jpg.jpg"
+   },
+   "links": 1
+  },
+  {
+   "id": 6517771,
+   "wikidata": "Q109044230",
+   "name": "Massif de Tournette-Aravis",
+   "ref": "GRP MTA",
+   "network": "rwn",
+   "from": null,
+   "to": null,
+   "countries": [
+    "Frankreich"
+   ],
+   "lengthKm": null,
+   "lengthSource": null,
+   "text": "",
+   "textSource": null,
+   "wikipedia": null,
+   "image": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/35/Col_de_l%27Oulettaz_vue_rapproch%C3%A9e.JPG/960px-Col_de_l%27Oulettaz_vue_rapproch%C3%A9e.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 960,
+    "height": 720,
+    "author": "Rémih",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Col_de_l%27Oulettaz_vue_rapproch%C3%A9e.JPG"
+   },
+   "links": 1
+  },
+  {
+   "id": 7781477,
+   "wikidata": "Q56935717",
+   "name": "’s Äpple",
+   "ref": null,
+   "network": "rwn",
+   "from": null,
+   "to": null,
+   "countries": [
+    "Deutschland"
+   ],
+   "lengthKm": 84,
+   "lengthSource": "Wikidata",
+   "text": "Der Landschaftserlebnisweg ’s Äpple führt als Rundwanderweg auf einer Länge von 84 km rund um Backnang und die Backnanger Bucht im Rems-Murr-Kreis und verläuft durch die landschaftsprägende Kulturlandschaft der Streuobstwiesen im Schwäbischen Mostviertel.",
+   "textSource": "Wikipedia",
+   "wikipedia": "https://de.wikipedia.org/wiki/%E2%80%99s_%C3%84pple",
+   "image": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/04/Aepple.png/960px-Aepple.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 960,
+    "height": 703,
+    "author": "OpenStreetMap Contributors, J Abele",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Aepple.png"
+   },
+   "links": 1
+  },
+  {
+   "id": 8845842,
+   "wikidata": "Q112630378",
+   "name": "Albsteig",
+   "ref": null,
+   "network": "rwn",
+   "from": "Albbruck",
+   "to": "St. Blasien",
+   "countries": [
+    "Deutschland"
+   ],
+   "lengthKm": 83,
+   "lengthSource": "OpenStreetMap",
+   "text": "Der Albsteig Schwarzwald (auch nur Albsteig) ist ein Fernwanderweg im Südschwarzwald. Die etwa 83 km lange Strecke wird wahlweise mit sieben oder vier Tagesetappen beschrieben.",
+   "textSource": "Wikipedia",
+   "wikipedia": "https://de.wikipedia.org/wiki/Albsteig_Schwarzwald",
+   "image": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d2/Bernauer_Alb_river_near_Bernau_with_nice_waterscenes_at_11_May_2015_-_panoramio.jpg/960px-Bernauer_Alb_river_near_Bernau_with_nice_waterscenes_at_11_May_2015_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 960,
+    "height": 638,
+    "author": "Henk Monster",
+    "license": "CC BY 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Bernauer_Alb_river_near_Bernau_with_nice_waterscenes_at_11_May_2015_-_panoramio.jpg"
+   },
+   "links": 1
+  },
+  {
+   "id": 13626638,
+   "wikidata": "Q109044232",
+   "name": "Tour de la Vologne",
+   "ref": null,
+   "network": "rwn",
+   "from": "Épinal",
+   "to": "Épinal",
+   "countries": [
+    "Frankreich"
+   ],
+   "lengthKm": 148,
+   "lengthSource": "OpenStreetMap",
+   "text": "",
+   "textSource": null,
+   "wikipedia": null,
+   "image": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/69/Longemer_et_vall%C3%A9e_de_la_Vologne%2C_vus_de_la_roche_du_Diable.jpg/960px-Longemer_et_vall%C3%A9e_de_la_Vologne%2C_vus_de_la_roche_du_Diable.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 960,
+    "height": 720,
+    "author": "Espirat",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Longemer_et_vall%C3%A9e_de_la_Vologne,_vus_de_la_roche_du_Diable.jpg"
+   },
+   "links": 1
+  },
+  {
+   "id": 49531,
+   "wikidata": "Q1713822",
+   "name": "Jurasteig",
+   "ref": "JuS",
+   "network": "nwn",
+   "from": null,
+   "to": null,
+   "countries": [
+    "Deutschland"
+   ],
+   "lengthKm": 237,
+   "lengthSource": "OpenStreetMap",
+   "text": "Der Jurasteig ist ein Rundwanderweg in Bayern (und daher im eigentlichen Sinne kein Fernwanderweg), „dessen Hauptroute ... den Umfang und das Ausmaß der Oberpfälzer Alb in seiner Kompaktheit nahezu zusammenfassend nachzeichnet“.",
+   "textSource": "Wikipedia",
+   "wikipedia": "https://de.wikipedia.org/wiki/Jurasteig",
+   "image": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/1/1d/J-jurasteig.gif?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "width": 960,
+    "height": 1229,
+    "author": "Derzno",
+    "license": "Public domain",
+    "licenseUrl": null,
+    "page": "https://commons.wikimedia.org/wiki/File:J-jurasteig.gif"
+   },
+   "links": 1
+  },
+  {
+   "id": 68268,
+   "wikidata": "Q12059915",
+   "name": "[Č] Chřenovice - Beroun",
+   "ref": "0001",
+   "network": "nwn",
+   "from": null,
+   "to": null,
+   "countries": [
+    "Tschechien"
+   ],
+   "lengthKm": 157,
+   "lengthSource": "Wikidata",
+   "text": "",
+   "textSource": null,
+   "wikipedia": null,
+   "image": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/83/%C5%BDampach_rozcest%C3%AD.jpg/960px-%C5%BDampach_rozcest%C3%AD.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 960,
+    "height": 1280,
+    "author": "cs:ŠJů",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+    "page": "https://commons.wikimedia.org/wiki/File:%C5%BDampach_rozcest%C3%AD.jpg"
+   },
+   "links": 1
+  },
+  {
+   "id": 90433,
+   "wikidata": "Q995446",
+   "name": "Frankenweg",
+   "ref": null,
+   "network": "nwn",
+   "from": "Altdorf",
+   "to": "Berching",
+   "countries": [
+    "Deutschland"
+   ],
+   "lengthKm": 520,
+   "lengthSource": "Wikidata",
+   "text": "Der Frankenweg ist ein Fernwanderweg in Bayern. Er ist circa 520 Kilometer lang und wurde am 11.",
+   "textSource": "Wikipedia",
+   "wikipedia": "https://de.wikipedia.org/wiki/Frankenweg",
+   "image": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/df/Frankenweg%2C_Hauptwanderweg_8_%28HW_8%29_des_Schw%C3%A4bischen_Albvereins%2C_Hier_Minenplattweg_-_panoramio.jpg/960px-Frankenweg%2C_Hauptwanderweg_8_%28HW_8%29_des_Schw%C3%A4bischen_Albvereins%2C_Hier_Minenplattweg_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 960,
+    "height": 717,
+    "author": "qwesy qwesy",
+    "license": "CC BY 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Frankenweg,_Hauptwanderweg_8_(HW_8)_des_Schw%C3%A4bischen_Albvereins,_Hier_Minenplattweg_-_panoramio.jpg"
+   },
+   "links": 1
+  },
+  {
+   "id": 1736379,
+   "wikidata": "Q2450378",
+   "name": "Traumpfad München-Venedig",
+   "ref": null,
+   "network": "iwn",
+   "from": null,
+   "to": null,
+   "countries": [
+    "Deutschland"
+   ],
+   "lengthKm": 550,
+   "lengthSource": "OpenStreetMap",
+   "text": "Der Traumpfad München–Venedig (abgekürzt: TMV) ist ein Fernwanderweg, den Ludwig Graßler in einem 1977 erstmals veröffentlichten Buch beschrieben hat. Er führt vom Marienplatz in München über die Bayerischen Voralpen und das Karwendel ins Inntal.",
+   "textSource": "Wikipedia",
+   "wikipedia": "https://de.wikipedia.org/wiki/Traumpfad_M%C3%BCnchen%E2%80%93Venedig",
+   "image": null,
+   "links": 1
+  },
+  {
+   "id": 1937092,
+   "wikidata": "Q14550928",
+   "name": "Mosel-Camino",
+   "ref": "MC",
+   "network": "iwn",
+   "from": "Koblenz-Stolzenfels",
+   "to": "Trier",
+   "countries": [
+    "Deutschland"
+   ],
+   "lengthKm": null,
+   "lengthSource": null,
+   "text": "Der Mosel-Camino (camino: spanisch = Weg) ist ein Abschnitt im Netz der Wege der Jakobspilger in Deutschland. Er führt von Koblenz-Stolzenfels auf beiden Seiten der Mosel bis zur Benediktinerabtei St.",
+   "textSource": "Wikipedia",
+   "wikipedia": "https://de.wikipedia.org/wiki/Mosel-Camino",
+   "image": null,
+   "links": 1
+  },
+  {
+   "id": 2073724,
+   "wikidata": "Q1250609",
+   "name": "Jakobsweg Österreich",
+   "ref": null,
+   "network": "iwn",
+   "from": null,
+   "to": null,
+   "countries": [
+    "Österreich"
+   ],
+   "lengthKm": null,
+   "lengthSource": null,
+   "text": "Der Österreichische Jakobsweg ist ein, teilweise beschilderter, etwa 750 bis 800 Kilometer langer Hauptast des Jakobswegenetzes in Österreich. Dieser stützt sich ungeachtet von regionalen Abweichungen hinsichtlich der Routenführung im Wesentlichen auf die 1999 erstmals veröffentlichten Forschungsergebnisse von Peter Lindenthal.",
+   "textSource": "Wikipedia",
+   "wikipedia": "https://de.wikipedia.org/wiki/Jakobsweg_%C3%96sterreich",
+   "image": null,
+   "links": 1
+  },
+  {
+   "id": 3371115,
+   "wikidata": "Q3556475",
+   "name": "Via Arverna",
+   "ref": null,
+   "network": "iwn",
+   "from": "Clermont-Ferrand",
+   "to": "Cahors",
+   "countries": [
+    "Frankreich"
+   ],
+   "lengthKm": 506,
+   "lengthSource": "OpenStreetMap",
+   "text": "",
+   "textSource": null,
+   "wikipedia": null,
+   "image": null,
+   "links": 1
+  },
+  {
+   "id": 8289208,
+   "wikidata": "Q3556489",
+   "name": "Via Domitia",
+   "ref": null,
+   "network": "iwn",
+   "from": "Montgenèvre, France",
+   "to": "Arles, France",
+   "countries": [
+    "Frankreich"
+   ],
+   "lengthKm": null,
+   "lengthSource": null,
+   "text": "",
+   "textSource": null,
+   "wikipedia": null,
+   "image": null,
+   "links": 1
+  },
+  {
+   "id": 11156760,
+   "wikidata": "Q110205768",
+   "name": "CSJ - Il Cammino di San Jacopo",
+   "ref": null,
+   "network": "iwn",
+   "from": "Firenze",
+   "to": "Livorno/Barcellona/Santiago",
+   "countries": [
+    "Italien"
+   ],
+   "lengthKm": 176,
+   "lengthSource": "OpenStreetMap",
+   "text": "",
+   "textSource": null,
+   "wikipedia": null,
+   "image": null,
+   "links": 1
+  },
+  {
+   "id": 12702331,
+   "wikidata": "Q10682162",
+   "name": "Stråsjöleden",
+   "ref": null,
+   "network": "iwn",
+   "from": null,
+   "to": null,
+   "countries": [
+    "Schweden"
+   ],
+   "lengthKm": 271,
+   "lengthSource": "Wikidata",
+   "text": "",
+   "textSource": null,
+   "wikipedia": null,
+   "image": null,
+   "links": 1
+  },
+  {
+   "id": 10077965,
+   "wikidata": "Q64605695",
+   "name": "Senda de la Laguna Grande",
+   "ref": "PR-AV 17",
+   "network": "rwn",
+   "from": "La Plataforma de Gredos",
+   "to": "La Laguna Grande",
+   "countries": [
+    "Spanien"
+   ],
+   "lengthKm": 7,
+   "lengthSource": "OpenStreetMap",
+   "text": "",
+   "textSource": null,
+   "wikipedia": null,
+   "image": null,
+   "links": 1
+  },
+  {
+   "id": 11278695,
+   "wikidata": "Q64605682",
+   "name": "Senda de la Garganta de Bohoyo",
+   "ref": "PR-AV 16",
+   "network": "rwn",
+   "from": "Carretera de Bohoyo",
+   "to": "Collado del Belesar",
+   "countries": [
+    "Spanien"
+   ],
+   "lengthKm": 15,
+   "lengthSource": "OpenStreetMap",
+   "text": "",
+   "textSource": null,
+   "wikipedia": null,
+   "image": null,
+   "links": 1
+  },
+  {
+   "id": 1623140,
+   "wikidata": "Q3478727",
+   "name": "De Saint-Raphaël à Rougon",
+   "ref": "GR 49",
+   "network": "nwn",
+   "from": null,
+   "to": null,
+   "countries": [
+    "Frankreich"
+   ],
+   "lengthKm": 100,
+   "lengthSource": "Wikidata",
+   "text": "",
+   "textSource": null,
+   "wikipedia": null,
+   "image": null,
+   "links": 1
+  },
+  {
+   "id": 1730279,
+   "wikidata": "Q11923436",
+   "name": "GR 65-5 (Spain)",
+   "ref": "GR 65.5",
+   "network": "nwn",
+   "from": null,
+   "to": null,
+   "countries": [
+    "Spanien"
+   ],
+   "lengthKm": 112,
+   "lengthSource": "Wikidata",
+   "text": "Weg in Spanien",
+   "textSource": "Wikidata",
+   "wikipedia": null,
+   "image": null,
+   "links": 1
+  },
+  {
+   "id": 6423545,
+   "wikidata": "Q5514510",
+   "name": "GR 71",
+   "ref": "GR 71",
+   "network": "nwn",
+   "from": null,
+   "to": null,
+   "countries": [
+    "Frankreich"
+   ],
+   "lengthKm": null,
+   "lengthSource": null,
+   "text": "",
+   "textSource": null,
+   "wikipedia": "https://en.wikipedia.org/wiki/GR_71",
+   "image": null,
+   "links": 1
+  },
+  {
+   "id": 7235528,
+   "wikidata": "Q30739857",
+   "name": "Via Garona",
+   "ref": "GR 861",
+   "network": "nwn",
+   "from": "Toulouse",
+   "to": "Saint-Bertrand-de-Comminges",
+   "countries": [
+    "Frankreich"
+   ],
+   "lengthKm": 170,
+   "lengthSource": "OpenStreetMap",
+   "text": "",
+   "textSource": null,
+   "wikipedia": null,
+   "image": null,
+   "links": 1
+  },
+  {
+   "id": 15557473,
+   "wikidata": "Q51881900",
+   "name": "Camí Ramader de Marina",
+   "ref": "CRdM",
+   "network": "nwn",
+   "from": null,
+   "to": null,
+   "countries": [
+    "Spanien"
+   ],
+   "lengthKm": 230,
+   "lengthSource": "OpenStreetMap",
+   "text": "",
+   "textSource": null,
+   "wikipedia": null,
+   "image": null,
+   "links": 1
+  },
+  {
+   "id": 2351642,
+   "wikidata": "Q11953013",
+   "name": "Matagalls - Montserrat",
+   "ref": "Mm",
+   "network": "rwn",
+   "from": "el Brull",
+   "to": "Montserrat",
+   "countries": [
+    "Spanien"
+   ],
+   "lengthKm": 81,
+   "lengthSource": "OpenStreetMap",
+   "text": "",
+   "textSource": null,
+   "wikipedia": null,
+   "image": null,
+   "links": 1
+  },
+  {
+   "id": 5256572,
+   "wikidata": "Q117755929",
+   "name": "Tour des Baronnies de Bigorre",
+   "ref": null,
+   "network": "rwn",
+   "from": null,
+   "to": null,
+   "countries": [
+    "Frankreich"
+   ],
+   "lengthKm": 70,
+   "lengthSource": "Wikidata",
+   "text": "",
+   "textSource": null,
+   "wikipedia": null,
+   "image": null,
+   "links": 1
+  },
+  {
+   "id": 8469499,
+   "wikidata": "Q137860937",
+   "name": "Tour du Pic des Trois Seigneurs",
+   "ref": null,
+   "network": "rwn",
+   "from": null,
+   "to": null,
+   "countries": [
+    "Frankreich"
+   ],
+   "lengthKm": 77,
+   "lengthSource": "Wikidata",
+   "text": "",
+   "textSource": null,
+   "wikipedia": null,
+   "image": null,
+   "links": 1
+  },
+  {
+   "id": 11835960,
+   "wikidata": "Q130752418",
+   "name": "Camí Ral de Vic a Olot",
+   "ref": "CR-VO",
+   "network": "rwn",
+   "from": "Vic",
+   "to": "Olot",
+   "countries": [
+    "Spanien"
+   ],
+   "lengthKm": null,
+   "lengthSource": null,
+   "text": "",
+   "textSource": null,
+   "wikipedia": null,
+   "image": null,
+   "links": 1
+  },
+  {
+   "id": 13271438,
+   "wikidata": "Q137187073",
+   "name": "Tour du Pays d'Olmes",
+   "ref": null,
+   "network": "rwn",
+   "from": null,
+   "to": null,
+   "countries": [
+    "Frankreich"
+   ],
+   "lengthKm": 68,
+   "lengthSource": "Wikidata",
+   "text": "",
+   "textSource": null,
+   "wikipedia": null,
+   "image": null,
+   "links": 1
+  },
+  {
+   "id": 14921347,
+   "wikidata": "Q137360710",
+   "name": "Tour des Montagnes d'Ax",
+   "ref": null,
+   "network": "rwn",
+   "from": null,
+   "to": null,
+   "countries": [
+    "Frankreich"
+   ],
+   "lengthKm": 73,
+   "lengthSource": "Wikidata",
+   "text": "",
+   "textSource": null,
+   "wikipedia": null,
+   "image": null,
+   "links": 1
+  },
+  {
+   "id": 19607680,
+   "wikidata": "Q137859130",
+   "name": "Tour de La Barguillère",
+   "ref": null,
+   "network": "rwn",
+   "from": null,
+   "to": null,
+   "countries": [
+    "Frankreich"
+   ],
+   "lengthKm": 50,
+   "lengthSource": "Wikidata",
+   "text": "",
+   "textSource": null,
+   "wikipedia": null,
+   "image": null,
+   "links": 1
+  },
+  {
+   "id": 1659988,
+   "wikidata": "Q131749547",
+   "name": "Corfu Trail",
+   "ref": "CT",
+   "network": "rwn",
+   "from": "Κάβος - Kavos",
+   "to": "Άγιος Σπυρίδων - Agios Spyridon",
+   "countries": [
+    "Griechenland"
+   ],
+   "lengthKm": 180,
+   "lengthSource": "OpenStreetMap",
+   "text": "",
+   "textSource": null,
+   "wikipedia": null,
+   "image": null,
+   "links": 1
+  },
+  {
+   "id": 1731864,
+   "wikidata": "Q3478702",
+   "name": "GR 26",
+   "ref": "GR 26",
+   "network": "nwn",
+   "from": "Villennes-sur-Seine",
+   "to": "Villers-sur-Mer",
+   "countries": [
+    "Frankreich"
+   ],
+   "lengthKm": 304,
+   "lengthSource": "Wikidata",
+   "text": "",
+   "textSource": null,
+   "wikipedia": null,
+   "image": null,
+   "links": 1
+  },
+  {
+   "id": 3224273,
+   "wikidata": "Q16676069",
+   "name": "De Condé-sur-Noireau à Gué-Rochoux",
+   "ref": "GR 226",
+   "network": "nwn",
+   "from": null,
+   "to": null,
+   "countries": [
+    "Frankreich"
+   ],
+   "lengthKm": 61,
+   "lengthSource": "Wikidata",
+   "text": "",
+   "textSource": null,
+   "wikipedia": null,
+   "image": null,
+   "links": 1
+  },
+  {
+   "id": 6893130,
+   "wikidata": "Q65150927",
+   "name": "Le tour de l'île d'Yeu",
+   "ref": "GR 80",
+   "network": "nwn",
+   "from": null,
+   "to": null,
+   "countries": [
+    "Frankreich"
+   ],
+   "lengthKm": 28,
+   "lengthSource": "Wikidata",
+   "text": "",
+   "textSource": null,
+   "wikipedia": null,
+   "image": null,
+   "links": 1
+  },
+  {
+   "id": 31562,
+   "wikidata": "Q2254450",
+   "name": "Schwarzwald-Schwäbische-Alb-Allgäu-Weg",
+   "ref": "HW 5",
+   "network": "nwn",
+   "from": null,
+   "to": null,
+   "countries": [
+    "Deutschland"
+   ],
+   "lengthKm": 306,
+   "lengthSource": "Wikidata",
+   "text": "Der Schwarzwald-Schwäbische Alb-Allgäu-Weg, auch Hauptwanderweg 5 oder abgekürzt HW 5 genannt, ist ein 311 Kilometer langer Fernwanderweg des Schwäbischen Albvereins. Er führt von Pforzheim bis auf den Schwarzen Grat.",
+   "textSource": "Wikipedia",
+   "wikipedia": "https://de.wikipedia.org/wiki/Schwarzwald-Schw%C3%A4bische-Alb-Allg%C3%A4u-Weg",
+   "image": null,
+   "links": 1
+  },
+  {
+   "id": 84446,
+   "wikidata": "Q1444799",
+   "name": "Frankenweg (Schwäbischer Albverein)",
+   "ref": "HW 8",
+   "network": "nwn",
+   "from": null,
+   "to": null,
+   "countries": [
+    "Deutschland"
+   ],
+   "lengthKm": 210,
+   "lengthSource": "Wikidata",
+   "text": "Der Frankenweg ist der Hauptwanderweg 8 (HW 8) des Schwäbischen Albvereins. Mit einer Gesamtlänge von 220 Kilometer verläuft er von Pforzheim über Heilbronn bis nach Rothenburg ob der Tauber und durchquert dabei den südlichen Kraichgau, den Heuchelberg, den Schwäbisch-Fränkischen Wald und die Hohenloher Ebene.",
+   "textSource": "Wikipedia",
+   "wikipedia": "https://de.wikipedia.org/wiki/Frankenweg_(Schw%C3%A4bischer_Albverein)",
+   "image": null,
+   "links": 1
+  },
+  {
+   "id": 128284,
+   "wikidata": "Q131989730",
+   "name": "Saar-Pfalz-Weg",
+   "ref": "SPW",
+   "network": "nwn",
+   "from": null,
+   "to": null,
+   "countries": [
+    "Deutschland"
+   ],
+   "lengthKm": null,
+   "lengthSource": null,
+   "text": "Der Saar-Pfalz-Weg ist ein 259 Kilometer langer Fernwanderweg, der durch das Saarland und die Pfalz führt. Er gehört zu den sogenannten „Saar-Rhein-Wanderwegen“.",
+   "textSource": "Wikipedia",
+   "wikipedia": "https://de.wikipedia.org/wiki/Saar-Pfalz-Weg",
+   "image": null,
+   "links": 1
+  },
+  {
+   "id": 157290,
+   "wikidata": "Q1616376",
+   "name": "Heuberg-Allgäu-Weg",
+   "ref": "HW 9",
+   "network": "nwn",
+   "from": null,
+   "to": null,
+   "countries": [
+    "Deutschland"
+   ],
+   "lengthKm": 182,
+   "lengthSource": "Wikidata",
+   "text": "Der Heuberg-Allgäu-Weg ist der Hauptwanderweg 9 (HW 9) des Schwäbischen Albvereins. Mit einer Gesamtlänge von 185 Kilometern verläuft er von Spaichingen bis auf den Schwarzen Grat und führt dabei von der westlichen Schwäbischen Alb über Oberschwaben und den Bodensee bis zum Württemberger Allgäu.",
+   "textSource": "Wikipedia",
+   "wikipedia": "https://de.wikipedia.org/wiki/Heuberg-Allg%C3%A4u-Weg",
+   "image": null,
+   "links": 1
+  },
+  {
+   "id": 166396,
+   "wikidata": "Q2257980",
+   "name": "Schwäbische-Alb-Oberschwaben-Weg",
+   "ref": "HW 7",
+   "network": "nwn",
+   "from": null,
+   "to": null,
+   "countries": [
+    "Deutschland"
+   ],
+   "lengthKm": 233,
+   "lengthSource": "Wikidata",
+   "text": "Der Schwäbische-Alb-Oberschwaben-Weg ist der Hauptwanderweg 7 (HW 7) des Schwäbischen Albvereins. Mit einer Gesamtlänge von 240 Kilometern verläuft er von Lorch im Remstal über Göppingen und Bad Saulgau bis nach Friedrichshafen und führt dabei durch sieben Landkreise Baden-Württembergs vom Schwäbischen Wald über die Schwäbische Alb durch …",
+   "textSource": "Wikipedia",
+   "wikipedia": "https://de.wikipedia.org/wiki/Schw%C3%A4bische-Alb-Oberschwaben-Weg",
+   "image": null,
+   "links": 1
+  },
+  {
+   "id": 169101,
+   "wikidata": "Q889685",
+   "name": "Bodensee-Rundweg",
+   "ref": null,
+   "network": "nwn",
+   "from": null,
+   "to": null,
+   "countries": [
+    "Schweiz"
+   ],
+   "lengthKm": null,
+   "lengthSource": null,
+   "text": "Der Bodensee-Rundwanderweg, ausgeschildert als Bodensee-Rundweg, führt rund um den Bodensee durch die Staatsgebiete Deutschlands, Österreichs und der Schweiz.",
+   "textSource": "Wikipedia",
+   "wikipedia": "https://de.wikipedia.org/wiki/Bodensee-Rundweg",
+   "image": null,
+   "links": 1
+  },
+  {
+   "id": 177745,
+   "wikidata": "Q306531",
+   "name": "Nordalpenweg",
+   "ref": "01",
+   "network": "nwn",
+   "from": null,
+   "to": null,
+   "countries": [
+    "Österreich"
+   ],
+   "lengthKm": 1000,
+   "lengthSource": "OpenStreetMap",
+   "text": "Der Nordalpenweg (Österreichischer Weitwanderweg 01) wurde am 22. Juni 1975 als erster österreichischer Ost-West-Weitwanderweg eröffnet.",
+   "textSource": "Wikipedia",
+   "wikipedia": "https://de.wikipedia.org/wiki/Nordalpenweg",
+   "image": null,
+   "links": 1
+  },
+  {
+   "id": 2268844,
+   "wikidata": "Q2257975",
+   "name": "Schwäbische-Alb-Nordrand-Weg",
+   "ref": "HW 1",
+   "network": "nwn",
+   "from": "Donauwörth",
+   "to": null,
+   "countries": [
+    "Deutschland"
+   ],
+   "lengthKm": 350,
+   "lengthSource": "Wikidata",
+   "text": "Der Schwäbische-Alb-Nordrand-Weg (Hauptwanderweg 1, HW 1), auch Albsteig, ist ein Fernwanderweg des Schwäbischen Albvereins entlang der Nordseite der Schwäbischen Alb. Er führt in 25 Tagesetappen über insgesamt 365 Kilometer und über 8000 Höhenmeter von Donauwörth nach Tuttlingen und folgt dabei dem Albtrauf.",
+   "textSource": "Wikipedia",
+   "wikipedia": "https://de.wikipedia.org/wiki/Schw%C3%A4bische-Alb-Nordrand-Weg",
+   "image": null,
+   "links": 1
+  },
+  {
+   "id": 2389501,
+   "wikidata": "Q2521643",
+   "name": "Via Beuronensis",
+   "ref": "JW",
+   "network": "nwn",
+   "from": "Balingen",
+   "to": "Meßkirch",
+   "countries": [
+    "Deutschland"
+   ],
+   "lengthKm": null,
+   "lengthSource": null,
+   "text": "Unter Via Beuronensis werden im weitesten Sinne sechs Jakobswege zwischen Neckar und Bodensee zusammengefasst. Sie führen von Tübingen nach Konstanz.",
+   "textSource": "Wikipedia",
+   "wikipedia": "https://de.wikipedia.org/wiki/Via_Beuronensis",
+   "image": null,
+   "links": 1
+  },
+  {
+   "id": 5664500,
+   "wikidata": "Q812144",
+   "name": "Bayerisch-Schwäbischer Jakobusweg",
+   "ref": "BSJ",
+   "network": "nwn",
+   "from": null,
+   "to": null,
+   "countries": [
+    "Deutschland"
+   ],
+   "lengthKm": null,
+   "lengthSource": null,
+   "text": "Der Bayerisch-Schwäbische Jakobusweg ist ein Fernwanderweg und Abschnitt des Wegenetzes des Jakobsweges. Am 23.",
+   "textSource": "Wikipedia",
+   "wikipedia": "https://de.wikipedia.org/wiki/Bayerisch-Schw%C3%A4bischer_Jakobusweg",
+   "image": null,
+   "links": 1
+  },
+  {
+   "id": 7230952,
+   "wikidata": "Q2257983",
+   "name": "Schwäbische-Alb-Südrand-Weg",
+   "ref": "HW 2",
+   "network": "nwn",
+   "from": "Donauwörth",
+   "to": "Tuttlingen",
+   "countries": [
+    "Deutschland"
+   ],
+   "lengthKm": 288,
+   "lengthSource": "Wikidata",
+   "text": "Der Schwäbische-Alb-Südrand-Weg (Hauptwanderweg 2, HW 2) ist ein Fernwanderweg des Schwäbischen Albvereins entlang der Südseite der Schwäbischen Alb. Er führt in 13 Tagesetappen über insgesamt 290 Kilometer von Donauwörth nach Tuttlingen.",
+   "textSource": "Wikipedia",
+   "wikipedia": "https://de.wikipedia.org/wiki/Schw%C3%A4bische-Alb-S%C3%BCdrand-Weg",
+   "image": null,
+   "links": 1
+  },
+  {
+   "id": 9974539,
+   "wikidata": "Q15823557",
+   "name": "Kinzigtäler Jakobusweg",
+   "ref": "KJW",
+   "network": "nwn",
+   "from": "Loßburg",
+   "to": "Straßburg",
+   "countries": [
+    "Deutschland"
+   ],
+   "lengthKm": null,
+   "lengthSource": null,
+   "text": "Der Kinzigtäler Jakobusweg ist ein Abschnitt im Netz der Jakobswege in Deutschland. Er führt von der ehemaligen Jakobuskirche (heute Bürgerhaus) in Loßburg durch das Kinzigtal nach Kehl.",
+   "textSource": "Wikipedia",
+   "wikipedia": "https://de.wikipedia.org/wiki/Kinzigt%C3%A4ler_Jakobusweg",
+   "image": null,
+   "links": 1
+  },
+  {
+   "id": 10169937,
+   "wikidata": "Q3478726",
+   "name": "De La Ribière à Chinon",
+   "ref": "GR 48",
+   "network": "nwn",
+   "from": "La Ribière",
+   "to": "Chinon",
+   "countries": [
+    "Frankreich"
+   ],
+   "lengthKm": 321,
+   "lengthSource": "Wikidata",
+   "text": "",
+   "textSource": null,
+   "wikipedia": null,
+   "image": null,
+   "links": 1
+  },
+  {
+   "id": 14316345,
+   "wikidata": "Q16009886",
+   "name": "Traversée des Mont du Beaujolais",
+   "ref": "GR 76",
+   "network": "nwn",
+   "from": "Chagny",
+   "to": "Affoux",
+   "countries": [
+    "Frankreich"
+   ],
+   "lengthKm": 179,
+   "lengthSource": "Wikidata",
+   "text": "",
+   "textSource": null,
+   "wikipedia": null,
+   "image": null,
+   "links": 1
+  },
+  {
+   "id": 18282859,
+   "wikidata": "Q892511",
+   "name": "Bonifatius-Route",
+   "ref": null,
+   "network": "nwn",
+   "from": null,
+   "to": null,
+   "countries": [
+    "Deutschland"
+   ],
+   "lengthKm": null,
+   "lengthSource": null,
+   "text": "Die Bonifatius-Route ist ein 2004 angelegter, 172 km langer Pilger- und Wanderweg, der auf den Spuren des Leichenzuges des heiligen Bonifatius von Mainz zu seiner Wunschruhestätte in Fulda führt. Am 10.",
+   "textSource": "Wikipedia",
+   "wikipedia": "https://de.wikipedia.org/wiki/Bonifatius-Route",
+   "image": null,
+   "links": 1
+  },
+  {
+   "id": 906688,
+   "wikidata": "Q7320370",
+   "name": "Rheintaler Höhenweg",
+   "ref": "86",
+   "network": "rwn",
+   "from": "Rorschach",
+   "to": "Sargans",
+   "countries": [
+    "Schweiz"
+   ],
+   "lengthKm": 110,
+   "lengthSource": "OpenStreetMap",
+   "text": "",
+   "textSource": null,
+   "wikipedia": "https://en.wikipedia.org/wiki/Rheintaler_H%C3%B6henweg",
+   "image": null,
+   "links": 1
+  },
+  {
+   "id": 912415,
+   "wikidata": "Q2521627",
+   "name": "Via Albula Bernina",
+   "ref": "33",
+   "network": "rwn",
+   "from": "Thusis",
+   "to": "Tirano (I)",
+   "countries": [
+    "Schweiz"
+   ],
+   "lengthKm": 130,
+   "lengthSource": "Wikidata",
+   "text": "Die Via Albula/Bernina ist ein 2010 eröffneter kultur- und industriehistorischer Wanderweg im Schweizer Kanton Graubünden, der dem seit 2008 als UNESCO-Welterbe klassifizierten Streckenverlauf der Albula- und der Berninabahn folgt.",
+   "textSource": "Wikipedia",
+   "wikipedia": "https://de.wikipedia.org/wiki/Via_Albula%2FBernina",
+   "image": null,
+   "links": 1
+  },
+  {
+   "id": 1246849,
+   "wikidata": "Q2209069",
+   "name": "Saar-Blies-Weg",
+   "ref": "SBW",
+   "network": "rwn",
+   "from": null,
+   "to": null,
+   "countries": [
+    "Deutschland"
+   ],
+   "lengthKm": 66,
+   "lengthSource": "OpenStreetMap",
+   "text": "Der Saar-Blies-Weg ist ein 66 km langer Wanderweg im Saarland und führt von Saarbrücken nach Nohfelden. Der Weg ist mit einem orangen Kreuz auf weißem Grund markiert.",
+   "textSource": "Wikipedia",
+   "wikipedia": "https://de.wikipedia.org/wiki/Saar-Blies-Weg",
+   "image": null,
+   "links": 1
+  },
+  {
+   "id": 2223740,
+   "wikidata": "Q2589030",
+   "name": "Wolfgang-Maria-Rabe-Weg",
+   "ref": "RAB",
+   "network": "rwn",
+   "from": null,
+   "to": null,
+   "countries": [
+    "Deutschland",
+    "Luxemburg",
+    "Frankreich"
+   ],
+   "lengthKm": null,
+   "lengthSource": null,
+   "text": "Der Wolfgang-Maria-Rabe-Weg ist 23 km lang und befindet sich im Dreiländereck Deutschland, Frankreich und Luxemburg. Der Weg ist mit einem roten Punkt gekennzeichnet und ist nach Wolfgang Maria Rabe benannt.",
+   "textSource": "Wikipedia",
+   "wikipedia": "https://de.wikipedia.org/wiki/Wolfgang-Maria-Rabe-Weg",
+   "image": null,
+   "links": 1
+  },
+  {
+   "id": 3094421,
+   "wikidata": "Q104034622",
+   "name": "Vier-Quellen-Weg",
+   "ref": "49",
+   "network": "rwn",
+   "from": "Andermatt, Oberalppass",
+   "to": "Furkapass, Belvédère",
+   "countries": [
+    "Schweiz"
+   ],
+   "lengthKm": 81,
+   "lengthSource": "Wikidata",
+   "text": "Als Vier-Quellen-Weg wird die Schweizer Wanderroute 49 (eine von 65 regionalen Routen) in der Gotthard-Gruppe bezeichnet. Sie beginnt am Oberalppass und führt in fünf Etappen durch die Kantone Graubünden, Uri, Tessin und Wallis im Uhrzeigersinn zum Furkapass.",
+   "textSource": "Wikipedia",
+   "wikipedia": "https://de.wikipedia.org/wiki/Vier-Quellen-Weg",
+   "image": null,
+   "links": 1
+  },
+  {
+   "id": 3172146,
+   "wikidata": "Q17127105",
+   "name": "Rheinterrassenweg",
+   "ref": "RTW",
+   "network": "rwn",
+   "from": "Mainz",
+   "to": "Worms",
+   "countries": [
+    "Deutschland"
+   ],
+   "lengthKm": 60,
+   "lengthSource": "OpenStreetMap",
+   "text": "Der Rheinterrassenweg, Eigenschreibweise: RheinTerrassenWeg, ist ein rund 75 Kilometer langer Wanderweg entlang des rheinhessischen Rheinabschnittes zwischen den Städten Worms und Mainz in Rheinland-Pfalz. Der Wanderweg ist in sechs Etappen unterteilt.",
+   "textSource": "Wikipedia",
+   "wikipedia": "https://de.wikipedia.org/wiki/Rheinterrassenweg",
+   "image": null,
+   "links": 1
+  },
+  {
+   "id": 5755321,
+   "wikidata": "Q1166948",
+   "name": "Saar-Westrich-Weg",
+   "ref": null,
+   "network": "rwn",
+   "from": null,
+   "to": null,
+   "countries": [
+    "Deutschland"
+   ],
+   "lengthKm": null,
+   "lengthSource": null,
+   "text": "Der Saar-Westrich-Weg des Saarwaldvereins führt von der Gemeinde Kirkel in die pfälzische Gemeinde Rammelsbach. Der Weg ist mit zwei waagrechten Balken gekennzeichnet, wobei der obere Balken grün und der untere weiß ist.",
+   "textSource": "Wikipedia",
+   "wikipedia": "https://de.wikipedia.org/wiki/Saar-Westrich-Weg",
+   "image": null,
+   "links": 1
+  },
+  {
+   "id": 6648464,
+   "wikidata": "Q1315901",
+   "name": "Saar-Wanderweg",
+   "ref": null,
+   "network": "rwn",
+   "from": null,
+   "to": null,
+   "countries": [
+    "Deutschland",
+    "Frankreich"
+   ],
+   "lengthKm": 260,
+   "lengthSource": "Wikidata",
+   "text": "Der Saar-Wanderweg führt über 260 km von der Quelle der roten Saar am Donon zur Mündung der Saar in die Mosel bei Konz. Der Weg ist mit einem blauen Andreaskreuz auf weißem Grund ausgeschildert.",
+   "textSource": "Wikipedia",
+   "wikipedia": "https://de.wikipedia.org/wiki/Saar-Wanderweg",
+   "image": null,
+   "links": 1
+  },
+  {
+   "id": 10886904,
+   "wikidata": "Q83870797",
+   "name": "Camino Incluso",
+   "ref": null,
+   "network": "rwn",
+   "from": null,
+   "to": null,
+   "countries": [
+    "Deutschland"
+   ],
+   "lengthKm": null,
+   "lengthSource": null,
+   "text": "Der Camino Incluso ist ein 84 km langer Pilgerweg von Bensheim-Auerbach von der Bergstraße über die Höhenzüge des Vorderen Odenwalds in den Odenwald bis nach Heidelberg an den Neckar und orientiert sich am Jakobsweg. Er ist als Zubringer zum pfälzischen und badischen Jakobsweg gedacht.",
+   "textSource": "Wikipedia",
+   "wikipedia": "https://de.wikipedia.org/wiki/Camino_Incluso",
+   "image": null,
+   "links": 1
+  },
+  {
+   "id": 13710369,
+   "wikidata": "Q137176916",
+   "name": "Albtraufgänger",
+   "ref": null,
+   "network": "rwn",
+   "from": null,
+   "to": null,
+   "countries": [
+    "Deutschland"
+   ],
+   "lengthKm": 113,
+   "lengthSource": "Wikidata",
+   "text": "Der Albtraufgänger ist ein rund 113 Kilometer langer Fernwanderweg im Landkreis Göppingen in Baden-Württemberg. Die Rundroute beginnt und endet am Schloss Wiesensteig und verläuft überwiegend entlang des Albtraufs, der markanten Steilkante der Schwäbischen Alb.",
+   "textSource": "Wikipedia",
+   "wikipedia": "https://de.wikipedia.org/wiki/Albtraufg%C3%A4nger",
+   "image": null,
+   "links": 1
+  },
+  {
+   "id": 19436990,
+   "wikidata": "Q2948636",
+   "name": "Tour de la Champagne Berichonne",
+   "ref": null,
+   "network": "rwn",
+   "from": null,
+   "to": null,
+   "countries": [
+    "Frankreich"
+   ],
+   "lengthKm": 150,
+   "lengthSource": "Wikidata",
+   "text": "",
+   "textSource": null,
+   "wikipedia": null,
+   "image": null,
+   "links": 1
+  },
+  {
+   "id": 18722,
+   "wikidata": "Q1645885",
+   "name": "Voralpenweg",
+   "ref": "04",
+   "network": "nwn",
+   "from": null,
+   "to": null,
+   "countries": [
+    "Österreich"
+   ],
+   "lengthKm": null,
+   "lengthSource": null,
+   "text": "Der Voralpenweg (auch Österreichischer Weitwanderweg 04) in Österreich ist ein Weitwanderweg von Wien nach Salzburg mit Anschluss an den Maximiliansweg in Bayern, der weiterhin in vergleichbarem Gelände an den Bodensee geht: Meist deutlich unter 2000 m führt er an der Nordflanke der Alpen durch hügelige bis leicht felsige Landschaft.",
+   "textSource": "Wikipedia",
+   "wikipedia": "https://de.wikipedia.org/wiki/Voralpenweg_(%C3%96sterreich)",
+   "image": null,
+   "links": 1
+  },
+  {
+   "id": 64560,
+   "wikidata": "Q27560597",
+   "name": "Limesweg",
+   "ref": "Lim",
+   "network": "nwn",
+   "from": "Wilburgstetten",
+   "to": "Gunzenhausen",
+   "countries": [
+    "Deutschland"
+   ],
+   "lengthKm": 155,
+   "lengthSource": "Wikidata",
+   "text": "Der Limesweg ist ein 38,9 km langer Streckenwanderweg von Wilburgstetten nach Gunzenhausen im bayerischen Regierungsbezirk Mittelfranken, der dem Verlauf des Rätischen Limes folgt.",
+   "textSource": "Wikipedia",
+   "wikipedia": "https://de.wikipedia.org/wiki/Limesweg_(Fr%C3%A4nkischer_Albverein)",
+   "image": null,
+   "links": 1
+  },
+  {
+   "id": 166446,
+   "wikidata": "Q12059914",
+   "name": "[Č] Plzeň-Doubravka (MHD) - U Rakolusk (rozc.)",
+   "ref": "0202",
+   "network": "nwn",
+   "from": null,
+   "to": null,
+   "countries": [
+    "Tschechien"
+   ],
+   "lengthKm": null,
+   "lengthSource": null,
+   "text": "",
+   "textSource": null,
+   "wikipedia": null,
+   "image": null,
+   "links": 1
+  },
+  {
+   "id": 540016,
+   "wikidata": "Q12777865",
+   "name": "Chodník Jurka Szomolanyiho",
+   "ref": "0702",
+   "network": "nwn",
+   "from": null,
+   "to": null,
+   "countries": [
+    "Slowakei"
+   ],
+   "lengthKm": 20,
+   "lengthSource": "Wikidata",
+   "text": "",
+   "textSource": null,
+   "wikipedia": null,
+   "image": null,
+   "links": 1
+  },
+  {
+   "id": 546943,
+   "wikidata": "Q12777863",
+   "name": "Hiking trail 0701",
+   "ref": "0701",
+   "network": "nwn",
+   "from": null,
+   "to": null,
+   "countries": [
+    "Slowakei"
+   ],
+   "lengthKm": 223,
+   "lengthSource": "Wikidata",
+   "text": "",
+   "textSource": null,
+   "wikipedia": null,
+   "image": null,
+   "links": 1
+  },
+  {
+   "id": 570575,
+   "wikidata": "Q25108275",
+   "name": "Záhorácka magistrála",
+   "ref": "0773",
+   "network": "nwn",
+   "from": null,
+   "to": null,
+   "countries": [
+    "Slowakei"
+   ],
+   "lengthKm": null,
+   "lengthSource": null,
+   "text": "",
+   "textSource": null,
+   "wikipedia": null,
+   "image": null,
+   "links": 1
+  },
+  {
+   "id": 961607,
+   "wikidata": "Q11772598",
+   "name": "Kleiner Beskidenwanderweg",
+   "ref": "MSB",
+   "network": "nwn",
+   "from": null,
+   "to": null,
+   "countries": [
+    "Polen"
+   ],
+   "lengthKm": 137,
+   "lengthSource": "Wikidata",
+   "text": "",
+   "textSource": null,
+   "wikipedia": null,
+   "image": null,
+   "links": 1
+  },
+  {
+   "id": 1503231,
+   "wikidata": "Q2521665",
+   "name": "Via Porta",
+   "ref": "VP",
+   "network": "nwn",
+   "from": "Kloster Volkenroda",
+   "to": "Kloster Waldsassen",
+   "countries": [
+    "Deutschland",
+    "Tschechien"
+   ],
+   "lengthKm": 300,
+   "lengthSource": "OpenStreetMap",
+   "text": "Die Via Porta ist ein Pilgerweg vom evangelischen Kloster Volkenroda im thüringischen Unstrut-Hainich-Kreis zum Kloster Waldsassen im Oberpfälzer Landkreis Tirschenreuth und ist die historische Verbindung zwischen dem ehemaligen Zisterzienserkloster und seinem Tochterkloster.",
+   "textSource": "Wikipedia",
+   "wikipedia": "https://de.wikipedia.org/wiki/Via_Porta",
+   "image": null,
+   "links": 1
+  },
+  {
+   "id": 1774592,
+   "wikidata": "Q1591535",
+   "name": "Jakobsweg Tirol",
+   "ref": null,
+   "network": "nwn",
+   "from": null,
+   "to": null,
+   "countries": [
+    "Österreich"
+   ],
+   "lengthKm": null,
+   "lengthSource": null,
+   "text": "Der Jakobsweg in Tirol ist der in Tirol verlaufende Teil des Jakobswegenetzes in Österreich.",
+   "textSource": "Wikipedia",
+   "wikipedia": "https://de.wikipedia.org/wiki/Jakobsweg_Tirol",
+   "image": null,
+   "links": 1
+  },
+  {
+   "id": 3251965,
+   "wikidata": "Q1679563",
+   "name": "Jakobsweg Isar–Loisach–Leutascher Ache–Inn",
+   "ref": null,
+   "network": "nwn",
+   "from": "Kloster Schäftlarn",
+   "to": "Mötz",
+   "countries": [
+    "Deutschland",
+    "Österreich"
+   ],
+   "lengthKm": 130,
+   "lengthSource": "OpenStreetMap",
+   "text": "Der Jakobsweg Isar–Loisach–Leutascher Ache–Inn ist ein beschilderter, grenzübergreifender Pilger- und Fernwanderweg im deutschen und österreichischen Jakobswegenetz. Der Pilgerweg bildet die Verbindung zwischen dem Südostbayerischen und dem Tiroler Jakobsweg bzw.",
+   "textSource": "Wikipedia",
+   "wikipedia": "https://de.wikipedia.org/wiki/Jakobsweg_Isar%E2%80%93Loisach%E2%80%93Leutascher_Ache%E2%80%93Inn",
+   "image": null,
+   "links": 1
+  },
+  {
+   "id": 3259619,
+   "wikidata": "Q116920206",
+   "name": "Kärntner Grenzweg",
+   "ref": "KGW",
+   "network": "nwn",
+   "from": null,
+   "to": null,
+   "countries": [
+    "Österreich"
+   ],
+   "lengthKm": null,
+   "lengthSource": null,
+   "text": "Der Kärntner Grenzweg (häufig als KGW abgekürzt) ist ein hochalpiner Weitwanderweg, der in 45 grenznahen Etappen Kärnten umrundet.",
+   "textSource": "Wikipedia",
+   "wikipedia": "https://de.wikipedia.org/wiki/K%C3%A4rntner_Grenzweg",
+   "image": null,
+   "links": 1
+  },
+  {
+   "id": 4251311,
+   "wikidata": "Q1679565",
+   "name": "Jakobsweg Kärnten",
+   "ref": null,
+   "network": "nwn",
+   "from": null,
+   "to": null,
+   "countries": [
+    "Österreich"
+   ],
+   "lengthKm": null,
+   "lengthSource": null,
+   "text": "Der Jakobsweg Kärnten ist ein großteils beschilderter, 216 Kilometer langer Abschnitt des Südösterreichischen Jakobsweges im österreichischen Jakobswegenetz.",
+   "textSource": "Wikipedia",
+   "wikipedia": "https://de.wikipedia.org/wiki/Jakobsweg_K%C3%A4rnten",
+   "image": null,
+   "links": 1
+  },
+  {
+   "id": 2535650,
+   "wikidata": "Q123377413",
+   "name": "Traversée de la Chartreuse",
+   "ref": null,
+   "network": "rwn",
+   "from": "Chambéry",
+   "to": "Grenoble",
+   "countries": [
+    "Frankreich"
+   ],
+   "lengthKm": 71,
+   "lengthSource": "Wikidata",
+   "text": "",
+   "textSource": null,
+   "wikipedia": null,
+   "image": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7f/GR9%2C_Travers%C3%A9e_de_Chartreuse.jpg/960px-GR9%2C_Travers%C3%A9e_de_Chartreuse.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 960,
+    "height": 614,
+    "author": "Niccolò Castellani",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "page": "https://commons.wikimedia.org/wiki/File:GR9,_Travers%C3%A9e_de_Chartreuse.jpg"
+   },
+   "links": 0
+  },
+  {
+   "id": 16255144,
+   "wikidata": "Q112630348",
+   "name": "Wasserweltensteig",
+   "ref": null,
+   "network": "rwn",
+   "from": "Triberg",
+   "to": "Schaffhausen",
+   "countries": [
+    "Deutschland"
+   ],
+   "lengthKm": 109,
+   "lengthSource": "OpenStreetMap",
+   "text": "Fernwanderweg im Südschwarzwald",
+   "textSource": "Wikidata",
+   "wikipedia": null,
+   "image": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c7/Triberger_Wasserf%C3%A4lle_%2814666767337%29.jpg/960px-Triberger_Wasserf%C3%A4lle_%2814666767337%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 960,
+    "height": 640,
+    "author": "Carsten Frenzl from Obernburg, Deutschland",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Triberger_Wasserf%C3%A4lle_(14666767337).jpg"
+   },
+   "links": 0
+  },
+  {
+   "id": 17961051,
+   "wikidata": "Q105693535",
+   "name": "Böser Tritt",
+   "ref": null,
+   "network": "rwn",
+   "from": "Lünerseebahn Talstation",
+   "to": "Lünersee",
+   "countries": [
+    "Österreich"
+   ],
+   "lengthKm": 2,
+   "lengthSource": "OpenStreetMap",
+   "text": "alpiner Wanderweg in der Gemeinde Brand in Vorarlberg, Österreich",
+   "textSource": "Wikidata",
+   "wikipedia": null,
+   "image": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/ff/Brand-Luenersee-boeser_Tritt-01ASD.jpg/960px-Brand-Luenersee-boeser_Tritt-01ASD.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": 960,
+    "height": 1280,
+    "author": "Asurnipal",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Brand-Luenersee-boeser_Tritt-01ASD.jpg"
+   },
+   "links": 0
+  }
+ ]
+}
