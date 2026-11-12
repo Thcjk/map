@@ -24,20 +24,29 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-      - run: node scripts/build-trail-catalog.mjs
+      - id: build
+        run: node scripts/build-trail-catalog.mjs
+        continue-on-error: true
       - name: Änderungen committen und veröffentlichen
+        # auch nach einem Fehler: dann sind wenigstens die gesammelten OSM-Daten gesichert
+        if: always()
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          if git diff --quiet -- src/data/trailCatalog.json; then
+          if git diff --quiet -- src/data/trailCatalog.json scripts/osm-relations.json && [ -z "$(git ls-files --others --exclude-standard scripts/osm-relations.json)" ]; then
             echo "Katalog unverändert."
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add src/data/trailCatalog.json
+          git add src/data/trailCatalog.json scripts/osm-relations.json
           git commit -m "Fernweg-Katalog aktualisiert"
           git pull --rebase
           git push
           # Pushes einer Action lösen keinen Deploy aus, darum hier ausdrücklich starten.
           gh workflow run deploy.yml --ref "$GITHUB_REF_NAME"
+      - name: Fehler melden
+        if: steps.build.outcome == 'failure'
+        run: |
+          echo "::error::Katalog unvollständig – die gesammelten OSM-Daten sind gesichert, der nächste Lauf macht weiter."
+          exit 1

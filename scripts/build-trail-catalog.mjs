@@ -5,10 +5,12 @@
 //   4. Wikipedia (CC BY-SA): Einleitungssatz als Beschreibung
 // Läuft in GitHub Actions (.github/workflows/trail-catalog.yml), ohne Abhängigkeiten.
 // Nichts wird geraten: Ein Weg kommt nur in den Katalog, wenn seine OSM-Relation eindeutig ist.
-import { writeFile } from 'node:fs/promises'
+import { readFile, writeFile } from 'node:fs/promises'
 
 const UA = 'trail-catalog-builder/1.0 (GitHub Actions; hiking app catalog)'
 const OUT = new URL('../src/data/trailCatalog.json', import.meta.url)
+// OSM-Ergebnisse früherer Läufe: Fällt ein Gebiet aus, bleiben seine Wege aus dem letzten Lauf erhalten.
+const OSM_CACHE = new URL('./osm-relations.json', import.meta.url)
 const MAX_TRAILS = 600
 // Reihenfolge nach Erfahrung aus den Läufen: der erste antwortete zuverlässig in unter einer Minute.
 const OVERPASS = [
@@ -101,6 +103,13 @@ const QUERIES = [
   ]),
 ]
 const byId = new Map()
+try {
+  const cached = JSON.parse(await readFile(OSM_CACHE, 'utf8'))
+  for (const r of cached.relations ?? []) byId.set(r.id, r)
+  console.log('Aus früheren Läufen:', byId.size)
+} catch {
+  console.log('Noch keine OSM-Daten aus früheren Läufen.')
+}
 const failed = []
 // Höchstens 25 Minuten für OSM: Was bis dahin nicht kam, fehlt diesmal (nächster Lauf holt es).
 const OSM_DEADLINE = Date.now() + 25 * 60_000
@@ -122,6 +131,7 @@ for (const q of QUERIES) {
 }
 if (failed.length) console.log('Ausgelassene Abfragen:', failed.join(' · '))
 const relations = [...byId.values()]
+await writeFile(OSM_CACHE, JSON.stringify({ updated: new Date().toISOString().slice(0, 10), relations: relations.map((r) => ({ id: r.id, tags: r.tags })) }) + '\n')
 console.log('OSM-Relationen mit Wikidata-Verweis:', relations.length)
 
 /** QID -> Relationen */
@@ -138,7 +148,7 @@ console.log('Verschiedene Wikidata-Objekte:', groups.size)
 const entities = new Map()
 for (const ids of chunks([...groups.keys()], 50)) {
   const json = await getJson(
-    `https://www.wikidata.org/w/api.php?action=wbgetentities&format=json&props=labels|descriptions|claims|sitelinks&languages=de|en&ids=${ids.join('|')}&maxlag=5`,
+    `https://www.wikidata.org/w/api.php?action=wbgetentities&format=json&props=labels|descriptions|claims|sitelinks&languages=de|en&ids=${ids.join('|')}`,
   )
   for (const [id, e] of Object.entries(json.entities ?? {})) if (!e.missing) entities.set(id, e)
   if (entities.size % 500 < 50) console.log('Wikidata …', entities.size)
