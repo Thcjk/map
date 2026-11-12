@@ -45,7 +45,7 @@ const chunks = (arr, n) => Array.from({ length: Math.ceil(arr.length / n) }, (_,
 // ---------- 1. OpenStreetMap ----------
 async function overpass(query) {
   let last
-  for (let round = 0; round < 2; round++) {
+  for (let round = 0; round < 1; round++) {
     for (const url of OVERPASS) {
       try {
         const json = await getJson(url, { method: 'POST', body: new URLSearchParams({ data: query }) }, 1)
@@ -61,27 +61,47 @@ async function overpass(query) {
   throw last
 }
 
-// Ohne Gebietsfilter und ohne Regex: Für Relationen ist die reine Tag-Abfrage am leichtesten.
-// Internationale und nationale Wege sind Pflicht, regionale ein Zusatz (dürfen ausfallen).
+// Internationale Wege weltweit in einer Abfrage (klein genug). Nationale und regionale Wege
+// sind zu viele für eine Abfrage: Europa in Kacheln aufteilen. Fällt eine Kachel aus, fehlen nur
+// deren Wege; der Katalog wird trotzdem gebaut (nur ohne iwn bricht das Skript ab).
+const EUROPE_TILES = []
+for (const [s, n] of [
+  [34, 44],
+  [44, 50],
+  [50, 56],
+  [56, 72],
+])
+  for (const [w, e] of [
+    [-25, 0],
+    [0, 10],
+    [10, 20],
+    [20, 45],
+  ])
+    EUROPE_TILES.push(`${s},${w},${n},${e}`)
+
 const QUERIES = [
-  { network: 'iwn', route: 'hiking', required: true },
-  { network: 'nwn', route: 'hiking', required: true },
-  { network: 'iwn', route: 'foot', required: false },
-  { network: 'nwn', route: 'foot', required: false },
-  { network: 'rwn', route: 'hiking', required: false },
+  { label: 'hiking/iwn', filter: '["route"="hiking"]["network"="iwn"]', required: true },
+  { label: 'foot/iwn', filter: '["route"="foot"]["network"="iwn"]' },
+  ...EUROPE_TILES.flatMap((bbox) => [
+    { label: `hiking/nwn ${bbox}`, filter: '["route"="hiking"]["network"="nwn"]', bbox },
+    { label: `hiking/rwn ${bbox}`, filter: '["route"="hiking"]["network"="rwn"]', bbox },
+  ]),
 ]
 const byId = new Map()
+const failed = []
 for (const q of QUERIES) {
   try {
-    const found = await overpass(`[out:json][timeout:240];relation["route"="${q.route}"]["network"="${q.network}"]["wikidata"];out tags;`)
-    console.log(`OSM ${q.route}/${q.network}:`, found.length)
+    const found = await overpass(`[out:json][timeout:180];relation${q.filter}["wikidata"]${q.bbox ? `(${q.bbox})` : ''};out tags;`)
+    console.log(`OSM ${q.label}:`, found.length)
     for (const r of found) byId.set(r.id, r)
   } catch (e) {
     if (q.required) throw e
-    console.log(`OSM ${q.route}/${q.network} ausgelassen:`, e.message)
+    failed.push(q.label)
+    console.log(`OSM ${q.label} ausgelassen:`, e.message)
   }
-  await sleep(3000)
+  await sleep(4000)
 }
+if (failed.length) console.log('Ausgelassene Abfragen:', failed.join(' · '))
 const relations = [...byId.values()]
 console.log('OSM-Relationen mit Wikidata-Verweis:', relations.length)
 
