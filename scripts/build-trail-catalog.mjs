@@ -19,10 +19,18 @@ const FREE_LICENSE = /^(cc0|cc[ -]by(-sa)?[ -]\d|public domain|pd\b|pdm)/i
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms))
 
-async function getJson(url, init = {}, tries = 4) {
+async function getJson(url, init = {}, tries = 8) {
   for (let i = 1; ; i++) {
     try {
       const res = await fetch(url, { ...init, headers: { 'User-Agent': UA, Accept: 'application/json', ...(init.headers ?? {}) } })
+      if (res.status === 429 || res.status === 503) {
+        // Wikimedia bremst: so lange warten, wie der Server verlangt
+        const wait = Math.min(120, Number(res.headers.get('retry-after')) || 10 * i)
+        if (i >= tries) throw new Error(`HTTP ${res.status}`)
+        console.log(`Gebremst (${res.status}), warte ${wait} s …`)
+        await sleep(wait * 1000)
+        continue
+      }
       if (!res.ok) throw new Error(`HTTP ${res.status}`)
       return await res.json()
     } catch (e) {
@@ -91,10 +99,10 @@ console.log('Verschiedene Wikidata-Objekte:', groups.size)
 const entities = new Map()
 for (const ids of chunks([...groups.keys()], 50)) {
   const json = await getJson(
-    `https://www.wikidata.org/w/api.php?action=wbgetentities&format=json&props=labels|descriptions|claims|sitelinks&languages=de|en&ids=${ids.join('|')}`,
+    `https://www.wikidata.org/w/api.php?action=wbgetentities&format=json&props=labels|descriptions|claims|sitelinks&languages=de|en&ids=${ids.join('|')}&maxlag=5`,
   )
   for (const [id, e] of Object.entries(json.entities ?? {})) if (!e.missing) entities.set(id, e)
-  await sleep(120)
+  await sleep(1000)
 }
 console.log('Wikidata-Objekte geladen:', entities.size)
 
@@ -116,11 +124,22 @@ function lengthKm(e, tags) {
   return null
 }
 
+/** Staaten in Europa (Wikidata-IDs), dazu die Landesteile des Vereinigten Königreichs. */
+const EUROPE = new Set(
+  'Q39 Q183 Q142 Q38 Q40 Q29 Q45 Q145 Q27 Q31 Q55 Q32 Q347 Q35 Q34 Q20 Q33 Q189 Q36 Q213 Q214 Q28 Q215 Q224 Q225 Q403 Q236 Q222 Q221 Q41 Q219 Q218 Q217 Q212 Q184 Q211 Q37 Q191 Q235 Q238 Q228 Q233 Q229 Q1246 Q21 Q22 Q25 Q26 Q237'.split(' '),
+)
+function inEurope(e) {
+  const countries = claimValues(e, 'P17').map((v) => v.id)
+  if (countries.length) return countries.some((c) => EUROPE.has(c))
+  const coord = claimValues(e, 'P625')[0]
+  return !!coord && coord.latitude > 34 && coord.latitude < 72 && coord.longitude > -25 && coord.longitude < 45
+}
+
 const candidates = []
 let ambiguous = 0
 for (const [qid, rels] of groups) {
   const e = entities.get(qid)
-  if (!e) continue
+  if (!e || !inEurope(e)) continue
   // Eindeutige Haupt-Relation bestimmen
   const p402 = new Set(claimValues(e, 'P402').map(String))
   let root = rels.find((r) => p402.has(String(r.id)))
@@ -146,7 +165,7 @@ for (const [qid, rels] of groups) {
     from: t.from,
     to: t.to,
     length: lengthKm(e, t),
-    countryIds: claimValues(e, 'P17').map((v) => v.id),
+    countryIds: claimValues(e, 'P17').map((v) => v.id).filter((id) => EUROPE.has(id)),
     description: e.descriptions?.de?.value ?? '',
     dewiki: e.sitelinks?.dewiki?.title,
     enwiki: e.sitelinks?.enwiki?.title,
@@ -164,7 +183,7 @@ const countryNames = new Map()
 for (const ids of chunks([...new Set(selected.flatMap((c) => c.countryIds))], 50)) {
   const json = await getJson(`https://www.wikidata.org/w/api.php?action=wbgetentities&format=json&props=labels&languages=de&ids=${ids.join('|')}`)
   for (const [id, e] of Object.entries(json.entities ?? {})) if (e.labels?.de) countryNames.set(id, e.labels.de.value)
-  await sleep(120)
+  await sleep(1000)
 }
 
 // ---------- 3. Wikimedia Commons ----------
@@ -207,7 +226,7 @@ for (const files of chunks([...new Set(selected.map((c) => c.imageFile).filter(B
       page: info.descriptionurl,
     })
   }
-  await sleep(150)
+  await sleep(1000)
 }
 console.log('Bilder mit freier Lizenz:', images.size)
 
@@ -222,7 +241,7 @@ for (const titles of chunks(selected.map((c) => c.dewiki).filter(Boolean), 20)) 
   for (const page of Object.values(json.query?.pages ?? {})) {
     if (page.extract) extracts.set(back.get(page.title) ?? page.title, page.extract.replace(/\s+/g, ' ').trim())
   }
-  await sleep(150)
+  await sleep(1000)
 }
 console.log('Wikipedia-Einleitungen:', extracts.size)
 
