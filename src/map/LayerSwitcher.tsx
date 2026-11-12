@@ -1,4 +1,5 @@
 import Dialog from '../components/Dialog'
+import { CONTOUR, INK_MUTED, MARK, PAPER_LIGHT, TRAIL } from '../theme'
 import { BASE_MAPS, OVERLAYS, type BaseMapId, type OverlayId } from './layers'
 
 interface Props {
@@ -42,6 +43,45 @@ export default function LayerSwitcher({ baseId, overlays, onBaseChange, onOverla
           </li>
         ))}
       </ul>
+      <h3 className="label mt-4 text-muted">Legende Topo-Karte</h3>
+      <ul className="mt-2 space-y-2 text-sm">
+        <li className="flex items-center gap-3">
+          <svg width="44" height="10" aria-hidden>
+            <line x1="2" y1="5" x2="42" y2="5" stroke={PAPER_LIGHT} strokeWidth="6" strokeLinecap="round" />
+            <line x1="2" y1="5" x2="42" y2="5" stroke={TRAIL} strokeWidth="2.4" strokeDasharray="6 4" />
+          </svg>
+          Wanderweg, Pfad
+        </li>
+        <li className="flex items-center gap-3">
+          <svg width="44" height="10" aria-hidden>
+            <line x1="2" y1="5" x2="42" y2="5" stroke={PAPER_LIGHT} strokeWidth="5" strokeLinecap="round" />
+            <line x1="2" y1="5" x2="42" y2="5" stroke={INK_MUTED} strokeWidth="1.8" strokeDasharray="10 4" />
+          </svg>
+          Feld- und Waldweg
+        </li>
+        <li className="flex items-center gap-3">
+          <svg width="44" height="10" aria-hidden>
+            <line x1="2" y1="5" x2="42" y2="5" stroke={MARK} strokeWidth="3.5" opacity="0.6" />
+          </svg>
+          <span>
+            Markierte Wanderroute (Ebene «Markierte Wanderrouten», Farbe nach Netz;{' '}
+            <a href="https://hiking.waymarkedtrails.org" target="_blank" rel="noopener" className="underline">
+              Legende
+            </a>
+            )
+          </span>
+        </li>
+        <li className="flex items-center gap-3">
+          <svg width="44" height="10" aria-hidden>
+            <line x1="2" y1="5" x2="42" y2="5" stroke={CONTOUR} strokeWidth="1.1" />
+          </svg>
+          Höhenlinie (beschriftet in m ü. M.)
+        </li>
+      </ul>
+      <p className="mt-3 text-xs text-muted">
+        Wege stammen aus OpenStreetMap. Ob ein Weg offiziell markiert, gesperrt oder anspruchsvoll ist, sagt die Linie allein nicht:
+        vor Ort gelten die Wegweiser.
+      </p>
     </Dialog>
   )
 }

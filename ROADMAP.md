@@ -83,6 +83,7 @@ Status: `[x]` erledigt, `[ ]` offen. Nach jeder Änderung aktualisieren.
       bilineare Höheninterpolation, deutsche Ortsnamen
 - [x] Fernweg-Katalog aus OSM + Wikidata + Wikipedia + Commons-Fotos (monatliche Action)
 - [ ] Katalog-Action erfolgreich durchlaufen lassen und Inhalte stichprobenartig prüfen
+- [x] Wanderwege deutlich: Pfade rot gestrichelt mit hellem Rand ab Zoom 11, Feldwege grau; markierte Wanderrouten (Waymarked Trails) standardmässig an; Legende im Ebenen-Dialog
 - [ ] Kartenstil mit echten Vektorkacheln auf dem Handy prüfen
 
 ## Phase 8 – Feinschliff

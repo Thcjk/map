@@ -135,6 +135,17 @@ const layers = [
     filter: ['==', ['get', 'class'], 'rail'],
     paint: { 'line-color': INK, 'line-width': 1, 'line-dasharray': [6, 2] },
   },
+  // Feld- und Waldwege: graubraun gestrichelt, mit hellem Rand für die Lesbarkeit auf grünem Grund
+  {
+    id: 'track-casing',
+    type: 'line',
+    source: 'omt',
+    'source-layer': 'transportation',
+    minzoom: 11,
+    filter: ['==', ['get', 'class'], 'track'],
+    layout: { 'line-cap': 'round', 'line-join': 'round' },
+    paint: { 'line-color': PAPER_LIGHT, 'line-width': ['interpolate', ['linear'], ['zoom'], 11, 2, 16, 4.5], 'line-opacity': 0.8 },
+  },
   {
     id: 'track',
     type: 'line',
@@ -142,7 +153,22 @@ const layers = [
     'source-layer': 'transportation',
     minzoom: 11,
     filter: ['==', ['get', 'class'], 'track'],
-    paint: { 'line-color': INK_MUTED, 'line-width': 1, 'line-dasharray': [6, 2], 'line-opacity': 0.9 },
+    paint: {
+      'line-color': INK_MUTED,
+      'line-width': ['interpolate', ['linear'], ['zoom'], 11, 0.9, 16, 2],
+      'line-dasharray': [5, 2],
+    },
+  },
+  // Wanderpfade: kräftig rot gestrichelt mit hellem Rand – das Wichtigste auf der Karte
+  {
+    id: 'path-casing',
+    type: 'line',
+    source: 'omt',
+    'source-layer': 'transportation',
+    minzoom: 11,
+    filter: ['==', ['get', 'class'], 'path'],
+    layout: { 'line-cap': 'round', 'line-join': 'round' },
+    paint: { 'line-color': PAPER_LIGHT, 'line-width': ['interpolate', ['linear'], ['zoom'], 11, 2.2, 13, 3.5, 16, 6], 'line-opacity': 0.85 },
   },
   {
     id: 'path',
@@ -151,7 +177,11 @@ const layers = [
     'source-layer': 'transportation',
     minzoom: 11,
     filter: ['==', ['get', 'class'], 'path'],
-    paint: { 'line-color': TRAIL, 'line-width': ['interpolate', ['linear'], ['zoom'], 11, 0.7, 16, 1.6], 'line-dasharray': [3, 2] },
+    paint: {
+      'line-color': TRAIL,
+      'line-width': ['interpolate', ['linear'], ['zoom'], 11, 1, 13, 1.6, 16, 2.8],
+      'line-dasharray': [2.5, 1.5],
+    },
   },
   {
     id: 'aerialway',

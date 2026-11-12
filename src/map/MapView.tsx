@@ -25,7 +25,8 @@ interface View {
 
 const VIEW_KEY = 'map.view'
 const DEFAULT_VIEW: View = { center: [8.2, 46.8], zoom: 7 }
-const DEFAULT_OVERLAYS: Record<OverlayId, boolean> = { trails: false, hillshade: true, contours: true }
+// Markierte Wanderrouten sind standardmässig an: Sie sind die wichtigste Planungshilfe.
+const DEFAULT_OVERLAYS: Record<OverlayId, boolean> = { trails: true, hillshade: true, contours: true }
 const LAYERS_ICON =
   '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 9 5-9 5-9-5 9-5Z"/><path d="m3 13 9 5 9-5"/></svg>'
 
@@ -58,7 +59,7 @@ export default function MapView({ children }: { children?: ReactNode }) {
   const [styleError, setStyleError] = useState(false)
   const [layersOpen, setLayersOpen] = useState(false)
   const [baseId, setBaseId, baseLoaded] = useSetting<BaseMapId>('map.base', 'openfreemap')
-  const [storedOverlays, setOverlays, overlaysLoaded] = useSetting('map.overlays', DEFAULT_OVERLAYS)
+  const [storedOverlays, setOverlays, overlaysLoaded] = useSetting('map.overlays.v2', DEFAULT_OVERLAYS)
   // ältere gespeicherte Einstellungen kennen neue Ebenen noch nicht
   const overlays = useMemo(() => ({ ...DEFAULT_OVERLAYS, ...storedOverlays }), [storedOverlays])
   const ready = baseLoaded && overlaysLoaded

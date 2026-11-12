@@ -61,7 +61,7 @@ export const BASE_MAPS: BaseMap[] = [
 ]
 
 export const OVERLAYS: { id: OverlayId; label: string }[] = [
-  { id: 'trails', label: 'Markierte Wanderwege' },
+  { id: 'trails', label: 'Markierte Wanderrouten (farbig nach Netz)' },
   { id: 'hillshade', label: 'Relief' },
   { id: 'contours', label: 'Höhenlinien' },
 ]
@@ -203,7 +203,7 @@ export function syncLayers(map: MlMap, base: BaseMap, overlays: Record<OverlayId
         maxzoom: 18,
         attribution: attribution('waymarkedtrails'),
       },
-      { type: 'raster', paint: { 'raster-opacity': 0.85 } },
+      { type: 'raster', paint: { 'raster-opacity': ['interpolate', ['linear'], ['zoom'], 6, 0.95, 14, 0.75] } as never },
       beforeApp(),
     )
   }
