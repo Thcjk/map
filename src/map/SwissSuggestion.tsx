@@ -25,14 +25,12 @@ export default function SwissSuggestion({ onAccept }: { onAccept: () => void }) 
   if (!loaded || dismissed || !inSwitzerland) return null
 
   return (
-    <div role="status" className="absolute left-2.5 right-16 top-[112px] z-20 sm:right-auto sm:w-md flex max-w-md items-center gap-3 rounded-2xl border border-text bg-surface p-3">
-      <p className="flex-1 text-sm">
-        Du bist in der Schweiz. Die swisstopo-Wanderkarte zeigt hier mehr Details.
-      </p>
-      <button type="button" onClick={onAccept} className="min-h-11 rounded-xl bg-accent px-4 font-semibold text-bg">
+    <div role="status" className="panel absolute left-2.5 right-16 top-[96px] z-20 flex items-center gap-2 p-2.5 sm:right-auto sm:w-[400px]">
+      <p className="flex-1 text-sm">In der Schweiz zeigt die swisstopo-Wanderkarte mehr Details.</p>
+      <button type="button" onClick={onAccept} className="btn btn-sm btn-primary">
         Wechseln
       </button>
-      <button type="button" onClick={() => setDismissed(true)} className="min-h-11 rounded-xl px-3 text-muted">
+      <button type="button" onClick={() => setDismissed(true)} className="btn btn-sm btn-bare" aria-label="Hinweis schliessen">
         Nein
       </button>
     </div>

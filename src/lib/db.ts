@@ -90,8 +90,6 @@ export interface Trail {
   points: RoutePoint[]
   gaps: number
   fetchedAt: number
-  /** Eintrag der kuratierten Liste, über den der Weg gefunden wurde (für den Sticker). */
-  catalogId?: string
 }
 
 /** Zwischengespeicherte POIs entlang einer Route (Schlüssel = Geometrie-Hash + Korridor). */

@@ -12,5 +12,9 @@ export const MARK = '#b3261e'
 /** Grünstufen von hell nach dunkel. */
 export const GREEN = ['#dfe6d0', '#c2d0ad', '#9db389', '#779567', '#527549', '#2c4a31'] as const
 /** Entsättigtes Graugrün für Gewässer. */
-export const WATER = '#b5c9c2'
+export const WATER = '#c3d4ce'
 export const WATER_LINE = '#7d9f98'
+/** Pfade auf der Karte: feines Rotbraun, gestrichelt. */
+export const TRAIL = '#a8442e'
+/** Höhenlinien: dunkles Oliv. */
+export const CONTOUR = '#42543a'

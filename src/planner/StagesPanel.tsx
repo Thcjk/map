@@ -1,5 +1,5 @@
 import { indexAtDistance } from '../lib/geo'
-import { formatKm, formatM } from '../lib/format'
+import { formatHm, formatKm } from '../lib/format'
 import { formatDuration } from '../lib/hikingTime'
 import type { Route } from '../routing/route'
 import { kindLabel, POI_CATEGORIES, type Poi } from '../trails/pois'
@@ -41,7 +41,7 @@ export default function StagesPanel({ route, plan, pois, onChange, onFocusStage 
 
   return (
     <div className="space-y-3">
-      <div role="radiogroup" aria-label="Aufteilen nach" className="grid grid-cols-3 gap-1 rounded-xl bg-bg p-1">
+      <div role="radiogroup" aria-label="Aufteilen nach" className="segmented">
         {(Object.keys(METRIC_LABELS) as StageMetric[]).map((m) => (
           <button
             key={m}
@@ -49,7 +49,6 @@ export default function StagesPanel({ route, plan, pois, onChange, onFocusStage 
             role="radio"
             aria-checked={m === metric}
             onClick={() => apply(m, METRIC_LABELS[m].default)}
-            className={`min-h-11 rounded-lg font-semibold ${m === metric ? 'bg-accent text-bg' : 'text-muted'}`}
           >
             {METRIC_LABELS[m].label}
           </button>
@@ -75,7 +74,7 @@ export default function StagesPanel({ route, plan, pois, onChange, onFocusStage 
       {noElevation && <p className="text-sm text-danger">Für diese Route fehlen Höhendaten; Aufteilung nach Distanz empfohlen.</p>}
 
       {!plan && (
-        <button type="button" onClick={() => apply(metric, target)} className="min-h-12 w-full rounded-xl bg-accent font-bold text-bg">
+        <button type="button" onClick={() => apply(metric, target)} className="btn btn-primary w-full">
           In Etappen aufteilen
         </button>
       )}
@@ -88,12 +87,12 @@ export default function StagesPanel({ route, plan, pois, onChange, onFocusStage 
               <button
                 type="button"
                 onClick={() => onChange({ ...plan, cuts: snapCutsToSleep(route, plan.cuts, pois) })}
-                className="min-h-11 rounded-xl border border-line px-3 text-sm"
+                className="btn btn-sm btn-quiet"
               >
-                An Übernachtung ausrichten
+                An Übernachtung
               </button>
             )}
-            <button type="button" onClick={() => onChange(null)} className="min-h-11 rounded-xl px-3 text-sm text-muted">
+            <button type="button" onClick={() => onChange(null)} className="btn btn-sm btn-bare">
               Aufheben
             </button>
           </div>
@@ -103,7 +102,7 @@ export default function StagesPanel({ route, plan, pois, onChange, onFocusStage 
               const last = s.index === stages.length - 1
               const sleep = pois && !last ? sleepSuggestions(pois, route.cum[s.to]).slice(0, 3) : []
               return (
-                <li key={s.index} className="rounded-xl border border-line bg-bg/40 p-3">
+                <li key={s.index} className="card p-3">
                   <button type="button" onClick={() => onFocusStage(s.from, s.to)} className="block w-full text-left">
                     <span className="flex items-baseline justify-between">
                       <span className="font-bold">Tag {s.index + 1}</span>
@@ -113,18 +112,18 @@ export default function StagesPanel({ route, plan, pois, onChange, onFocusStage 
                     </span>
                     <span className="tabular mt-1 grid grid-cols-4 gap-1 text-sm font-semibold">
                       <span>{formatKm(s.distance)}</span>
-                      <span>↑ {route.hasElevation ? formatM(s.ascent) : '–'}</span>
-                      <span>↓ {route.hasElevation ? formatM(s.descent) : '–'}</span>
+                      <span>↑ {route.hasElevation ? formatHm(s.ascent) : '–'}</span>
+                      <span>↓ {route.hasElevation ? formatHm(s.descent) : '–'}</span>
                       <span>{formatDuration(s.minutes, true)}</span>
                     </span>
                   </button>
                   {!last && (
                     <div className="mt-2 flex items-center gap-2 text-sm">
                       <span className="flex-1 text-muted">Etappenende</span>
-                      <button type="button" aria-label={`Ende Tag ${s.index + 1} einen Kilometer zurück`} onClick={() => shift(s.index, -1000)} className="min-h-10 min-w-12 rounded-lg border border-line">
+                      <button type="button" aria-label={`Ende Tag ${s.index + 1} einen Kilometer zurück`} onClick={() => shift(s.index, -1000)} className="btn btn-sm btn-quiet">
                         −1 km
                       </button>
-                      <button type="button" aria-label={`Ende Tag ${s.index + 1} einen Kilometer weiter`} onClick={() => shift(s.index, 1000)} className="min-h-10 min-w-12 rounded-lg border border-line">
+                      <button type="button" aria-label={`Ende Tag ${s.index + 1} einen Kilometer weiter`} onClick={() => shift(s.index, 1000)} className="btn btn-sm btn-quiet">
                         +1 km
                       </button>
                     </div>

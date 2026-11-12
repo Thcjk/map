@@ -8,6 +8,7 @@ import { corridorTiles, tileKey, type TileId } from './tiles'
  *
  * Erlaubt und umgesetzt (Details in DATENQUELLEN.md):
  * - Grundkarte (OpenFreeMap-Vektorkacheln): nur Korridor, gedrosselt, mit Obergrenze.
+ * - Kartenschriften: eigene Dateien der App.
  * - Höhenmodell (Terrain Tiles, AWS Open Data): frei nutzbar.
  * Nicht erlaubt und darum nicht herunterladbar: swisstopo-Dienste, Waymarked Trails.
  *
@@ -16,7 +17,6 @@ import { corridorTiles, tileKey, type TileId } from './tiles'
  */
 const OMT_TILEJSON = 'https://tiles.openfreemap.org/planet'
 const DEM_URL = 'https://s3.amazonaws.com/elevation-tiles-prod/terrarium'
-const FONT_URL = 'https://tiles.openfreemap.org/fonts'
 export const OMT_CACHE = 'offline-omt'
 /** Gleiche Namen wie die Laufzeit-Caches des Service Workers (vite.config.ts). */
 export const DEM_CACHE = 'dem-tiles'
@@ -131,9 +131,9 @@ export async function downloadRegion(
 
   await pool(plan.omt, (t) => safe(() => store(omtCache, omtKey(tileKey(t)), tpl.replace('{z}', String(t.z)).replace('{x}', String(t.x)).replace('{y}', String(t.y))))(), signal)
   await pool(plan.dem, (t) => safe(() => store(demCache, demUrl(tileKey(t)), demUrl(tileKey(t))))(), signal)
-  // Schriften für Ortsnamen und Höhenzahlen (lateinische Bereiche)
-  const fonts = ['Noto Sans Regular', 'Noto Sans Bold', 'Noto Sans Italic'].flatMap((f) =>
-    ['0-255', '256-511', '8192-8447'].map((r) => `${FONT_URL}/${encodeURIComponent(f)}/${r}.pbf`),
+  // Kartenschriften (eigene Glyphen unter /fonts) für Ortsnamen und Höhenzahlen
+  const fonts = ['PlexMono-Regular', 'PlexMono-Medium', 'PlexMono-Italic'].flatMap((f) =>
+    ['0-255', '256-511', '8192-8447'].map((r) => `${location.origin}${import.meta.env.BASE_URL}fonts/${f}/${r}.pbf`),
   )
   await pool(fonts, (u) => store(fontCache, u, u).catch(() => undefined), signal)
 

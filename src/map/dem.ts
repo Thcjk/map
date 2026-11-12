@@ -18,10 +18,10 @@ demSource.setupMaplibre(maplibregl)
 /** Höhenlinien als Vektortiles; Abstände [fein, betont] in Metern je Zoomstufe. */
 export const contourTiles = demSource.contourProtocolUrl({
   thresholds: {
-    9: [200, 1000],
-    11: [100, 500],
-    12: [50, 200],
-    14: [20, 100],
+    8: [200, 1000],
+    10: [100, 500],
+    12: [50, 250],
+    13: [20, 100],
     15: [10, 50],
   },
   contourLayer: 'contours',

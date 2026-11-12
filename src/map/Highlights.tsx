@@ -1,18 +1,23 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import * as maplibregl from 'maplibre-gl'
-import { CloseIcon, StarIcon } from '../components/icons'
+import Dialog from '../components/Dialog'
 import { db, type Highlight } from '../lib/db'
+import type { LngLat } from '../lib/geo'
 import { resizePhoto } from '../lib/image'
-import { useEscape } from '../lib/useEscape'
 import { useMap } from './MapContext'
 
 const dateFmt = new Intl.DateTimeFormat('de-CH', { dateStyle: 'medium', timeStyle: 'short' })
 
-/** Highlights: eigene Fotos und Notizen an Punkten auf der Karte (lokal gespeichert). */
-export default function Highlights() {
+interface Props {
+  /** Ort, an dem eine neue Notiz/ein Foto abgelegt werden soll (öffnet den Dialog). */
+  request: LngLat | null
+  onDone: () => void
+}
+
+/** Eigene Fotos und Notizen an Punkten auf der Karte (lokal gespeichert). */
+export default function Highlights({ request, onDone }: Props) {
   const map = useMap()
   const [items, setItems] = useState<Highlight[]>([])
-  const [adding, setAdding] = useState(false)
   const [open, setOpen] = useState<Highlight | null>(null)
   const [note, setNote] = useState('')
   const [photo, setPhoto] = useState<Blob | null>(null)
@@ -28,7 +33,7 @@ export default function Highlights() {
       const el = document.createElement('button')
       el.type = 'button'
       el.className = 'highlight-marker'
-      el.setAttribute('aria-label', `Highlight: ${h.note || 'Foto'}`)
+      el.setAttribute('aria-label', `Notiz: ${h.note || 'Foto'}`)
       el.textContent = '★'
       el.addEventListener('click', (e) => {
         e.stopPropagation()
@@ -45,48 +50,30 @@ export default function Highlights() {
   useEffect(() => () => void (openUrl && URL.revokeObjectURL(openUrl)), [openUrl])
 
   const close = () => {
-    setAdding(false)
     setNote('')
     setPhoto(null)
     setError(null)
+    onDone()
   }
 
   const save = async () => {
-    if (!map || (!note.trim() && !photo)) return
-    const c = map.getCenter()
-    await db.highlights.put({ id: crypto.randomUUID(), lng: c.lng, lat: c.lat, note: note.trim(), photo: photo ?? undefined, createdAt: Date.now() })
+    if (!request || (!note.trim() && !photo)) return
+    await db.highlights.put({ id: crypto.randomUUID(), lng: request[0], lat: request[1], note: note.trim(), photo: photo ?? undefined, createdAt: Date.now() })
     close()
     await reload()
   }
 
-  useEscape(adding || !!open, () => {
-    close()
-    setOpen(null)
-  })
-
-  const sheet = 'w-full rounded-t-2xl border border-text bg-surface p-4 pb-[calc(1rem+env(safe-area-inset-bottom))] sm:w-96 sm:rounded-2xl'
-
   return (
     <>
-      <button type="button" onClick={() => setAdding(true)} aria-label="Highlight hinzufügen" className="map-fab absolute right-2.5 top-[324px] z-10">
-        <StarIcon />
-      </button>
-
-      {adding && (
-        <div className="absolute inset-0 z-40 flex items-end bg-black/40 sm:items-center sm:justify-center" onClick={close}>
+      {request && (
+        <Dialog title="Notiz oder Foto" onClose={close}>
           <form
-            role="dialog"
-            aria-label="Highlight hinzufügen"
-            onClick={(e) => e.stopPropagation()}
             onSubmit={(e) => {
               e.preventDefault()
               void save()
             }}
-            className={sheet}
           >
-            <h2 className="text-lg font-bold">Highlight</h2>
-            <p className="label mt-1 text-muted">Position: Fadenkreuz in der Kartenmitte</p>
-            <textarea value={note} onChange={(e) => setNote(e.target.value)} rows={3} placeholder="Notiz" aria-label="Notiz" className="mt-3 w-full rounded-xl border border-line bg-bg p-3" />
+            <textarea value={note} onChange={(e) => setNote(e.target.value)} rows={3} placeholder="Notiz" aria-label="Notiz" className="field" />
             <input
               ref={fileInput}
               type="file"
@@ -107,42 +94,34 @@ export default function Highlights() {
             {photoUrl && <img src={photoUrl} alt="Gewähltes Foto" className="mt-2 max-h-48 w-full border border-line object-cover" />}
             {error && <p role="alert" className="mt-2 text-sm text-danger">{error}</p>}
             <div className="mt-3 flex gap-2">
-              <button type="button" onClick={() => fileInput.current?.click()} className="min-h-12 flex-1 rounded-xl border border-text font-semibold">
+              <button type="button" onClick={() => fileInput.current?.click()} className="btn flex-1">
                 {photo ? 'Anderes Foto' : 'Foto wählen'}
               </button>
-              <button type="submit" disabled={!note.trim() && !photo} className="min-h-12 flex-1 rounded-xl bg-accent font-bold text-bg disabled:opacity-40">
+              <button type="submit" disabled={!note.trim() && !photo} className="btn btn-primary flex-1">
                 Speichern
               </button>
             </div>
           </form>
-        </div>
+        </Dialog>
       )}
 
       {open && (
-        <div className="absolute inset-0 z-40 flex items-end bg-black/40 sm:items-center sm:justify-center" onClick={() => setOpen(null)}>
-          <section role="dialog" aria-label="Highlight" onClick={(e) => e.stopPropagation()} className={sheet}>
-            <div className="flex items-center justify-between">
-              <p className="label text-green-5">{dateFmt.format(open.createdAt)}</p>
-              <button type="button" onClick={() => setOpen(null)} aria-label="Schliessen" className="flex size-11 items-center justify-center text-muted">
-                <CloseIcon />
-              </button>
-            </div>
-            {openUrl && <img src={openUrl} alt={open.note || 'Foto'} className="max-h-[50vh] w-full border border-line object-contain" />}
-            {open.note && <p className="mt-2 whitespace-pre-wrap">{open.note}</p>}
-            <button
-              type="button"
-              onClick={async () => {
-                if (!confirm('Highlight wirklich löschen?')) return
-                await db.highlights.delete(open.id)
-                setOpen(null)
-                await reload()
-              }}
-              className="mt-3 min-h-11 text-danger"
-            >
-              Löschen
-            </button>
-          </section>
-        </div>
+        <Dialog title={dateFmt.format(open.createdAt)} onClose={() => setOpen(null)}>
+          {openUrl && <img src={openUrl} alt={open.note || 'Foto'} className="max-h-[50vh] w-full border border-line object-contain" />}
+          {open.note && <p className="mt-2 whitespace-pre-wrap">{open.note}</p>}
+          <button
+            type="button"
+            onClick={async () => {
+              if (!confirm('Eintrag wirklich löschen?')) return
+              await db.highlights.delete(open.id)
+              setOpen(null)
+              await reload()
+            }}
+            className="btn btn-danger btn-sm mt-3"
+          >
+            Löschen
+          </button>
+        </Dialog>
       )}
     </>
   )

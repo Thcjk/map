@@ -16,6 +16,9 @@ export interface Route {
   descent: number
   duration: number
   hasElevation: boolean
+  /** Tiefster und höchster Punkt (m ü. M.), falls Höhen vorhanden. */
+  minEle: number | null
+  maxEle: number | null
   /** Meter pro Belagsart. */
   surfaces: Partial<Record<SurfaceClass, number>>
   /** Meter pro SAC-Grad. */
@@ -55,6 +58,13 @@ export function routeFromPoints(
     if (w.sac) sac[w.sac] = (sac[w.sac] ?? 0) + d
   }
   const sacMax = [...SAC_ORDER].reverse().find((g) => sac[g]) ?? null
+  let minEle: number | null = null
+  let maxEle: number | null = null
+  for (const p of points) {
+    if (p[2] === null) continue
+    if (minEle === null || p[2] < minEle) minEle = p[2]
+    if (maxEle === null || p[2] > maxEle) maxEle = p[2]
+  }
   return {
     points,
     ways,
@@ -64,7 +74,9 @@ export function routeFromPoints(
     ascent,
     descent,
     duration: minutes[minutes.length - 1] ?? 0,
-    hasElevation: points.some((p) => p[2] !== null),
+    hasElevation: maxEle !== null,
+    minEle,
+    maxEle,
     surfaces,
     sac,
     sacMax,

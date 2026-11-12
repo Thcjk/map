@@ -1,26 +1,35 @@
 import type { LayerSpecification, Map as MlMap, StyleSpecification } from 'maplibre-gl'
 import { SOURCES } from '../data/sources'
 import { OMT_PROTOCOL } from '../offline/store'
-import { GREEN, INK, INK_MUTED, PAPER, PAPER_LIGHT, WATER, WATER_LINE } from '../theme'
+import { GREEN, INK, INK_MUTED, MARK, PAPER, PAPER_LIGHT, TRAIL, WATER, WATER_LINE } from '../theme'
 
 /**
  * Eigener Kartenstil «Vermessungsblatt» auf den Vektordaten von OpenFreeMap
  * (OpenMapTiles-Schema): Papiergrund, Grünflächen in Stufen, Tinte für Wege und Schrift.
  * Relief und Höhenlinien kommen als Overlays dazu (siehe layers.ts).
  */
-const FONT = ['Noto Sans Bold']
-const FONT_REGULAR = ['Noto Sans Regular']
-const FONT_ITALIC = ['Noto Sans Italic']
+/** Eigene Glyphen (IBM Plex Mono, OFL) aus public/fonts – technische Kartenbeschriftung. */
+export const MAP_FONT = ['PlexMono-Medium']
+export const MAP_FONT_REGULAR = ['PlexMono-Regular']
+const MAP_FONT_ITALIC = ['PlexMono-Italic']
+const GLYPHS = `${location.origin}${import.meta.env.BASE_URL}fonts/{fontstack}/{range}.pbf`
+
+/** Deutsche Namen bevorzugen, sonst lateinische Schreibweise (die Schrift deckt Latein und Kyrillisch ab). */
+const NAME = ['coalesce', ['get', 'name:de'], ['get', 'name:latin'], ['get', 'name']]
 
 const label = (size: number | unknown[], extra: Record<string, unknown> = {}) => ({
-  'text-font': FONT,
+  'text-field': NAME,
+  'text-font': MAP_FONT,
   'text-size': size,
   'text-transform': 'uppercase',
-  'text-letter-spacing': 0.18,
-  'text-max-width': 8,
+  'text-letter-spacing': 0.16,
+  'text-max-width': 9,
+  'text-line-height': 1.25,
   ...extra,
 })
-const halo = { 'text-color': INK, 'text-halo-color': PAPER_LIGHT, 'text-halo-width': 1.6 }
+const halo = { 'text-color': INK, 'text-halo-color': PAPER_LIGHT, 'text-halo-width': 1.4 }
+
+const HIKING_POIS = ['alpine_hut', 'wilderness_hut', 'shelter', 'camp_site', 'drinking_water', 'viewpoint']
 
 const layers = [
   { id: 'background', type: 'background', paint: { 'background-color': PAPER } },
@@ -30,7 +39,7 @@ const layers = [
     source: 'omt',
     'source-layer': 'landcover',
     filter: ['in', ['get', 'class'], ['literal', ['grass', 'farmland', 'wetland']]],
-    paint: { 'fill-color': GREEN[0], 'fill-opacity': 0.7 },
+    paint: { 'fill-color': GREEN[0], 'fill-opacity': 0.55 },
   },
   {
     id: 'landcover-wood',
@@ -38,7 +47,7 @@ const layers = [
     source: 'omt',
     'source-layer': 'landcover',
     filter: ['==', ['get', 'class'], 'wood'],
-    paint: { 'fill-color': GREEN[2], 'fill-opacity': ['interpolate', ['linear'], ['zoom'], 5, 0.75, 14, 0.55] },
+    paint: { 'fill-color': GREEN[2], 'fill-opacity': ['interpolate', ['linear'], ['zoom'], 5, 0.6, 12, 0.38] },
   },
   {
     id: 'landcover-ice',
@@ -133,7 +142,7 @@ const layers = [
     'source-layer': 'transportation',
     minzoom: 11,
     filter: ['==', ['get', 'class'], 'track'],
-    paint: { 'line-color': INK, 'line-width': 1, 'line-dasharray': [5, 2], 'line-opacity': 0.8 },
+    paint: { 'line-color': INK_MUTED, 'line-width': 1, 'line-dasharray': [6, 2], 'line-opacity': 0.9 },
   },
   {
     id: 'path',
@@ -142,7 +151,16 @@ const layers = [
     'source-layer': 'transportation',
     minzoom: 11,
     filter: ['==', ['get', 'class'], 'path'],
-    paint: { 'line-color': INK, 'line-width': ['interpolate', ['linear'], ['zoom'], 11, 0.6, 16, 1.4], 'line-dasharray': [2, 1.5] },
+    paint: { 'line-color': TRAIL, 'line-width': ['interpolate', ['linear'], ['zoom'], 11, 0.7, 16, 1.6], 'line-dasharray': [3, 2] },
+  },
+  {
+    id: 'aerialway',
+    type: 'line',
+    source: 'omt',
+    'source-layer': 'transportation',
+    minzoom: 11,
+    filter: ['==', ['get', 'class'], 'aerialway'],
+    paint: { 'line-color': INK, 'line-width': 1, 'line-dasharray': [1, 3] },
   },
   {
     id: 'boundary-country',
@@ -157,7 +175,7 @@ const layers = [
     type: 'symbol',
     source: 'omt',
     'source-layer': 'water_name',
-    layout: { 'text-field': ['get', 'name'], 'text-font': FONT_ITALIC, 'text-size': 12, 'text-letter-spacing': 0.1 },
+    layout: { 'text-field': NAME, 'text-font': MAP_FONT_ITALIC, 'text-size': 11, 'text-letter-spacing': 0.12 },
     paint: { 'text-color': '#3f5f58', 'text-halo-color': PAPER_LIGHT, 'text-halo-width': 1.2 },
   },
   {
@@ -170,11 +188,35 @@ const layers = [
     layout: {
       'icon-image': 'peak',
       'icon-size': 0.5,
-      'text-field': ['concat', ['get', 'name'], '\n', ['to-string', ['get', 'ele']]],
-      'text-font': FONT_REGULAR,
-      'text-size': 11,
+      'text-field': ['format', NAME, {}, '\n', {}, ['to-string', ['get', 'ele']], { 'font-scale': 0.95 }],
+      'text-font': MAP_FONT_REGULAR,
+      'text-size': 10.5,
+      'text-transform': 'uppercase',
+      'text-letter-spacing': 0.1,
       'text-anchor': 'top',
       'text-offset': [0, 0.6],
+      'text-optional': true,
+    },
+    paint: halo,
+  },
+  {
+    // Was unterwegs zählt: Hütten, Unterstände, Zeltplätze, Trinkwasser, Aussichtspunkte
+    id: 'hiking-poi',
+    type: 'symbol',
+    source: 'omt',
+    'source-layer': 'poi',
+    minzoom: 12,
+    filter: ['in', ['get', 'subclass'], ['literal', HIKING_POIS]],
+    layout: {
+      'icon-image': ['concat', 'poi-', ['get', 'subclass']],
+      'icon-size': 0.5,
+      'icon-allow-overlap': false,
+      'text-field': ['step', ['zoom'], '', 13, NAME],
+      'text-font': MAP_FONT_REGULAR,
+      'text-size': 10,
+      'text-anchor': 'top',
+      'text-offset': [0, 0.9],
+      'text-max-width': 8,
       'text-optional': true,
     },
     paint: halo,
@@ -186,7 +228,7 @@ const layers = [
     'source-layer': 'place',
     minzoom: 10,
     filter: ['in', ['get', 'class'], ['literal', ['village', 'hamlet', 'suburb', 'isolated_dwelling']]],
-    layout: { 'text-field': ['get', 'name'], ...label(10.5) },
+    layout: label(10),
     paint: { ...halo, 'text-color': INK_MUTED },
   },
   {
@@ -194,9 +236,9 @@ const layers = [
     type: 'symbol',
     source: 'omt',
     'source-layer': 'place',
-    minzoom: 6,
+    minzoom: 8,
     filter: ['==', ['get', 'class'], 'town'],
-    layout: { 'text-field': ['get', 'name'], ...label(['interpolate', ['linear'], ['zoom'], 6, 10, 14, 14]) },
+    layout: label(['interpolate', ['linear'], ['zoom'], 6, 10, 14, 13]),
     paint: halo,
   },
   {
@@ -204,8 +246,8 @@ const layers = [
     type: 'symbol',
     source: 'omt',
     'source-layer': 'place',
-    filter: ['==', ['get', 'class'], 'city'],
-    layout: { 'text-field': ['get', 'name'], ...label(['interpolate', ['linear'], ['zoom'], 4, 10, 12, 18]) },
+    filter: ['all', ['==', ['get', 'class'], 'city'], ['<=', ['coalesce', ['get', 'rank'], 9], ['step', ['zoom'], 2, 5, 4, 6, 6, 7, 99]]],
+    layout: label(['interpolate', ['linear'], ['zoom'], 4, 10, 12, 16], { 'text-letter-spacing': 0.22 }),
     paint: halo,
   },
   {
@@ -214,8 +256,9 @@ const layers = [
     source: 'omt',
     'source-layer': 'place',
     maxzoom: 7,
-    filter: ['==', ['get', 'class'], 'country'],
-    layout: { 'text-field': ['get', 'name'], ...label(13, { 'text-letter-spacing': 0.35 }) },
+    // Kleinstaaten erst beim Hineinzoomen beschriften, sonst überdecken sie ihre Umgebung
+    filter: ['all', ['==', ['get', 'class'], 'country'], ['<=', ['coalesce', ['get', 'rank'], 6], ['step', ['zoom'], 1, 3, 2, 4, 3, 5, 4, 6, 6]]],
+    layout: label(12, { 'text-letter-spacing': 0.4 }),
     paint: halo,
   },
 ] as unknown as LayerSpecification[]
@@ -223,7 +266,7 @@ const layers = [
 export const TOPO_STYLE: StyleSpecification = {
   version: 8,
   name: 'Vermessungsblatt',
-  glyphs: 'https://tiles.openfreemap.org/fonts/{fontstack}/{range}.pbf',
+  glyphs: GLYPHS,
   sources: {
     omt: {
       type: 'vector',
@@ -237,21 +280,94 @@ export const TOPO_STYLE: StyleSpecification = {
   layers,
 }
 
-/** Gipfel-Dreieck für den Stil bereitstellen (wird nach jedem Stilwechsel gebraucht). */
+type Draw = (ctx: CanvasRenderingContext2D, s: number) => void
+
+/** Kleine Kartenzeichen in Tinte (bzw. Rot für Hütten), gezeichnet statt geladen. */
+const SYMBOLS: Record<string, { color: string; draw: Draw }> = {
+  peak: {
+    color: INK,
+    draw: (c, s) => {
+      c.moveTo(s / 2, s * 0.16)
+      c.lineTo(s * 0.86, s * 0.82)
+      c.lineTo(s * 0.14, s * 0.82)
+      c.closePath()
+    },
+  },
+  'poi-alpine_hut': { color: MARK, draw: house },
+  'poi-wilderness_hut': { color: INK, draw: house },
+  'poi-shelter': {
+    color: INK,
+    draw: (c, s) => {
+      c.moveTo(s * 0.12, s * 0.55)
+      c.lineTo(s / 2, s * 0.2)
+      c.lineTo(s * 0.88, s * 0.55)
+      c.lineTo(s * 0.76, s * 0.55)
+      c.lineTo(s / 2, s * 0.34)
+      c.lineTo(s * 0.24, s * 0.55)
+      c.closePath()
+      c.rect(s * 0.24, s * 0.55, s * 0.08, s * 0.28)
+      c.rect(s * 0.68, s * 0.55, s * 0.08, s * 0.28)
+    },
+  },
+  'poi-camp_site': {
+    color: INK,
+    draw: (c, s) => {
+      c.moveTo(s / 2, s * 0.18)
+      c.lineTo(s * 0.9, s * 0.82)
+      c.lineTo(s * 0.6, s * 0.82)
+      c.lineTo(s / 2, s * 0.56)
+      c.lineTo(s * 0.4, s * 0.82)
+      c.lineTo(s * 0.1, s * 0.82)
+      c.closePath()
+    },
+  },
+  'poi-drinking_water': {
+    color: WATER_LINE,
+    draw: (c, s) => {
+      c.moveTo(s / 2, s * 0.14)
+      c.bezierCurveTo(s * 0.86, s * 0.5, s * 0.8, s * 0.86, s / 2, s * 0.86)
+      c.bezierCurveTo(s * 0.2, s * 0.86, s * 0.14, s * 0.5, s / 2, s * 0.14)
+    },
+  },
+  'poi-viewpoint': {
+    color: INK,
+    draw: (c, s) => {
+      c.arc(s / 2, s * 0.7, s * 0.36, Math.PI, 0)
+      c.closePath()
+      c.rect(s * 0.46, s * 0.14, s * 0.08, s * 0.16)
+    },
+  },
+}
+
+function house(c: CanvasRenderingContext2D, s: number) {
+  c.moveTo(s / 2, s * 0.14)
+  c.lineTo(s * 0.9, s * 0.5)
+  c.lineTo(s * 0.78, s * 0.5)
+  c.lineTo(s * 0.78, s * 0.84)
+  c.lineTo(s * 0.22, s * 0.84)
+  c.lineTo(s * 0.22, s * 0.5)
+  c.lineTo(s * 0.1, s * 0.5)
+  c.closePath()
+}
+
+/** Kartenzeichen bei Bedarf bereitstellen (auch nach jedem Stilwechsel). */
 export function provideStyleImages(map: MlMap) {
   map.on('styleimagemissing', (e) => {
-    if (e.id !== 'peak' || map.hasImage('peak')) return
-    const size = 32
+    const symbol = SYMBOLS[e.id]
+    if (!symbol || map.hasImage(e.id)) return
+    const size = 36
     const canvas = document.createElement('canvas')
     canvas.width = canvas.height = size
     const ctx = canvas.getContext('2d')!
-    ctx.fillStyle = INK
     ctx.beginPath()
-    ctx.moveTo(size / 2, 5)
-    ctx.lineTo(size - 5, size - 6)
-    ctx.lineTo(5, size - 6)
-    ctx.closePath()
+    symbol.draw(ctx, size)
+    // heller Rand, damit das Zeichen auf grünem Grund lesbar bleibt
+    ctx.lineJoin = 'round'
+    ctx.lineWidth = 4
+    ctx.strokeStyle = PAPER_LIGHT
+    ctx.stroke()
+    ctx.fillStyle = symbol.color
     ctx.fill()
-    map.addImage('peak', ctx.getImageData(0, 0, size, size))
+    map.addImage(e.id, ctx.getImageData(0, 0, size, size))
   })
 }

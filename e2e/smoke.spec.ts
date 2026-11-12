@@ -6,8 +6,8 @@ import { expect, test } from '@playwright/test'
  * ohne Netz läuft und keine fremden Server belastet.
  */
 test('Route planen, speichern und als GPX exportieren', async ({ page, context }) => {
-  // Kartenkacheln, Schriften, Höhen und Overlays: leer bzw. blockiert
-  await context.route(/tiles\.openfreemap\.org|elevation-tiles-prod|waymarkedtrails|geo\.admin\.ch/, (r) => r.abort())
+  // Kartenkacheln, Höhen, Overlays und Katalogfotos: blockiert
+  await context.route(/tiles\.openfreemap\.org|elevation-tiles-prod|waymarkedtrails|geo\.admin\.ch|wikimedia\.org/, (r) => r.abort())
   let routingCalls = 0
   await context.route(/brouter\.de/, async (route) => {
     routingCalls++
@@ -43,27 +43,33 @@ test('Route planen, speichern und als GPX exportieren', async ({ page, context }
   await map.click({ position: { x: 280, y: 300 } })
 
   // Kennzahlen erscheinen, sobald beide Teilstücke geroutet sind
-  const panel = page.getByRole('region', { name: 'Routenplanung' })
-  await expect(panel.getByText('Route wird berechnet')).toHaveCount(0, { timeout: 15_000 })
-  await expect(panel.locator('dd').first()).toContainText('km')
+  const planning = page.getByRole('region', { name: 'Routenplanung' })
+  await expect(planning.getByText('Route wird berechnet')).toHaveCount(0, { timeout: 15_000 })
+  await expect(planning.locator('dd').first()).toContainText('km')
   // Eine laufende Anfrage darf nicht abgebrochen und wiederholt werden.
   expect(routingCalls).toBe(2)
 
   // Rückgängig entfernt den letzten Punkt, Wiederholen bringt ihn zurück (ohne neue Anfrage)
-  await panel.getByRole('button', { name: 'Zurück' }).click()
+  await planning.getByRole('button', { name: 'Rückgängig' }).click()
   await expect(page.locator('.waypoint-marker')).toHaveCount(2)
-  await panel.getByRole('button', { name: 'Vor' }).click()
+  await planning.getByRole('button', { name: 'Wiederholen' }).click()
   await expect(page.locator('.waypoint-marker')).toHaveCount(3)
   expect(routingCalls).toBe(2)
 
-  // Speichern
-  await panel.getByRole('button', { name: 'Speichern' }).click()
-  await panel.getByLabel('Name der Tour').fill('Smoke-Tour')
-  await panel.getByLabel('Name der Tour').press('Enter')
-  await expect(page.getByText('Tour gespeichert.')).toBeVisible()
+  // Fertig: Die Route zeigt Kennzahlen in Höhenmetern (Hm), nicht als «m»
+  await planning.getByRole('button', { name: 'Fertig' }).click()
+  const routePanel = page.getByRole('region', { name: 'Route', exact: true })
+  await expect(routePanel.locator('dd').nth(1)).toContainText('Hm')
 
-  // Export aus dem Panel
-  const [download] = await Promise.all([page.waitForEvent('download'), panel.getByRole('button', { name: 'GPX' }).click()])
+  // Speichern
+  await routePanel.getByRole('button', { name: 'Speichern' }).click()
+  await page.getByLabel('Name der Tour').fill('Smoke-Tour')
+  await page.getByLabel('Name der Tour').press('Enter')
+  await expect(page.getByText('Tour gespeichert')).toBeVisible()
+
+  // Export über «Weitere Aktionen»
+  await routePanel.getByRole('button', { name: 'Weitere Aktionen' }).click()
+  const [download] = await Promise.all([page.waitForEvent('download'), page.getByRole('button', { name: 'Als GPX exportieren' }).click()])
   expect(download.suggestedFilename()).toBe('smoke-tour.gpx')
   const gpx = await readFile(await download.path(), 'utf8')
   expect(gpx).toContain('<name>Smoke-Tour</name>')
@@ -75,4 +81,8 @@ test('Route planen, speichern und als GPX exportieren', async ({ page, context }
   await expect(page.getByRole('heading', { name: 'Smoke-Tour' })).toBeVisible()
   await page.reload()
   await expect(page.getByRole('heading', { name: 'Smoke-Tour' })).toBeVisible()
+
+  // Zurück zur Karte: Die Route ist sofort wieder da (die Karte bleibt geladen)
+  await page.getByRole('link', { name: 'Auf Karte' }).click()
+  await expect(page.getByRole('region', { name: 'Route', exact: true })).toContainText('Smoke-Tour')
 })

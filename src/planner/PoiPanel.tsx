@@ -22,8 +22,8 @@ export default function PoiPanel({ pois, loading, error, corridor, filter, onCor
   return (
     <div className="space-y-3">
       <div className="flex items-center gap-2">
-        <span className="text-sm text-muted">Korridor</span>
-        <div role="radiogroup" aria-label="Korridor" className="flex flex-1 gap-1 rounded-xl bg-bg p-1">
+        <span className="label text-muted">Korridor</span>
+        <div role="radiogroup" aria-label="Korridor" className="segmented flex-1">
           {CORRIDORS.map((m) => (
             <button
               key={m}
@@ -31,7 +31,6 @@ export default function PoiPanel({ pois, loading, error, corridor, filter, onCor
               role="radio"
               aria-checked={m === corridor}
               onClick={() => onCorridor(m)}
-              className={`min-h-10 flex-1 rounded-lg text-sm font-semibold ${m === corridor ? 'bg-accent text-bg' : 'text-muted'}`}
             >
               {m < 1000 ? `${m} m` : `${m / 1000} km`}
             </button>
@@ -40,8 +39,8 @@ export default function PoiPanel({ pois, loading, error, corridor, filter, onCor
       </div>
 
       {!pois && loading === null && (
-        <button type="button" onClick={onLoad} className="min-h-12 w-full rounded-xl bg-accent font-bold text-bg">
-          Hütten, Camping, Wasser & Einkauf laden
+        <button type="button" onClick={onLoad} className="btn btn-primary w-full">
+          Hütten, Camping, Wasser, Einkauf laden
         </button>
       )}
       {loading !== null && (
@@ -52,7 +51,7 @@ export default function PoiPanel({ pois, loading, error, corridor, filter, onCor
       {error && (
         <p role="alert" className="flex items-center gap-2 text-sm text-danger">
           <span className="flex-1">{error}</span>
-          <button type="button" onClick={onLoad} className="min-h-10 rounded-lg border border-danger px-3">
+          <button type="button" onClick={onLoad} className="btn btn-sm">
             Erneut
           </button>
         </p>
@@ -74,7 +73,7 @@ export default function PoiPanel({ pois, loading, error, corridor, filter, onCor
                     else next.add(c.id)
                     onFilter(next)
                   }}
-                  className={`flex min-h-10 items-center gap-1.5 rounded-full border px-3 text-sm ${on ? 'border-text' : 'border-line text-muted'}`}
+                  className={`btn btn-sm normal-case! tracking-normal! ${on ? '' : 'btn-quiet text-muted!'}`}
                 >
                   <span className="size-2.5 rounded-full" style={{ background: on ? c.color : 'transparent', border: `2px solid ${c.color}` }} />
                   {c.label} <span className="tabular text-muted">{count(c.id)}</span>

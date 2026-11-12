@@ -20,6 +20,8 @@ interface Props {
   onInsert: (index: number, at: LngLat) => void
   onMove: (index: number, to: LngLat) => void
   onSelect: (index: number | null) => void
+  /** Tippen auf die Karte ausserhalb des Planens (z. B. Punkt-Karte öffnen). */
+  onTap?: (at: LngLat) => void
 }
 
 const ROUTE = 'app-route'
@@ -114,8 +116,13 @@ export default function RouteLayer(props: Props) {
     if (!map) return
     const onClick = (e: MapMouseEvent) => {
       const p = latest.current
-      if (!p.editable) return
       const at: LngLat = [e.lngLat.lng, e.lngLat.lat]
+      if (!p.editable) {
+        // POIs haben ihr eigenes Popup
+        const onPoi = map.getLayer('app-pois') && map.queryRenderedFeatures(e.point, { layers: ['app-pois'] }).length > 0
+        if (!onPoi) p.onTap?.(at)
+        return
+      }
       const box: [[number, number], [number, number]] = [
         [e.point.x - 10, e.point.y - 10],
         [e.point.x + 10, e.point.y + 10],

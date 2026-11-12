@@ -1,9 +1,9 @@
 import type { Map as MlMap, LayerSpecification, SourceSpecification, StyleSpecification } from 'maplibre-gl'
 import { SOURCES } from '../data/sources'
-import { GREEN, INK, PAPER_LIGHT } from '../theme'
+import { CONTOUR, GREEN, INK, PAPER_LIGHT } from '../theme'
 import { contourTiles, demSource } from './dem'
 import { CH_BOUNDS } from './switzerland'
-import { TOPO_STYLE } from './topoStyle'
+import { MAP_FONT_REGULAR, TOPO_STYLE } from './topoStyle'
 
 const attribution = (id: string) => SOURCES.find((s) => s.id === id)!.attribution
 
@@ -112,12 +112,16 @@ export function syncLayers(map: MlMap, base: BaseMap, overlays: Record<OverlayId
       },
       {
         type: 'hillshade',
+        // Licht aus vier Richtungen: Jeder Hang wird grün, je steiler desto dunkler;
+        // flaches Gelände bleibt papierhell (wie eine Hangneigungskarte).
         paint: {
-          'hillshade-exaggeration': 0.6,
-          'hillshade-shadow-color': GREEN[5],
-          'hillshade-highlight-color': PAPER_LIGHT,
-          'hillshade-accent-color': GREEN[4],
-        },
+          'hillshade-method': 'multidirectional',
+          'hillshade-illumination-direction': [315, 45, 135, 225],
+          'hillshade-illumination-altitude': [38, 38, 38, 38],
+          'hillshade-shadow-color': [GREEN[5], GREEN[4], GREEN[4], GREEN[5]],
+          'hillshade-highlight-color': ['rgba(243,242,231,0)', 'rgba(243,242,231,0)', 'rgba(243,242,231,0)', 'rgba(243,242,231,0)'],
+          'hillshade-exaggeration': 0.66,
+        } as never,
       },
       // unter Gewässern und Wegen, damit diese lesbar bleiben
       map.getLayer('water') ? 'water' : firstSymbol(),
@@ -138,9 +142,9 @@ export function syncLayers(map: MlMap, base: BaseMap, overlays: Record<OverlayId
           source: src,
           'source-layer': 'contours',
           paint: {
-            'line-color': GREEN[5],
-            'line-opacity': ['match', ['get', 'level'], 1, 0.75, 0.4],
-            'line-width': ['match', ['get', 'level'], 1, 1, 0.5],
+            'line-color': CONTOUR,
+            'line-opacity': ['match', ['get', 'level'], 1, 0.85, 0.5],
+            'line-width': ['match', ['get', 'level'], 1, 1.1, 0.55],
           },
         },
         map.getLayer('building') ? 'building' : firstSymbol(),
@@ -157,9 +161,9 @@ export function syncLayers(map: MlMap, base: BaseMap, overlays: Record<OverlayId
           layout: {
             'symbol-placement': 'line',
             'text-field': ['to-string', ['get', 'ele']],
-            'text-font': ['Noto Sans Regular'],
-            'text-size': 10,
-            'text-letter-spacing': 0.08,
+            'text-font': MAP_FONT_REGULAR,
+            'text-size': 9.5,
+            'text-letter-spacing': 0.06,
           },
           paint: { 'text-color': INK, 'text-halo-color': PAPER_LIGHT, 'text-halo-width': 1.2 },
         },

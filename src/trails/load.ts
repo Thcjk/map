@@ -10,15 +10,12 @@ const MAX_AGE_MS = 30 * 24 * 3600 * 1000
 export type LoadStep = 'osm' | 'elevation'
 
 export async function loadTrail(
-  hit: Pick<TrailHit, 'id' | 'name' | 'ref' | 'network'> & { catalogId?: string },
+  hit: Pick<TrailHit, 'id' | 'name' | 'ref' | 'network'>,
   onStep: (step: LoadStep, share?: number) => void,
   signal?: AbortSignal,
 ): Promise<Trail> {
   const cached = await db.trails.get(hit.id)
-  if (cached && Date.now() - cached.fetchedAt < MAX_AGE_MS) {
-    if (hit.catalogId && cached.catalogId !== hit.catalogId) await db.trails.update(hit.id, { catalogId: hit.catalogId })
-    return cached
-  }
+  if (cached && Date.now() - cached.fetchedAt < MAX_AGE_MS) return cached
   onStep('osm')
   const elements = await overpass(relationQuery(hit.id), signal)
   const { points, gaps } = assembleRelation(hit.id, elements)
@@ -29,7 +26,7 @@ export async function loadTrail(
     if (signal?.aborted) throw e
     return points
   })
-  const trail: Trail = { id: hit.id, name: hit.name, ref: hit.ref, network: hit.network, catalogId: hit.catalogId, points: withEle, gaps, fetchedAt: Date.now() }
+  const trail: Trail = { id: hit.id, name: hit.name, ref: hit.ref, network: hit.network, points: withEle, gaps, fetchedAt: Date.now() }
   await db.trails.put(trail)
   return trail
 }

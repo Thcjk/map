@@ -54,11 +54,17 @@ export function bbox(points: (LngLat | RoutePoint)[]): [number, number, number, 
 }
 
 /**
- * Geglättete Höhen mit Hysterese: Eine Höhenänderung zählt erst, wenn sie den
- * Schwellwert übersteigt. So blähen Messrauschen und DEM-Treppen die Höhenmeter nicht auf.
+ * Schwelle für Höhenmeter: Eine Höhenänderung zählt erst ab 10 m. Höhenmodelle rauschen
+ * (v. a. quer zum Hang); ohne Schwelle summiert sich das zu viel zu vielen Höhenmetern.
+ * 10 m entspricht dem Filter von BRouter und gängiger Praxis.
+ */
+export const ELEVATION_THRESHOLD_M = 10
+
+/**
+ * Geglättete Höhen mit Hysterese (siehe {@link ELEVATION_THRESHOLD_M}).
  * Punkte ohne Höhe übernehmen den letzten bekannten Wert (am Anfang den ersten bekannten).
  */
-export function smoothElevations(eles: (number | null)[], threshold = 5): (number | null)[] {
+export function smoothElevations(eles: (number | null)[], threshold = ELEVATION_THRESHOLD_M): (number | null)[] {
   let ref: number | null = eles.find((e) => e !== null) ?? null
   return eles.map((e) => {
     if (e !== null && ref !== null && Math.abs(e - ref) >= threshold) ref = e
@@ -66,8 +72,8 @@ export function smoothElevations(eles: (number | null)[], threshold = 5): (numbe
   })
 }
 
-/** Auf- und Abstieg in Metern, auf Basis von {@link smoothElevations}. */
-export function elevationGainLoss(eles: (number | null)[], threshold = 5): { ascent: number; descent: number } {
+/** Summe aller Auf- und Abstiege in Metern (Höhenmeter), auf Basis von {@link smoothElevations}. */
+export function elevationGainLoss(eles: (number | null)[], threshold = ELEVATION_THRESHOLD_M): { ascent: number; descent: number } {
   const smooth = smoothElevations(eles, threshold)
   let ascent = 0
   let descent = 0

@@ -2,7 +2,8 @@ import { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { cloudConfigured, getSupabase } from '../cloud/client'
 import { fetchPublicTour } from '../cloud/sync'
-import { formatKm, formatM } from '../lib/format'
+import PageFrame from '../components/PageFrame'
+import { formatHm, formatKm } from '../lib/format'
 import { formatDuration } from '../lib/hikingTime'
 import { routeFromPoints } from '../routing/route'
 import { saveTour } from '../lib/tours'
@@ -35,23 +36,20 @@ export default function SharedTourPage() {
   }
 
   return (
-    <div className="h-full overflow-y-auto px-4 py-6">
-      <div className="mx-auto max-w-md">
-        {error && <p role="alert" className="rounded-xl border border-line bg-surface p-4">{error}</p>}
-        {!tour && !error && <p role="status" className="text-muted">Tour wird geladen …</p>}
-        {tour && (
-          <div className="rounded-xl border border-line bg-surface p-4">
-            <p className="label text-green-5">Geteilte Tour</p>
-            <h1 className="mt-1 text-2xl font-bold">{tour.name}</h1>
-            <p className="tabular mt-2 text-lg">
-              {formatKm(tour.distance)} · ↑ {formatM(tour.ascent)} · ↓ {formatM(tour.descent)} · {formatDuration(tour.duration)}
-            </p>
-            <button type="button" onClick={() => void copy()} className="mt-4 min-h-12 w-full rounded-xl bg-accent font-bold text-bg">
-              In meine Touren übernehmen und öffnen
-            </button>
-          </div>
-        )}
-      </div>
-    </div>
+    <PageFrame sheet="06" title="Geteilte Tour">
+      {error && <p role="alert" className="card p-3">{error}</p>}
+      {!tour && !error && <p role="status" className="label text-muted">Tour wird geladen …</p>}
+      {tour && (
+        <div className="card p-4">
+          <h2 className="text-xl font-bold">{tour.name}</h2>
+          <p className="tabular mt-2">
+            {formatKm(tour.distance)} · bergauf {formatHm(tour.ascent)} · bergab {formatHm(tour.descent)} · {formatDuration(tour.duration)}
+          </p>
+          <button type="button" onClick={() => void copy()} className="btn btn-primary mt-4 w-full">
+            In meine Touren übernehmen
+          </button>
+        </div>
+      )}
+    </PageFrame>
   )
 }

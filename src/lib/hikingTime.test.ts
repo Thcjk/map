@@ -27,6 +27,7 @@ describe('Wanderzeit', () => {
   it('formatiert wie auf Wegweisern', () => {
     expect(formatDuration(42)).toBe('40 min')
     expect(formatDuration(184)).toBe('3 h 05 min')
-    expect(formatDuration(2720, true)).toBe('45 h 20')
+    expect(formatDuration(1280, true)).toBe('21 h 20')
+    expect(formatDuration(8115, true)).toBe('135 h')
   })
 })

@@ -50,9 +50,9 @@ export default function OfflinePanel({ route, name }: { route: Route; name: stri
       </p>
       <div className="flex items-center gap-2">
         <span className="label text-muted">Streifen</span>
-        <div role="radiogroup" aria-label="Breite des Streifens" className="flex flex-1 gap-1 rounded-xl bg-bg p-1">
+        <div role="radiogroup" aria-label="Breite des Streifens" className="segmented flex-1">
           {CORRIDORS.map((m) => (
-            <button key={m} type="button" role="radio" aria-checked={m === corridor} onClick={() => setCorridor(m)} className={`min-h-10 flex-1 rounded-lg text-sm font-semibold ${m === corridor ? 'bg-accent text-bg' : 'text-muted'}`}>
+            <button key={m} type="button" role="radio" aria-checked={m === corridor} onClick={() => setCorridor(m)}>
               ± {m / 1000} km
             </button>
           ))}
@@ -72,13 +72,13 @@ export default function OfflinePanel({ route, name }: { route: Route; name: stri
             <span className="tabular text-sm">
               {progress[0]} / {progress[1]}
             </span>
-            <button type="button" onClick={() => ctrl.current?.abort()} className="min-h-10 rounded-lg border border-line px-3 text-sm">
+            <button type="button" onClick={() => ctrl.current?.abort()} className="btn btn-sm">
               Abbrechen
             </button>
           </div>
         </div>
       ) : (
-        <button type="button" disabled={plan.tooLarge} onClick={() => void start()} className="min-h-12 w-full rounded-xl bg-accent font-bold text-bg disabled:opacity-40">
+        <button type="button" disabled={plan.tooLarge} onClick={() => void start()} className="btn btn-primary w-full">
           Karte für diese Route herunterladen
         </button>
       )}
@@ -103,7 +103,7 @@ export default function OfflinePanel({ route, name }: { route: Route; name: stri
                     await deleteRegion(r.id)
                     await refresh()
                   }}
-                  className="min-h-10 rounded-lg px-3 text-sm text-danger"
+                  className="btn btn-sm btn-danger"
                 >
                   Löschen
                 </button>

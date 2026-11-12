@@ -1,34 +1,45 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef } from 'react'
 import { useMap } from './MapContext'
 
 const fmt = (v: number, pos: string, neg: string) => `${Math.abs(v).toFixed(4)}° ${v >= 0 ? pos : neg}`
 
-/** Fadenkreuz in der Kartenmitte und deren Koordinaten, wie am Rand eines Kartenblatts. */
+/**
+ * Fadenkreuz in der Kartenmitte und deren Koordinaten, wie am Rand eines Kartenblatts.
+ * Der Text wird direkt gesetzt (ohne React-Durchlauf), damit das Verschieben flüssig bleibt.
+ */
 export default function CoordinateReadout() {
   const map = useMap()
-  const [center, setCenter] = useState<{ lng: number; lat: number } | null>(null)
+  const text = useRef<HTMLParagraphElement>(null)
+  const cross = useRef<SVGSVGElement>(null)
 
   useEffect(() => {
     if (!map) return
-    const update = () => setCenter(map.getCenter())
+    let frame = 0
+    const update = () => {
+      cancelAnimationFrame(frame)
+      frame = requestAnimationFrame(() => {
+        const c = map.getCenter()
+        if (text.current) text.current.textContent = `${fmt(c.lat, 'N', 'S')}  ${fmt(c.lng, 'E', 'W')}`
+        // Die Kartenmitte verschiebt sich, wenn Bedienflächen einen Rand belegen.
+        const p = map.getPadding()
+        if (cross.current)
+          cross.current.style.transform = `translate(calc(-50% + ${((p.left ?? 0) - (p.right ?? 0)) / 2}px), calc(-50% + ${((p.top ?? 0) - (p.bottom ?? 0)) / 2}px))`
+      })
+    }
     update()
     map.on('move', update)
     return () => {
+      cancelAnimationFrame(frame)
       map.off('move', update)
     }
   }, [map])
 
-  if (!center) return null
   return (
     <>
-      <svg aria-hidden width="22" height="22" viewBox="0 0 22 22" className="pointer-events-none absolute left-1/2 top-1/2 z-10 -translate-x-1/2 -translate-y-1/2 text-mark">
-        <path d="M11 0v8M11 14v8M0 11h8M14 11h8" stroke="currentColor" strokeWidth="1.2" />
+      <svg ref={cross} aria-hidden width="26" height="26" viewBox="0 0 26 26" className="pointer-events-none absolute left-1/2 top-1/2 z-10 text-mark">
+        <path d="M13 0v9M13 17v9M0 13h9M17 13h9" stroke="currentColor" strokeWidth="1.1" />
       </svg>
-      <p className="label pointer-events-none absolute left-2.5 top-[68px] z-10 bg-surface/80 px-1.5 py-0.5 text-[10px]! text-text">
-        {fmt(center.lat, 'N', 'S')}
-        <br />
-        {fmt(center.lng, 'E', 'W')}
-      </p>
+      <p ref={text} aria-hidden className="label pointer-events-none absolute left-2.5 top-[66px] z-10 whitespace-pre bg-surface/85 px-1.5 py-0.5 text-[10px]! text-text" />
     </>
   )
 }

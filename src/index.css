@@ -43,19 +43,22 @@ body,
 body {
   margin: 0;
   background-color: var(--color-bg);
-  /* feines Papierkorn */
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .09 0 0 0 0 .14 0 0 0 0 .1 0 0 0 .09 0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");
+  /* Papierkorn als kleine Kachel (kein SVG-Filter: der kostet auf Handys Rechenzeit) */
+  background-image: url('/paper.png');
   color: var(--color-text);
   font-family: var(--font-sans);
   -webkit-tap-highlight-color: transparent;
+  overscroll-behavior: none;
 }
 
-/* Überschriften: breite Grotesk wie ein Kartentitel */
-h1 {
-  font-stretch: 122%;
+/* Titel wie die Wortmarke eines Kartenblatts: breit, fett, klein geschrieben */
+h1,
+.wordmark {
+  font-stretch: 125%;
   font-weight: 800;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.03em;
   text-transform: lowercase;
+  line-height: 1;
 }
 
 /* Technische Beschriftung: Monospace-Versalien mit Sperrung */
@@ -63,7 +66,7 @@ h1 {
   font-family: var(--font-mono);
   font-size: 11px;
   font-weight: 500;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
 }
 
@@ -78,7 +81,151 @@ h1 {
   outline-offset: 2px;
 }
 
-/* MapLibre-Bedienelemente an das dunkle UI anpassen, mit grossen Touch-Flächen. */
+/* ---------- Bausteine ---------- */
+
+/* Schaltflächen: rechteckig, feine Tintenlinie, Beschriftung wie auf der Karte */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 48px;
+  padding: 0 16px;
+  border: 1px solid var(--color-text);
+  border-radius: 3px;
+  background: var(--color-surface);
+  color: var(--color-text);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  cursor: pointer;
+  user-select: none;
+}
+.btn:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+.btn:active:not(:disabled) {
+  transform: translateY(1px);
+}
+.btn-primary {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: var(--color-surface);
+}
+.btn-quiet {
+  border-color: var(--color-line);
+}
+.btn-bare {
+  border-color: transparent;
+  background: transparent;
+  color: var(--color-muted);
+}
+.btn-danger {
+  border-color: transparent;
+  background: transparent;
+  color: var(--color-danger);
+}
+.btn-sm {
+  min-height: 40px;
+  padding: 0 12px;
+  font-size: 11px;
+}
+.btn-icon {
+  width: 48px;
+  padding: 0;
+  flex: none;
+}
+
+.field {
+  min-height: 48px;
+  width: 100%;
+  padding: 0 12px;
+  border: 1px solid var(--color-text);
+  border-radius: 3px;
+  background: var(--color-surface);
+  color: var(--color-text);
+  font-size: 16px;
+}
+textarea.field {
+  padding: 12px;
+}
+
+.card {
+  border: 1px solid var(--color-line);
+  border-radius: 3px;
+  background: var(--color-surface);
+}
+
+/* Auswahl in Segmenten (Tabs, Umschalter) */
+.segmented {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+  border: 1px solid var(--color-text);
+  border-radius: 3px;
+  overflow: hidden;
+}
+.segmented > button {
+  min-height: 42px;
+  padding: 0 6px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  background: var(--color-surface);
+}
+.segmented > button + button {
+  border-left: 1px solid var(--color-line);
+}
+.segmented > button[aria-checked='true'],
+.segmented > button[aria-selected='true'] {
+  background: var(--color-text);
+  color: var(--color-surface);
+  font-weight: 600;
+}
+
+/* Schwebende Flächen über der Karte: Papier mit Tintenrand */
+.panel {
+  border: 1px solid var(--color-text);
+  border-radius: 4px;
+  background-color: var(--color-surface);
+  background-image: url('/paper.png');
+}
+
+/* Passkreuz wie am Rand eines Kartenblatts */
+.regmark {
+  position: absolute;
+  width: 13px;
+  height: 13px;
+  pointer-events: none;
+  background:
+    linear-gradient(var(--color-text), var(--color-text)) center / 100% 1px no-repeat,
+    linear-gradient(var(--color-text), var(--color-text)) center / 1px 100% no-repeat;
+  opacity: 0.55;
+}
+
+/* Höhenskala in Grünstufen */
+.elevation-scale {
+  height: 8px;
+  background: linear-gradient(
+    to right,
+    var(--color-green-1) 0 16.6%,
+    var(--color-green-2) 16.6% 33.3%,
+    var(--color-green-3) 33.3% 50%,
+    var(--color-green-4) 50% 66.6%,
+    var(--color-green-5) 66.6% 83.3%,
+    var(--color-green-6) 83.3% 100%
+  );
+  border: 1px solid var(--color-text);
+}
+
+/* MapLibre-Bedienelemente im Papier-Look, mit grossen Touch-Flächen. */
 .maplibregl-ctrl-group {
   background: var(--color-surface) !important;
   border: 1px solid var(--color-text);
@@ -111,15 +258,10 @@ h1 {
   color: var(--color-text) !important;
   font-family: var(--font-mono);
 }
-.map-fab {
-  display: flex;
+.map-ctrl-button {
+  display: flex !important;
   align-items: center;
   justify-content: center;
-  width: 46px;
-  height: 46px;
-  border-radius: 4px;
-  border: 1px solid var(--color-text);
-  background: var(--color-surface);
   color: var(--color-text);
 }
 
@@ -193,32 +335,6 @@ h1 {
   box-shadow: 0 0 0 1px var(--color-text), 0 0 0 8px rgb(179 38 30 / 0.18);
 }
 
-/* Sticker frisch freigeschaltet: kurz «aufkleben» */
-@keyframes sticker-pop {
-  0% {
-    transform: scale(0.6) rotate(-14deg);
-    opacity: 0;
-  }
-  60% {
-    transform: scale(1.12) rotate(4deg);
-    opacity: 1;
-  }
-  80% {
-    transform: scale(0.97) rotate(-2deg);
-  }
-  100% {
-    transform: none;
-  }
-}
-.sticker-pop {
-  animation: sticker-pop 0.9s cubic-bezier(0.2, 0.9, 0.3, 1.2) both;
-}
-@media (prefers-reduced-motion: reduce) {
-  .sticker-pop {
-    animation: none;
-  }
-}
-
 .highlight-marker {
   width: 28px;
   height: 28px;
@@ -230,4 +346,23 @@ h1 {
   line-height: 1;
   cursor: pointer;
   box-shadow: 0 1px 4px rgb(23 36 26 / 0.4);
+}
+
+/* Papierfläche für Seiten, die über der Karte liegen */
+.paper {
+  background-color: var(--color-bg);
+  background-image: url('/paper.png');
+}
+
+/* Nadel für einen gewählten Punkt: rotes Fadenkreuz im Ring */
+.pin-marker {
+  width: 30px;
+  height: 30px;
+  border: 2px solid var(--color-mark);
+  border-radius: 9999px;
+  background:
+    linear-gradient(var(--color-mark), var(--color-mark)) center / 100% 1.5px no-repeat,
+    linear-gradient(var(--color-mark), var(--color-mark)) center / 1.5px 100% no-repeat,
+    rgb(243 242 231 / 0.75);
+  pointer-events: none;
 }

@@ -15,7 +15,7 @@ export interface StagePlan {
 
 export const METRIC_LABELS: Record<StageMetric, { label: string; unit: string; min: number; max: number; step: number; default: number }> = {
   distance: { label: 'Distanz', unit: 'km', min: 5, max: 60, step: 1, default: 20 },
-  ascent: { label: 'Aufstieg', unit: 'Hm', min: 200, max: 2500, step: 50, default: 1000 },
+  ascent: { label: 'Bergauf', unit: 'Hm', min: 200, max: 2500, step: 50, default: 1000 },
   time: { label: 'Gehzeit', unit: 'h', min: 2, max: 12, step: 0.5, default: 6 },
 }
 

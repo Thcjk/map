@@ -3,7 +3,7 @@ import { cumulativeDistances, elevationGainLoss, type RoutePoint } from './geo'
 import type { GpxData } from './gpx'
 
 /** GPS-Höhen rauschen stärker als Kartenhöhen: grösserer Schwellwert. */
-const GPS_ELEVATION_THRESHOLD = 10
+export const GPS_ELEVATION_THRESHOLD = 15
 
 export function buildActivity(
   name: string,

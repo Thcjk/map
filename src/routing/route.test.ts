@@ -17,6 +17,7 @@ describe('buildRoute', () => {
     expect(r.ascent).toBe(100)
     expect(r.descent).toBe(50)
     expect(r.sacMax).toBe('T2')
+    expect([r.minEle, r.maxEle]).toEqual([1000, 1100])
     expect(r.surfaces.path).toBeCloseTo(r.distance)
   })
 })

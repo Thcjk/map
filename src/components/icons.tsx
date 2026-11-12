@@ -104,3 +104,55 @@ export const StarIcon = (p: SVGProps<SVGSVGElement>) => (
     <path d="m12 3 2.7 5.8 6.3.8-4.6 4.4 1.2 6.3L12 17.2l-5.6 3.1 1.2-6.3L3 9.6l6.3-.8Z" />
   </svg>
 )
+
+export const MapIcon = (p: SVGProps<SVGSVGElement>) => (
+  <svg {...base(p)}>
+    <path d="m3 6 6-2 6 2 6-2v14l-6 2-6-2-6 2ZM9 4v14M15 6v14" />
+  </svg>
+)
+
+export const SignpostIcon = (p: SVGProps<SVGSVGElement>) => (
+  <svg {...base(p)}>
+    <path d="M12 3v18M12 5h6l2 2.5L18 10h-6M12 11H6l-2 2.5L6 16h6" />
+  </svg>
+)
+
+export const ListIcon = (p: SVGProps<SVGSVGElement>) => (
+  <svg {...base(p)}>
+    <path d="M8 6h12M8 12h12M8 18h12M4 6h.01M4 12h.01M4 18h.01" />
+  </svg>
+)
+
+export const MoreIcon = (p: SVGProps<SVGSVGElement>) => (
+  <svg {...base(p)}>
+    <circle cx="5" cy="12" r="1.3" fill="currentColor" />
+    <circle cx="12" cy="12" r="1.3" fill="currentColor" />
+    <circle cx="19" cy="12" r="1.3" fill="currentColor" />
+  </svg>
+)
+
+export const PlayIcon = (p: SVGProps<SVGSVGElement>) => (
+  <svg {...base(p)}>
+    <path d="M7 4.5v15l12-7.5Z" fill="currentColor" />
+  </svg>
+)
+
+export const PenIcon = (p: SVGProps<SVGSVGElement>) => (
+  <svg {...base(p)}>
+    <path d="m4 20 1-4L16 5l3 3L8 19ZM14 7l3 3" />
+  </svg>
+)
+
+export const LocateIcon = (p: SVGProps<SVGSVGElement>) => (
+  <svg {...base(p)}>
+    <circle cx="12" cy="12" r="6" />
+    <path d="M12 2v4M12 18v4M2 12h4M18 12h4" />
+  </svg>
+)
+
+export const CameraIcon = (p: SVGProps<SVGSVGElement>) => (
+  <svg {...base(p)}>
+    <path d="M4 8h3l2-3h6l2 3h3v11H4Z" />
+    <circle cx="12" cy="13" r="3.5" />
+  </svg>
+)

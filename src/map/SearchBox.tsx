@@ -5,7 +5,12 @@ import { useMap } from './MapContext'
 
 const DEBOUNCE_MS = 350
 
-export default function SearchBox() {
+interface Props {
+  /** Gewählter Ort (die Karte fährt selbst dorthin). */
+  onPick?: (place: Place) => void
+}
+
+export default function SearchBox({ onPick }: Props) {
   const map = useMap()
   const listId = useId()
   const [query, setQuery] = useState('')
@@ -45,13 +50,14 @@ export default function SearchBox() {
     if (!map) return
     if (p.bbox) map.fitBounds(p.bbox, { padding: 40, maxZoom: 15, duration: 800 })
     else map.flyTo({ center: [p.lng, p.lat], zoom: 14 })
+    onPick?.(p)
   }
 
   const showList = open && (results.length > 0 || error)
 
   return (
     <div className="absolute left-2.5 right-16 top-2.5 z-20 max-w-md">
-      <div className="flex items-center rounded-xl border border-text bg-surface focus-within:outline-2 focus-within:outline-mark">
+      <div className="panel flex items-center focus-within:outline-2 focus-within:outline-mark">
         <SearchIcon className="ml-3 shrink-0 text-muted" />
         <input
           type="search"
@@ -82,7 +88,7 @@ export default function SearchBox() {
         )}
       </div>
       {showList && (
-        <ul id={listId} role="listbox" className="mt-1 overflow-hidden rounded-xl border border-text bg-surface">
+        <ul id={listId} role="listbox" className="panel mt-1 overflow-hidden">
           {error && <li className="p-3 text-sm text-danger">{error}</li>}
           {results.map((p, i) => (
             <li key={p.id} role="option" aria-selected={i === active}>
