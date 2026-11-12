@@ -103,10 +103,15 @@ const QUERIES = [
   ]),
 ]
 const byId = new Map()
+let lastFailed = []
 try {
   const cached = JSON.parse(await readFile(OSM_CACHE, 'utf8'))
   for (const r of cached.relations ?? []) byId.set(r.id, r)
-  console.log('Aus früheren Läufen:', byId.size)
+  // Ohne Angaben aus dem letzten Lauf: in umgekehrter Reihenfolge abfragen (der letzte Lauf kam von Süden)
+  lastFailed = cached.failed ?? QUERIES.filter((q) => !q.required).map((q) => q.label).slice(-20)
+  console.log('Aus früheren Läufen:', byId.size, '· zuletzt ausgefallen:', lastFailed.length)
+  // Zuletzt ausgefallene Gebiete zuerst abfragen, damit sie diesmal sicher drankommen
+  QUERIES.sort((a, b) => (lastFailed.includes(b.label) ? 1 : 0) - (lastFailed.includes(a.label) ? 1 : 0) || (b.required ? 1 : 0) - (a.required ? 1 : 0))
 } catch {
   console.log('Noch keine OSM-Daten aus früheren Läufen.')
 }
@@ -115,7 +120,7 @@ const failed = []
 const OSM_DEADLINE = Date.now() + 25 * 60_000
 for (const q of QUERIES) {
   if (!q.required && Date.now() > OSM_DEADLINE) {
-    failed.push(`${q.label} (Zeit)`)
+    failed.push(q.label)
     continue
   }
   try {
@@ -131,7 +136,7 @@ for (const q of QUERIES) {
 }
 if (failed.length) console.log('Ausgelassene Abfragen:', failed.join(' · '))
 const relations = [...byId.values()]
-await writeFile(OSM_CACHE, JSON.stringify({ updated: new Date().toISOString().slice(0, 10), relations: relations.map((r) => ({ id: r.id, tags: r.tags })) }) + '\n')
+await writeFile(OSM_CACHE, JSON.stringify({ updated: new Date().toISOString().slice(0, 10), failed, relations: relations.map((r) => ({ id: r.id, tags: r.tags })) }) + '\n')
 console.log('OSM-Relationen mit Wikidata-Verweis:', relations.length)
 
 /** QID -> Relationen */
