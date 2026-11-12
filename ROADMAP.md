@@ -82,7 +82,8 @@ Status: `[x]` erledigt, `[ ]` offen. Nach jeder Änderung aktualisieren.
 - [x] Zahlen: «Bergauf/Bergab» in Hm mit Erklärung, höchster/tiefster Punkt, Gehzeit über 24 h ohne Minuten,
       bilineare Höheninterpolation, deutsche Ortsnamen
 - [x] Fernweg-Katalog aus OSM + Wikidata + Wikipedia + Commons-Fotos (monatliche Action)
-- [ ] Katalog-Action erfolgreich durchlaufen lassen und Inhalte stichprobenartig prüfen
+- [x] Katalog-Action läuft: 600 Wege, 286 mit Foto (Stand 12.11.2026); Stichprobe geprüft (TMB 170 km, GR 20 179 km, E-Wege)
+- [ ] Fehlende Gebiete (v. a. UK, Skandinavien, Balkan) kommen mit den nächsten Läufen dazu (OSM-Server oft überlastet)
 - [x] Wanderwege deutlich: Pfade rot gestrichelt mit hellem Rand ab Zoom 11, Feldwege grau; markierte Wanderrouten (Waymarked Trails) standardmässig an; Legende im Ebenen-Dialog
 - [ ] Kartenstil mit echten Vektorkacheln auf dem Handy prüfen
 
