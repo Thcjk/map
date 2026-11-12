@@ -24,7 +24,11 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms))
 async function getJson(url, init = {}, tries = 8) {
   for (let i = 1; ; i++) {
     try {
-      const res = await fetch(url, { ...init, headers: { 'User-Agent': UA, Accept: 'application/json', ...(init.headers ?? {}) } })
+      const res = await fetch(url, {
+        signal: AbortSignal.timeout(60_000),
+        ...init,
+        headers: { 'User-Agent': UA, Accept: 'application/json', ...(init.headers ?? {}) },
+      })
       if (res.status === 429 || res.status === 503) {
         // Wikimedia bremst: so lange warten, wie der Server verlangt
         const wait = Math.min(120, Number(res.headers.get('retry-after')) || 10 * i)
@@ -34,7 +38,14 @@ async function getJson(url, init = {}, tries = 8) {
         continue
       }
       if (!res.ok) throw new Error(`HTTP ${res.status}`)
-      return await res.json()
+      const json = await res.json()
+      // Wikidata meldet Überlastung (maxlag) mit HTTP 200: warten und erneut versuchen
+      if (json?.error?.code === 'maxlag') {
+        if (i >= tries) throw new Error('maxlag')
+        await sleep((Number(res.headers.get('retry-after')) || 5) * 1000)
+        continue
+      }
+      return json
     } catch (e) {
       if (i >= tries) throw new Error(`${url.slice(0, 90)}: ${e.message}`)
       await sleep(2000 * i)
@@ -91,7 +102,13 @@ const QUERIES = [
 ]
 const byId = new Map()
 const failed = []
+// Höchstens 25 Minuten für OSM: Was bis dahin nicht kam, fehlt diesmal (nächster Lauf holt es).
+const OSM_DEADLINE = Date.now() + 25 * 60_000
 for (const q of QUERIES) {
+  if (!q.required && Date.now() > OSM_DEADLINE) {
+    failed.push(`${q.label} (Zeit)`)
+    continue
+  }
   try {
     const found = await overpass(`[out:json][timeout:110];relation${q.filter}["wikidata"]${q.bbox ? `(${q.bbox})` : ''};out tags;`)
     console.log(`OSM ${q.label}:`, found.length)
@@ -124,9 +141,10 @@ for (const ids of chunks([...groups.keys()], 50)) {
     `https://www.wikidata.org/w/api.php?action=wbgetentities&format=json&props=labels|descriptions|claims|sitelinks&languages=de|en&ids=${ids.join('|')}&maxlag=5`,
   )
   for (const [id, e] of Object.entries(json.entities ?? {})) if (!e.missing) entities.set(id, e)
+  if (entities.size % 500 < 50) console.log('Wikidata …', entities.size)
   await sleep(1000)
 }
-console.log('Wikidata-Objekte geladen:', entities.size)
+console.log('Wikidata-Objekte geladen:', entities.size, new Date().toISOString())
 
 const claimValues = (e, p) =>
   (e.claims?.[p] ?? []).filter((c) => c.rank !== 'deprecated' && c.mainsnak?.datavalue).map((c) => c.mainsnak.datavalue.value)
