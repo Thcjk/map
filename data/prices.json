@@ -1,1 +1,124 @@
-{ "updatedAt": null, "products": {} }
+{
+ "updatedAt": "2026-11-21T20:00:43.342Z",
+ "products": {
+  "geekom-a6": {
+   "name": "Geekom A6 (Ryzen 7 6800H, 680M)",
+   "shop": "Digitec/Galaxus",
+   "status": "ok",
+   "error": null,
+   "checkedAt": "2026-11-21T20:00:43.342Z",
+   "current": {
+    "price": 565.74,
+    "strikePrice": null,
+    "available": true,
+    "at": "2026-11-21T20:00:43.342Z"
+   },
+   "lowest": {
+    "price": 565.74,
+    "at": "2026-11-21T20:00:43.342Z"
+   },
+   "history": [
+    {
+     "t": "2026-11-21T20:00:43.342Z",
+     "price": 565.74,
+     "available": true
+    }
+   ],
+   "url": "https://www.galaxus.ch/de/s1/product/geekom-a6-512-gb-16-gb-amd-ryzen-7-6800h-pc-66104432",
+   "matchedName": "A6 (512 GB, 16 GB, AMD Ryzen 7 6800H)",
+   "availabilityRaw": "FULL",
+   "specsText": "Geekom A6 (512 GB, 16 GB, AMD Ryzen 7 6800H) PC Der GEEKOM Mini-PC A6 ist eine kompakte Computerlösung für vielfältige Anwendungen, ausgestattet mit einem AMD Ryzen 7 6800 Prozessor mit einer maximalen Boost-Taktfrequenz von 4,7 GHz. Das System verfügt über 16 GB Arbeitsspeicher und eine 512 GB Solid-State-Festplatte, was reaktionsschnelle Leistung für Multitasking und Datenzugriff bietet. Als Mini-PC mit raumoptimierten Abmessungen eignet er sich gut als Home-Theater-PC (HTPC) für Medienkonsum, Büroproduktivität oder leichte kreative Aufgaben. Die im Prozessor integrierte AMD Radeon Grafik unterstützt Display-Ausgänge für Multimedia- und Alltagscomputing-Bedürfnisse. Konstruiert mit typischer Wärme-management-Aufmerksamkeit kompakter Bauformen, bewahrt er Betriebsstabilität bei längerer Nutzung. Anschlussoptionen umfassen mehrere USB-Anschlüsse, HDMI und andere Standard-Schnittstellen für Peripheriegeräte. Der Solid-State-Speicher trägt zu schnelleren Startzeiten und Anwendungsladezeiten im Vergleich zu traditionellen Festplatten bei. Dieses Modell stellt ein Nachfolgemodell von früheren Generationen in GEEKOMs Mini-PC-Reihe dar und bietet aktualisierte Komponenten in einem vertrauten kompakten Design. Sein geringer Platzbedarf macht ihn geeignet für die Platzierung in Unterhaltungszentren, Arbeitsbereichen oder anderen Bereichen, wo vollwertige Desktop-Computer unpraktisch wären. Die Kombination aus Prozessorleistung und Speicherkapazität ermöglicht effiziente Handhabung von Bürosoftware, Webbrowsing und Streaming-Inhalten. Wie bei allen kompakten Computergeräten sollte ausreichende Belüftung für optimale Leistung gewährleistet sein. Das System kommt gebrauchsfertig mit installiertem Betriebssystem an und erfordert nur den Anschluss an Stromversorgung, Display und Eingabegeräte. CH Stromkabel wird benötigt."
+  },
+  "gmktec-m6-ultra": {
+   "name": "GMKtec M6 Ultra (Ryzen 5 7640HS, 760M)",
+   "shop": "Digitec/Galaxus",
+   "status": "ok",
+   "error": null,
+   "checkedAt": "2026-11-21T20:00:43.342Z",
+   "current": {
+    "price": 698,
+    "strikePrice": null,
+    "available": true,
+    "at": "2026-11-21T20:00:43.342Z"
+   },
+   "lowest": {
+    "price": 698,
+    "at": "2026-11-21T20:00:43.342Z"
+   },
+   "history": [
+    {
+     "t": "2026-11-21T20:00:43.342Z",
+     "price": 698,
+     "available": true
+    }
+   ],
+   "url": "https://www.galaxus.ch/de/s1/product/gmktec-m6-ultra-1000-gb-32-gb-amd-ryzen-5-7640hs-pc-65189705",
+   "matchedName": "M6 Ultra (1000 GB, 32 GB, AMD Ryzen 5 7640HS)",
+   "availabilityRaw": "FULL",
+   "specsText": "GMKtec M6 Ultra (1000 GB, 32 GB, AMD Ryzen 5 7640HS) PC Der MINI PC GMKtec M6 Ultra ist eine kompakte und leistungsstarke Desktop-Lösung, die mit einem AMD Ryzen 5 7640HS Prozessor ausgestattet ist. Mit 32 GB RAM und einer 1 TB SSD bietet dieses Gerät eine beeindruckende Leistung für verschiedene Anwendungen, von Büroarbeiten bis hin zu Multimedia-Anwendungen. Der Small Form-Faktor ermöglicht eine platzsparende Integration in jede Umgebung, während das vorinstallierte Windows 11 Pro eine benutzerfreundliche und moderne Benutzeroberfläche bietet. Die integrierte Grafik sorgt für eine ausreichende visuelle Leistung, während die Luftkühlung für einen leisen Betrieb sorgt. Der MINI PC ist zudem mit WLAN ausgestattet, was eine flexible und kabellose Verbindung ermöglicht.\n\n- Kompakter Small Form-Faktor für platzsparende Nutzung\n- Leistungsstarker AMD Ryzen 5 7640HS Prozessor\n- 32 GB RAM für reibungsloses Multitasking\n- 1 TB SSD für schnellen Zugriff auf Daten und Anwendungen."
+  },
+  "beelink-ser8": {
+   "name": "Beelink SER8 (8745HS/8845HS, 780M)",
+   "shop": "Digitec/Galaxus",
+   "status": "ok",
+   "error": null,
+   "checkedAt": "2026-11-21T20:00:43.342Z",
+   "current": {
+    "price": 1127,
+    "strikePrice": null,
+    "available": null,
+    "at": "2026-11-21T20:00:43.342Z"
+   },
+   "lowest": {
+    "price": 1127,
+    "at": "2026-11-21T20:00:43.342Z"
+   },
+   "history": [
+    {
+     "t": "2026-11-21T20:00:43.342Z",
+     "price": 1127,
+     "available": null
+    }
+   ],
+   "url": "https://www.galaxus.ch/de/s1/product/beelink-ser8-1000-gb-32-gb-amd-ryzen-7-8845hs-pc-71324419",
+   "matchedName": "SER8 (1000 GB, 32 GB, AMD Ryzen 7 8845HS)",
+   "availabilityRaw": "UNKNOWN",
+   "specsText": "Beelink SER8 (1000 GB, 32 GB, AMD Ryzen 7 8845HS) PC Besserer Wert, unschlagbare Leistung – Der Beelink SER8 Mini-PC wird von einem AMD Ryzen 7 8745HS Prozessor mit einer maximalen Turbo-Frequenz von 4,9 GHz und einer AMD Radeon 780M iGPU angetrieben. Entsprechend einem 8845HS ohne den Ryzen AI Engine NPU bietet der 8745HS ein besseres Preis-Leistungs-Verhältnis und ebenso unschlagbare Leistung.\n\nEinfache Erweiterung und neue RAM-Konfiguration – Der SER8 8745HS unterstützt Dual-Channel DDR5 5600MHz RAM von bis zu 256 GB, sodass Sie Aufgaben im Handumdrehen erledigen können. Unter der Haube des SER8 befinden sich zwei M.2 PCIe 4.0 SSD-Steckplätze, die bis zu 8 TB schnellen internen Speicher unterstützen.\n\n32 dB nahezu geräuschloser Betrieb – Die Luftansaugung von unten ist so effizient bei der Wärmeableitung, dass der SER8 sehr niedrige Lüftergeschwindigkeiten benötigt, um bei 65W TDP kühl und stabil zu bleiben, was einen nahezu geräuschlosen Betrieb gewährleistet. Da es keine Lüftungsschlitze an der Ober- und Seitenfläche gibt, kann der SER8 nun ein erfrischenderes Design haben. Das integrierte Metallgehäuse bietet nicht nur eine hervorragende strukturelle Integrität, sondern wirkt auch als Geräuschdämpfer und sorgt für ein leises Nutzungserlebnis.\n\nUltra-praktisches staubdichtes Design – Der neue hochdichte Metallfilter an der Unterseite sorgt für optimalen Luftstrom, hält Staub aus dem SER8 fern und vermeidet Staubansammlungen sowie staubbedingte Probleme.\n\nDreifach-Display-Ausgang – Mit HDMI 2.1, DisplayPort 1.4 und voll funktionsfähigem USB4 unterstützt der SER8 Dreifach-Display und 4K-Ausgabe.\n\nCPU: AMD Ryzen 7 8745HS 8C/16T 4,9 GHz maximale Turbo-Frequenz, 16 MB L3-Cache  \nGPU: AMD Radeon 780M, 12 Kerne 2600 MHz  \nSpeicher: Dual SO-DIMM DDR5 5600MHz Steckplatz, max. 256 GB  \nSpeicher: Dual M.2 2280 PCIe 4.0 x4, max. 8 TB (4 TB x 2)  \nKühlsystem: MSC 2.0 Kühlsystem, Dampfkamm, leiser Lüfter, SSD-Kühler  \nDreifach-Display: DP1.4 (4K 144Hz) x1, HDMI 2.1 (4K 120Hz) x1, USB4 (40Gbps/TBT3/PD/DP1.4) x1  \nUnterstützt 4K-Ausgabe  \nFarbe: Frostsilber  \nAbmessungen & Gewicht: 0,814L, 0,75 kg  \nDrahtloses Netzwerk: WiFi 6 (Intel AX200), Bluetooth 5.2  \nAdapter: Eingang: 100-240V AC, 50/60Hz, Ausgang: 19V 5,26A  \nBetriebssystem: Windows 11 Pro."
+  },
+  "philips-27m2n3500pf": {
+   "name": "Philips Evnia 27M2N3500PF",
+   "shop": "Digitec/Galaxus",
+   "status": "error",
+   "error": "Kein passender Treffer für «Philips Evnia 27M2N3500PF». Bitte den Produktlink eintragen.",
+   "checkedAt": "2026-11-21T20:00:43.342Z"
+  },
+  "asus-vg27aq5a": {
+   "name": "ASUS TUF Gaming VG27AQ5A",
+   "shop": "Digitec/Galaxus",
+   "status": "ok",
+   "error": null,
+   "checkedAt": "2026-11-21T20:00:43.342Z",
+   "current": {
+    "price": 164,
+    "strikePrice": null,
+    "available": true,
+    "at": "2026-11-21T20:00:43.342Z"
+   },
+   "lowest": {
+    "price": 164,
+    "at": "2026-11-21T20:00:43.342Z"
+   },
+   "history": [
+    {
+     "t": "2026-11-21T20:00:43.342Z",
+     "price": 164,
+     "available": true
+    }
+   ],
+   "url": "https://www.galaxus.ch/de/s1/product/asus-tuf-gaming-vg27aq5a-2560-x-1440-pixel-27-monitor-59382254",
+   "matchedName": "TUF Gaming VG27AQ5A (2560 x 1440 Pixel, 27\")",
+   "availabilityRaw": "TICK",
+   "specsText": "ASUS TUF Gaming VG27AQ5A (2560 x 1440 Pixel, 27\") Monitor Der 27 Zoll grosse TUF Gaming VG27AQ5A QHD-Gaming-Monitor ist mit einem IPS-Panel ausgestattet, das blitzschnelle 210 Hz (OC) ermöglicht. ASUS Extreme Low Motion Blur Sync (ELMB Sync) und AMD FreeSync™ Premium sowie VESA AdaptiveSync Technologien ermöglichen butterweiches Gaming. Ausserdem unterstützt er HDR und hat einen DCI-P3-Gamut von 95 %, um aussergewöhnliche Farben und Kontraste zu bieten."
+  }
+ }
+}
