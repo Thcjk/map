@@ -1,0 +1,33 @@
+{
+  "_hinweis": "Deine Kaufregeln. In der App unter «Regeln» bearbeitbar. CPU-Namen werden ohne Gross-/Kleinschreibung im Produkttext gesucht.",
+  "miniPc": {
+    "gpus": [
+      { "name": "Radeon 680M", "verdict": "good", "cpus": ["6800H", "6850H", "6900HX", "6980HX", "7735HS", "7736U"], "maxPrice": 500 },
+      { "name": "Radeon 760M", "verdict": "good", "cpus": ["7640HS", "7640U", "8640HS", "8645HS"], "maxPrice": 500 },
+      { "name": "Radeon 780M", "verdict": "good", "cpus": ["7840HS", "7940HS", "8745HS", "8845HS", "8945HS", "H 255", "7840U", "8840U"], "maxPrice": 600 },
+      { "name": "Radeon 890M", "verdict": "good", "cpus": ["HX 370", "HX 375"], "maxPrice": 800 },
+      { "name": "Radeon 740M", "verdict": "bad", "cpus": ["7545U", "7540U", "7440U"] },
+      { "name": "Radeon 660M", "verdict": "bad", "cpus": ["7535HS", "7533HS", "7535U", "6600H", "6600U"] },
+      { "name": "Radeon Vega", "verdict": "bad", "cpus": ["7430U", "7530U", "7730U", "5600G", "3400G"], "cpuPattern": "\\b5[0-9]{3}(H|HS|HX|U|G|GE)\\b" },
+      { "name": "Intel UHD (N-Serie)", "verdict": "bad", "cpus": ["N100", "N150", "N95", "N97", "N200", "N300", "N305"] }
+    ],
+    "badText": ["Onboard Graphics"],
+    "minRamGb": 16,
+    "warnSingleChannel": true,
+    "barebone": { "verdict": "bad", "extraCost": "CHF 250–350 für RAM und SSD" }
+  },
+  "monitor": {
+    "sizeInch": 27,
+    "resolution": "2560x1440",
+    "panels": ["IPS", "Mini-LED"],
+    "minHz": 165,
+    "warnBelowHz": 144,
+    "needDisplayPort": true,
+    "warnOled": "OLED: Einbrenn-Risiko bei statischen Inhalten (Code-Editor, Taskleiste) und weniger scharfe Schrift durch die Subpixel-Anordnung.",
+    "warnTooBig": "4K oder Ultrawide (3440x1440) ist zu viel für Mini-PC-Grafik in Spielen."
+  },
+  "fakeDiscount": {
+    "_hinweis": "Ein «Statt»-Preis gilt als fragwürdig, wenn der Artikel in den letzten Tagen schon günstiger oder gleich teuer war.",
+    "lookbackDays": 30
+  }
+}
