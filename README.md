@@ -1,12 +1,7 @@
-# Etappa
+# Deal-Radar (Arbeitstitel)
 
-Kostenlose Web-App (PWA) zum Planen von Fernwanderungen – Karte, Routenplanung,
-Etappen, Navigation und offline nutzbar. Alle Daten aus freien Quellen, siehe
-[DATENQUELLEN.md](DATENQUELLEN.md).
+Web-App, die Technik-Deals in der Schweiz überwacht (Mini-PC fürs Gaming, Monitor).
+Im Aufbau – siehe ROADMAP.md.
 
-```bash
-npm install
-npm run dev
-```
-
-Projektregeln: [CLAUDE.md](CLAUDE.md) · Fortschritt: [ROADMAP.md](ROADMAP.md)
+> Hinweis: Dieses Repo enthielt früher die Wander-App «Etappa». Ihr letzter Stand ist
+> Commit `5b3f0bf` auf diesem Branch (`git checkout 5b3f0bf`).
