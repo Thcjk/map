@@ -1,97 +1,61 @@
-// Einmaliger Test: Was erlauben die Shops, und welche Wege funktionieren aus GitHub Actions?
-// Läuft mit: node scraper/probe.js  (Node 22, keine Abhängigkeiten)
-
+// Test 2: Galaxus-/Digitec-MCP genauer ansehen und eine Digitec-Produktseite auslesen.
 const UA = 'deal-radar/0.1 (privater Preiswecker; github.com/Thcjk/map)'
+const AGENT = 'deal-radar price watcher (personal use), rule-based, no LLM'
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms))
 
-async function get(url, opts = {}) {
-  try {
-    const res = await fetch(url, { headers: { 'User-Agent': UA, Accept: opts.accept ?? 'text/html,application/json', ...(opts.headers ?? {}) }, method: opts.method ?? 'GET', body: opts.body, signal: AbortSignal.timeout(30_000) })
-    const text = await res.text()
-    return { status: res.status, headers: Object.fromEntries(res.headers), text }
-  } catch (e) {
-    return { status: 0, error: e.message, text: '' }
-  }
-}
-
-const SHOPS = {
-  digitec: 'https://www.digitec.ch',
-  galaxus: 'https://www.galaxus.ch',
-  brack: 'https://www.brack.ch',
-  conrad: 'https://www.conrad.ch',
-  mediamarkt: 'https://www.mediamarkt.ch',
-  interdiscount: 'https://www.interdiscount.ch',
-  amazon: 'https://www.amazon.de',
-}
-
-console.log('==== 1. robots.txt ====')
-for (const [name, base] of Object.entries(SHOPS)) {
-  const r = await get(`${base}/robots.txt`, { accept: 'text/plain' })
-  console.log(`\n--- ${name}: HTTP ${r.status} ${r.error ?? ''} (${r.text.length} Zeichen)`)
-  // nur die Blöcke für * und die Zeilen zu Produkten/Suche zeigen
-  const lines = r.text.split('\n').map((l) => l.trim())
-  let inStar = false
-  for (const l of lines) {
-    if (/^user-agent:/i.test(l)) inStar = /^user-agent:\s*\*\s*$/i.test(l)
-    if (inStar || /crawl-delay|ai|gpt|claude/i.test(l)) console.log('  ', l.slice(0, 120))
-  }
-  await sleep(1500)
-}
-
-console.log('\n==== 2. Galaxus MCP ====')
-const MCP_CANDIDATES = ['https://mcp.galaxus.ch/mcp', 'https://mcp.galaxus.ch/', 'https://mcp.galaxus.ch/sse', 'https://www.galaxus.ch/mcp']
-let mcpUrl = null
-let session = null
-const rpc = async (url, method, params, id = 1) => {
-  const headers = { 'Content-Type': 'application/json', Accept: 'application/json, text/event-stream' }
+async function post(url, body, session) {
+  const headers = { 'Content-Type': 'application/json', Accept: 'application/json, text/event-stream', 'User-Agent': UA }
   if (session) headers['Mcp-Session-Id'] = session
-  const r = await get(url, { method: 'POST', headers, body: JSON.stringify({ jsonrpc: '2.0', id, method, params }), accept: 'application/json, text/event-stream' })
-  if (r.headers?.['mcp-session-id']) session = r.headers['mcp-session-id']
-  // SSE-Antwort: «data: {...}»
-  const m = r.text.match(/^data: (.*)$/m)
+  const res = await fetch(url, { method: 'POST', headers, body: JSON.stringify(body), signal: AbortSignal.timeout(30_000) })
+  const text = await res.text()
+  const m = text.match(/^data: (.*)$/m)
   let json = null
-  try {
-    json = JSON.parse(m ? m[1] : r.text)
-  } catch {}
-  return { ...r, json }
-}
-for (const url of MCP_CANDIDATES) {
-  session = null
-  const r = await rpc(url, 'initialize', { protocolVersion: '2025-06-18', capabilities: {}, clientInfo: { name: 'deal-radar-probe', version: '0.1' } })
-  console.log(`${url}: HTTP ${r.status} ${r.error ?? ''} ${r.text.slice(0, 200).replace(/\s+/g, ' ')}`)
-  if (r.json?.result) {
-    mcpUrl = url
-    break
-  }
-  await sleep(1000)
-}
-if (mcpUrl) {
-  await rpc(mcpUrl, 'notifications/initialized', {})
-  const tools = await rpc(mcpUrl, 'tools/list', {}, 2)
-  for (const t of tools.json?.result?.tools ?? []) console.log(`TOOL ${t.name}: ${(t.description ?? '').slice(0, 160)}\n   input: ${JSON.stringify(t.inputSchema?.properties ?? {}).slice(0, 300)}`)
-  const search = (tools.json?.result?.tools ?? []).find((t) => /search/i.test(t.name))
-  if (search) {
-    const queryKey = Object.keys(search.inputSchema?.properties ?? { query: 1 })[0]
-    for (const q of ['Geekom A6', 'GMKtec M6 Ultra', 'Beelink SER8', 'Philips Evnia 27M2N3500PF', 'ASUS TUF VG27AQ5A']) {
-      const r = await rpc(mcpUrl, 'tools/call', { name: search.name, arguments: { [queryKey]: q } }, 3)
-      console.log(`\nSUCHE «${q}»: HTTP ${r.status}`)
-      console.log(JSON.stringify(r.json?.result ?? r.json ?? r.text).slice(0, 1500))
-      await sleep(2000)
-    }
-  }
+  try { json = JSON.parse(m ? m[1] : text) } catch {}
+  return { status: res.status, session: res.headers.get('mcp-session-id'), text, json }
 }
 
-console.log('\n==== 3. Produktseiten / JSON-LD ====')
-const PAGES = [
-  ['digitec Suche', 'https://www.digitec.ch/de/search?q=Beelink%20SER8'],
-  ['brack Suche', 'https://www.brack.ch/search?query=Beelink%20SER8'],
-  ['interdiscount Suche', 'https://www.interdiscount.ch/de/search?search=asus%20vg27aq5a'],
-  ['mediamarkt Suche', 'https://www.mediamarkt.ch/de/search.html?query=asus%20vg27aq5a'],
-  ['conrad Suche', 'https://www.conrad.ch/de/search.html?search=beelink'],
-]
-for (const [label, url] of PAGES) {
-  const r = await get(url)
-  const ld = (r.text.match(/application\/ld\+json/g) ?? []).length
-  console.log(`${label}: HTTP ${r.status} ${r.error ?? ''} · ${r.text.length} Zeichen · JSON-LD-Blöcke: ${ld} · Server: ${r.headers?.server ?? '?'} · ${/akamai|captcha|access denied|cloudflare/i.test(r.text) ? 'BOT-SCHUTZ-HINWEIS' : ''}`)
+async function mcp(url) {
+  console.log(`\n######## ${url}`)
+  let r
+  try {
+    r = await post(url, { jsonrpc: '2.0', id: 1, method: 'initialize', params: { protocolVersion: '2025-06-18', capabilities: {}, clientInfo: { name: 'deal-radar', version: '0.1' } } })
+  } catch (e) {
+    console.log('Fehler:', e.message)
+    return
+  }
+  console.log('init:', r.status, r.text.slice(0, 600).replace(/\s+/g, ' '))
+  if (!r.json?.result) return
+  const session = r.session
+  await post(url, { jsonrpc: '2.0', method: 'notifications/initialized' }, session)
+  const tools = await post(url, { jsonrpc: '2.0', id: 2, method: 'tools/list' }, session)
+  for (const t of tools.json?.result?.tools ?? []) console.log(`\nTOOL ${t.name}\n  ${t.description}\n  schema: ${JSON.stringify(t.inputSchema)}`)
+  const res = await post(url, { jsonrpc: '2.0', id: 3, method: 'resources/list' }, session)
+  console.log('\nresources:', JSON.stringify(res.json?.result ?? res.text).slice(0, 800))
+  for (const q of ['Beelink SER8', 'ASUS TUF Gaming VG27AQ5A']) {
+    const s = await post(url, { jsonrpc: '2.0', id: 4, method: 'tools/call', params: { name: 'search_products', arguments: { query: q, agentInfo: AGENT, language: 'de' } } }, session)
+    console.log(`\nSUCHE «${q}»:\n${JSON.stringify(s.json?.result ?? s.text).slice(0, 4000)}`)
+    await sleep(2000)
+  }
+  return session
+}
+
+await mcp('https://mcp.galaxus.ch/')
+await sleep(2000)
+await mcp('https://mcp.digitec.ch/')
+
+console.log('\n######## Digitec robots.txt (Anfang)')
+const robots = await (await fetch('https://www.digitec.ch/robots.txt', { headers: { 'User-Agent': UA } })).text()
+console.log(robots.split('\n').slice(0, 40).join('\n'))
+
+console.log('\n######## Digitec Suche: JSON-LD-Inhalt')
+const html = await (await fetch('https://www.digitec.ch/de/search?q=Beelink%20SER8', { headers: { 'User-Agent': UA, Accept: 'text/html' } })).text()
+for (const m of html.matchAll(/<script[^>]*application\/ld\+json[^>]*>([\s\S]*?)<\/script>/g)) console.log(m[1].slice(0, 1500))
+const link = html.match(/href="(\/de\/s1\/product\/[^"]+)"/)
+console.log('Erster Produktlink:', link?.[1])
+if (link) {
   await sleep(3000)
+  const p = await fetch(`https://www.digitec.ch${link[1]}`, { headers: { 'User-Agent': UA, Accept: 'text/html' } })
+  const ph = await p.text()
+  console.log(`Produktseite: HTTP ${p.status}, ${ph.length} Zeichen`)
+  for (const m of ph.matchAll(/<script[^>]*application\/ld\+json[^>]*>([\s\S]*?)<\/script>/g)) console.log(m[1].slice(0, 3000))
 }
