@@ -1,0 +1,4 @@
+{
+  "_hinweis": "intervalHours: wie oft die Preise geprüft werden (1 = stündlich, z. B. rund um Black Friday; 6 = normal).",
+  "intervalHours": 6
+}

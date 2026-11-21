@@ -1,0 +1,10 @@
+{
+  "_hinweis": "Deine Wunschliste. In der App bearbeitbar. «query» dient der Suche, bis die genaue Produkt-ID («productId») bekannt ist.",
+  "products": [
+    { "id": "geekom-a6", "name": "Geekom A6 (Ryzen 7 6800H, 680M)", "category": "miniPc", "query": "Geekom A6 6800H", "targetPrice": 490, "url": null },
+    { "id": "gmktec-m6-ultra", "name": "GMKtec M6 Ultra (Ryzen 5 7640HS, 760M)", "category": "miniPc", "query": "GMKtec M6 Ultra 7640HS", "targetPrice": 480, "url": null },
+    { "id": "beelink-ser8", "name": "Beelink SER8 (8745HS/8845HS, 780M)", "category": "miniPc", "query": "Beelink SER8", "targetPrice": 600, "url": null },
+    { "id": "philips-27m2n3500pf", "name": "Philips Evnia 27M2N3500PF", "category": "monitor", "query": "Philips Evnia 27M2N3500PF", "targetPrice": 140, "url": null },
+    { "id": "asus-vg27aq5a", "name": "ASUS TUF Gaming VG27AQ5A", "category": "monitor", "query": "ASUS TUF Gaming VG27AQ5A", "targetPrice": 150, "url": "https://www.galaxus.ch/de/s1/product/asus-tuf-gaming-vg27aq5a-2560-x-1440-pixel-27-monitor-59382254" }
+  ]
+}
