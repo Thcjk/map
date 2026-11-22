@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-21T20:00:43.342Z",
+ "updatedAt": "2026-11-22T00:24:01.721Z",
  "products": {
   "geekom-a6": {
    "name": "Geekom A6 (Ryzen 7 6800H, 680M)",
@@ -11,7 +11,7 @@
     "price": 565.74,
     "strikePrice": null,
     "available": true,
-    "at": "2026-11-21T20:00:43.342Z"
+    "at": "2026-11-22T00:24:01.721Z"
    },
    "lowest": {
     "price": 565.74,
@@ -20,6 +20,11 @@
    "history": [
     {
      "t": "2026-11-21T20:00:43.342Z",
+     "price": 565.74,
+     "available": true
+    },
+    {
+     "t": "2026-11-22T00:24:01.721Z",
      "price": 565.74,
      "available": true
     }
@@ -39,7 +44,7 @@
     "price": 698,
     "strikePrice": null,
     "available": true,
-    "at": "2026-11-21T20:00:43.342Z"
+    "at": "2026-11-22T00:24:01.721Z"
    },
    "lowest": {
     "price": 698,
@@ -48,6 +53,11 @@
    "history": [
     {
      "t": "2026-11-21T20:00:43.342Z",
+     "price": 698,
+     "available": true
+    },
+    {
+     "t": "2026-11-22T00:24:01.721Z",
      "price": 698,
      "available": true
     }
@@ -67,7 +77,7 @@
     "price": 1127,
     "strikePrice": null,
     "available": null,
-    "at": "2026-11-21T20:00:43.342Z"
+    "at": "2026-11-22T00:24:01.721Z"
    },
    "lowest": {
     "price": 1127,
@@ -76,6 +86,11 @@
    "history": [
     {
      "t": "2026-11-21T20:00:43.342Z",
+     "price": 1127,
+     "available": null
+    },
+    {
+     "t": "2026-11-22T00:24:01.721Z",
      "price": 1127,
      "available": null
     }
@@ -90,7 +105,7 @@
    "shop": "Digitec/Galaxus",
    "status": "error",
    "error": "Kein passender Treffer für «Philips Evnia 27M2N3500PF». Bitte den Produktlink eintragen.",
-   "checkedAt": "2026-11-21T20:00:43.342Z"
+   "checkedAt": "2026-11-22T00:24:01.721Z"
   },
   "asus-vg27aq5a": {
    "name": "ASUS TUF Gaming VG27AQ5A",
@@ -102,7 +117,7 @@
     "price": 164,
     "strikePrice": null,
     "available": true,
-    "at": "2026-11-21T20:00:43.342Z"
+    "at": "2026-11-22T00:24:01.721Z"
    },
    "lowest": {
     "price": 164,
@@ -111,6 +126,11 @@
    "history": [
     {
      "t": "2026-11-21T20:00:43.342Z",
+     "price": 164,
+     "available": true
+    },
+    {
+     "t": "2026-11-22T00:24:01.721Z",
      "price": 164,
      "available": true
     }
